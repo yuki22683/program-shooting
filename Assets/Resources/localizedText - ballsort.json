@@ -1,0 +1,2025 @@
+{
+    "en": {
+      "btn_start": "Start",
+      "btn_privacy_policy": "Privacy Policy",
+      "title_privacy_policy": "Privacy Policy",
+      "body_condition": "Please scroll to the bottom",
+      "btn_accept": "Accept",
+      "btn_decline": "Decline",
+      "title_stage": "Select Stage",
+      "body_stage1": "Stage 1",
+      "body_stage2": "Stage 2",
+      "body_stage3": "Stage 3",
+      "body_stage4": "Stage 4",
+      "body_stage5": "Stage 5",
+      "body_stage6": "Stage 6",
+      "body_stage7": "Stage 7",
+      "body_stage8": "Stage 8",
+      "body_stage9": "Stage 9",
+      "body_stage10": "Stage 10",
+      "body_stage11": "Stage 11",
+      "body_stage12": "Stage 12",
+      "body_stage13": "Stage 13",
+      "body_stage14": "Stage 14",
+      "body_stage15": "Stage 15",
+      "body_stage16": "Stage 16",
+      "body_stage17": "Stage 17",
+      "title_level": "Select Level",
+      "btn_yes": "Yes",
+      "btn_cancel": "Cancel",
+      "body_next": "Next",
+      "title_position": "Position Setting",
+      "body_x": "X position",
+      "body_y": "Y position",
+      "body_z": "Z position",
+      "body_scale": "Scale",
+      "btn_reset": "Reset",
+      "body_back": "Back to home?",
+      "body_over": "Start over?",
+      "btn_home": "Home",
+      "btn_passthrough": "Passthrough",
+      "btn_bgm": "BGM",
+      "btn_sound": "Sound",
+      "btn_retry": "Retry",
+      "btn_undo": "Undo",
+      "btn_add": "Add Tube",
+      "btn_hint": "Hint",
+      "btn_on": "ON",
+      "btn_off": "OFF",
+      "body_all_clear": "All Stages Completed",
+      "body_level": "Level",
+      "body_stage": "Stage",
+      "body_privacy_policy": "
+Effective Date: April 3, 2025
+
+Welcome to \"BallSort\" a 3D  game developed and operated by yt-Studio (\"we,\" \"us,\" or \"our\"). We are committed to respecting your privacy and protecting your personal information. This Privacy Policy explains how we collect, use, and share information when you use our application (\"BallSort\") on Meta Quest.
+
+1. Information We Collect
+Information You Provide Directly  
+BallSort does not require user registration, and therefore we do not collect personal information such as your name or email address directly from you.
+
+Device and Usage Information  
+We may collect information related to your use of the app and your device, such as the device model, operating system version, and connection status. This data is used to optimize game performance and address technical issues.
+
+Gameplay Data  
+We do not collect gameplay data that can identify you personally (e.g., scores, playtime, or interaction history). However, if you use the leaderboard feature provided by the Meta platform, score-related information may be processed by Meta.
+
+2. How We Use Your Information
+We use the collected information for the following purposes:  
+To provide, maintain, and improve BallSort (e.g., fixing bugs or enhancing performance).  
+
+To respond to user support requests and resolve technical issues.  
+
+To send you important notifications about the app (e.g., updates or policy changes).
+
+3. Sharing Your Personal Information
+No Sale to Third Parties: We do not sell your personal information to third parties.  
+
+Service Providers: We may share minimal information with service providers (e.g., cloud server providers) necessary to support the operation of BallSort, but only for the purpose of delivering app functionality.  
+
+Meta Platform: If you use the leaderboard feature, score data is managed by the Meta platform. We do not directly store this data.
+
+4. Security of Your Information
+We implement reasonable security measures to protect your information from unauthorized access, use, or disclosure. However, please note that no data transmission over the internet can be guaranteed to be completely secure.
+
+5. Your Rights and Choices
+Access and Deletion: Since BallSort collects minimal personal information, requests for access or deletion typically do not apply. However, feel free to contact us with any concerns.  
+
+Withdrawal of Consent: You may withdraw consent at any time by adjusting settings within the app or contacting us.  
+
+Leaderboard Opt-Out: You can avoid sharing score data by choosing not to use the leaderboard feature.
+
+6. Children’s Privacy
+BallSort is not intended for children under the age of 13. We do not knowingly collect personal information from children. If you believe we have unintentionally collected information from a child, please contact us immediately, and we will take prompt action to address the situation.
+
+7. Changes to This Privacy Policy
+We may update this Privacy Policy as needed. Any changes will be reflected on this page with a new effective date. We recommend reviewing this policy periodically for updates.
+
+8. Contact Us
+If you have any questions or concerns about this Privacy Policy, please reach out to us at:  
+
+Email: yuki22683@gmail.com
+
+By using BallSort, you agree to the terms outlined in this Privacy Policy. We appreciate your trust and are dedicated to delivering a fun and secure 3D BallSort experience.
+Thank you for playing  BallSort!"
+    },
+    "ja": {
+      "btn_start": "スタート",
+      "btn_privacy_policy": "プライバシーポリシー",
+      "title_privacy_policy": "プライバシーポリシー",
+      "body_condition": "下までスクロールしてください",
+      "btn_accept": "同意する",
+      "btn_decline": "拒否する",
+      "title_stage": "ステージ選択",
+      "body_stage1": "ステージ 1",
+      "body_stage2": "ステージ 2",
+      "body_stage3": "ステージ 3",
+      "body_stage4": "ステージ 4",
+      "body_stage5": "ステージ 5",
+      "body_stage6": "ステージ 6",
+      "body_stage7": "ステージ 7",
+      "body_stage8": "ステージ 8",
+      "body_stage9": "ステージ 9",
+      "body_stage10": "ステージ 10",
+      "body_stage11": "ステージ 11",
+      "body_stage12": "ステージ 12",
+      "body_stage13": "ステージ 13",
+      "body_stage14": "ステージ 14",
+      "body_stage15": "ステージ 15",
+      "body_stage16": "ステージ 16",
+      "body_stage17": "ステージ 17",
+      "title_level": "レベル選択",
+      "btn_yes": "はい",
+      "btn_cancel": "キャンセル",
+      "body_next": "次へ",
+      "title_position": "位置設定",
+      "body_x": "X位置",
+      "body_y": "Y位置",
+      "body_z": "Z位置",
+      "body_scale": "スケール",
+      "btn_reset": "リセット",
+      "body_back": "ホームに戻る？",
+      "body_over": "最初からやり直す？",
+      "btn_home": "ホーム",
+      "btn_passthrough": "パススルー",
+      "btn_bgm": "BGM",
+      "btn_sound": "サウンド",
+      "btn_retry": "リトライ",
+      "btn_undo": "元に戻す",
+      "btn_add": "チューブを追加",
+      "btn_hint": "ヒント",
+      "btn_on": "オン",
+      "btn_off": "オフ",
+      "body_all_clear": "すべてのステージをクリア",
+      "body_level": "レベル",
+      "body_stage": "ステージ",
+      "body_privacy_policy": "
+発効日：2025年4月3日
+
+「BallSort」へようこそ。これは、yt-Studio（「私たち」、「当社」、または「弊社」）によって開発および運営される3Dゲームです。私たちはあなたのプライバシーを尊重し、個人情報を保護することに取り組んでいます。このプライバシーポリシーは、Meta Questで当社のアプリケーション（「BallSort」）を使用する際に、どのように情報を収集、使用、共有するかを説明します。
+
+1. 収集する情報
+直接提供される情報
+BallSortはユーザー登録を必要としないため、あなたの名前やメールアドレスなどの個人情報を直接収集しません。
+デバイスおよび使用情報
+アプリの使用およびデバイスに関連する情報（デバイスのモデル、オペレーティングシステムのバージョン、接続状態など）を収集する場合があります。これらのデータは、ゲームのパフォーマンスを最適化し、技術的な問題を解決するために使用されます。
+ゲームプレイデータ
+あなたを個人として特定できるゲームプレイデータ（例：スコア、プレイ時間、インタラクション履歴など）は収集しません。ただし、Metaプラットフォームが提供するリーダーボード機能を使用する場合、スコア関連の情報はMetaによって処理される可能性があります。
+
+2. 情報の使用方法
+収集した情報は以下の目的で使用します：
+BallSortの提供、維持、改善（例：バグの修正やパフォーマンスの向上）。  
+ユーザーのサポートリクエストへの対応および技術的な問題の解決。  
+アプリに関する重要な通知（例：アップデートやポリシーの変更）の送信。
+
+3. 個人情報の共有
+第三者への販売なし： 私たちはあなたの個人情報を第三者に販売しません。  
+サービスプロバイダー： BallSortの運営をサポートするために必要なサービスプロバイダー（例：クラウドサーバープロバイダー）と最小限の情報を共有する場合がありますが、これはアプリの機能を提供する目的に限定されます。  
+Metaプラットフォーム： リーダーボード機能を使用する場合、スコアデータはMetaプラットフォームによって管理されます。私たちはこのデータを直接保存しません。
+
+4. 情報のセキュリティ
+私たちは、情報への不正アクセス、使用、または開示を防ぐために合理的なセキュリティ対策を講じています。ただし、インターネットを介したデータ送信は完全に安全であると保証できないことにご注意ください。
+
+5. あなたの権利と選択肢
+アクセスおよび削除： BallSortは最小限の個人情報しか収集しないため、アクセスや削除のリクエストは通常適用されません。ただし、懸念がある場合はお気軽にご連絡ください。  
+同意の撤回： アプリ内の設定を調整するか、または当社に連絡することで、いつでも同意を撤回できます。  
+リーダーボードのオプトアウト： リーダーボード機能を使用しないことで、スコアデータの共有を回避できます。
+
+6. 子供のプライバシー
+BallSortは13歳未満の子供を対象としていません。私たちは子供から意図的に個人情報を収集しません。もし子供から意図せず情報を収集したと思われる場合は、すぐにご連絡ください。迅速に対応し、状況を解決します。
+
+7. このプライバシーポリシーの変更
+必要に応じて、このプライバシーポリシーを更新する場合があります。変更は新しい発効日とともにこのページに反映されます。定期的にこのポリシーを確認することをお勧めします。
+
+8. お問い合わせ
+このプライバシーポリシーについて質問や懸念がある場合は、以下までご連絡ください：  
+
+メール：yuki22683@gmail.com
+BallSortを使用することで、このプライバシーポリシーに記載された条件に同意したものとみなされます。私たちはあなたの信頼を大切にし、楽しく安全な3D BallSort体験を提供することに尽力しています。
+BallSortをプレイしてくれてありがとう！"
+    },
+    "cs": {
+      "btn_start": "Spustit",
+      "btn_privacy_policy": "Zásady ochrany osobních údajů",
+      "title_privacy_policy": "Zásady ochrany osobních údajů",
+      "body_condition": "Přejděte dolů",
+      "btn_accept": "Přijmout",
+      "btn_decline": "Odmítnout",
+      "title_stage": "Vybrat fázi",
+      "body_stage1": "Fáze 1",
+      "body_stage2": "Fáze 2",
+      "body_stage3": "Fáze 3",
+      "body_stage4": "Fáze 4",
+      "body_stage5": "Fáze 5",
+      "body_stage6": "Fáze 6",
+      "body_stage7": "Fáze 7",
+      "body_stage8": "Fáze 8",
+      "body_stage9": "Fáze 9",
+      "body_stage10": "Fáze 10",
+      "body_stage11": "Fáze 11",
+      "body_stage12": "Fáze 12",
+      "body_stage13": "Fáze 13",
+      "body_stage14": "Fáze 14",
+      "body_stage15": "Fáze 15",
+      "body_stage16": "Fáze 16",
+      "body_stage17": "Fáze 17",
+      "title_level": "Vybrat úroveň",
+      "btn_yes": "Ano",
+      "btn_cancel": "Zrušit",
+      "body_next": "Další",
+      "title_position": "Nastavení pozice",
+      "body_x": "Pozice X",
+      "body_y": "Pozice Y",
+      "body_z": "Pozice Z",
+      "body_scale": "Měřítko",
+      "btn_reset": "Resetovat",
+      "body_back": "Zpět na domov?",
+      "body_over": "Začít znovu?",
+      "btn_home": "Domů",
+      "btn_passthrough": "Průchod",
+      "btn_bgm": "Hudba na pozadí",
+      "btn_sound": "Zvuk",
+      "btn_retry": "Zkusit znovu",
+      "btn_undo": "Zpět",
+      "btn_add": "Přidat trubku",
+      "btn_hint": "Nápověda",
+      "btn_on": "Zapnuto",
+      "btn_off": "Vypnuto",
+      "body_all_clear": "Všechny úrovně dokončeny",
+      "body_level": "úroveň",
+      "body_stage": "Fáze",
+      "body_privacy_policy": "
+Datum účinnosti: 3. dubna 2025
+
+Vítejte v \"BallSort\", 3D hře vyvinuté a provozované společností yt-Studio (\"my,\" \"nás,\" nebo \"naše\"). Zavazujeme se respektovat vaše soukromí a chránit vaše osobní údaje. Tyto Zásady ochrany osobních údajů vysvětlují, jak shromažďujeme, používáme a sdílíme informace, když používáte naši aplikaci (\"BallSort\") na platformě Meta Quest.
+
+1. Informace, které shromažďujeme
+Informace, které poskytujete přímo
+BallSort nevyžaduje registraci uživatelů, a proto přímo od vás neshromažďujeme osobní údaje, jako je vaše jméno nebo e-mailová adresa.
+Informace o zařízení a použití
+Můžeme shromažďovat informace týkající se vašeho používání aplikace a vašeho zařízení, jako je model zařízení, verze operačního systému a stav připojení. Tyto údaje slouží k optimalizaci výkonu hry a řešení technických problémů.
+Herní data
+Neshromažďujeme herní data, která by vás mohla osobně identifikovat (např. skóre, doba hraní nebo historie interakcí). Pokud však využíváte funkci žebříčku poskytovanou platformou Meta, údaje týkající se skóre může zpracovávat Meta.
+
+2. Jak používáme vaše informace
+Shromážděné informace používáme k následujícím účelům:
+K poskytování, údržbě a vylepšování BallSort (např. oprava chyb nebo zlepšení výkonu).  
+K odpovídání na žádosti o podporu uživatelů a řešení technických problémů.  
+K zasílání důležitých oznámení o aplikaci (např. aktualizace nebo změny zásad).
+
+3. Sdílení vašich osobních údajů
+Žádný prodej třetím stranám: Vaše osobní údaje neprodáváme třetím stranám.  
+Poskytovatelé služeb: Můžeme sdílet minimální informace s poskytovateli služeb (např. poskytovateli cloudových serverů) nezbytnými pro podporu provozu BallSort, ale pouze za účelem zajištění funkčnosti aplikace.  
+Platforma Meta: Pokud využíváte funkci žebříčku, údaje o skóre spravuje platforma Meta. Tyto údaje přímo neukládáme.
+
+4. Bezpečnost vašich informací
+Zavádíme přiměřená bezpečnostní opatření k ochraně vašich informací před neoprávněným přístupem, použitím nebo zveřejněním. Upozorňujeme však, že žádný přenos dat přes internet nemůže být zaručen jako zcela bezpečný.
+
+5. Vaše práva a možnosti
+Přístup a výmaz: Vzhledem k tomu, že BallSort shromažďuje minimální osobní údaje, požadavky na přístup nebo výmaz obvykle nejsou relevantní. Přesto nás můžete kontaktovat s jakýmikoli obavami.  
+Odstoupení od souhlasu: Souhlas můžete kdykoli odvolat úpravou nastavení v aplikaci nebo nás kontaktováním.  
+Odmítnutí žebříčku: Sdílení údajů o skóre můžete zabránit tím, že funkci žebříčku nevyužijete.
+
+6. Ochrana soukromí dětí
+BallSort není určen dětem mladším 13 let. Vědomě neshromažďujeme osobní údaje od dětí. Pokud se domníváte, že jsme neúmyslně shromáždili informace od dítěte, kontaktujte nás prosím okamžitě, a my podnikneme rychlé kroky k vyřešení situace.
+
+7. Změny těchto Zásad ochrany osobních údajů
+Tyto Zásady ochrany osobních údajů můžeme podle potřeby aktualizovat. Jakékoli změny budou zveřejněny na této stránce s novým datem účinnosti. Doporučujeme pravidelně kontrolovat tyto zásady kvůli aktualizacím.
+
+8. Kontaktujte nás
+Pokud máte jakékoli otázky nebo obavy týkající se těchto Zásad ochrany osobních údajů, kontaktujte nás na:  
+
+E-mail: yuki22683@gmail.com
+Používáním BallSort souhlasíte s podmínkami uvedenými v těchto Zásadách ochrany osobních údajů. Vážíme si vaší důvěry a jsme odhodláni poskytovat zábavný a bezpečný 3D zážitek s BallSort.
+Děkujeme, že hrajete BallSort!"
+    },
+    "de": {
+      "btn_start": "Starten",
+      "btn_privacy_policy": "Datenschutzrichtlinie",
+      "title_privacy_policy": "Datenschutzrichtlinie",
+      "body_condition": "Bitte nach unten scrollen",
+      "btn_accept": "Akzeptieren",
+      "btn_decline": "Ablehnen",
+      "title_stage": "Stufe auswählen",
+      "body_stage1": "Stufe 1",
+      "body_stage2": "Stufe 2",
+      "body_stage3": "Stufe 3",
+      "body_stage4": "Stufe 4",
+      "body_stage5": "Stufe 5",
+      "body_stage6": "Stufe 6",
+      "body_stage7": "Stufe 7",
+      "body_stage8": "Stufe 8",
+      "body_stage9": "Stufe 9",
+      "body_stage10": "Stufe 10",
+      "body_stage11": "Stufe 11",
+      "body_stage12": "Stufe 12",
+      "body_stage13": "Stufe 13",
+      "body_stage14": "Stufe 14",
+      "body_stage15": "Stufe 15",
+      "body_stage16": "Stufe 16",
+      "body_stage17": "Stufe 17",
+      "title_level": "Level auswählen",
+      "btn_yes": "Ja",
+      "btn_cancel": "Abbrechen",
+      "body_next": "Weiter",
+      "title_position": "Positionseinstellung",
+      "body_x": "X-Position",
+      "body_y": "Y-Position",
+      "body_z": "Z-Position",
+      "body_scale": "Skalierung",
+      "btn_reset": "Zurücksetzen",
+      "body_back": "Zurück zur Startseite?",
+      "body_over": "Neu starten?",
+      "btn_home": "Startseite",
+      "btn_passthrough": "Durchgang",
+      "btn_bgm": "Hintergrundmusik",
+      "btn_sound": "Ton",
+      "btn_retry": "Erneut versuchen",
+      "btn_undo": "Rückgängig",
+      "btn_add": "Rohr hinzufügen",
+      "btn_hint": "Hinweis",
+      "btn_on": "Ein",
+      "btn_off": "Aus",
+      "body_all_clear": "Alle Stufen abgeschlossen",
+      "body_level": "Level",
+      "body_stage": "Stufe",
+      "body_privacy_policy": "
+Datum des Inkrafttretens: 3. April 2025
+
+Willkommen bei \"BallSort\", einem 3D-Spiel, das von yt-Studio (\"wir\", \"uns\" oder \"unser\") entwickelt und betrieben wird. Wir verpflichten uns, Ihre Privatsphäre zu respektieren und Ihre persönlichen Daten zu schützen. Diese Datenschutzrichtlinie erläutert, wie wir Informationen sammeln, verwenden und teilen, wenn Sie unsere Anwendung (\"BallSort\") auf Meta Quest nutzen.
+
+1. Informationen, die wir sammeln
+Direkt von Ihnen bereitgestellte Informationen
+BallSort erfordert keine Benutzerregistrierung, daher sammeln wir keine persönlichen Informationen wie Ihren Namen oder Ihre E-Mail-Adresse direkt von Ihnen.
+Geräte- und Nutzungsinformationen
+Wir können Informationen über Ihre Nutzung der App und Ihr Gerät sammeln, wie z. B. das Gerätemodell, die Version des Betriebssystems und den Verbindungsstatus. Diese Daten werden verwendet, um die Spielleistung zu optimieren und technische Probleme zu beheben.
+Spieldaten
+Wir sammeln keine Spieldaten, die Sie persönlich identifizieren können (z. B. Punktzahlen, Spielzeit oder Interaktionsverlauf). Wenn Sie jedoch die von der Meta-Plattform bereitgestellte Ranglistenfunktion nutzen, können punktbezogene Informationen von Meta verarbeitet werden.
+
+2. Wie wir Ihre Informationen verwenden
+Wir verwenden die gesammelten Informationen für die folgenden Zwecke:
+Um BallSort bereitzustellen, zu warten und zu verbessern (z. B. Fehlerbehebung oder Leistungssteigerung).  
+Um auf Supportanfragen von Nutzern zu reagieren und technische Probleme zu lösen.  
+Um Ihnen wichtige Benachrichtigungen über die App zu senden (z. B. Updates oder Änderungen der Richtlinien).
+
+3. Weitergabe Ihrer persönlichen Informationen
+Kein Verkauf an Dritte: Wir verkaufen Ihre persönlichen Informationen nicht an Dritte.  
+Dienstleister: Wir können minimale Informationen mit Dienstleistern (z. B. Anbietern von Cloud-Servern) teilen, die für den Betrieb von BallSort erforderlich sind, jedoch nur zum Zweck der Bereitstellung der App-Funktionalität.  
+Meta-Plattform: Wenn Sie die Ranglistenfunktion nutzen, werden Punktedaten von der Meta-Plattform verwaltet. Wir speichern diese Daten nicht direkt.
+
+4. Sicherheit Ihrer Informationen
+Wir setzen angemessene Sicherheitsmaßnahmen ein, um Ihre Informationen vor unbefugtem Zugriff, Nutzung oder Offenlegung zu schützen. Bitte beachten Sie jedoch, dass keine Datenübertragung über das Internet vollständig sicher garantiert werden kann.
+
+5. Ihre Rechte und Wahlmöglichkeiten
+Zugang und Löschung: Da BallSort nur minimale persönliche Informationen sammelt, sind Anfragen nach Zugang oder Löschung in der Regel nicht anwendbar. Sie können uns jedoch gerne bei Fragen oder Bedenken kontaktieren.  
+Widerruf der Einwilligung: Sie können Ihre Einwilligung jederzeit widerrufen, indem Sie die Einstellungen in der App anpassen oder uns kontaktieren.  
+Abmeldung von der Rangliste: Sie können die Weitergabe von Punktedaten vermeiden, indem Sie die Ranglistenfunktion nicht nutzen.
+
+6. Datenschutz von Kindern
+BallSort ist nicht für Kinder unter 13 Jahren gedacht. Wir sammeln wissentlich keine persönlichen Informationen von Kindern. Wenn Sie glauben, dass wir unbeabsichtigt Informationen von einem Kind gesammelt haben, kontaktieren Sie uns bitte umgehend, und wir werden schnell Maßnahmen ergreifen, um die Situation zu klären.
+
+7. Änderungen an dieser Datenschutzrichtlinie
+Wir können diese Datenschutzrichtlinie bei Bedarf aktualisieren. Alle Änderungen werden auf dieser Seite mit einem neuen Datum des Inkrafttretens angezeigt. Wir empfehlen, diese Richtlinie regelmäßig auf Aktualisierungen zu überprüfen.
+
+8. Kontaktieren Sie uns
+Wenn Sie Fragen oder Bedenken zu dieser Datenschutzrichtlinie haben, kontaktieren Sie uns bitte unter:  
+
+E-Mail: yuki22683@gmail.com
+Durch die Nutzung von BallSort stimmen Sie den in dieser Datenschutzrichtlinie beschriebenen Bedingungen zu. Wir schätzen Ihr Vertrauen und sind bestrebt, ein unterhaltsames und sicheres 3D-BallSort-Erlebnis zu bieten.
+Vielen Dank, dass Sie BallSort spielen!"
+    },
+    "nl": {
+      "btn_start": "Starten",
+      "btn_privacy_policy": "Privacybeleid",
+      "title_privacy_policy": "Privacybeleid",
+      "body_condition": "Scroll naar beneden",
+      "btn_accept": "Accepteren",
+      "btn_decline": "Weigeren",
+      "title_stage": "Selecteer fase",
+      "body_stage1": "Fase 1",
+      "body_stage2": "Fase 2",
+      "body_stage3": "Fase 3",
+      "body_stage4": "Fase 4",
+      "body_stage5": "Fase 5",
+      "body_stage6": "Fase 6",
+      "body_stage7": "Fase 7",
+      "body_stage8": "Fase 8",
+      "body_stage9": "Fase 9",
+      "body_stage10": "Fase 10",
+      "body_stage11": "Fase 11",
+      "body_stage12": "Fase 12",
+      "body_stage13": "Fase 13",
+      "body_stage14": "Fase 14",
+      "body_stage15": "Fase 15",
+      "body_stage16": "Fase 16",
+      "body_stage17": "Fase 17",
+      "title_level": "Selecteer niveau",
+      "btn_yes": "Ja",
+      "btn_cancel": "Annuleren",
+      "body_next": "Volgende",
+      "title_position": "Positie-instelling",
+      "body_x": "X-positie",
+      "body_y": "Y-positie",
+      "body_z": "Z-positie",
+      "body_scale": "Schaal",
+      "btn_reset": "Resetten",
+      "body_back": "Terug naar home?",
+      "body_over": "Opnieuw beginnen?",
+      "btn_home": "Home",
+      "btn_passthrough": "Doorgang",
+      "btn_bgm": "Achtergrondmuziek",
+      "btn_sound": "Geluid",
+      "btn_retry": "Opnieuw proberen",
+      "btn_undo": "Ongedaan maken",
+      "btn_add": "Buis toevoegen",
+      "btn_hint": "Hint",
+      "btn_on": "Aan",
+      "btn_off": "Uit",
+      "body_all_clear": "Alle niveaus voltooid",
+      "body_level": "niveau",
+      "body_stage": "Fase",
+      "body_privacy_policy": "
+Ingangsdatum: 3 april 2025
+
+Welkom bij \"BallSort\", een 3D-spel ontwikkeld en beheerd door yt-Studio (\"wij,\" \"ons,\" of \"onze\"). Wij zetten ons in om uw privacy te respecteren en uw persoonlijke gegevens te beschermen. Deze Privacyverklaring legt uit hoe wij informatie verzamelen, gebruiken en delen wanneer u onze applicatie (\"BallSort\") gebruikt op Meta Quest.
+
+1. Informatie die wij verzamelen
+Informatie die u rechtstreeks verstrekt
+BallSort vereist geen gebruikersregistratie, en daarom verzamelen wij geen persoonlijke informatie zoals uw naam of e-mailadres rechtstreeks van u.
+Apparaat- en gebruiksinformatie
+Wij kunnen informatie verzamelen met betrekking tot uw gebruik van de app en uw apparaat, zoals het apparaatmodel, de versie van het besturingssysteem en de verbindingsstatus. Deze gegevens worden gebruikt om de prestaties van het spel te optimaliseren en technische problemen op te lossen.
+Spelgegevens
+Wij verzamelen geen spelgegevens die u persoonlijk kunnen identificeren (bijv. scores, speeltijd of interactiegeschiedenis). Als u echter de leaderboard-functie gebruikt die wordt aangeboden door het Meta-platform, kunnen score-gerelateerde gegevens worden verwerkt door Meta.
+
+2. Hoe wij uw informatie gebruiken
+Wij gebruiken de verzamelde informatie voor de volgende doeleinden:
+Om BallSort te leveren, te onderhouden en te verbeteren (bijv. het oplossen van bugs of het verbeteren van prestaties).  
+Om te reageren op ondersteuningsverzoeken van gebruikers en technische problemen op te lossen.  
+Om u belangrijke meldingen over de app te sturen (bijv. updates of beleidswijzigingen).
+
+3. Het delen van uw persoonlijke informatie
+Geen verkoop aan derden: Wij verkopen uw persoonlijke informatie niet aan derden.  
+Dienstverleners: Wij kunnen minimale informatie delen met dienstverleners (bijv. aanbieders van cloudservers) die nodig zijn om de werking van BallSort te ondersteunen, maar alleen voor het leveren van de functionaliteit van de app.  
+Meta-platform: Als u de leaderboard-functie gebruikt, worden scoregegevens beheerd door het Meta-platform. Wij slaan deze gegevens niet direct op.
+
+4. Beveiliging van uw informatie
+Wij nemen redelijke beveiligingsmaatregelen om uw informatie te beschermen tegen ongeoorloofde toegang, gebruik of openbaarmaking. Houd er echter rekening mee dat geen enkele gegevensoverdracht via internet volledig veilig kan worden gegarandeerd.
+
+5. Uw rechten en keuzes
+Toegang en verwijdering: Omdat BallSort minimale persoonlijke informatie verzamelt, zijn verzoeken om toegang of verwijdering doorgaans niet van toepassing. Neem gerust contact met ons op als u zorgen heeft.  
+Intrekking van toestemming: U kunt uw toestemming op elk moment intrekken door de instellingen in de app aan te passen of contact met ons op te nemen.  
+Afmelden voor leaderboard: U kunt het delen van scoregegevens vermijden door ervoor te kiezen de leaderboard-functie niet te gebruiken.
+
+6. Privacy van kinderen
+BallSort is niet bedoeld voor kinderen jonger dan 13 jaar. Wij verzamelen niet bewust persoonlijke informatie van kinderen. Als u denkt dat wij onbedoeld informatie van een kind hebben verzameld, neem dan onmiddellijk contact met ons op, en wij zullen snel actie ondernemen om de situatie aan te pakken.
+
+7. Wijzigingen in deze Privacyverklaring
+Wij kunnen deze Privacyverklaring indien nodig bijwerken. Eventuele wijzigingen worden weergegeven op deze pagina met een nieuwe ingangsdatum. Wij raden aan deze verklaring regelmatig te controleren op updates.
+
+8. Contact met ons opnemen
+Als u vragen of zorgen heeft over deze Privacyverklaring, neem dan contact met ons op via:  
+
+E-mail: yuki22683@gmail.com
+Door BallSort te gebruiken, gaat u akkoord met de voorwaarden zoals uiteengezet in deze Privacyverklaring. Wij waarderen uw vertrouwen en zijn toegewijd aan het bieden van een leuke en veilige 3D BallSort-ervaring.
+Bedankt voor het spelen van BallSort!"
+    },
+    "da": {
+      "btn_start": "Start",
+      "btn_privacy_policy": "Privatlivspolitik",
+      "title_privacy_policy": "Privatlivspolitik",
+      "body_condition": "Rul til bunden",
+      "btn_accept": "Accepter",
+      "btn_decline": "Afvise",
+      "title_stage": "Vælg fase",
+      "body_stage1": "Fase 1",
+      "body_stage2": "Fase 2",
+      "body_stage3": "Fase 3",
+      "body_stage4": "Fase 4",
+      "body_stage5": "Fase 5",
+      "body_stage6": "Fase 6",
+      "body_stage7": "Fase 7",
+      "body_stage8": "Fase 8",
+      "body_stage9": "Fase 9",
+      "body_stage10": "Fase 10",
+      "body_stage11": "Fase 11",
+      "body_stage12": "Fase 12",
+      "body_stage13": "Fase 13",
+      "body_stage14": "Fase 14",
+      "body_stage15": "Fase 15",
+      "body_stage16": "Fase 16",
+      "body_stage17": "Fase 17",
+      "title_level": "Vælg niveau",
+      "btn_yes": "Ja",
+      "btn_cancel": "Annuller",
+      "body_next": "Næste",
+      "title_position": "Positionsindstilling",
+      "body_x": "X-position",
+      "body_y": "Y-position",
+      "body_z": "Z-position",
+      "body_scale": "Skala",
+      "btn_reset": "Nulstil",
+      "body_back": "Tilbage til start?",
+      "body_over": "Start forfra?",
+      "btn_home": "Hjem",
+      "btn_passthrough": "Gennemgang",
+      "btn_bgm": "Baggrundsmusik",
+      "btn_sound": "Lyd",
+      "btn_retry": "Prøv igen",
+      "btn_undo": "Fortryd",
+      "btn_add": "Tilføj rør",
+      "btn_hint": "Tip",
+      "btn_on": "Tændt",
+      "btn_off": "Slukket",
+      "body_all_clear": "Alle niveauer fuldført",
+      "body_level": "niveau",
+      "body_stage": "Fase",
+      "body_privacy_policy": "
+Ikrafttrædelsesdato: 3. april 2025
+
+Velkommen til \"BallSort\", et 3D-spil udviklet og drevet af yt-Studio (\"vi,\" \"os,\" eller \"vores\"). Vi er forpligtet til at respektere dit privatliv og beskytte dine personlige oplysninger. Denne privatlivspolitik forklarer, hvordan vi indsamler, bruger og deler oplysninger, når du bruger vores applikation (\"BallSort\") på Meta Quest.
+
+1. Oplysninger, vi indsamler
+Oplysninger, du giver direkte
+BallSort kræver ikke brugerregistrering, og derfor indsamler vi ikke personlige oplysninger såsom dit navn eller e-mailadresse direkte fra dig.
+Enheds- og brugsoplysninger
+Vi kan indsamle oplysninger relateret til din brug af appen og din enhed, såsom enhedsmodel, version af operativsystemet og forbindelsesstatus. Disse data bruges til at optimere spillets ydeevne og løse tekniske problemer.
+Spildata
+Vi indsamler ikke spildata, der kan identificere dig personligt (f.eks. scores, spilletid eller interaktionshistorik). Hvis du bruger leaderboard-funktionen, der leveres af Meta-platformen, kan score-relaterede oplysninger blive behandlet af Meta.
+
+2. Hvordan vi bruger dine oplysninger
+Vi bruger de indsamlede oplysninger til følgende formål:
+At levere, vedligeholde og forbedre BallSort (f.eks. rette fejl eller forbedre ydeevnen).  
+At besvare brugerstøtteforespørgsler og løse tekniske problemer.  
+At sende dig vigtige meddelelser om appen (f.eks. opdateringer eller ændringer i politikken).
+
+3. Deling af dine personlige oplysninger
+Intet salg til tredjeparter: Vi sælger ikke dine personlige oplysninger til tredjeparter.  
+Tjenesteudbydere: Vi kan dele minimale oplysninger med tjenesteudbydere (f.eks. udbydere af cloud-servere), der er nødvendige for at understøtte driften af BallSort, men kun med det formål at levere appens funktionalitet.  
+Meta-platformen: Hvis du bruger leaderboard-funktionen, administreres scoredata af Meta-platformen. Vi gemmer ikke disse data direkte.
+
+4. Sikkerhed af dine oplysninger
+Vi implementerer rimelige sikkerhedsforanstaltninger for at beskytte dine oplysninger mod uautoriseret adgang, brug eller videregivelse. Bemærk dog, at ingen datatransmission over internettet kan garanteres at være fuldstændig sikker.
+
+5. Dine rettigheder og valg
+Adgang og sletning: Da BallSort indsamler minimale personlige oplysninger, gælder anmodninger om adgang eller sletning typisk ikke. Du er dog velkommen til at kontakte os med eventuelle bekymringer.  
+Tilbagetrækning af samtykke: Du kan til enhver tid trække dit samtykke tilbage ved at justere indstillingerne i appen eller kontakte os.  
+Fravalg af leaderboard: Du kan undgå at dele scoredata ved at vælge ikke at bruge leaderboard-funktionen.
+
+6. Børns privatliv
+BallSort er ikke beregnet til børn under 13 år. Vi indsamler ikke bevidst personlige oplysninger fra børn. Hvis du mener, at vi utilsigtet har indsamlet oplysninger fra et barn, bedes du kontakte os øjeblikkeligt, og vi vil tage hurtige skridt til at løse situationen.
+
+7. Ændringer i denne privatlivspolitik
+Vi kan opdatere denne privatlivspolitik efter behov. Eventuelle ændringer vil blive afspejlet på denne side med en ny ikrafttrædelsesdato. Vi anbefaler, at du regelmæssigt gennemgår denne politik for opdateringer.
+
+8. Kontakt os
+Hvis du har spørgsmål eller bekymringer vedrørende denne privatlivspolitik, bedes du kontakte os på:  
+
+E-mail: yuki22683@gmail.com
+Ved at bruge BallSort accepterer du de vilkår, der er beskrevet i denne privatlivspolitik. Vi værdsætter din tillid og er dedikerede til at levere en sjov og sikker 3D BallSort-oplevelse.
+Tak fordi du spiller BallSort!"
+    },
+    "el": {
+      "btn_start": "Έναρξη",
+      "btn_privacy_policy": "Πολιτική Απορρήτου",
+      "title_privacy_policy": "Πολιτική Απορρήτου",
+      "body_condition": "Παρακαλώ μετακινηθείτε στο κάτω μέρος",
+      "btn_accept": "Αποδοχή",
+      "btn_decline": "Απόρριψη",
+      "title_stage": "Επιλογή Σταδίου",
+      "body_stage1": "Στάδιο 1",
+      "body_stage2": "Στάδιο 2",
+      "body_stage3": "Στάδιο 3",
+      "body_stage4": "Στάδιο 4",
+      "body_stage5": "Στάδιο 5",
+      "body_stage6": "Στάδιο 6",
+      "body_stage7": "Στάδιο 7",
+      "body_stage8": "Στάδιο 8",
+      "body_stage9": "Στάδιο 9",
+      "body_stage10": "Στάδιο 10",
+      "body_stage11": "Στάδιο 11",
+      "body_stage12": "Στάδιο 12",
+      "body_stage13": "Στάδιο 13",
+      "body_stage14": "Στάδιο 14",
+      "body_stage15": "Στάδιο 15",
+      "body_stage16": "Στάδιο 16",
+      "body_stage17": "Στάδιο 17",
+      "title_level": "Επιλογή Επιπέδου",
+      "btn_yes": "Ναι",
+      "btn_cancel": "Ακύρωση",
+      "body_next": "Επόμενο",
+      "title_position": "Ρύθμιση Θέσης",
+      "body_x": "Θέση X",
+      "body_y": "Θέση Y",
+      "body_z": "Θέση Z",
+      "body_scale": "Κλίμακα",
+      "btn_reset": "Επαναφορά",
+      "body_back": "Επιστροφή στην αρχική;",
+      "body_over": "Ξεκινήστε ξανά;",
+      "btn_home": "Αρχική",
+      "btn_passthrough": "Διάβαση",
+      "btn_bgm": "Μουσική Υποβάθρου",
+      "btn_sound": "Ήχος",
+      "btn_retry": "Επανάληψη",
+      "btn_undo": "Αναίρεση",
+      "btn_add": "Προσθήκη Σωλήνα",
+      "btn_hint": "Υπόδειξη",
+      "btn_on": "Ενεργό",
+      "btn_off": "Ανενεργό",
+      "body_all_clear": "Όλα τα στάδια ολοκληρώθηκαν",
+      "body_level": "Επίπεδο",
+      "body_stage": "Στάδιο",
+      "body_privacy_policy": "
+Ημερομηνία Έναρξης Ισχύος: 3 Απριλίου 2025
+
+Καλώς ήρθατε στο \"BallSort\", ένα τρισδιάστατο παιχνίδι που αναπτύχθηκε και λειτουργεί από την yt-Studio (\"εμείς\", \"μας\" ή \"μας\"). Δεσμευόμαστε να σεβόμαστε την ιδιωτικότητά σας και να προστατεύουμε τα προσωπικά σας δεδομένα. Η παρούσα Πολιτική Απορρήτου εξηγεί πώς συλλέγουμε, χρησιμοποιούμε και κοινοποιούμε πληροφορίες όταν χρησιμοποιείτε την εφαρμογή μας (\"BallSort\") στην πλατφόρμα Meta Quest.
+
+1. Πληροφορίες που Συλλέγουμε
+Πληροφορίες που Παρέχετε Απευθείας
+Το BallSort δεν απαιτεί εγγραφή χρήστη, και επομένως δεν συλλέγουμε προσωπικές πληροφορίες όπως το όνομά σας ή τη διεύθυνση email σας απευθείας από εσάς.
+Πληροφορίες Συσκευής και Χρήσης
+Μπορεί να συλλέξουμε πληροφορίες σχετικές με τη χρήση της εφαρμογής και τη συσκευή σας, όπως το μοντέλο της συσκευής, η έκδοση του λειτουργικού συστήματος και η κατάσταση σύνδεσης. Αυτά τα δεδομένα χρησιμοποιούνται για τη βελτιστοποίηση της απόδοσης του παιχνιδιού και την αντιμετώπιση τεχνικών προβλημάτων.
+Δεδομένα Παιχνιδιού
+Δεν συλλέγουμε δεδομένα παιχνιδιού που μπορούν να σας ταυτοποιήσουν προσωπικά (π.χ. βαθμολογίες, χρόνος παιχνιδιού ή ιστορικό αλληλεπιδράσεων). Ωστόσο, εάν χρησιμοποιείτε τη λειτουργία κατάταξης που παρέχεται από την πλατφόρμα Meta, οι πληροφορίες που σχετίζονται με τις βαθμολογίες μπορεί να υποβληθούν σε επεξεργασία από τη Meta.
+
+2. Πώς Χρησιμοποιούμε τις Πληροφορίες σας
+Χρησιμοποιούμε τις συλλεγόμενες πληροφορίες για τους εξής σκοπούς:
+Για την παροχή, τη συντήρηση και τη βελτίωση του BallSort (π.χ. διόρθωση σφαλμάτων ή βελτίωση της απόδοσης).  
+Για την ανταπόκριση σε αιτήματα υποστήριξης χρηστών και την επίλυση τεχνικών προβλημάτων.  
+Για την αποστολή σημαντικών ειδοποιήσεων σχετικά με την εφαρμογή (π.χ. ενημερώσεις ή αλλαγές πολιτικής).
+
+3. Κοινοποίηση των Προσωπικών σας Πληροφοριών
+Καμία Πώληση σε Τρίτους: Δεν πωλούμε τα προσωπικά σας δεδομένα σε τρίτους.  
+Πάροχοι Υπηρεσιών: Μπορεί να κοινοποιήσουμε ελάχιστες πληροφορίες με παρόχους υπηρεσιών (π.χ. παρόχους cloud server) που είναι απαραίτητοι για την υποστήριξη της λειτουργίας του BallSort, αλλά μόνο για την παροχή της λειτουργικότητας της εφαρμογής.  
+Πλατφόρμα Meta: Εάν χρησιμοποιείτε τη λειτουργία κατάταξης, τα δεδομένα βαθμολογίας διαχειρίζονται από την πλατφόρμα Meta. Δεν αποθηκεύουμε αυτά τα δεδομένα απευθείας.
+
+4. Ασφάλεια των Πληροφοριών σας
+Εφαρμόζουμε εύλογα μέτρα ασφαλείας για την προστασία των πληροφοριών σας από μη εξουσιοδοτημένη πρόσβαση, χρήση ή αποκάλυψη. Ωστόσο, σημειώστε ότι καμία μετάδοση δεδομένων μέσω του διαδικτύου δεν μπορεί να εγγυηθεί ότι είναι πλήρως ασφαλής.
+
+5. Τα Δικαιώματά σας και οι Επιλογές σας
+Πρόσβαση και Διαγραφή: Εφόσον το BallSort συλλέγει ελάχιστες προσωπικές πληροφορίες, τα αιτήματα για πρόσβαση ή διαγραφή συνήθως δεν ισχύουν. Ωστόσο, μη διστάσετε να επικοινωνήσετε μαζί μας για οποιεσδήποτε ανησυχίες.  
+Ανάκληση Συναίνεσης: Μπορείτε να ανακαλέσετε τη συγκατάθεσή σας ανά πάσα στιγμή προσαρμόζοντας τις ρυθμίσεις εντός της εφαρμογής ή επικοινωνώντας μαζί μας.  
+Εξαίρεση από την Κατάταξη: Μπορείτε να αποφύγετε την κοινοποίηση δεδομένων βαθμολογίας επιλέγοντας να μην χρησιμοποιήσετε τη λειτουργία κατάταξης.
+
+6. Προστασία της Ιδιωτικότητας των Παιδιών
+Το BallSort δεν προορίζεται για παιδιά κάτω των 13 ετών. Δεν συλλέγουμε εν γνώσει μας προσωπικές πληροφορίες από παιδιά. Εάν πιστεύετε ότι έχουμε συλλέξει ακούσια πληροφορίες από παιδί, επικοινωνήστε μαζί μας αμέσως, και θα λάβουμε άμεσα μέτρα για την αντιμετώπιση της κατάστασης.
+
+7. Αλλαγές στην Πολιτική Απορρήτου
+Μπορεί να ενημερώσουμε αυτήν την Πολιτική Απορρήτου όπως απαιτείται. Οποιεσδήποτε αλλαγές θα εμφανίζονται σε αυτήν τη σελίδα με νέα ημερομηνία έναρξης ισχύος. Συνιστούμε να ελέγχετε περιοδικά αυτήν την πολιτική για ενημερώσεις.
+
+8. Επικοινωνήστε μαζί μας
+Εάν έχετε οποιεσδήποτε ερωτήσεις ή ανησυχίες σχετικά με αυτήν την Πολιτική Απορρήτου, παρακαλούμε επικοινωνήστε μαζί μας στο:  
+
+Ηλεκτρονικό Ταχυδρομείο: yuki22683@gmail.com
+Χρησιμοποιώντας το BallSort, συμφωνείτε με τους όρους που περιγράφονται σε αυτήν την Πολιτική Απορρήτου. Εκτιμούμε την εμπιστοσύνη σας και είμαστε αφοσιωμένοι στο να προσφέρουμε μια διασκεδαστική και ασφαλή εμπειρία 3D BallSort.
+Σας ευχαριστούμε που παίζετε το BallSort!"
+    },
+    "fi": {
+      "btn_start": "Aloita",
+      "btn_privacy_policy": "Yksityisyyskäytäntö",
+      "title_privacy_policy": "Yksityisyyskäytäntö",
+      "body_condition": "Vieritä alas",
+      "btn_accept": "Hyväksy",
+      "btn_decline": "Hylkää",
+      "title_stage": "Valitse vaihe",
+      "body_stage1": "Vaihe 1",
+      "body_stage2": "Vaihe 2",
+      "body_stage3": "Vaihe 3",
+      "body_stage4": "Vaihe 4",
+      "body_stage5": "Vaihe 5",
+      "body_stage6": "Vaihe 6",
+      "body_stage7": "Vaihe 7",
+      "body_stage8": "Vaihe 8",
+      "body_stage9": "Vaihe 9",
+      "body_stage10": "Vaihe 10",
+      "body_stage11": "Vaihe 11",
+      "body_stage12": "Vaihe 12",
+      "body_stage13": "Vaihe 13",
+      "body_stage14": "Vaihe 14",
+      "body_stage15": "Vaihe 15",
+      "body_stage16": "Vaihe 16",
+      "body_stage17": "Vaihe 17",
+      "title_level": "Valitse taso",
+      "btn_yes": "Kyllä",
+      "btn_cancel": "Peru",
+      "body_next": "Seuraava",
+      "title_position": "Sijainnin asetus",
+      "body_x": "X-sijainti",
+      "body_y": "Y-sijainti",
+      "body_z": "Z-sijainti",
+      "body_scale": "Skaala",
+      "btn_reset": "Nollaa",
+      "body_back": "Takaisin kotiin?",
+      "body_over": "Aloita alusta?",
+      "btn_home": "Koti",
+      "btn_passthrough": "Läpivienti",
+      "btn_bgm": "Taustamusiikki",
+      "btn_sound": "Ääni",
+      "btn_retry": "Yritä uudelleen",
+      "btn_undo": "Kumoa",
+      "btn_add": "Lisää putki",
+      "btn_hint": "Vihje",
+      "btn_on": "Päällä",
+      "btn_off": "Pois",
+      "body_all_clear": "Kaikki tasot suoritettu",
+      "body_level": "taso",
+      "body_stage": "Vaihe",
+      "body_privacy_policy": "
+Voimaantulopäivä: 3. huhtikuuta 2025
+
+Tervetuloa pelaamaan \"BallSort\"-peliä, joka on yt-Studion (\"me,\" \"meitä,\" tai \"meidän\") kehittämä ja ylläpitämä 3D-peli. Olemme sitoutuneet kunnioittamaan yksityisyyttäsi ja suojelemaan henkilökohtaisia tietojasi. Tämä tietosuojakäytäntö selittää, miten keräämme, käytämme ja jaamme tietoja, kun käytät sovellustamme (\"BallSort\") Meta Quest -alustalla.
+
+1. Keräämämme tiedot
+Suoraan antamasi tiedot
+BallSort ei vaadi käyttäjärekisteröitymistä, joten emme kerää suoraan sinulta henkilökohtaisia tietoja, kuten nimeäsi tai sähköpostiosoitettasi.
+Laitteen ja käytön tiedot
+Voimme kerätä tietoja, jotka liittyvät sovelluksen käyttöösi ja laitteeseesi, kuten laitteen malli, käyttöjärjestelmän versio ja yhteyden tila. Näitä tietoja käytetään pelin suorituskyvyn optimointiin ja teknisten ongelmien ratkaisemiseen.
+Pelitiedot
+Emme kerää pelitietoja, jotka voivat tunnistaa sinut henkilökohtaisesti (esim. pisteet, peliaika tai vuorovaikutushistoria). Jos kuitenkin käytät Meta-alustan tarjoamaa pistetaulukko-ominaisuutta, pistetietoja voi käsitellä Meta.
+
+2. Kuinka käytämme tietojasi
+Käytämme kerättyjä tietoja seuraaviin tarkoituksiin:
+Tarjotaksemme, ylläpitääksemme ja parantaaksemme BallSort-peliä (esim. korjataksemme bugeja tai parantaaksemme suorituskykyä).  
+Vastataksemme käyttäjien tukipyyntöihin ja ratkaistaksemme teknisiä ongelmia.  
+Lähettääksemme sinulle tärkeitä ilmoituksia sovelluksesta (esim. päivitykset tai käytäntömuutokset).
+
+3. Henkilökohtaisten tietojesi jakaminen
+Ei myyntiä kolmansille osapuolille: Emme myy henkilökohtaisia tietojasi kolmansille osapuolille.  
+Palveluntarjoajat: Voimme jakaa minimaalisen määrän tietoja palveluntarjoajien (esim. pilvipalvelinten tarjoajat) kanssa, jotka ovat välttämättömiä BallSort-sovelluksen toiminnan tukemiseksi, mutta vain sovelluksen toiminnallisuuden tarjoamiseksi.  
+Meta-alusta: Jos käytät pistetaulukko-ominaisuutta, pistetiedot hallinnoi Meta-alusta. Emme tallenna näitä tietoja suoraan.
+
+4. Tietojesi turvallisuus
+Toteutamme kohtuullisia turvallisuustoimenpiteitä suojataksemme tietojasi luvattomalta pääsyltä, käytöltä tai paljastamiselta. Huomaa kuitenkin, että mikään tiedonsiirto internetin kautta ei voi olla täysin turvallista.
+
+5. Oikeutesi ja valintasi
+Pääsy ja poistaminen: Koska BallSort kerää vain vähän henkilökohtaisia tietoja, pääsy- tai poistopyynnöt eivät yleensä ole sovellettavissa. Voit kuitenkin ottaa meihin yhteyttä, jos sinulla on huolenaiheita.  
+Suostumuksen peruuttaminen: Voit peruuttaa suostumuksesi milloin tahansa säätämällä sovelluksen asetuksia tai ottamalla meihin yhteyttä.  
+Pistetaulukon kieltäminen: Voit välttää pistetietojen jakamisen päättämällä olla käyttämättä pistetaulukko-ominaisuutta.
+
+6. Lasten yksityisyys
+BallSort ei ole tarkoitettu alle 13-vuotiaille lapsille. Emme tietoisesti kerää henkilökohtaisia tietoja lapsilta. Jos uskot, että olemme vahingossa keränneet tietoja lapselta, ota meihin välittömästi yhteyttä, niin ryhdymme nopeasti toimiin tilanteen korjaamiseksi.
+
+7. Muutokset tähän tietosuojakäytäntöön
+Voimme päivittää tätä tietosuojakäytäntöä tarpeen mukaan. Kaikki muutokset näkyvät tällä sivulla uuden voimaantulopäivän kera. Suosittelemme tarkistamaan tämän käytännön säännöllisesti päivitysten varalta.
+
+8. Ota yhteyttä
+Jos sinulla on kysymyksiä tai huolenaiheita tästä tietosuojakäytännöstä, ota meihin yhteyttä osoitteessa:  
+
+Sähköposti: yuki22683@gmail.com
+Käyttämällä BallSort-sovellusta hyväksyt tässä tietosuojakäytännössä esitetyt ehdot. Arvostamme luottamustasi ja olemme sitoutuneet tarjoamaan hauskan ja turvallisen 3D BallSort -kokemuksen.
+Kiitos, että pelaat BallSort-peliä!"
+    },
+    "fr": {
+      "btn_start": "Commencer",
+      "btn_privacy_policy": "Politique de confidentialité",
+      "title_privacy_policy": "Politique de confidentialité",
+      "body_condition": "Veuillez défiler jusqu'en bas",
+      "btn_accept": "Accepter",
+      "btn_decline": "Refuser",
+      "title_stage": "Sélectionner l'étape",
+      "body_stage1": "Étape 1",
+      "body_stage2": "Étape 2",
+      "body_stage3": "Étape 3",
+      "body_stage4": "Étape 4",
+      "body_stage5": "Étape 5",
+      "body_stage6": "Étape 6",
+      "body_stage7": "Étape 7",
+      "body_stage8": "Étape 8",
+      "body_stage9": "Étape 9",
+      "body_stage10": "Étape 10",
+      "body_stage11": "Étape 11",
+      "body_stage12": "Étape 12",
+      "body_stage13": "Étape 13",
+      "body_stage14": "Étape 14",
+      "body_stage15": "Étape 15",
+      "body_stage16": "Étape 16",
+      "body_stage17": "Étape 17",
+      "title_level": "Sélectionner le niveau",
+      "btn_yes": "Oui",
+      "btn_cancel": "Annuler",
+      "body_next": "Suivant",
+      "title_position": "Réglage de position",
+      "body_x": "Position X",
+      "body_y": "Position Y",
+      "body_z": "Position Z",
+      "body_scale": "Échelle",
+      "btn_reset": "Réinitialiser",
+      "body_back": "Retour à l'accueil ?",
+      "body_over": "Recommencer ?",
+      "btn_home": "Accueil",
+      "btn_passthrough": "Passage",
+      "btn_bgm": "Musique de fond",
+      "btn_sound": "Son",
+      "btn_retry": "Réessayer",
+      "btn_undo": "Annuler",
+      "btn_add": "Ajouter un tube",
+      "btn_hint": "Indice",
+      "btn_on": "Activé",
+      "btn_off": "Désactivé",
+      "body_all_clear": "Toutes les étapes terminées",
+      "body_level": "niveau",
+      "body_stage": "Étape",
+      "body_privacy_policy": "
+Date d'entrée en vigueur : 3 avril 2025
+
+Bienvenue dans \"BallSort\", un jeu 3D développé et géré par yt-Studio (\"nous\", \"notre\" ou \"nos\"). Nous nous engageons à respecter votre vie privée et à protéger vos informations personnelles. Cette Politique de confidentialité explique comment nous collectons, utilisons et partageons les informations lorsque vous utilisez notre application (\"BallSort\") sur Meta Quest.
+
+1. Informations que nous collectons
+Informations que vous fournissez directement
+BallSort ne requiert pas d'inscription des utilisateurs, et par conséquent, nous ne collectons pas directement d'informations personnelles telles que votre nom ou votre adresse e-mail.
+Informations sur l'appareil et l'utilisation
+Nous pouvons collecter des informations relatives à votre utilisation de l'application et à votre appareil, telles que le modèle de l'appareil, la version du système d'exploitation et l'état de la connexion. Ces données sont utilisées pour optimiser les performances du jeu et résoudre les problèmes techniques.
+Données de jeu
+Nous ne collectons pas de données de jeu qui pourraient vous identifier personnellement (par exemple, scores, temps de jeu ou historique d'interactions). Cependant, si vous utilisez la fonctionnalité de classement fournie par la plateforme Meta, les informations relatives aux scores peuvent être traitées par Meta.
+
+2. Comment nous utilisons vos informations
+Nous utilisons les informations collectées aux fins suivantes :
+Fournir, maintenir et améliorer BallSort (par exemple, corriger des bugs ou optimiser les performances).  
+Répondre aux demandes de support des utilisateurs et résoudre les problèmes techniques.  
+Vous envoyer des notifications importantes concernant l'application (par exemple, mises à jour ou modifications des politiques).
+
+3. Partage de vos informations personnelles
+Aucune vente à des tiers : Nous ne vendons pas vos informations personnelles à des tiers.  
+Fournisseurs de services : Nous pouvons partager des informations minimales avec des fournisseurs de services (par exemple, des fournisseurs de serveurs cloud) nécessaires pour soutenir le fonctionnement de BallSort, mais uniquement dans le but de fournir les fonctionnalités de l'application.  
+Plateforme Meta : Si vous utilisez la fonctionnalité de classement, les données de score sont gérées par la plateforme Meta. Nous ne stockons pas directement ces données.
+
+4. Sécurité de vos informations
+Nous mettons en œuvre des mesures de sécurité raisonnables pour protéger vos informations contre tout accès, utilisation ou divulgation non autorisés. Toutefois, veuillez noter qu'aucune transmission de données sur Internet ne peut être garantie comme totalement sécurisée.
+
+5. Vos droits et choix
+Accès et suppression : Étant donné que BallSort collecte un minimum d'informations personnelles, les demandes d'accès ou de suppression ne s'appliquent généralement pas. Toutefois, n'hésitez pas à nous contacter si vous avez des préoccupations.  
+Retrait du consentement : Vous pouvez retirer votre consentement à tout moment en ajustant les paramètres de l'application ou en nous contactant.  
+Désactivation du classement : Vous pouvez éviter le partage des données de score en choisissant de ne pas utiliser la fonctionnalité de classement.
+
+6. Confidentialité des enfants
+BallSort n'est pas destiné aux enfants de moins de 13 ans. Nous ne collectons pas sciemment d'informations personnelles auprès d'enfants. Si vous pensez que nous avons collecté par inadvertance des informations d'un enfant, veuillez nous contacter immédiatement, et nous prendrons des mesures rapides pour résoudre la situation.
+
+7. Modifications de cette politique de confidentialité
+Nous pouvons mettre à jour cette Politique de confidentialité si nécessaire. Toute modification sera reflétée sur cette page avec une nouvelle date d'entrée en vigueur. Nous vous recommandons de consulter cette politique régulièrement pour prendre connaissance des mises à jour.
+
+8. Contactez-nous
+Si vous avez des questions ou des préoccupations concernant cette Politique de confidentialité, veuillez nous contacter à l'adresse suivante :  
+
+E-mail : yuki22683@gmail.com
+En utilisant BallSort, vous acceptez les conditions décrites dans cette Politique de confidentialité. Nous apprécions votre confiance et nous nous engageons à offrir une expérience 3D BallSort amusante et sécurisée.
+Merci de jouer à BallSort !"
+    },
+    "it": {
+      "btn_start": "Inizia",
+      "btn_privacy_policy": "Informativa sulla privacy",
+      "title_privacy_policy": "Informativa sulla privacy",
+      "body_condition": "Scorri fino in fondo",
+      "btn_accept": "Accetta",
+      "btn_decline": "Rifiuta",
+      "title_stage": "Seleziona fase",
+      "body_stage1": "Fase 1",
+      "body_stage2": "Fase 2",
+      "body_stage3": "Fase 3",
+      "body_stage4": "Fase 4",
+      "body_stage5": "Fase 5",
+      "body_stage6": "Fase 6",
+      "body_stage7": "Fase 7",
+      "body_stage8": "Fase 8",
+      "body_stage9": "Fase 9",
+      "body_stage10": "Fase 10",
+      "body_stage11": "Fase 11",
+      "body_stage12": "Fase 12",
+      "body_stage13": "Fase 13",
+      "body_stage14": "Fase 14",
+      "body_stage15": "Fase 15",
+      "body_stage16": "Fase 16",
+      "body_stage17": "Fase 17",
+      "title_level": "Seleziona livello",
+      "btn_yes": "Sì",
+      "btn_cancel": "Annulla",
+      "body_next": "Avanti",
+      "title_position": "Impostazione posizione",
+      "body_x": "Posizione X",
+      "body_y": "Posizione Y",
+      "body_z": "Posizione Z",
+      "body_scale": "Scala",
+      "btn_reset": "Ripristina",
+      "body_back": "Torna alla home?",
+      "body_over": "Ricomincia?",
+      "btn_home": "Home",
+      "btn_passthrough": "Passaggio",
+      "btn_bgm": "Musica di sottofondo",
+      "btn_sound": "Suono",
+      "btn_retry": "Riprova",
+      "btn_undo": "Annulla",
+      "btn_add": "Aggiungi tubo",
+      "btn_hint": "Suggerimento",
+      "btn_on": "Acceso",
+      "btn_off": "Spento",
+      "body_all_clear": "Tutte le fasi completate ",
+      "body_level": "livello",
+      "body_stage": "Fase",
+      "body_privacy_policy": "
+Data di entrata in vigore: 3 aprile 2025
+
+Benvenuti in \"BallSort\", un gioco 3D sviluppato e gestito da yt-Studio (\"noi\", \"ci\" o \"nostro\"). Ci impegniamo a rispettare la vostra privacy e a proteggere le vostre informazioni personali. La presente Informativa sulla privacy spiega come raccogliamo, utilizziamo e condividiamo le informazioni quando utilizzate la nostra applicazione (\"BallSort\") su Meta Quest.
+
+1. Informazioni che raccogliamo
+Informazioni fornite direttamente
+BallSort non richiede la registrazione degli utenti, pertanto non raccogliamo direttamente informazioni personali come il vostro nome o indirizzo e-mail.
+Informazioni sul dispositivo e sull'utilizzo
+Potremmo raccogliere informazioni relative all'uso dell'app e al vostro dispositivo, come il modello del dispositivo, la versione del sistema operativo e lo stato della connessione. Questi dati vengono utilizzati per ottimizzare le prestazioni del gioco e risolvere problemi tecnici.
+Dati di gioco
+Non raccogliamo dati di gioco che possano identificarvi personalmente (ad esempio, punteggi, tempo di gioco o cronologia delle interazioni). Tuttavia, se utilizzate la funzione di classifica fornita dalla piattaforma Meta, le informazioni relative ai punteggi potrebbero essere elaborate da Meta.
+
+2. Come utilizziamo le vostre informazioni
+Utilizziamo le informazioni raccolte per i seguenti scopi:
+Fornire, mantenere e migliorare BallSort (ad esempio, correggere bug o migliorare le prestazioni).  
+Rispondere alle richieste di supporto degli utenti e risolvere problemi tecnici.  
+Inviarvi notifiche importanti sull'app (ad esempio, aggiornamenti o modifiche alle politiche).
+
+3. Condivisione delle vostre informazioni personali
+Nessuna vendita a terzi: Non vendiamo le vostre informazioni personali a terzi.  
+Fornitori di servizi: Potremmo condividere informazioni minime con fornitori di servizi (ad esempio, fornitori di server cloud) necessari per supportare il funzionamento di BallSort, ma solo allo scopo di fornire le funzionalità dell'app.  
+Piattaforma Meta: Se utilizzate la funzione di classifica, i dati relativi ai punteggi sono gestiti dalla piattaforma Meta. Non memorizziamo direttamente questi dati.
+
+4. Sicurezza delle vostre informazioni
+Adottiamo misure di sicurezza ragionevoli per proteggere le vostre informazioni da accessi, usi o divulgazioni non autorizzati. Si prega di notare, tuttavia, che nessuna trasmissione di dati su Internet può essere garantita come completamente sicura.
+
+5. I vostri diritti e scelte
+Accesso e cancellazione: Poiché BallSort raccoglie informazioni personali minime, le richieste di accesso o cancellazione generalmente non si applicano. Tuttavia, non esitate a contattarci per qualsiasi preoccupazione.  
+Revoca del consenso: Potete revocare il consenso in qualsiasi momento modificando le impostazioni all'interno dell'app o contattandoci.  
+Esclusione dalla classifica: Potete evitare la condivisione dei dati sui punteggi scegliendo di non utilizzare la funzione di classifica.
+
+6. Privacy dei minori
+BallSort non è destinato a bambini di età inferiore ai 13 anni. Non raccogliamo consapevolmente informazioni personali da bambini. Se ritenete che abbiamo raccolto involontariamente informazioni da un bambino, vi preghiamo di contattarci immediatamente e prenderemo provvedimenti rapidi per affrontare la situazione.
+
+7. Modifiche alla presente Informativa sulla privacy
+Potremmo aggiornare questa Informativa sulla privacy secondo necessità. Eventuali modifiche saranno riflesse in questa pagina con una nuova data di entrata in vigore. Consigliamo di rivedere periodicamente questa informativa per eventuali aggiornamenti.
+
+8. Contattaci
+Se avete domande o preoccupazioni riguardo a questa Informativa sulla privacy, vi preghiamo di contattarci all'indirizzo:  
+
+E-mail: yuki22683@gmail.com
+Utilizzando BallSort, accettate i termini descritti in questa Informativa sulla privacy. Apprezziamo la vostra fiducia e ci dedichiamo a offrire un'esperienza 3D BallSort divertente e sicura.
+Grazie per aver giocato a BallSort!"
+    },
+    "ko": {
+      "btn_start": "시작",
+      "btn_privacy_policy": "개인정보 보호정침",
+      "title_privacy_policy": "개인정보 보호정침",
+      "body_condition": "하단으로 스크롤하세요",
+      "btn_accept": "수락",
+      "btn_decline": "거부",
+      "title_stage": "스테이지 선택",
+      "body_stage1": "스테이지 1",
+      "body_stage2": "스테이지 2",
+      "body_stage3": "스테이지 3",
+      "body_stage4": "스테이지 4",
+      "body_stage5": "스테이지 5",
+      "body_stage6": "스테이지 6",
+      "body_stage7": "스테이지 7",
+      "body_stage8": "스테이지 8",
+      "body_stage9": "스테이지 9",
+      "body_stage10": "스테이지 10",
+      "body_stage11": "스테이지 11",
+      "body_stage12": "스테이지 12",
+      "body_stage13": "스테이지 13",
+      "body_stage14": "스테이지 14",
+      "body_stage15": "스테이지 15",
+      "body_stage16": "스테이지 16",
+      "body_stage17": "스테이지 17",
+      "title_level": "레벨 선택",
+      "btn_yes": "예",
+      "btn_cancel": "취소",
+      "body_next": "다음",
+      "title_position": "위치 설정",
+      "body_x": "X 위치",
+      "body_y": "Y 위치",
+      "body_z": "Z 위치",
+      "body_scale": "스케일",
+      "btn_reset": "초기화",
+      "body_back": "홈으로 돌아가기?",
+      "body_over": "처음부터 다시 시작?",
+      "btn_home": "홈",
+      "btn_passthrough": "패스스루",
+      "btn_bgm": "BGM",
+      "btn_sound": "사운드",
+      "btn_retry": "재시도",
+      "btn_undo": "실행 취소",
+      "btn_add": "튜브 추가",
+      "btn_hint": "힌트",
+      "btn_on": "켜기",
+      "btn_off": "끄기",
+      "body_all_clear": "모든 스테이지 완료",
+      "body_level": "레벨",
+      "body_stage": "스테이지",
+      "body_privacy_policy": "
+발효일: 2025년 4월 3일
+
+\"BallSort\"에 오신 것을 환영합니다. 이는 yt-Studio(\"우리\", \"당사\" 또는 \"저희\")에서 개발 및 운영하는 3D 게임입니다. 우리는 귀하의 개인정보를 존중하고 보호하기 위해 최선을 다하고 있습니다. 본 개인정보 보호정책은 귀하가 Meta Quest에서 당사의 애플리케이션(\"BallSort\")을 사용할 때 정보를 수집, 사용 및 공유하는 방법을 설명합니다.
+
+1. 수집하는 정보
+직접 제공한 정보
+BallSort는 사용자 등록을 요구하지 않으므로 귀하의 이름이나 이메일 주소와 같은 개인정보를 직접 수집하지 않습니다.
+기기 및 사용 정보
+앱 사용 및 귀하의 기기와 관련된 정보(예: 기기 모델, 운영체제 버전, 연결 상태 등)를 수집할 수 있습니다. 이 데이터는 게임 성능을 최적화하고 기술적 문제를 해결하는 데 사용됩니다.
+게임플레이 데이터
+귀하를 개인적으로 식별할 수 있는 게임플레이 데이터(예: 점수, 플레이 시간, 상호작용 기록 등)는 수집하지 않습니다. 다만, Meta 플랫폼에서 제공하는 리더보드 기능을 사용하는 경우 점수 관련 정보는 Meta에 의해 처리될 수 있습니다.
+
+2. 정보 사용 방법
+수집된 정보는 다음 목적을 위해 사용됩니다:
+BallSort를 제공, 유지 및 개선(예: 버그 수정 또는 성능 향상).  
+사용자 지원 요청에 응답하고 기술적 문제를 해결.  
+앱에 대한 중요한 알림(예: 업데이트 또는 정책 변경)을 귀하에게 전송.
+
+3. 개인정보 공유
+제3자 판매 금지: 우리는 귀하의 개인정보를 제3자에게 판매하지 않습니다.  
+서비스 제공자: BallSort 운영을 지원하는 데 필요한 서비스 제공자(예: 클라우드 서버 제공자)와 최소한의 정보를 공유할 수 있으나, 이는 앱 기능을 제공하는 목적에 한정됩니다.  
+Meta 플랫폼: 리더보드 기능을 사용하는 경우 점수 데이터는 Meta 플랫폼에서 관리됩니다. 우리는 이 데이터를 직접 저장하지 않습니다.
+
+4. 정보 보안
+우리는 귀하의 정보가 무단 접근, 사용 또는 공개로부터 보호되도록 합리적인 보안 조치를 시행합니다. 그러나 인터넷을 통한 데이터 전송은 완전히 안전하다고 보장할 수 없음을 유의해 주십시오.
+
+5. 귀하의 권리 및 선택
+접근 및 삭제: BallSort는 최소한의 개인정보만 수집하므로 접근 또는 삭제 요청은 일반적으로 적용되지 않습니다. 하지만 우려 사항이 있는 경우 언제든지 저희에게 연락해 주십시오.  
+동의 철회: 앱 내 설정을 조정하거나 저희에게 연락하여 언제든지 동의를 철회할 수 있습니다.  
+리더보드 제외: 리더보드 기능을 사용하지 않음으로써 점수 데이터 공유를 피할 수 있습니다.
+
+6. 아동의 개인정보
+BallSort는 13세 미만 아동을 대상으로 하지 않습니다. 우리는 아동의 개인정보를 고의로 수집하지 않습니다. 만약 우리가 의도치 않게 아동의 정보를 수집했다고 생각되시면 즉시 저희에게 연락해 주십시오. 우리는 신속하게 상황을 해결하기 위한 조치를 취할 것입니다.
+
+7. 본 개인정보 보호정책의 변경
+필요에 따라 본 개인정보 보호정책을 업데이트할 수 있습니다. 변경 사항은 새로운 발효일과 함께 이 페이지에 반영됩니다. 정기적으로 이 정책을 검토하여 업데이트를 확인하는 것을 권장합니다.
+
+8. 문의하기
+본 개인정보 보호정책에 대한 질문이나 우려 사항이 있는 경우 아래로 연락해 주십시오:  
+
+이메일: yuki22683@gmail.com
+BallSort를 사용함으로써 귀하는 본 개인정보 보호정책에 명시된 조건에 동의하는 것으로 간주됩니다. 우리는 귀하의 신뢰를 소중히 여기며 재미있고 안전한 3D BallSort 경험을 제공하기 위해 최선을 다하고 있습니다.
+BallSort를 플레이해 주셔서 감사합니다!"
+    },
+    "no": {
+      "btn_start": "Start",
+      "btn_privacy_policy": "Personvernerklæring",
+      "title_privacy_policy": "Personvernerklæring",
+      "body_condition": "Rull til bunnen",
+      "btn_accept": "Godta",
+      "btn_decline": "Avslå",
+      "title_stage": "Velg fase",
+      "body_stage1": "Fase 1",
+      "body_stage2": "Fase 2",
+      "body_stage3": "Fase 3",
+      "body_stage4": "Fase 4",
+      "body_stage5": "Fase 5",
+      "body_stage6": "Fase 6",
+      "body_stage7": "Fase 7",
+      "body_stage8": "Fase 8",
+      "body_stage9": "Fase 9",
+      "body_stage10": "Fase 10",
+      "body_stage11": "Fase 11",
+      "body_stage12": "Fase 12",
+      "body_stage13": "Fase 13",
+      "body_stage14": "Fase 14",
+      "body_stage15": "Fase 15",
+      "body_stage16": "Fase 16",
+      "body_stage17": "Fase 17",
+      "title_level": "Velg nivå",
+      "btn_yes": "Ja",
+      "btn_cancel": "Avbryt",
+      "body_next": "Neste",
+      "title_position": "Posisjonsinnstilling",
+      "body_x": "X-posisjon",
+      "body_y": "Y-posisjon",
+      "body_z": "Z-posisjon",
+      "body_scale": "Skala",
+      "btn_reset": "Tilbakestill",
+      "body_back": "Tilbake til hjem?",
+      "body_over": "Starte på nytt?",
+      "btn_home": "Hjem",
+      "btn_passthrough": "Gjennomgang",
+      "btn_bgm": "Bakgrunnsmusikk",
+      "btn_sound": "Lyd",
+      "btn_retry": "Prøv igjen",
+      "btn_undo": "Angre",
+      "btn_add": "Legg til rør",
+      "btn_hint": "Tips",
+      "btn_on": "På",
+      "btn_off": "Av",
+      "body_all_clear": "Alle nivåer fullført",
+      "body_level": "nivå",
+      "body_stage": "Fase",
+      "body_privacy_policy": "
+Ikrafttredelsesdato: 3. april 2025
+
+Velkommen til \"BallSort\", et 3D-spill utviklet og driftet av yt-Studio (\"vi\", \"oss\" eller \"vår\"). Vi er forpliktet til å respektere ditt personvern og beskytte dine personopplysninger. Denne personvernerklæringen forklarer hvordan vi samler inn, bruker og deler informasjon når du bruker vår applikasjon (\"BallSort\") på Meta Quest.
+
+1. Informasjon vi samler inn
+Informasjon du gir direkte
+BallSort krever ikke brukerregistrering, og derfor samler vi ikke inn personopplysninger som navn eller e-postadresse direkte fra deg.
+Enhets- og bruksinformasjon
+Vi kan samle inn informasjon relatert til din bruk av appen og enheten din, som enhetsmodell, operativsystemversjon og tilkoblingsstatus. Disse dataene brukes til å optimalisere spillets ytelse og løse tekniske problemer.
+Spilldata
+Vi samler ikke inn spilldata som kan identifisere deg personlig (f.eks. poengsummer, spilletid eller interaksjonshistorikk). Hvis du bruker toppliste-funksjonen som tilbys av Meta-plattformen, kan poengrelatert informasjon behandles av Meta.
+
+2. Hvordan vi bruker informasjonen din
+Vi bruker den innsamlede informasjonen til følgende formål:
+Å tilby, vedlikeholde og forbedre BallSort (f.eks. fikse feil eller forbedre ytelsen).  
+Å svare på brukerstøtteforespørsler og løse tekniske problemer.  
+Å sende deg viktige varsler om appen (f.eks. oppdateringer eller endringer i retningslinjene).
+
+3. Deling av dine personopplysninger
+Ingen salg til tredjeparter: Vi selger ikke dine personopplysninger til tredjeparter.  
+Tjenesteleverandører: Vi kan dele minimal informasjon med tjenesteleverandører (f.eks. leverandører av skyservere) som er nødvendige for å støtte driften av BallSort, men kun for å levere appens funksjonalitet.  
+Meta-plattformen: Hvis du bruker toppliste-funksjonen, administreres poengdata av Meta-plattformen. Vi lagrer ikke disse dataene direkte.
+
+4. Sikkerhet for informasjonen din
+Vi implementerer rimelige sikkerhetstiltak for å beskytte informasjonen din mot uautorisert tilgang, bruk eller avsløring. Vær oppmerksom på at ingen dataoverføring over internett kan garanteres å være helt sikker.
+
+5. Dine rettigheter og valg
+Tilgang og sletting: Siden BallSort samler inn minimalt med personopplysninger, gjelder forespørsler om tilgang eller sletting vanligvis ikke. Du er imidlertid velkommen til å kontakte oss ved eventuelle bekymringer.  
+Tilbaketrekking av samtykke: Du kan når som helst trekke tilbake samtykket ved å justere innstillingene i appen eller kontakte oss.  
+Velge bort topplisten: Du kan unngå å dele poengdata ved å velge å ikke bruke toppliste-funksjonen.
+
+6. Barns personvern
+BallSort er ikke beregnet på barn under 13 år. Vi samler ikke bevisst inn personopplysninger fra barn. Hvis du mener vi utilsiktet har samlet inn informasjon fra et barn, vennligst kontakt oss umiddelbart, så vil vi iverksette raske tiltak for å håndtere situasjonen.
+
+7. Endringer i denne personvernerklæringen
+Vi kan oppdatere denne personvernerklæringen ved behov. Eventuelle endringer vil bli gjenspeilet på denne siden med en ny ikrafttredelsesdato. Vi anbefaler at du gjennomgår denne erklæringen regelmessig for oppdateringer.
+
+8. Kontakt oss
+Hvis du har spørsmål eller bekymringer angående denne personvernerklæringen, vennligst kontakt oss på:  
+
+E-post: yuki22683@gmail.com
+Ved å bruke BallSort godtar du vilkårene som er beskrevet i denne personvernerklæringen. Vi setter pris på tilliten din og er dedikert til å levere en morsom og sikker 3D BallSort-opplevelse.
+Takk for at du spiller BallSort!"
+    },
+    "pl": {
+      "btn_start": "Rozpocznij",
+      "btn_privacy_policy": "Polityka prywatności",
+      "title_privacy_policy": "Polityka prywatności",
+      "body_condition": "Przewiń na dół",
+      "btn_accept": "Zaakceptuj",
+      "btn_decline": "Odrzuć",
+      "title_stage": "Wybierz etap",
+      "body_stage1": "Etap 1",
+      "body_stage2": "Etap 2",
+      "body_stage3": "Etap 3",
+      "body_stage4": "Etap 4",
+      "body_stage5": "Etap 5",
+      "body_stage6": "Etap 6",
+      "body_stage7": "Etap 7",
+      "body_stage8": "Etap 8",
+      "body_stage9": "Etap 9",
+      "body_stage10": "Etap 10",
+      "body_stage11": "Etap 11",
+      "body_stage12": "Etap 12",
+      "body_stage13": "Etap 13",
+      "body_stage14": "Etap 14",
+      "body_stage15": "Etap 15",
+      "body_stage16": "Etap 16",
+      "body_stage17": "Etap 17",
+      "title_level": "Wybierz poziom",
+      "btn_yes": "Tak",
+      "btn_cancel": "Anuluj",
+      "body_next": "Dalej",
+      "title_position": "Ustawienie pozycji",
+      "body_x": "Pozycja X",
+      "body_y": "Pozycja Y",
+      "body_z": "Pozycja Z",
+      "body_scale": "Skala",
+      "btn_reset": "Resetuj",
+      "body_back": "Powrót do strony głównej?",
+      "body_over": "Zacząć od nowa?",
+      "btn_home": "Strona główna",
+      "btn_passthrough": "Przejście",
+      "btn_bgm": "Muzyka w tle",
+      "btn_sound": "Dźwięk",
+      "btn_retry": "Spróbuj ponownie",
+      "btn_undo": "Cofnij",
+      "btn_add": "Dodaj rurkę",
+      "btn_hint": "Wskazówka",
+      "btn_on": "Włączone",
+      "btn_off": "Wyłączone",
+      "body_all_clear": "Wszystkie etapy zakończone",
+      "body_level": "poziom",
+      "body_stage": "Etap",
+      "body_privacy_policy": "
+Data wejścia w życie: 3 kwietnia 2025
+
+Witamy w grze \"BallSort\", grze 3D opracowanej i obsługiwanej przez yt-Studio (\"my\", \"nas\" lub \"nasz\"). Zobowiązujemy się do poszanowania Twojej prywatności i ochrony Twoich danych osobowych. Niniejsza Polityka Prywatności wyjaśnia, jak gromadzimy, wykorzystujemy i udostępniamy informacje, gdy korzystasz z naszej aplikacji (\"BallSort\") na platformie Meta Quest.
+
+1. Informacje, które gromadzimy
+Informacje podawane bezpośrednio
+BallSort nie wymaga rejestracji użytkownika, dlatego nie gromadzimy bezpośrednio danych osobowych, takich jak imię, nazwisko czy adres e-mail.
+Informacje o urządzeniu i użytkowaniu
+Możemy gromadzić informacje związane z korzystaniem z aplikacji oraz Twoim urządzeniem, takie jak model urządzenia, wersja systemu operacyjnego czy status połączenia. Dane te są wykorzystywane do optymalizacji wydajności gry i rozwiązywania problemów technicznych.
+Dane rozgrywki
+Nie gromadzimy danych rozgrywki, które mogą Cię osobiście identyfikować (np. wyniki, czas gry, historia interakcji). Jednakże, jeśli korzystasz z funkcji tablicy wyników dostarczanej przez platformę Meta, dane związane z wynikami mogą być przetwarzane przez Meta.
+
+2. Jak wykorzystujemy Twoje informacje
+Wykorzystujemy zebrane informacje w następujących celach:  
+Aby dostarczać, utrzymywać i ulepszać BallSort (np. naprawiać błędy lub poprawiać wydajność).  
+
+Aby odpowiadać na prośby o wsparcie użytkownika i rozwiązywać problemy techniczne.  
+
+Aby wysyłać ważne powiadomienia dotyczące aplikacji (np. aktualizacje lub zmiany w polityce).
+
+3. Udostępnianie Twoich danych osobowych
+Brak sprzedaży stronom trzecim: Nie sprzedajemy Twoich danych osobowych stronom trzecim.
+Dostawcy usług: Możemy udostępniać minimalne informacje dostawcom usług (np. dostawcom serwerów chmurowych) niezbędnym do wspierania działania BallSort, ale tylko w celu zapewnienia funkcjonalności aplikacji.
+Platforma Meta: Jeśli korzystasz z funkcji tablicy wyników, dane wyników są zarządzane przez platformę Meta. Nie przechowujemy tych danych bezpośrednio.
+
+4. Bezpieczeństwo Twoich informacji
+Wdrożyliśmy rozsądne środki bezpieczeństwa, aby chronić Twoje informacje przed nieautoryzowanym dostępem, użyciem lub ujawnieniem. Należy jednak pamiętać, że żadna transmisja danych przez internet nie może być zagwarantowana jako całkowicie bezpieczna.
+
+5. Twoje prawa i wybory
+Dostęp i usuwanie: Ponieważ BallSort zbiera minimalną ilość danych osobowych, wnioski o dostęp lub usunięcie danych zazwyczaj nie mają zastosowania. Jeśli masz jakiekolwiek obawy, skontaktuj się z nami.
+Wycofanie zgody: Możesz w dowolnym momencie wycofać zgodę, dostosowując ustawienia w aplikacji lub kontaktując się z nami.
+Rezygnacja z tablicy wyników: Możesz uniknąć udostępniania danych wyników, wybierając opcję nieużywania funkcji tablicy wyników.
+
+6. Prywatność dzieci
+BallSort nie jest przeznaczony dla dzieci poniżej 13 roku życia. Nie gromadzimy świadomie danych osobowych od dzieci. Jeśli uważasz, że nieumyślnie zebraliśmy informacje od dziecka, skontaktuj się z nami niezwłocznie, a my podejmiemy szybkie działania, aby rozwiązać sytuację.
+
+7. Zmiany w niniejszej Polityce Prywatności
+Możemy aktualizować niniejszą Politykę Prywatności w razie potrzeby. Wszelkie zmiany zostaną odzwierciedlone na tej stronie z nową datą wejścia w życie. Zalecamy okresowe przeglądanie tej polityki w celu zapoznania się z aktualizacjami.
+
+8. Skontaktuj się z nami
+Jeśli masz jakiekolwiek pytania lub obawy dotyczące niniejszej Polityki Prywatności, skontaktuj się z nami pod adresem:  
+
+E-mail: yuki22683@gmail.com
+Korzystając z BallSort, zgadzasz się na warunki określone w niniejszej Polityce Prywatności. Doceniamy Twoje zaufanie i jesteśmy zaangażowani w dostarczanie zabawnego i bezpiecznego doświadczenia 3D z BallSort.
+Dziękujemy za grę w BallSort!"
+    },
+    "pt": {
+      "btn_start": "Iniciar",
+      "btn_privacy_policy": "Política de Privacidade",
+      "title_privacy_policy": "Política de Privacidade",
+      "body_condition": "Desloque até ao fim",
+      "btn_accept": "Aceitar",
+      "btn_decline": "Recusar",
+      "title_stage": "Selecionar etapa",
+      "body_stage1": "Etapa 1",
+      "body_stage2": "Etapa 2",
+      "body_stage3": "Etapa 3",
+      "body_stage4": "Etapa 4",
+      "body_stage5": "Etapa 5",
+      "body_stage6": "Etapa 6",
+      "body_stage7": "Etapa 7",
+      "body_stage8": "Etapa 8",
+      "body_stage9": "Etapa 9",
+      "body_stage10": "Etapa 10",
+      "body_stage11": "Etapa 11",
+      "body_stage12": "Etapa 12",
+      "body_stage13": "Etapa 13",
+      "body_stage14": "Etapa 14",
+      "body_stage15": "Etapa 15",
+      "body_stage16": "Etapa 16",
+      "body_stage17": "Etapa 17",
+      "title_level": "Selecionar nível",
+      "btn_yes": "Sim",
+      "btn_cancel": "Cancelar",
+      "body_next": "Seguinte",
+      "title_position": "Configuração de posição",
+      "body_x": "Posição X",
+      "body_y": "Posição Y",
+      "body_z": "Posição Z",
+      "body_scale": "Escala",
+      "btn_reset": "Repor",
+      "body_back": "Voltar para o início?",
+      "body_over": "Recomeçar?",
+      "btn_home": "Início",
+      "btn_passthrough": "Passagem",
+      "btn_bgm": "Música de fundo",
+      "btn_sound": "Som",
+      "btn_retry": "Tentar novamente",
+      "btn_undo": "Desfazer",
+      "btn_add": "Adicionar tubo",
+      "btn_hint": "Dica",
+      "btn_on": "Ligado",
+      "btn_off": "Desligado",
+      "body_all_clear": "Todas as etapas concluídas",
+      "body_level": "nível",
+      "body_stage": "Etapa",
+      "body_privacy_policy": "
+Data de Entrada em Vigor: 3 de abril de 2025
+
+Bem-vindo ao \"BallSort\", um jogo 3D desenvolvido e operado pela yt-Studio (\"nós\", \"nos\" ou \"nosso\"). Estamos comprometidos em respeitar a sua privacidade e proteger as suas informações pessoais. Esta Política de Privacidade explica como recolhemos, utilizamos e partilhamos informações quando utiliza a nossa aplicação (\"BallSort\") na Meta Quest.
+
+1. Informações que Recolhemos
+Informações Fornecidas Diretamente
+O BallSort não exige registo de utilizador, pelo que não recolhemos diretamente informações pessoais, como o seu nome ou endereço de e-mail.
+Informações do Dispositivo e de Utilização
+Podemos recolher informações relacionadas com a utilização da aplicação e do seu dispositivo, como o modelo do dispositivo, a versão do sistema operativo e o estado da ligação. Estes dados são utilizados para otimizar o desempenho do jogo e resolver problemas técnicos.
+Dados de Jogabilidade
+Não recolhemos dados de jogabilidade que possam identificá-lo pessoalmente (por exemplo, pontuações, tempo de jogo ou histórico de interações). No entanto, se utilizar a funcionalidade de tabela de classificação fornecida pela plataforma Meta, as informações relacionadas com a pontuação podem ser processadas pela Meta.
+
+2. Como Utilizamos as Suas Informações
+Utilizamos as informações recolhidas para os seguintes fins:  
+Fornecer, manter e melhorar o BallSort (por exemplo, corrigir erros ou melhorar o desempenho).  
+
+Responder a pedidos de suporte do utilizador e resolver problemas técnicos.  
+
+Enviar notificações importantes sobre a aplicação (por exemplo, atualizações ou alterações na política).
+
+3. Partilha das Suas Informações Pessoais
+Sem Venda a Terceiros: Não vendemos as suas informações pessoais a terceiros.
+Fornecedores de Serviços: Podemos partilhar informações mínimas com fornecedores de serviços (por exemplo, fornecedores de servidores em nuvem) necessários para suportar o funcionamento do BallSort, mas apenas para o propósito de fornecer a funcionalidade da aplicação.
+Plataforma Meta: Se utilizar a funcionalidade de tabela de classificação, os dados de pontuação são geridos pela plataforma Meta. Não armazenamos esses dados diretamente.
+
+4. Segurança das Suas Informações
+Implementamos medidas de segurança razoáveis para proteger as suas informações contra acesso, utilização ou divulgação não autorizados. No entanto, note que nenhuma transmissão de dados pela internet pode ser garantida como completamente segura.
+
+5. Os Seus Direitos e Escolhas
+Acesso e Eliminação: Dado que o BallSort recolhe informações pessoais mínimas, os pedidos de acesso ou eliminação geralmente não se aplicam. No entanto, sinta-se à vontade para nos contactar com qualquer preocupação.
+Revogação do Consentimento: Pode revogar o seu consentimento a qualquer momento, ajustando as definições na aplicação ou contactando-nos.
+Exclusão da Tabela de Classificação: Pode evitar a partilha de dados de pontuação ao optar por não utilizar a funcionalidade de tabela de classificação.
+
+6. Privacidade das Crianças
+O BallSort não é destinado a crianças com menos de 13 anos. Não recolhemos intencionalmente informações pessoais de crianças. Se acredita que recolhemos informações de uma criança sem intenção, contacte-nos imediatamente, e tomaremos medidas rápidas para resolver a situação.
+
+7. Alterações a Esta Política de Privacidade
+Podemos atualizar esta Política de Privacidade conforme necessário. Quaisquer alterações serão refletidas nesta página com uma nova data de entrada em vigor. Recomendamos que reveja esta política periodicamente para se manter atualizado.
+
+8. Contacte-nos
+Se tiver alguma dúvida ou preocupação sobre esta Política de Privacidade, entre em contacto connosco através de:  
+
+E-mail: yuki22683@gmail.com
+Ao utilizar o BallSort, concorda com os termos descritos nesta Política de Privacidade. Agradecemos a sua confiança e estamos dedicados a proporcionar uma experiência 3D divertida e segura com o BallSort.
+Obrigado por jogar BallSort!"
+    },
+    "ro": {
+      "btn_start": "Începe",
+      "btn_privacy_policy": "Politică de confidențialitate",
+      "title_privacy_policy": "Politică de confidențialitate",
+      "body_condition": "Vă rugăm să derulați până jos",
+      "btn_accept": "Acceptă",
+      "btn_decline": "Refuză",
+      "title_stage": "Selectați etapa",
+      "body_stage1": "Etapă 1",
+      "body_stage2": "Etapă 2",
+      "body_stage3": "Etapă 3",
+      "body_stage4": "Etapă 4",
+      "body_stage5": "Etapă 5",
+      "body_stage6": "Etapă 6",
+      "body_stage7": "Etapă 7",
+      "body_stage8": "Etapă 8",
+      "body_stage9": "Etapă 9",
+      "body_stage10": "Etapă 10",
+      "body_stage11": "Etapă 11",
+      "body_stage12": "Etapă 12",
+      "body_stage13": "Etapă 13",
+      "body_stage14": "Etapă 14",
+      "body_stage15": "Etapă 15",
+      "body_stage16": "Etapă 16",
+      "body_stage17": "Etapă 17",
+      "title_level": "Selectați nivelul",
+      "btn_yes": "Da",
+      "btn_cancel": "Anulați",
+      "body_next": "Următor",
+      "title_position": "Setare poziție",
+      "body_x": "Poziție X",
+      "body_y": "Poziție Y",
+      "body_z": "Poziție Z",
+      "body_scale": "Scală",
+      "btn_reset": "Resetați",
+      "body_back": "Înapoi la pagina principală?",
+      "body_over": "Începeți din nou?",
+      "btn_home": "Acasă",
+      "btn_passthrough": "Trecere",
+      "btn_bgm": "Muzică de fundal",
+      "btn_sound": "Sunet",
+      "btn_retry": "Încercați din nou",
+      "btn_undo": "Anulați",
+      "btn_add": "Adăugați tub",
+      "btn_hint": "Indiciu",
+      "btn_on": "Pornit",
+      "btn_off": "Oprit",
+      "body_all_clear": "Toate etapele finalizate",
+      "body_level": "nivel",
+      "body_stage": "Etapă",
+      "body_privacy_policy": "
+Data intrării în vigoare: 3 aprilie 2025
+
+Bine ați venit la \"BallSort\", un joc 3D dezvoltat și operat de yt-Studio („noi”, „ne” sau „nostru”). Ne angajăm să respectăm confidențialitatea dumneavoastră și să protejăm informațiile personale. Această Politică de Confidențialitate explică modul în care colectăm, utilizăm și partajăm informațiile atunci când utilizați aplicația noastră („BallSort”) pe Meta Quest.
+
+1. Informațiile pe care le colectăm
+Informații furnizate direct
+BallSort nu necesită înregistrarea utilizatorului, prin urmare nu colectăm direct informații personale, cum ar fi numele sau adresa de e-mail.
+Informații despre dispozitiv și utilizare
+Putem colecta informații legate de utilizarea aplicației și de dispozitivul dumneavoastră, cum ar fi modelul dispozitivului, versiunea sistemului de operare și starea conexiunii. Aceste date sunt utilizate pentru a optimiza performanța jocului și pentru a rezolva problemele tehnice.
+Date despre joc
+Nu colectăm date despre joc care vă pot identifica personal (de exemplu, scoruri, timpul de joc sau istoricul interacțiunilor). Cu toate acestea, dacă utilizați funcția de clasament oferită de platforma Meta, informațiile legate de scor pot fi procesate de Meta.
+
+2. Cum utilizăm informațiile dumneavoastră
+Utilizăm informațiile colectate în următoarele scopuri:  
+Pentru a furniza, menține și îmbunătăți BallSort (de exemplu, corectarea erorilor sau îmbunătățirea performanței).  
+
+Pentru a răspunde la cererile de asistență ale utilizatorilor și a rezolva problemele tehnice.  
+
+Pentru a vă trimite notificări importante despre aplicație (de exemplu, actualizări sau modificări ale politicii).
+
+3. Partajarea informațiilor personale
+Fără vânzare către terți: Nu vindem informațiile dumneavoastră personale către terți.
+Furnizori de servicii: Putem partaja informații minime cu furnizorii de servicii (de exemplu, furnizorii de servere cloud) necesari pentru a susține funcționarea BallSort, dar doar în scopul de a oferi funcționalitatea aplicației.
+Platforma Meta: Dacă utilizați funcția de clasament, datele despre scor sunt gestionate de platforma Meta. Nu stocăm aceste date direct.
+
+4. Securitatea informațiilor dumneavoastră
+Implementăm măsuri de securitate rezonabile pentru a vă proteja informațiile împotriva accesului, utilizării sau divulgării neautorizate. Cu toate acestea, vă rugăm să rețineți că nicio transmisie de date prin internet nu poate fi garantată ca fiind complet sigură.
+
+5. Drepturile și opțiunile dumneavoastră
+Acces și ștergere: Deoarece BallSort colectează informații personale minime, cererile de acces sau ștergere nu se aplică de obicei. Cu toate acestea, nu ezitați să ne contactați dacă aveți orice preocupări.
+Retragerea consimțământului: Puteți retrage consimțământul în orice moment prin ajustarea setărilor din aplicație sau contactându-ne.
+Renunțarea la clasament: Puteți evita partajarea datelor despre scor alegând să nu utilizați funcția de clasament.
+
+6. Confidențialitatea copiilor
+BallSort nu este destinat copiilor sub 13 ani. Nu colectăm în mod conștient informații personale de la copii. Dacă credeți că am colectat neintenționat informații de la un copil, vă rugăm să ne contactați imediat, iar noi vom lua măsuri rapide pentru a soluționa situația.
+
+7. Modificări ale acestei Politici de Confidențialitate
+Putem actualiza această Politică de Confidențialitate după cum este necesar. Orice modificări vor fi reflectate pe această pagină cu o nouă dată de intrare în vigoare. Vă recomandăm să verificați periodic această politică pentru actualizări.
+
+8. Contactați-ne
+Dacă aveți întrebări sau preocupări cu privire la această Politică de Confidențialitate, vă rugăm să ne contactați la:  
+
+E-mail: yuki22683@gmail.com
+Prin utilizarea BallSort, sunteți de acord cu termenii descriși în această Politică de Confidențialitate. Apreciem încrederea dumneavoastră și ne dedicăm oferirii unei experiențe 3D distractive și sigure cu BallSort.
+Vă mulțumim că jucați BallSort!"
+    },
+    "ru": {
+      "btn_start": "Начать",
+      "btn_privacy_policy": "Политика конфиденциальности",
+      "title_privacy_policy": "Политика конфиденциальности",
+      "body_condition": "Прокрутите вниз",
+      "btn_accept": "Принять",
+      "btn_decline": "Отклонить",
+      "title_stage": "Выбрать этап",
+      "body_stage1": "Этап 1",
+      "body_stage2": "Этап 2",
+      "body_stage3": "Этап 3",
+      "body_stage4": "Этап 4",
+      "body_stage5": "Этап 5",
+      "body_stage6": "Этап 6",
+      "body_stage7": "Этап 7",
+      "body_stage8": "Этап 8",
+      "body_stage9": "Этап 9",
+      "body_stage10": "Этап 10",
+      "body_stage11": "Этап 11",
+      "body_stage12": "Этап 12",
+      "body_stage13": "Этап 13",
+      "body_stage14": "Этап 14",
+      "body_stage15": "Этап 15",
+      "body_stage16": "Этап 16",
+      "body_stage17": "Этап 17",
+      "title_level": "Выбрать уровень",
+      "btn_yes": "Да",
+      "btn_cancel": "Отмена",
+      "body_next": "Далее",
+      "title_position": "Настройка положения",
+      "body_x": "Положение X",
+      "body_y": "Положение Y",
+      "body_z": "Положение Z",
+      "body_scale": "Масштаб",
+      "btn_reset": "Сброс",
+      "body_back": "Вернуться на главную?",
+      "body_over": "Начать заново?",
+      "btn_home": "Главная",
+      "btn_passthrough": "Проход",
+      "btn_bgm": "Фоновая музыка",
+      "btn_sound": "Звук",
+      "btn_retry": "Повторить",
+      "btn_undo": "Отменить",
+      "btn_add": "Добавить трубку",
+      "btn_hint": "Подсказка",
+      "btn_on": "Вкл",
+      "btn_off": "Выкл",
+      "body_all_clear": "Все этапы завершены",
+      "body_level": "уровень",
+      "body_stage": "Этап",
+      "body_privacy_policy": "
+Дата вступления в силу: 3 апреля 2025 года
+
+Добро пожаловать в \"BallSort\" — 3D-игру, разработанную и управляемую yt-Studio («мы», «нас» или «наш»). Мы стремимся уважать вашу конфиденциальность и защищать ваши личные данные. Настоящая Политика конфиденциальности объясняет, как мы собираем, используем и передаем информацию, когда вы используете наше приложение (\"BallSort\") на платформе Meta Quest.
+
+1. Информация, которую мы собираем
+Информация, предоставленная вами напрямую
+BallSort не требует регистрации пользователя, поэтому мы не собираем личную информацию, такую как ваше имя или адрес электронной почты, непосредственно от вас.
+Информация об устройстве и использовании
+Мы можем собирать информацию, связанную с использованием приложения и вашим устройством, например, модель устройства, версию операционной системы и статус соединения. Эти данные используются для оптимизации производительности игры и устранения технических проблем.
+Данные игровой активности
+Мы не собираем данные игровой активности, которые могут идентифицировать вас лично (например, результаты, время игры или историю взаимодействий). Однако, если вы используете функцию таблицы лидеров, предоставляемую платформой Meta, информация, связанная с результатами, может обрабатываться Meta.
+
+2. Как мы используем вашу информацию
+Мы используем собранную информацию в следующих целях:  
+Для предоставления, поддержки и улучшения BallSort (например, исправления ошибок или повышения производительности).  
+
+Для ответа на запросы поддержки пользователей и устранения технических проблем.  
+
+Для отправки вам важных уведомлений о приложении (например, об обновлениях или изменениях в политике).
+
+3. Передача вашей личной информации
+Отсутствие продажи третьим лицам: Мы не продаем вашу личную информацию третьим лицам.
+Поставщики услуг: Мы можем передавать минимальную информацию поставщикам услуг (например, провайдерам облачных серверов), необходимым для поддержки работы BallSort, но только в целях обеспечения функциональности приложения.
+Платформа Meta: Если вы используете функцию таблицы лидеров, данные о результатах управляются платформой Meta. Мы не храним эти данные напрямую.
+
+4. Безопасность вашей информации
+Мы применяем разумные меры безопасности для защиты вашей информации от несанкционированного доступа, использования или раскрытия. Однако обратите внимание, что никакая передача данных через интернет не может быть гарантированно полностью безопасной.
+
+5. Ваши права и возможности выбора
+Доступ и удаление: Поскольку BallSort собирает минимальное количество личной информации, запросы на доступ или удаление обычно не применяются. Тем не менее, вы можете связаться с нами по любым вопросам.
+Отзыв согласия: Вы можете отозвать свое согласие в любое время, изменив настройки в приложении или связавшись с нами.
+Отказ от таблицы лидеров: Вы можете избежать передачи данных о результатах, выбрав не использовать функцию таблицы лидеров.
+
+6. Конфиденциальность детей
+BallSort не предназначен для детей младше 13 лет. Мы сознательно не собираем личную информацию от детей. Если вы считаете, что мы непреднамеренно собрали информацию от ребенка, пожалуйста, немедленно свяжитесь с нами, и мы оперативно устраним ситуацию.
+
+7. Изменения в настоящей Политике конфиденциальности
+Мы можем обновлять настоящую Политику конфиденциальности по мере необходимости. Все изменения будут отражены на этой странице с указанием новой даты вступления в силу. Мы рекомендуем периодически просматривать эту политику для ознакомления с обновлениями.
+
+8. Свяжитесь с нами
+Если у вас есть вопросы или опасения по поводу настоящей Политики конфиденциальности, пожалуйста, свяжитесь с нами по адресу:  
+
+Электронная почта: yuki22683@gmail.com
+Используя BallSort, вы соглашаетесь с условиями, изложенными в настоящей Политике конфиденциальности. Мы ценим ваше доверие и стремимся предоставить увлекательный и безопасный 3D-опыт с BallSort.
+Спасибо за то, что играете в BallSort!"
+    },
+    "es": {
+      "btn_start": "Iniciar",
+      "btn_privacy_policy": "Política de Privacidad",
+      "title_privacy_policy": "Política de Privacidad",
+      "body_condition": "Desplázate hasta abajo",
+      "btn_accept": "Aceptar",
+      "btn_decline": "Rechazar",
+      "title_stage": "Seleccionar etapa",
+      "body_stage1": "Etapa 1",
+      "body_stage2": "Etapa 2",
+      "body_stage3": "Etapa 3",
+      "body_stage4": "Etapa 4",
+      "body_stage5": "Etapa 5",
+      "body_stage6": "Etapa 6",
+      "body_stage7": "Etapa 7",
+      "body_stage8": "Etapa 8",
+      "body_stage9": "Etapa 9",
+      "body_stage10": "Etapa 10",
+      "body_stage11": "Etapa 11",
+      "body_stage12": "Etapa 12",
+      "body_stage13": "Etapa 13",
+      "body_stage14": "Etapa 14",
+      "body_stage15": "Etapa 15",
+      "body_stage16": "Etapa 16",
+      "body_stage17": "Etapa 17",
+      "title_level": "Seleccionar nivel",
+      "btn_yes": "Sí",
+      "btn_cancel": "Cancelar",
+      "body_next": "Siguiente",
+      "title_position": "Configuración de posición",
+      "body_x": "Posición X",
+      "body_y": "Posición Y",
+      "body_z": "Posición Z",
+      "body_scale": "Escala",
+      "btn_reset": "Restablecer",
+      "body_back": "¿Volver al inicio?",
+      "body_over": "¿Empezar de nuevo?",
+      "btn_home": "Inicio",
+      "btn_passthrough": "Paso",
+      "btn_bgm": "Música de fondo",
+      "btn_sound": "Sonido",
+      "btn_retry": "Reintentar",
+      "btn_undo": "Deshacer",
+      "btn_add": "Agregar tubo",
+      "btn_hint": "Pista",
+      "btn_on": "Encendido",
+      "btn_off": "Apagado",
+      "body_all_clear": "Todas las etapas completadas",
+      "body_level": "nivel",
+      "body_stage": "Etapa",
+      "body_privacy_policy": "
+Fecha de entrada en vigor: 3 de abril de 2025
+
+Bienvenido a \"BallSort\", un juego 3D desarrollado y gestionado por yt-Studio (\"nosotros\", \"nos\" o \"nuestro\"). Nos comprometemos a respetar tu privacidad y proteger tu información personal. Esta Política de Privacidad explica cómo recopilamos, utilizamos y compartimos información cuando utilizas nuestra aplicación (\"BallSort\") en Meta Quest.
+
+1. Información que recopilamos
+Información proporcionada directamente
+BallSort no requiere registro de usuario, por lo que no recopilamos información personal como tu nombre o dirección de correo electrónico directamente de ti.
+Información del dispositivo y uso
+Podemos recopilar información relacionada con el uso de la aplicación y tu dispositivo, como el modelo del dispositivo, la versión del sistema operativo y el estado de la conexión. Estos datos se utilizan para optimizar el rendimiento del juego y resolver problemas técnicos.
+Datos de juego
+No recopilamos datos de juego que puedan identificarte personalmente (por ejemplo, puntuaciones, tiempo de juego o historial de interacciones). Sin embargo, si utilizas la función de tabla de clasificación proporcionada por la plataforma Meta, la información relacionada con las puntuaciones puede ser procesada por Meta.
+
+2. Cómo utilizamos tu información
+Utilizamos la información recopilada para los siguientes fines:  
+Proporcionar, mantener y mejorar BallSort (por ejemplo, corregir errores o mejorar el rendimiento).  
+
+Responder a solicitudes de soporte de usuarios y resolver problemas técnicos.  
+
+Enviarte notificaciones importantes sobre la aplicación (por ejemplo, actualizaciones o cambios en la política).
+
+3. Compartir tu información personal
+Sin venta a terceros: No vendemos tu información personal a terceros.
+Proveedores de servicios: Podemos compartir información mínima con proveedores de servicios (por ejemplo, proveedores de servidores en la nube) necesarios para apoyar el funcionamiento de BallSort, pero solo con el fin de ofrecer la funcionalidad de la aplicación.
+Plataforma Meta: Si utilizas la función de tabla de clasificación, los datos de puntuación son gestionados por la plataforma Meta. No almacenamos estos datos directamente.
+
+4. Seguridad de tu información
+Implementamos medidas de seguridad razonables para proteger tu información contra accesos, usos o divulgaciones no autorizados. Sin embargo, ten en cuenta que ninguna transmisión de datos por internet puede garantizarse como completamente segura.
+
+5. Tus derechos y opciones
+Acceso y eliminación: Dado que BallSort recopila información personal mínima, las solicitudes de acceso o eliminación generalmente no son aplicables. No obstante, no dudes en contactarnos si tienes alguna preocupación.
+Retirada de consentimiento: Puedes retirar tu consentimiento en cualquier momento ajustando la configuración en la aplicación o contactándonos.
+Exclusión de la tabla de clasificación: Puedes evitar compartir datos de puntuación al optar por no usar la función de tabla de clasificación.
+
+6. Privacidad de los menores
+BallSort no está destinado a menores de 13 años. No recopilamos intencionadamente información personal de menores. Si crees que hemos recopilado información de un menor sin intención, contáctanos de inmediato y tomaremos medidas rápidas para abordar la situación.
+
+7. Cambios en esta Política de Privacidad
+Podemos actualizar esta Política de Privacidad según sea necesario. Cualquier cambio se reflejará en esta página con una nueva fecha de entrada en vigor. Recomendamos revisar esta política periódicamente para estar al tanto de las actualizaciones.
+
+8. Contacta con nosotros
+Si tienes alguna pregunta o preocupación sobre esta Política de Privacidad, por favor contáctanos en:  
+
+Correo electrónico: yuki22683@gmail.com
+Al usar BallSort, aceptas los términos descritos en esta Política de Privacidad. Agradecemos tu confianza y estamos dedicados a ofrecer una experiencia 3D divertida y segura con BallSort.
+¡Gracias por jugar a BallSort!"
+    },
+    "sv": { 
+      "btn_start": "Starta",
+      "btn_privacy_policy": "Integritetspolicy",
+      "title_privacy_policy": "Integritetspolicy",
+      "body_condition": "Rulla till botten",
+      "btn_accept": "Acceptera",
+      "btn_decline": "Avböj",
+      "title_stage": "Välj steg",
+      "body_stage1": "Steg 1",
+      "body_stage2": "Steg 2",
+      "body_stage3": "Steg 3",
+      "body_stage4": "Steg 4",
+      "body_stage5": "Steg 5",
+      "body_stage6": "Steg 6",
+      "body_stage7": "Steg 7",
+      "body_stage8": "Steg 8",
+      "body_stage9": "Steg 9",
+      "body_stage10": "Steg 10",
+      "body_stage11": "Steg 11",
+      "body_stage12": "Steg 12",
+      "body_stage13": "Steg 13",
+      "body_stage14": "Steg 14",
+      "body_stage15": "Steg 15",
+      "body_stage16": "Steg 16",
+      "body_stage17": "Steg 17",
+      "title_level": "Välj nivå",
+      "btn_yes": "Ja",
+      "btn_cancel": "Avbryt",
+      "body_next": "Nästa",
+      "title_position": "Positionsinställning",
+      "body_x": "X-position",
+      "body_y": "Y-position",
+      "body_z": "Z-position",
+      "body_scale": "Skala",
+      "btn_reset": "Återställ",
+      "body_back": "Tillbaka till hem?",
+      "body_over": "Börja om?",
+      "btn_home": "Hem",
+      "btn_passthrough": "Genomgång",
+      "btn_bgm": "Bakgrundsmusik",
+      "btn_sound": "Ljud",
+      "btn_retry": "Försök igen",
+      "btn_undo": "Ångra",
+      "btn_add": "Lägg till rör",
+      "btn_hint": "Tips",
+      "btn_on": "På",
+      "btn_off": "Av",
+      "body_all_clear": "Alla nivåer slutförda",
+      "body_level": "nivå",
+      "body_stage": "Steg",
+      "body_privacy_policy": "
+Ikraftträdandedatum: 3 april 2025
+
+Välkommen till \"BallSort\", ett 3D-spel utvecklat och drivet av yt-Studio (\"vi\", \"oss\" eller \"vår\"). Vi är engagerade i att respektera din integritet och skydda dina personuppgifter. Denna integritetspolicy förklarar hur vi samlar in, använder och delar information när du använder vår applikation (\"BallSort\") på Meta Quest.
+
+1. Information vi samlar in
+Information du tillhandahåller direkt
+BallSort kräver ingen användarregistrering, och därför samlar vi inte in personlig information som ditt namn eller e-postadress direkt från dig.
+Information om enhet och användning
+Vi kan samla in information relaterad till din användning av appen och din enhet, såsom enhetsmodell, version av operativsystem och anslutningsstatus. Dessa data används för att optimera spelets prestanda och lösa tekniska problem.
+Speldata
+Vi samlar inte in speldata som kan identifiera dig personligen (t.ex. poäng, speltid eller interaktionshistorik). Om du använder toppliste-funktionen som tillhandahålls av Meta-plattformen kan dock poängrelaterad information behandlas av Meta.
+
+2. Hur vi använder din information
+Vi använder den insamlade informationen för följande ändamål:  
+Att tillhandahålla, underhålla och förbättra BallSort (t.ex. åtgärda buggar eller förbättra prestanda).  
+
+Att svara på användares supportförfrågningar och lösa tekniska problem.  
+
+Att skicka viktiga meddelanden om appen (t.ex. uppdateringar eller policyändringar).
+
+3. Delning av din personliga information
+Ingen försäljning till tredje part: Vi säljer inte din personliga information till tredje part.
+Tjänsteleverantörer: Vi kan dela minimal information med tjänsteleverantörer (t.ex. leverantörer av molnservrar) som är nödvändiga för att stödja driften av BallSort, men endast i syfte att leverera appens funktionalitet.
+Meta-plattformen: Om du använder toppliste-funktionen hanteras poängdata av Meta-plattformen. Vi lagrar inte dessa data direkt.
+
+4. Säkerhet för din information
+Vi implementerar rimliga säkerhetsåtgärder för att skydda din information från obehörig åtkomst, användning eller avslöjande. Observera dock att ingen dataöverföring över internet kan garanteras vara helt säker.
+
+5. Dina rättigheter och val
+Åtkomst och radering: Eftersom BallSort samlar in minimal personlig information är förfrågningar om åtkomst eller radering vanligtvis inte tillämpliga. Du är dock välkommen att kontakta oss med eventuella frågor.
+Återkallande av samtycke: Du kan när som helst återkalla ditt samtycke genom att justera inställningarna i appen eller kontakta oss.
+Avstå från topplistan: Du kan undvika att dela poängdata genom att välja att inte använda toppliste-funktionen.
+
+6. Barns integritet
+BallSort är inte avsett för barn under 13 år. Vi samlar inte medvetet in personlig information från barn. Om du tror att vi oavsiktligt har samlat in information från ett barn, kontakta oss omedelbart, så vidtar vi snabba åtgärder för att hantera situationen.
+
+7. Ändringar i denna integritetspolicy
+Vi kan uppdatera denna integritetspolicy vid behov. Eventuella ändringar kommer att återspeglas på denna sida med ett nytt ikraftträdandedatum. Vi rekommenderar att du regelbundet granskar denna policy för uppdateringar.
+
+8. Kontakta oss
+Om du har några frågor eller funderingar kring denna integritetspolicy, vänligen kontakta oss på:  
+
+E-post: yuki22683@gmail.com
+Genom att använda BallSort godkänner du villkoren i denna integritetspolicy. Vi värdesätter ditt förtroende och är engagerade i att leverera en rolig och säker 3D-upplevelse med BallSort.
+Tack för att du spelar BallSort!"
+    },
+    "tr": {
+      "btn_start": "Başlat",
+      "btn_privacy_policy": "Gizlilik Politikası",
+      "title_privacy_policy": "Gizlilik Politikası",
+      "body_condition": "Lütfen aşağı kaydırın",
+      "btn_accept": "Kabul Et",
+      "btn_decline": "Reddet",
+      "title_stage": "Aşama Seç",
+      "body_stage1": "Aşama 1",
+      "body_stage2": "Aşama 2",
+      "body_stage3": "Aşama 3",
+      "body_stage4": "Aşama 4",
+      "body_stage5": "Aşama 5",
+      "body_stage6": "Aşama 6",
+      "body_stage7": "Aşama 7",
+      "body_stage8": "Aşama 8",
+      "body_stage9": "Aşama 9",
+      "body_stage10": "Aşama 10",
+      "body_stage11": "Aşama 11",
+      "body_stage12": "Aşama 12",
+      "body_stage13": "Aşama 13",
+      "body_stage14": "Aşama 14",
+      "body_stage15": "Aşama 15",
+      "body_stage16": "Aşama 16",
+      "body_stage17": "Aşama 17",
+      "title_level": "Seviye Seç",
+      "btn_yes": "Evet",
+      "btn_cancel": "İptal",
+      "body_next": "Sonraki",
+      "title_position": "Konum Ayarı",
+      "body_x": "X konumu",
+      "body_y": "Y konumu",
+      "body_z": "Z konumu",
+      "body_scale": "Ölçek",
+      "btn_reset": "Sıfırla",
+      "body_back": "Ana sayfaya dön?",
+      "body_over": "Yeniden başla?",
+      "btn_home": "Ana Sayfa",
+      "btn_passthrough": "Geçiş",
+      "btn_bgm": "Arka Plan Müziği",
+      "btn_sound": "Ses",
+      "btn_retry": "Tekrar Dene",
+      "btn_undo": "Geri Al",
+      "btn_add": "Tüp Ekle",
+      "btn_hint": "İpucu",
+      "btn_on": "Açık",
+      "btn_off": "Kapalı",
+      "body_all_clear": "Tüm aşamalar tamamlandı",
+      "body_level": "seviye",
+      "body_stage": "Aşama",
+      "body_privacy_policy": "
+Yürürlük Tarihi: 3 Nisan 2025
+
+\"BallSort\" oyununa hoş geldiniz; bu, yt-Studio (\"biz\", \"bize\" veya \"bizim\") tarafından geliştirilen ve işletilen bir 3D oyundur. Gizliliğinize saygı göstermeye ve kişisel bilgilerinizi korumaya kararlıyız. Bu Gizlilik Politikası, Meta Quest üzerinde uygulamamızı (\"BallSort\") kullandığınızda bilgilerinizi nasıl topladığımızı, kullandığımızı ve paylaştığımızı açıklamaktadır.
+
+1. Topladığımız Bilgiler
+Doğrudan Sağladığınız Bilgiler
+BallSort, kullanıcı kaydı gerektirmez ve bu nedenle adınız veya e-posta adresiniz gibi kişisel bilgileri doğrudan sizden toplamayız.
+Cihaz ve Kullanım Bilgileri
+Uygulamanın kullanımı ve cihazınızla ilgili bilgileri toplayabiliriz; örneğin, cihaz modeli, işletim sistemi sürümü ve bağlantı durumu. Bu veriler, oyun performansını optimize etmek ve teknik sorunları çözmek için kullanılır.
+Oyun Verileri
+Sizi kişisel olarak tanımlayabilecek oyun verilerini (örneğin, puanlar, oynama süresi veya etkileşim geçmişi) toplamayız. Ancak, Meta platformu tarafından sağlanan liderlik tablosu özelliğini kullanırsanız, puanla ilgili bilgiler Meta tarafından işlenebilir.
+
+2. Bilgilerinizi Nasıl Kullanıyoruz
+Toplanan bilgileri aşağıdaki amaçlar için kullanıyoruz:  
+BallSort'u sağlamak, sürdürmek ve iyileştirmek (örneğin, hataları düzeltmek veya performansı artırmak).  
+
+Kullanıcı destek taleplerine yanıt vermek ve teknik sorunları çözmek.  
+
+Uygulama hakkında önemli bildirimler göndermek (örneğin, güncellemeler veya politika değişiklikleri).
+
+3. Kişisel Bilgilerinizi Paylaşma
+Üçüncü Taraflara Satış Yok: Kişisel bilgilerinizi üçüncü taraflara satmayız.
+Hizmet Sağlayıcılar: BallSort'un işleyişini desteklemek için gerekli olan hizmet sağlayıcılarla (örneğin, bulut sunucu sağlayıcıları) minimum bilgiyi paylaşabiliriz, ancak yalnızca uygulamanın işlevselliğini sunmak amacıyla.
+Meta Platformu: Liderlik tablosu özelliğini kullanırsanız, puan verileri Meta platformu tarafından yönetilir. Bu verileri doğrudan saklamayız.
+
+4. Bilgilerinizin Güvenliği
+Bilgilerinizi yetkisiz erişim, kullanım veya ifşadan korumak için makul güvenlik önlemleri uygularız. Ancak, internet üzerinden hiçbir veri aktarımının tamamen güvenli olduğunun garanti edilemeyeceğini lütfen unutmayın.
+
+5. Haklarınız ve Seçenekleriniz
+Erişim ve Silme: BallSort minimum kişisel bilgi topladığından, erişim veya silme talepleri genellikle uygulanmaz. Ancak, herhangi bir endişeniz varsa bizimle iletişime geçmekten çekinmeyin.
+Rızanın Geri Çekilmesi: Uygulama içindeki ayarları düzenleyerek veya bizimle iletişime geçerek rızanızı istediğiniz zaman geri çekebilirsiniz.
+Liderlik Tablosundan Çıkma: Liderlik tablosu özelliğini kullanmamayı tercih ederek puan verilerinin paylaşılmasını önleyebilirsiniz.
+
+6. Çocukların Gizliliği
+BallSort, 13 yaşından küçük çocuklar için tasarlanmamıştır. Çocuklardan bilerek kişisel bilgi toplamayız. Eğer bir çocuğun bilgilerini istemeden topladığımızı düşünüyorsanız, lütfen hemen bizimle iletişime geçin; durumu hızlıca ele almak için gerekli adımları atacağız.
+
+7. Bu Gizlilik Politikasında Değişiklikler
+Bu Gizlilik Politikasını gerektiğinde güncelleyebiliriz. Herhangi bir değişiklik, yeni bir yürürlük tarihi ile bu sayfada yansıtılacaktır. Güncellemeler için bu politikayı periyodik olarak gözden geçirmenizi öneririz.
+
+8. Bize Ulaşın
+Bu Gizlilik Politikası hakkında herhangi bir sorunuz veya endişeniz varsa, lütfen bizimle iletişime geçin:  
+
+E-posta: yuki22683@gmail.com
+BallSort'u kullanarak, bu Gizlilik Politikasında belirtilen şartları kabul etmiş olursunuz. Güveninize değer veriyoruz ve eğlenceli ve güvenli bir 3D BallSort deneyimi sunmaya adanmışız.
+BallSort'u oynadığınız için teşekkür ederiz!"
+    },
+    "zh-Hans": {
+      "btn_start": "开始",
+      "btn_privacy_policy": "隐私政策",
+      "title_privacy_policy": "隐私政策",
+      "body_condition": "请滚动到底部",
+      "btn_accept": "接受",
+      "btn_decline": "拒绝",
+      "title_stage": "选择关卡",
+      "body_stage1": "关卡 1",
+      "body_stage2": "关卡 2",
+      "body_stage3": "关卡 3",
+      "body_stage4": "关卡 4",
+      "body_stage5": "关卡 5",
+      "body_stage6": "关卡 6",
+      "body_stage7": "关卡 7",
+      "body_stage8": "关卡 8",
+      "body_stage9": "关卡 9",
+      "body_stage10": "关卡 10",
+      "body_stage11": "关卡 11",
+      "body_stage12": "关卡 12",
+      "body_stage13": "关卡 13",
+      "body_stage14": "关卡 14",
+      "body_stage15": "关卡 15",
+      "body_stage16": "关卡 16",
+      "body_stage17": "关卡 17",
+      "title_level": "选择等级",
+      "btn_yes": "是",
+      "btn_cancel": "取消",
+      "body_next": "下一步",
+      "title_position": "位置设置",
+      "body_x": "X 位置",
+      "body_y": "Y 位置",
+      "body_z": "Z 位置",
+      "body_scale": "缩放",
+      "btn_reset": "重置",
+      "body_back": "返回主页？",
+      "body_over": "重新开始？",
+      "btn_home": "主页",
+      "btn_passthrough": "透视",
+      "btn_bgm": "背景音乐",
+      "btn_sound": "声音",
+      "btn_retry": "重试",
+      "btn_undo": "撤销",
+      "btn_add": "添加管子",
+      "btn_hint": "提示",
+      "btn_on": "开启",
+      "btn_off": "关闭",
+      "body_all_clear": "所有关卡完成",
+      "body_level": "等级",
+      "body_stage": "关卡",
+      "body_privacy_policy": "
+生效日期：2025年4月3日
+
+欢迎体验“BallSort”，这是一款由yt-Studio（“我们”或“我们的”）开发和运营的3D游戏。我们致力于尊重您的隐私并保护您的个人信息。本隐私政策说明了当您在Meta Quest上使用我们的应用程序（“BallSort”）时，我们如何收集、使用和共享信息。
+
+1. 我们收集的信息
+您直接提供的信息
+BallSort不需要用户注册，因此我们不会直接从您那里收集个人信息，例如您的姓名或电子邮件地址。
+设备和使用信息
+我们可能会收集与您使用应用程序和设备相关的信息，例如设备型号、操作系统版本和连接状态。这些数据用于优化游戏性能和解决技术问题。
+游戏数据
+我们不会收集可以识别您个人身份的游戏数据（例如分数、游戏时间或交互历史）。但是，如果您使用Meta平台提供的排行榜功能，与分数相关的信息可能会由Meta处理。
+
+2. 我们如何使用您的信息
+我们将收集的信息用于以下目的：  
+提供、维护和改进BallSort（例如修复错误或提升性能）。  
+
+响应用户支持请求并解决技术问题。  
+
+向您发送有关应用程序的重要通知（例如更新或政策变更）。
+
+3. 分享您的个人信息
+不向第三方出售：我们不会将您的个人信息出售给第三方。
+服务提供商：我们可能会与支持BallSort运营所需的服务提供商（例如云服务器提供商）共享最少的信息，但仅限于提供应用程序功能的用途。
+Meta平台：如果您使用排行榜功能，分数数据将由Meta平台管理。我们不会直接存储这些数据。
+
+4. 您的信息安全
+我们采取合理的安保措施来保护您的信息，防止未经授权的访问、使用或披露。但是，请注意，互联网上的数据传输无法保证完全安全。
+
+5. 您的权利和选择
+访问和删除：由于BallSort收集的个人信息极少，访问或删除请求通常不适用。如有任何疑问，请随时与我们联系。
+撤回同意：您可以随时通过调整应用程序内的设置或联系我们来撤回同意。
+排行榜选择退出：您可以选择不使用排行榜功能，以避免分享分数数据。
+
+6. 儿童隐私
+BallSort不适用于13岁以下的儿童。我们不会故意收集儿童的个人信息。如果您认为我们无意中收集了儿童的信息，请立即与我们联系，我们将迅速采取措施处理。
+
+7. 本隐私政策的变更
+我们可能会根据需要更新本隐私政策。任何变更将在本页面上反映，并附上新的生效日期。建议您定期查看本政策以获取更新。
+
+8. 联系我们
+如果您对本隐私政策有任何疑问或担忧，请通过以下方式联系我们：
+
+电子邮件：yuki22683@gmail.com
+使用BallSort即表示您同意本隐私政策中概述的条款。我们感谢您的信任，并致力于提供一个有趣且安全的3D BallSort体验。
+感谢您玩BallSort！"
+    },
+    "zh-Hant": {
+      "btn_start": "開始",
+      "btn_privacy_policy": "隱私政策",
+      "title_privacy_policy": "隱私政策",
+      "body_condition": "請滾動到底部",
+      "btn_accept": "接受",
+      "btn_decline": "拒絕",
+      "title_stage": "選擇關卡",
+      "body_stage1": "關卡 1",
+      "body_stage2": "關卡 2",
+      "body_stage3": "關卡 3",
+      "body_stage4": "關卡 4",
+      "body_stage5": "關卡 5",
+      "body_stage6": "關卡 6",
+      "body_stage7": "關卡 7",
+      "body_stage8": "關卡 8",
+      "body_stage9": "關卡 9",
+      "body_stage10": "關卡 10",
+      "body_stage11": "關卡 11",
+      "body_stage12": "關卡 12",
+      "body_stage13": "關卡 13",
+      "body_stage14": "關卡 14",
+      "body_stage15": "關卡 15",
+      "body_stage16": "關卡 16",
+      "body_stage17": "關卡 17",
+      "title_level": "選擇等級",
+      "btn_yes": "是",
+      "btn_cancel": "取消",
+      "body_next": "下一步",
+      "title_position": "位置設置",
+      "body_x": "X 位置",
+      "body_y": "Y 位置",
+      "body_z": "Z 位置",
+      "body_scale": "縮放",
+      "btn_reset": "重置",
+      "body_back": "返回主頁？",
+      "body_over": "重新開始？",
+      "btn_home": "主頁",
+      "btn_passthrough": "透視",
+      "btn_bgm": "背景音樂",
+      "btn_sound": "聲音",
+      "btn_retry": "重試",
+      "btn_undo": "撤銷",
+      "btn_add": "添加管子",
+      "btn_hint": "提示",
+      "btn_on": "開啟",
+      "btn_off": "關閉",
+      "body_all_clear": "所有關卡完成",
+      "body_level": "等級",
+      "body_stage": "關卡",
+      "body_privacy_policy": "
+生效日期：2025年4月3日
+
+歡迎體驗“BallSort”，這是一款由yt-Studio（“我們”或“我們的”）開發和運營的3D遊戲。我們致力於尊重您的隱私並保護您的個人資訊。本隱私政策說明了當您在Meta Quest上使用我們的應用程式（“BallSort”）時，我們如何收集、使用和分享資訊。
+
+1. 我們收集的資訊
+您直接提供的資訊
+BallSort不需要用戶註冊，因此我們不會直接從您那裡收集個人資訊，例如您的姓名或電子郵件地址。
+設備和使用資訊
+我們可能會收集與您使用應用程式和設備相關的資訊，例如設備型號、操作系統版本和連接狀態。這些數據用於優化遊戲性能和解決技術問題。
+遊戲數據
+我們不會收集可以識別您個人身份的遊戲數據（例如分數、遊戲時間或互動歷史）。但是，如果您使用Meta平台提供的排行榜功能，與分數相關的資訊可能會由Meta處理。
+
+2. 我們如何使用您的資訊
+我們將收集的資訊用於以下目的：  
+提供、維護和改進BallSort（例如修復錯誤或提升性能）。  
+
+回應用戶支持請求並解決技術問題。  
+
+向您發送有關應用程式的重要通知（例如更新或政策變更）。
+
+3. 分享您的個人資訊
+不向第三方出售：我們不會將您的個人資訊出售給第三方。  
+服務提供商：我們可能會與支持BallSort運營所需的服務提供商（例如雲伺服器提供商）分享最少的資訊，但僅限於提供應用程式功能的用途。  
+Meta平台：如果您使用排行榜功能，分數數據將由Meta平台管理。我們不會直接儲存這些數據。
+
+4. 您的資訊安全
+我們採取合理的安全措施來保護您的資訊，防止未經授權的訪問、使用或披露。但是，請注意，網際網路上的數據傳輸無法保證完全安全。
+
+5. 您的權利和選擇
+訪問和刪除：由於BallSort收集的個人資訊極少，訪問或刪除請求通常不適用。如有任何疑問，請隨時與我們聯繫。  
+撤回同意：您可以隨時通過調整應用程式內的設置或聯繫我們來撤回同意。  
+排行榜選擇退出：您可以選擇不使用排行榜功能，以避免分享分數數據。
+
+6. 兒童隱私
+BallSort不適用於13歲以下的兒童。我們不會故意收集兒童的個人資訊。如果您認為我們無意中收集了兒童的資訊，請立即與我們聯繫，我們將迅速採取措施處理。
+
+7. 本隱私政策的變更
+我們可能會根據需要更新本隱私政策。任何變更將在本頁面上反映，並附上新的生效日期。建議您定期審查本政策以獲取更新。
+
+8. 聯繫我們
+如果您對本隱私政策有任何疑問或擔憂，請通過以下方式聯繫我們：  
+
+電子郵件：yuki22683@gmail.com
+使用BallSort即表示您同意本隱私政策中概述的條款。我們感謝您的信任，並致力於提供一個有趣且安全的3D BallSort體驗。
+感謝您玩BallSort！"
+    }
+  }
+  

@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "unity": {
+      "command": "node",
+      "args": ["C:/Work/MetaXR/ProgramShooting/unity-mcp-server/dist/index.js"],
+      "env": {
+        "UNITY_PROJECT_PATH": "C:/Work/MetaXR/ProgramShooting"
+      }
+    }
+  }
+}

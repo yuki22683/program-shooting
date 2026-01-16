@@ -1,0 +1,87 @@
+# Unity generated
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+
+# MemoryCaptures
+/[Mm]emoryCaptures/
+
+# Recordings
+/[Rr]ecordings/
+
+# Asset meta data
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+
+# Unity3D generated
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Unity3D generated file on crash reports
+sysinfo.txt
+
+# Builds
+*.apk
+*.aab
+*.unitypackage
+*.app
+
+# Crashlytics
+crashlytics-build.properties
+
+# Packed Addressables
+/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
+
+# TextMesh Pro
+/[Aa]ssets/[Tt]ext[Mm]esh [Pp]ro/
+
+# Temporary auto-generated Android
+/[Aa]ssets/[Pp]lugins/[Aa]ndroid/[Bb]ase[Pp]roject[Tt]emplate.gradle
+/[Aa]ssets/[Pp]lugins/[Aa]ndroid/[Gg]radle[Ss]ettings[Tt]emplate.gradle
+/[Aa]ssets/[Pp]lugins/[Aa]ndroid/[Gg]radle[Tt]emplate.properties
+/[Aa]ssets/[Pp]lugins/[Aa]ndroid/[Ll]auncher[Tt]emplate.gradle
+/[Aa]ssets/[Pp]lugins/[Aa]ndroid/[Mm]ain[Tt]emplate.gradle
+
+# Gradle cache
+.gradle/
+
+# IDE
+.idea/
+.vs/
+*.code-workspace
+
+# SVN
+.svn/
+
+# OS generated
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Node modules (for MCP server)
+node_modules/
+
+# Launcher build
+/launcher/build/
+/launcher/.gradle/
