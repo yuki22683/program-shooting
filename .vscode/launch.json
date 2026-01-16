@@ -5,6 +5,24 @@
             "name": "Attach to Unity",
             "type": "vstuc",
             "request": "attach"
+        },
+        {
+            "name": "Attach to Unity (Editor)",
+            "type": "vstuc",
+            "request": "attach",
+            "targetSelection": "editor"
+        },
+        {
+            "name": "Attach to Unity (Android Player)",
+            "type": "vstuc",
+            "request": "attach",
+            "targetSelection": "androidPlayer"
+        },
+        {
+            "name": "Attach to Unity (Build)",
+            "type": "vstuc",
+            "request": "attach",
+            "targetSelection": "build"
         }
-     ]
+    ]
 }
