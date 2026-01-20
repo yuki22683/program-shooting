@@ -4,114 +4,119 @@ public class RandomWalk : MonoBehaviour
 {
     [Header("Movement Settings")]
     [SerializeField] private float moveSpeed = 0.5f;
-    [SerializeField] private float arrivalThreshold = 0.1f;
+    [SerializeField] private float wallDetectionDistance = 0.5f;
 
-    [Header("Bounds Settings")]
-    [SerializeField] private float wanderRadius = 3f;
+    [Header("Height Settings")]
     [SerializeField] private float minHeight = 0.5f;
     [SerializeField] private float maxHeight = 2.0f;
-    [SerializeField] private float wallCheckDistance = 0.3f;
 
-    [Header("Raycast Settings")]
-    [SerializeField] private LayerMask wallLayerMask = -1;
+    [Header("Initialization")]
+    [SerializeField] private float initDelay = 3.0f;
 
-    private Vector3 targetPosition;
-    private Vector3 startPosition;
-    private bool hasTarget;
-    private Transform headset;
+    private Vector3 moveDirection;
+    private bool isInitialized;
+    private float initTimer;
+    private Collider ownCollider;
+    private Transform headsetTransform;
 
     private void Start()
     {
-        startPosition = transform.position;
-        headset = Camera.main?.transform;
-        SetNewTargetPosition();
-        Debug.Log($"[RandomWalk] Started at {startPosition}");
+        Debug.Log("[RandomWalk] Start called - waiting for room mesh to load");
+        initTimer = 0f;
+        ownCollider = GetComponent<Collider>();
+        headsetTransform = Camera.main?.transform;
     }
 
     private void Update()
     {
-        if (!hasTarget)
+        // Wait for initialization delay
+        if (!isInitialized)
         {
-            SetNewTargetPosition();
+            initTimer += Time.deltaTime;
+            if (initTimer >= initDelay)
+            {
+                Initialize();
+            }
             return;
         }
 
-        Vector3 direction = (targetPosition - transform.position).normalized;
-        float distance = Vector3.Distance(transform.position, targetPosition);
+        // Check for wall collision using raycast (detect ANY collider, not just "Room" tag)
+        bool willHitWall = CheckWallAhead();
 
-        if (distance <= arrivalThreshold)
+        if (willHitWall)
         {
-            SetNewTargetPosition();
-            return;
+            // Change direction until we find a clear path
+            SetRandomDirection();
+        }
+        else
+        {
+            // Move only when path is clear
+            transform.position += moveDirection * moveSpeed * Time.deltaTime;
         }
 
-        // Check for walls ahead
-        if (Physics.Raycast(transform.position, direction, wallCheckDistance, wallLayerMask))
+        // Clamp height
+        Vector3 pos = transform.position;
+        if (pos.y < minHeight || pos.y > maxHeight)
         {
-            SetNewTargetPosition();
-            return;
+            pos.y = Mathf.Clamp(pos.y, minHeight, maxHeight);
+            transform.position = pos;
+            SetRandomDirection();
         }
 
-        transform.position += direction * moveSpeed * Time.deltaTime;
-
+        // Always face the headset
         FaceHeadset();
     }
 
     private void FaceHeadset()
     {
-        if (headset == null)
+        if (headsetTransform == null)
         {
-            headset = Camera.main?.transform;
-            if (headset == null) return;
+            headsetTransform = Camera.main?.transform;
+            if (headsetTransform == null) return;
         }
 
-        Vector3 directionFromHeadset = transform.position - headset.position;
+        Vector3 directionToHeadset = transform.position - headsetTransform.position;
 
-        if (directionFromHeadset.sqrMagnitude > 0.001f)
+        if (directionToHeadset.sqrMagnitude > 0.001f)
         {
-            transform.rotation = Quaternion.LookRotation(directionFromHeadset);
+            transform.rotation = Quaternion.LookRotation(directionToHeadset);
         }
     }
 
-    private void SetNewTargetPosition()
+    private bool CheckWallAhead()
     {
-        for (int i = 0; i < 30; i++)
+        // Cast multiple rays to detect walls more reliably
+        Vector3 origin = transform.position;
+
+        // Main ray in movement direction
+        RaycastHit[] hits = Physics.RaycastAll(origin, moveDirection, wallDetectionDistance);
+
+        foreach (var hit in hits)
         {
-            Vector3 randomDirection = Random.insideUnitSphere * wanderRadius;
-            randomDirection.y = 0;
-            Vector3 candidate = startPosition + randomDirection;
-            candidate.y = Random.Range(minHeight, maxHeight);
+            // Ignore self
+            if (hit.collider == ownCollider) continue;
+            if (hit.collider.transform.IsChildOf(transform)) continue;
 
-            // Check if path is clear
-            Vector3 dirToCandidate = (candidate - transform.position).normalized;
-            float distToCandidate = Vector3.Distance(transform.position, candidate);
-
-            if (!Physics.Raycast(transform.position, dirToCandidate, distToCandidate, wallLayerMask))
-            {
-                targetPosition = candidate;
-                hasTarget = true;
-                Debug.Log($"[RandomWalk] New target: {targetPosition}");
-                return;
-            }
+            // Hit something that's not self - it's a wall or obstacle
+            Debug.Log($"[RandomWalk] Wall detected: {hit.collider.name} at distance {hit.distance}");
+            return true;
         }
 
-        // Fallback: just move to a nearby position
-        targetPosition = transform.position + Random.insideUnitSphere * 0.5f;
-        targetPosition.y = Mathf.Clamp(targetPosition.y, minHeight, maxHeight);
-        hasTarget = true;
+        return false;
     }
 
-    private void OnDrawGizmosSelected()
+    private void Initialize()
     {
-        Gizmos.color = Color.yellow;
-        Vector3 center = Application.isPlaying ? startPosition : transform.position;
-        Gizmos.DrawWireSphere(center, wanderRadius);
+        Debug.Log("[RandomWalk] Initializing...");
+        SetRandomDirection();
+        isInitialized = true;
+        Debug.Log($"[RandomWalk] Initialized! Direction={moveDirection}, Position={transform.position}");
+    }
 
-        if (hasTarget)
-        {
-            Gizmos.color = Color.green;
-            Gizmos.DrawLine(transform.position, targetPosition);
-            Gizmos.DrawSphere(targetPosition, 0.05f);
-        }
+    private void SetRandomDirection()
+    {
+        moveDirection = Random.onUnitSphere;
+        moveDirection.y *= 0.3f; // Reduce vertical movement
+        moveDirection = moveDirection.normalized;
     }
 }

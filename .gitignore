@@ -1,3 +1,14 @@
+# Only track specific folders in Assets
+/Assets/*
+!/Assets/Materials/
+!/Assets/Meshes/
+!/Assets/Scenes/
+!/Assets/Scripts/
+!/Assets/Materials.meta
+!/Assets/Meshes.meta
+!/Assets/Scenes.meta
+!/Assets/Scripts.meta
+
 # Unity generated
 /[Ll]ibrary/
 /[Tt]emp/
