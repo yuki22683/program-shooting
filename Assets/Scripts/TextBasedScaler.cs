@@ -204,6 +204,7 @@ public class TextBasedScaler : MonoBehaviour
     [SerializeField] private Transform cube1;
     [SerializeField] private Transform cube2;
     [SerializeField] private Transform cube3;
+    [SerializeField] private BoxCollider colliderBox;
 
     [Header("Materials")]
     [SerializeField] private Material keywordMaterial;
@@ -331,6 +332,13 @@ public class TextBasedScaler : MonoBehaviour
             Vector3 pos = cube3.localPosition;
             pos.x = -cube2PosX;
             cube3.localPosition = pos;
+        }
+
+        if (colliderBox != null && charCount > 0)
+        {
+            Vector3 size = colliderBox.size;
+            size.x = 1f + (0.4f / charCount);
+            colliderBox.size = size;
         }
     }
 

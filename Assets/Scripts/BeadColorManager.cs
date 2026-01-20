@@ -52,13 +52,13 @@ public class BeadColorManager : MonoBehaviour
 			default: break;
 #else
 			case BeadColorType.None:
-				//material.color = DataManager.gameSettings.colorSettings.beadsColors[rodId].colors[beadId]; break;
+				material.color = DataManager.gameSettings.colorSettings.beadsColors[rodId].colors[beadId]; break;
 			case BeadColorType.Touch:
-				//material.color = DataManager.gameSettings.colorSettings.touchColor; break;
+				material.color = DataManager.gameSettings.colorSettings.touchColor; break;
 			case BeadColorType.Disable:
-				//material.color = DataManager.gameSettings.colorSettings.debounceColor; break;
+				material.color = DataManager.gameSettings.colorSettings.debounceColor; break;
 			case BeadColorType.Active:
-				//material.color = DataManager.gameSettings.colorSettings.activeColor; break;
+				material.color = DataManager.gameSettings.colorSettings.activeColor; break;
 			default: break;
 #endif
 		}

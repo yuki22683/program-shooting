@@ -21,7 +21,9 @@
       "privacy_policy_title": "Privacy Policy",
       "privacy_policy_caution": "Please scroll to the bottom.",
       "privacy_policy_btn_accept": "Accept",
-      "privacy_policy_btn_decline": "Decline"
+      "privacy_policy_btn_decline": "Decline",
+      "dialog_btn_yes": "Yes",
+      "dialog_btn_no": "No"
     },
     "ja": {
       "menu_title": "メニュー",
@@ -385,7 +387,9 @@
       "python_inheritance_chapter2_line13_comment": "引数selfのchargeメソッドを定義しよう",
       "python_inheritance_chapter2_line15_comment": "'electric car'をreturnしよう",
       "python_inheritance_chapter2_line17_comment": "ElectricCarクラスのオブジェクトを生成してev1に格納しよう",
-      "python_inheritance_chapter2_line19_comment": "describeメソッドが返す文字列を出力しょう"
+      "python_inheritance_chapter2_line19_comment": "describeメソッドが返す文字列を出力しょう",
+      "dialog_btn_yes": "はい",
+      "dialog_btn_no": "いいえ"
     },
     "cs": {
       "menu_title": "Nabídka",
@@ -409,7 +413,9 @@
       "privacy_policy_title": "Zásady ochrany osobních údajů",
       "privacy_policy_caution": "Prosím, přejděte dolů na konec.",
       "privacy_policy_btn_accept": "Přijmout",
-      "privacy_policy_btn_decline": "Odmítnout"
+      "privacy_policy_btn_decline": "Odmítnout",
+      "dialog_btn_yes": "Ano",
+      "dialog_btn_no": "Ne"
     },
     "de": {
       "menu_title": "Menü",
@@ -433,7 +439,9 @@
       "privacy_policy_title": "Datenschutzrichtlinie",
       "privacy_policy_caution": "Bitte bis zum Ende scrollen.",
       "privacy_policy_btn_accept": "Akzeptieren",
-      "privacy_policy_btn_decline": "Ablehnen"
+      "privacy_policy_btn_decline": "Ablehnen",
+      "dialog_btn_yes": "Ja",
+      "dialog_btn_no": "Nein"
     },
     "nl": {
       "menu_title": "Menu",
@@ -457,7 +465,9 @@
       "privacy_policy_title": "Privacybeleid",
       "privacy_policy_caution": "Scroll a.u.b. naar beneden.",
       "privacy_policy_btn_accept": "Accepteren",
-      "privacy_policy_btn_decline": "Weigeren"
+      "privacy_policy_btn_decline": "Weigeren",
+      "dialog_btn_yes": "Ja",
+      "dialog_btn_no": "Nee"
     },
     "da": {
       "menu_title": "Menu",
@@ -481,7 +491,9 @@
       "privacy_policy_title": "Privatlivspolitik",
       "privacy_policy_caution": "Rul venligst til bunden.",
       "privacy_policy_btn_accept": "Accepter",
-      "privacy_policy_btn_decline": "Afvis"
+      "privacy_policy_btn_decline": "Afvis",
+      "dialog_btn_yes": "Ja",
+      "dialog_btn_no": "Nej"
     },
     "el": {
       "menu_title": "Μενού",
@@ -505,7 +517,9 @@
       "privacy_policy_title": "Πολιτική Απορρήτου",
       "privacy_policy_caution": "Παρακαλώ μετακινηθείτε στο τέλος.",
       "privacy_policy_btn_accept": "Αποδοχή",
-      "privacy_policy_btn_decline": "Απόρριψη"
+      "privacy_policy_btn_decline": "Απόρριψη",
+      "dialog_btn_yes": "Ναι",
+      "dialog_btn_no": "Όχι"
     },
     "fi": {
       "menu_title": "Valikko",
@@ -529,7 +543,9 @@
       "privacy_policy_title": "Tietosuojakäytäntö",
       "privacy_policy_caution": "Vieritä alas asti.",
       "privacy_policy_btn_accept": "Hyväksy",
-      "privacy_policy_btn_decline": "Hylkää"
+      "privacy_policy_btn_decline": "Hylkää",
+      "dialog_btn_yes": "Kyllä",
+      "dialog_btn_no": "Ei"
     },
     "fr": {
       "menu_title": "Menu",
@@ -553,7 +569,9 @@
       "privacy_policy_title": "Politique de confidentialité",
       "privacy_policy_caution": "Veuillez faire défiler jusqu'en bas.",
       "privacy_policy_btn_accept": "Accepter",
-      "privacy_policy_btn_decline": "Refuser"
+      "privacy_policy_btn_decline": "Refuser",
+      "dialog_btn_yes": "Oui",
+      "dialog_btn_no": "Non"
     },
     "it": {
       "menu_title": "Menu",
@@ -577,7 +595,9 @@
       "privacy_policy_title": "Informativa sulla privacy",
       "privacy_policy_caution": "Scorri fino in fondo.",
       "privacy_policy_btn_accept": "Accetta",
-      "privacy_policy_btn_decline": "Rifiuta"
+      "privacy_policy_btn_decline": "Rifiuta",
+      "dialog_btn_yes": "Sì",
+      "dialog_btn_no": "No"
     },
     "ko": {
       "menu_title": "메뉴",
@@ -601,7 +621,9 @@
       "privacy_policy_title": "개인정보 정책",
       "privacy_policy_caution": "아래까지 스크롤해 주세요.",
       "privacy_policy_btn_accept": "수락",
-      "privacy_policy_btn_decline": "거부"
+      "privacy_policy_btn_decline": "거부",
+      "dialog_btn_yes": "예",
+      "dialog_btn_no": "아니오"
     },
     "no": {
       "menu_title": "Meny",
@@ -625,7 +647,9 @@
       "privacy_policy_title": "Personvernpolicy",
       "privacy_policy_caution": "Vennligst bla til bunnen.",
       "privacy_policy_btn_accept": "Godta",
-      "privacy_policy_btn_decline": "Avslå"
+      "privacy_policy_btn_decline": "Avslå",
+      "dialog_btn_yes": "Ja",
+      "dialog_btn_no": "Nei"
     },
     "pl": {
       "menu_title": "Menu",
@@ -649,7 +673,9 @@
       "privacy_policy_title": "Polityka prywatności",
       "privacy_policy_caution": "Przewiń do końca.",
       "privacy_policy_btn_accept": "Akceptuj",
-      "privacy_policy_btn_decline": "Odrzuć"
+      "privacy_policy_btn_decline": "Odrzuć",
+      "dialog_btn_yes": "Tak",
+      "dialog_btn_no": "Nie"
     },
     "pt": {
       "menu_title": "Menu",
@@ -673,7 +699,9 @@
       "privacy_policy_title": "Política de Privacidade",
       "privacy_policy_caution": "Por favor, role até o final.",
       "privacy_policy_btn_accept": "Aceitar",
-      "privacy_policy_btn_decline": "Recusar"
+      "privacy_policy_btn_decline": "Recusar",
+      "dialog_btn_yes": "Sim",
+      "dialog_btn_no": "Não"
     },
     "ro": {
       "menu_title": "Meniu",
@@ -697,7 +725,9 @@
       "privacy_policy_title": "Politica de confidențialitate",
       "privacy_policy_caution": "Te rugăm să derulezi până la final.",
       "privacy_policy_btn_accept": "Acceptă",
-      "privacy_policy_btn_decline": "Refuză"
+      "privacy_policy_btn_decline": "Refuză",
+      "dialog_btn_yes": "Da",
+      "dialog_btn_no": "Nu"
     },
     "ru": {
       "menu_title": "Меню",
@@ -721,7 +751,9 @@
       "privacy_policy_title": "Политика конфиденциальности",
       "privacy_policy_caution": "Пожалуйста, прокрутите до конца.",
       "privacy_policy_btn_accept": "Принять",
-      "privacy_policy_btn_decline": "Отклонить"
+      "privacy_policy_btn_decline": "Отклонить",
+      "dialog_btn_yes": "Да",
+      "dialog_btn_no": "Нет"
     },
     "es": {
       "menu_title": "Menú",
@@ -745,7 +777,9 @@
       "privacy_policy_title": "Política de privacidad",
       "privacy_policy_caution": "Por favor, desplázate hasta el final.",
       "privacy_policy_btn_accept": "Aceptar",
-      "privacy_policy_btn_decline": "Rechazar"
+      "privacy_policy_btn_decline": "Rechazar",
+      "dialog_btn_yes": "Sí",
+      "dialog_btn_no": "No"
     },
     "sv": {
       "menu_title": "Meny",
@@ -769,7 +803,9 @@
       "privacy_policy_title": "Integritetspolicy",
       "privacy_policy_caution": "Vänligen scrolla till botten.",
       "privacy_policy_btn_accept": "Acceptera",
-      "privacy_policy_btn_decline": "Avböj"
+      "privacy_policy_btn_decline": "Avböj",
+      "dialog_btn_yes": "Ja",
+      "dialog_btn_no": "Nej"
     },
     "tr": {
       "menu_title": "Menü",
@@ -793,7 +829,9 @@
       "privacy_policy_title": "Gizlilik Politikası",
       "privacy_policy_caution": "Lütfen sona kadar kaydırın.",
       "privacy_policy_btn_accept": "Kabul Et",
-      "privacy_policy_btn_decline": "Reddet"
+      "privacy_policy_btn_decline": "Reddet",
+      "dialog_btn_yes": "Evet",
+      "dialog_btn_no": "Hayır"
     },
     "zh-Hans": {
       "menu_title": "菜单",
@@ -817,7 +855,9 @@
       "privacy_policy_title": "隐私政策",
       "privacy_policy_caution": "请滚动到底部。",
       "privacy_policy_btn_accept": "接受",
-      "privacy_policy_btn_decline": "拒绝"
+      "privacy_policy_btn_decline": "拒绝",
+      "dialog_btn_yes": "是",
+      "dialog_btn_no": "否"
     },
     "zh-Hant": {
       "menu_title": "選單",
@@ -841,7 +881,9 @@
       "privacy_policy_title": "隱私政策",
       "privacy_policy_caution": "請滾動到底部。",
       "privacy_policy_btn_accept": "接受",
-      "privacy_policy_btn_decline": "拒絕"
+      "privacy_policy_btn_decline": "拒絕",
+      "dialog_btn_yes": "是",
+      "dialog_btn_no": "否"
     }
   }
   

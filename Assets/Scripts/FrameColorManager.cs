@@ -6,7 +6,7 @@ public class FrameColorManager : MonoBehaviour
     void Start()
     {
         MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
-        //meshRenderer.material.color = DataManager.gameSettings.colorSettings.frameColor;
+        meshRenderer.material.color = DataManager.gameSettings.colorSettings.frameColor;
     }
 
     // Update is called once per frame

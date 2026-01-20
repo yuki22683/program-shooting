@@ -31,32 +31,32 @@ public class RodManager : MonoBehaviour
     public void SetUpperBeadStateDisable()
 	{
 		upperBeadState = RodState.Disable;
-		//Invoke("SetUpperBeadStateEnable", DataManager.gameSettings.controlSettings.controlDebounceTime);
+		Invoke("SetUpperBeadStateEnable", DataManager.gameSettings.controlSettings.controlDebounceTime);
 	}
 
 	public void SetLowerBeadsStateDisable(Transform moveLowerBead)
     {
 		lowerBeadsState = RodState.Disable;
 		SetLowerBeadsColor(false, moveLowerBead);
-		//Invoke("SetLowerBeadStateEnable", DataManager.gameSettings.controlSettings.controlDebounceTime);
+		Invoke("SetLowerBeadStateEnable", DataManager.gameSettings.controlSettings.controlDebounceTime);
 	}
 
 	public void SetUpperBeadStateEnable()
     {
 		upperBeadState = RodState.Enable;
-		//if (gameManager.isActive)
-		//{
-		//	SetUpperBeadsColor(true);
-		//}
+		if (gameManager.isActive)
+		{
+			SetUpperBeadsColor(true);
+		}
 	}
 
 	public void SetLowerBeadStateEnable()
 	{
 		lowerBeadsState = RodState.Enable;
-		//if (gameManager.isActive)
-		//{
-		//	SetLowerBeadsColor(true, null);
-		//}
+		if (gameManager.isActive)
+		{
+			SetLowerBeadsColor(true, null);
+		}
 	}
 
 	private void SetLowerBeadsColor(bool flg, Transform moveLowerBead)

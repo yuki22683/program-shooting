@@ -110,10 +110,10 @@ public class BeadCollisionDetector : MonoBehaviour
 	private void DetectFingerCollision()
 	{
 		if (gameManager == null) return;
-		//if (!gameManager.isActive)
-		//{
-		//	return;
-		//}
+		if (!gameManager.isActive)
+		{
+			return;
+		}
 
 		if (rightIndexFingerTip == null || leftIndexFingerTip == null || rightThumbTip == null || leftThumbTip == null)
 		{
@@ -162,17 +162,17 @@ public class BeadCollisionDetector : MonoBehaviour
 			MoveBead();
 			if (beadType == BeadType.Lower)
 			{
-				//if (gameManager.gameMode != GameManager.GameMode.TutorialMode)
-				//{
-				//	rodManager.SetLowerBeadsStateDisable(transform.parent);
-				//}
+				if (gameManager.gameMode != GameManager.GameMode.TutorialMode)
+				{
+					rodManager.SetLowerBeadsStateDisable(transform.parent);
+				}
 			}
 			else
 			{
-				//if (gameManager.gameMode != GameManager.GameMode.TutorialMode)
-				//{
-				//	rodManager.SetUpperBeadStateDisable();
-				//}
+				if (gameManager.gameMode != GameManager.GameMode.TutorialMode)
+				{
+					rodManager.SetUpperBeadStateDisable();
+				}
 			}
 		}
 	}

@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.gamelovers.mcp-unity": "file:../../_ProgramShooting/Packages/com.gamelovers.mcp-unity",
     "com.meta.xr.sdk.all": "74.0.3",
     "com.meta.xr.simulator": "74.0.0",
     "com.unity.2d.sprite": "1.0.0",

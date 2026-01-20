@@ -8,7 +8,7 @@ public class RodColorManager : MonoBehaviour
     void Start()
     {
         MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
-        //meshRenderer.material.color = DataManager.gameSettings.colorSettings.rodColors[id];
+        meshRenderer.material.color = DataManager.gameSettings.colorSettings.rodColors[id];
     }
 
     // Update is called once per frame

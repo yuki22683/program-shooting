@@ -15,7 +15,7 @@ public class PanelGrabDetector : MonoBehaviour
 	{
 		// PanelWithManipulators“à‚Ì‚·‚×‚Ä‚ÌGrabbable‚ðŽæ“¾
 		grabbables = panel.GetComponentsInChildren<Grabbable>();
-		//isActive = gameManager.isActive;
+		isActive = gameManager.isActive;
 	}
 
 	void Update()
@@ -47,24 +47,24 @@ public class PanelGrabDetector : MonoBehaviour
 			}
 			else
 			{
-				//if ((Time.time > inactiveTimer + inactiveInterval)
-				//	&& !gameManager.isActive)
-				//{
-				//	SetAbacusActive();
-				//}
+				if ((Time.time > inactiveTimer + inactiveInterval)
+					&& !gameManager.isActive)
+				{
+					SetAbacusActive();
+				}
 			}
 		}
 	}
 
 	private void SetAbacusActive()
 	{
-		//gameManager.isActive = true;
-		//gameManager.SetAbacusActive();
+		gameManager.isActive = true;
+		gameManager.SetAbacusActive();
 	}
 
 	private void SetAbacusInactive()
 	{
-		//gameManager.isActive = false;
-		//gameManager.SetAbacusInactive();
+		gameManager.isActive = false;
+		gameManager.SetAbacusInactive();
 	}
 }
