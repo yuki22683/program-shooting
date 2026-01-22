@@ -4,10 +4,14 @@
 !/Assets/Meshes/
 !/Assets/Scenes/
 !/Assets/Scripts/
+!/Assets/Resources/
+!/Assets/Prefabs/
 !/Assets/Materials.meta
 !/Assets/Meshes.meta
 !/Assets/Scenes.meta
 !/Assets/Scripts.meta
+!/Assets/Resources.meta
+!/Assets/Prefabs.meta
 
 # Unity generated
 /[Ll]ibrary/

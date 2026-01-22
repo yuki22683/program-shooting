@@ -46,7 +46,7 @@ public class TextBasedScaler : MonoBehaviour
     };
 
     // All language configurations from syntax-highlight.ts
-    private static readonly Dictionary<string, LanguageConfig> LanguageConfigs = new Dictionary<string, LanguageConfig>
+    public static readonly Dictionary<string, LanguageConfig> LanguageConfigs = new Dictionary<string, LanguageConfig>
     {
         ["python"] = new LanguageConfig
         {
@@ -222,7 +222,7 @@ public class TextBasedScaler : MonoBehaviour
     [SerializeField] private string language = "csharp";
 
     private TextMeshProUGUI tmpText;
-    private int lastCharacterCount = -1;
+    private float lastCharacterCount = -1f;
     private string lastText = "";
     private Renderer cubeRenderer;
     private Renderer cube1Renderer;
@@ -281,31 +281,37 @@ public class TextBasedScaler : MonoBehaviour
 
         int charCount = GetWeightedCharCount(tmpText.text);
 
-        if (charCount == lastCharacterCount) return;
-        lastCharacterCount = charCount;
+        // Minimum 4 characters for size calculation
+        charCount = Mathf.Max(charCount, 4);
+
+        // Scale width: reduce to 3/4 (make it shorter)
+        float scaledCharCount = charCount * (3f / 4f);
+
+        if (scaledCharCount == lastCharacterCount) return;
+        lastCharacterCount = scaledCharCount;
 
         if (rayInteraction != null)
         {
             Vector3 scale = rayInteraction.localScale;
-            scale.x = 0.05f * charCount;
+            scale.x = 0.05f * scaledCharCount;
             rayInteraction.localScale = scale;
         }
 
         if (canvasRect != null)
         {
             Vector2 size = canvasRect.sizeDelta;
-            size.x = charCount * 5f;
+            size.x = scaledCharCount * 5f;
             canvasRect.sizeDelta = size;
         }
 
         if (textRect != null)
         {
             Vector2 size = textRect.sizeDelta;
-            size.x = charCount * 50f;
+            size.x = scaledCharCount * 50f;
             textRect.sizeDelta = size;
         }
 
-        float cubeScaleX = charCount * 0.05f + 0.02f;
+        float cubeScaleX = scaledCharCount * 0.05f + 0.02f;
         if (cube != null)
         {
             Vector3 scale = cube.localScale;
@@ -319,7 +325,7 @@ public class TextBasedScaler : MonoBehaviour
             cube1.localScale = scale;
         }
 
-        float cube2PosX = charCount * 0.025f + 0.005f;
+        float cube2PosX = scaledCharCount * 0.025f + 0.005f;
         if (cube2 != null)
         {
             Vector3 pos = cube2.localPosition;
@@ -334,11 +340,16 @@ public class TextBasedScaler : MonoBehaviour
             cube3.localPosition = pos;
         }
 
-        if (colliderBox != null && charCount > 0)
+        if (colliderBox != null && rayInteraction != null)
         {
-            Vector3 size = colliderBox.size;
-            size.x = 1f + (0.4f / charCount);
-            colliderBox.size = size;
+            // x-size = 1 + (0.1 / (rayInteraction's x-scale × 10))
+            float rayScaleX = rayInteraction.localScale.x;
+            if (rayScaleX > 0)
+            {
+                Vector3 size = colliderBox.size;
+                size.x = 1f + (0.1f / (rayScaleX * 10f));
+                colliderBox.size = size;
+            }
         }
     }
 
