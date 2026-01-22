@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git push:*)",
+      "Bash(git filter-branch:*)",
+      "Bash(git lfs install:*)",
+      "Bash(git lfs track:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nAdd Git LFS tracking for wav and unity3d files\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git lfs migrate:*)",
+      "Bash(git stash:*)",
+      "Bash(git checkout:*)",
+      "Bash(git commit:*)",
+      "mcp__mcp-unity__get_gameobject",
+      "mcp__mcp-unity__get_scene_info",
+      "mcp__mcp-unity__select_gameobject",
+      "Bash(ffmpeg:*)",
+      "Bash(where:*)",
+      "Bash(/c/ffmpeg-6.1.1-full_build/bin/ffmpeg:*)",
+      "Bash(\"/tmp/WinGet/Gyan.FFmpeg.8.0.1/extracted/ffmpeg-8.0.1-full_build/bin/ffmpeg.exe\" -i \"C:/Work/git/senkou-code/public/icons/python.svg\" -vf \"scale=256:256\" \"C:/Work/MetaXR/ProgramShooting/Assets/Materials/python_icon.png\" -y)",
+      "Bash(python -c:*)",
+      "Bash(pip show:*)",
+      "Bash(pip install:*)",
+      "mcp__mcp-unity__update_component",
+      "mcp__mcp-unity__update_gameobject",
+      "mcp__mcp-unity__recompile_scripts",
+      "mcp__mcp-unity__save_scene",
+      "mcp__mcp-unity__send_console_log",
+      "mcp__mcp-unity__get_console_logs",
+      "Bash(dir:*)",
+      "mcp__mcp-unity__load_scene"
+    ]
+  }
+}

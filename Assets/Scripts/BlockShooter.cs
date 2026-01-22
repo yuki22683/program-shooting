@@ -7,7 +7,21 @@ public class BlockShooter : MonoBehaviour
     [SerializeField] private RayInteractable rayInteractable;
     [SerializeField] private float moveSpeed = 0.5f;
 
+    [Header("Ray Visual Color")]
+    [SerializeField] private Color hoverRayColor = new Color(1f, 0f, 0f, 0.9f); // Red
+
     private bool isDestroying;
+
+    // Ray visual caching
+    private static ControllerRayVisual[] cachedRayVisuals;
+    private static Color[] originalRayHoverColor0;
+    private static Color[] originalRayHoverColor1;
+
+    // Cursor visual caching
+    private static RayInteractorCursorVisual[] cachedCursorVisuals;
+    private static Color[] originalCursorHoverColor;
+
+    private static bool colorsInitialized;
 
     /// <summary>
     /// The order index of this block in the code sequence
@@ -38,6 +52,9 @@ public class BlockShooter : MonoBehaviour
         {
             rayInteractable.WhenPointerEventRaised -= OnPointerEvent;
         }
+
+        // Restore ray color when block is destroyed (in case it was being hovered)
+        RestoreRayColor();
     }
 
     private void OnPointerEvent(PointerEvent evt)
@@ -46,9 +63,11 @@ public class BlockShooter : MonoBehaviour
         {
             case PointerEventType.Hover:
                 Debug.Log("[BlockShooter] Pointer entered");
+                SetRayColorRed();
                 break;
             case PointerEventType.Unhover:
                 Debug.Log("[BlockShooter] Pointer exited");
+                RestoreRayColor();
                 break;
             case PointerEventType.Select:
                 Debug.Log("[BlockShooter] Selected (clicked)");
@@ -57,6 +76,101 @@ public class BlockShooter : MonoBehaviour
             case PointerEventType.Unselect:
                 Debug.Log("[BlockShooter] Unselected");
                 break;
+        }
+    }
+
+    private void InitializeRayVisuals()
+    {
+        if (colorsInitialized) return;
+
+        // Cache ray visuals
+        cachedRayVisuals = FindObjectsOfType<ControllerRayVisual>();
+        if (cachedRayVisuals != null && cachedRayVisuals.Length > 0)
+        {
+            originalRayHoverColor0 = new Color[cachedRayVisuals.Length];
+            originalRayHoverColor1 = new Color[cachedRayVisuals.Length];
+
+            for (int i = 0; i < cachedRayVisuals.Length; i++)
+            {
+                originalRayHoverColor0[i] = cachedRayVisuals[i].HoverColor0;
+                originalRayHoverColor1[i] = cachedRayVisuals[i].HoverColor1;
+            }
+            Debug.Log($"[BlockShooter] Initialized {cachedRayVisuals.Length} ray visuals");
+        }
+
+        // Cache cursor visuals (reticle)
+        cachedCursorVisuals = FindObjectsOfType<RayInteractorCursorVisual>();
+        if (cachedCursorVisuals != null && cachedCursorVisuals.Length > 0)
+        {
+            originalCursorHoverColor = new Color[cachedCursorVisuals.Length];
+
+            for (int i = 0; i < cachedCursorVisuals.Length; i++)
+            {
+                originalCursorHoverColor[i] = cachedCursorVisuals[i].HoverColor;
+            }
+            Debug.Log($"[BlockShooter] Initialized {cachedCursorVisuals.Length} cursor visuals");
+        }
+
+        colorsInitialized = true;
+    }
+
+    private void SetRayColorRed()
+    {
+        InitializeRayVisuals();
+
+        // Set ray color to red
+        if (cachedRayVisuals != null)
+        {
+            foreach (var rayVisual in cachedRayVisuals)
+            {
+                if (rayVisual != null)
+                {
+                    rayVisual.HoverColor0 = hoverRayColor;
+                    rayVisual.HoverColor1 = new Color(hoverRayColor.r, hoverRayColor.g, hoverRayColor.b, 0f);
+                }
+            }
+        }
+
+        // Set cursor (reticle) color to red
+        if (cachedCursorVisuals != null)
+        {
+            foreach (var cursorVisual in cachedCursorVisuals)
+            {
+                if (cursorVisual != null)
+                {
+                    cursorVisual.HoverColor = hoverRayColor;
+                }
+            }
+        }
+    }
+
+    private void RestoreRayColor()
+    {
+        if (!colorsInitialized) return;
+
+        // Restore ray colors
+        if (cachedRayVisuals != null && originalRayHoverColor0 != null)
+        {
+            for (int i = 0; i < cachedRayVisuals.Length; i++)
+            {
+                if (cachedRayVisuals[i] != null)
+                {
+                    cachedRayVisuals[i].HoverColor0 = originalRayHoverColor0[i];
+                    cachedRayVisuals[i].HoverColor1 = originalRayHoverColor1[i];
+                }
+            }
+        }
+
+        // Restore cursor (reticle) colors
+        if (cachedCursorVisuals != null && originalCursorHoverColor != null)
+        {
+            for (int i = 0; i < cachedCursorVisuals.Length; i++)
+            {
+                if (cachedCursorVisuals[i] != null)
+                {
+                    cachedCursorVisuals[i].HoverColor = originalCursorHoverColor[i];
+                }
+            }
         }
     }
 

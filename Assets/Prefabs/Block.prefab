@@ -796,7 +796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rayInteractable: {fileID: 72824470362289254}
-  moveSpeed: 0.5
+  moveSpeed: 5
 --- !u!114 &2619092160307611733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -809,13 +809,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d7fe04eb8d296a45b4f16e7ecbd51ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.5
-  wallDetectionDistance: 0
+  moveSpeed: 0.01
+  wallDetectionDistance: 0.5
   minHeight: -2
   maxHeight: 2
   roomCheckInterval: 0.2
   maxOutsideTime: 3
-  maxDistanceFromHeadset: 5
+  maxDistanceFromHeadset: 3
   randomAngleRange: 45
 --- !u!1 &5649442352554513346
 GameObject:

@@ -281,11 +281,11 @@ public class TextBasedScaler : MonoBehaviour
 
         int charCount = GetWeightedCharCount(tmpText.text);
 
-        // Minimum 4 characters for size calculation
-        charCount = Mathf.Max(charCount, 4);
-
         // Scale width: reduce to 3/4 (make it shorter)
         float scaledCharCount = charCount * (3f / 4f);
+
+        // Minimum 4 characters for size calculation (applied after scaling)
+        scaledCharCount = Mathf.Max(scaledCharCount, 4f);
 
         if (scaledCharCount == lastCharacterCount) return;
         lastCharacterCount = scaledCharCount;

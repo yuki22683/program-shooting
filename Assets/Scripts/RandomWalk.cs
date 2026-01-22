@@ -19,6 +19,10 @@ public class RandomWalk : MonoBehaviour
     [SerializeField] private float maxDistanceFromHeadset = 5.0f;
     [SerializeField] private float randomAngleRange = 45f;
 
+    [Header("Block Repulsion")]
+    [SerializeField] private float repulsionDistance = 0.15f;
+    [SerializeField] private float repulsionStrength = 2.0f;
+
     private Vector3 moveDirection;
     private bool isInitialized;
     private Collider ownCollider;
@@ -55,6 +59,13 @@ public class RandomWalk : MonoBehaviour
             // Reflect off the wall
             Vector3 normal = wallHit.Value.normal;
             moveDirection = Vector3.Reflect(moveDirection, normal).normalized;
+        }
+
+        // Apply repulsion from nearby blocks
+        Vector3 repulsionForce = CalculateBlockRepulsion();
+        if (repulsionForce.sqrMagnitude > 0.001f)
+        {
+            moveDirection = (moveDirection + repulsionForce * repulsionStrength).normalized;
         }
 
         // Always move
@@ -326,5 +337,36 @@ public class RandomWalk : MonoBehaviour
         moveDirection = randomizedDirection.normalized;
 
         Debug.Log($"[RandomWalk] Too far from headset, turning inward. New direction: {moveDirection}");
+    }
+
+    /// <summary>
+    /// Calculate repulsion force from nearby blocks to prevent overlap
+    /// </summary>
+    private Vector3 CalculateBlockRepulsion()
+    {
+        Vector3 repulsionForce = Vector3.zero;
+
+        // Find all blocks with BlockShooter component
+        BlockShooter[] allBlocks = FindObjectsOfType<BlockShooter>();
+
+        foreach (var block in allBlocks)
+        {
+            // Skip self
+            if (block.gameObject == gameObject) continue;
+
+            Vector3 toOther = block.transform.position - transform.position;
+            float distance = toOther.magnitude;
+
+            // If within repulsion distance, apply force away from the other block
+            if (distance < repulsionDistance && distance > 0.001f)
+            {
+                // Repulsion strength increases as distance decreases
+                float strength = 1.0f - (distance / repulsionDistance);
+                Vector3 repelDirection = -toOther.normalized;
+                repulsionForce += repelDirection * strength;
+            }
+        }
+
+        return repulsionForce;
     }
 }
