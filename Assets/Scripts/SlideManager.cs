@@ -224,7 +224,7 @@ public class SlideManager : MonoBehaviour
         // Find back button in TopBar
         if (backButton == null)
         {
-            Transform backBtnTransform = transform.Find("PanelInteractable/PanelCanvas/TopBar/Horizontal/Horizontal/PrimaryButton_IconAndLabel_UnityUIButton (2)");
+            Transform backBtnTransform = transform.Find("PanelInteractable/PanelCanvas/TopBar/Horizontal/Vertical/Horizontal/PrimaryButton_IconAndLabel_UnityUIButton (2)");
             if (backBtnTransform != null)
             {
                 backButton = backBtnTransform.GetComponent<Button>();
