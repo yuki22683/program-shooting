@@ -14,6 +14,10 @@ public class LessonButtonSpawner : MonoBehaviour
     [Header("Spawn Container")]
     [SerializeField] private Transform buttonContainer;
 
+    [Header("Panel References")]
+    [SerializeField] private GameObject slidePanel;
+    [SerializeField] private GameObject selectLessonPanel;
+
     [Header("Lesson Selection")]
     [SerializeField] private int currentLessonIndex = 0;
 
@@ -29,6 +33,8 @@ public class LessonButtonSpawner : MonoBehaviour
         public string exerciseTitleKey;
         public string exerciseDescriptionKey;
         public string difficultyKey;
+        public string slideKeyPrefix;
+        public int slideCount = 3;
         public bool isCompleted;
         public bool isLocked;
     }
@@ -37,6 +43,72 @@ public class LessonButtonSpawner : MonoBehaviour
     {
         lessonManager = FindObjectOfType<LessonManager>();
         FindReferences();
+        FindPanelsIfNeeded();
+    }
+
+    /// <summary>
+    /// Finds panel references if not assigned in Inspector
+    /// </summary>
+    private void FindPanelsIfNeeded()
+    {
+        if (slidePanel == null)
+        {
+            slidePanel = FindObjectByName("SlidePanel");
+            if (slidePanel != null)
+            {
+                Debug.Log("[LessonButtonSpawner] Found SlidePanel");
+            }
+        }
+
+        if (selectLessonPanel == null)
+        {
+            // Try to find parent SelectLessonPanel
+            Transform parent = transform;
+            while (parent != null)
+            {
+                if (parent.name == "SelectLessonPanel")
+                {
+                    selectLessonPanel = parent.gameObject;
+                    Debug.Log("[LessonButtonSpawner] Found SelectLessonPanel (parent)");
+                    break;
+                }
+                parent = parent.parent;
+            }
+
+            // If still not found, search in scene
+            if (selectLessonPanel == null)
+            {
+                selectLessonPanel = FindObjectByName("SelectLessonPanel");
+                if (selectLessonPanel != null)
+                {
+                    Debug.Log("[LessonButtonSpawner] Found SelectLessonPanel (scene search)");
+                }
+            }
+        }
+    }
+
+    /// <summary>
+    /// Finds a GameObject by name in the scene (including inactive)
+    /// </summary>
+    private GameObject FindObjectByName(string name)
+    {
+        foreach (GameObject root in UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects())
+        {
+            GameObject found = FindInChildren(root.transform, name);
+            if (found != null) return found;
+        }
+        return null;
+    }
+
+    private GameObject FindInChildren(Transform parent, string name)
+    {
+        if (parent.name == name) return parent.gameObject;
+        foreach (Transform child in parent)
+        {
+            GameObject found = FindInChildren(child, name);
+            if (found != null) return found;
+        }
+        return null;
     }
 
     private void Start()
@@ -342,8 +414,115 @@ public class LessonButtonSpawner : MonoBehaviour
             exerciseData.isLocked
         );
 
+        // Register onClick handler via AddListener
+        Button button = buttonObj.GetComponent<Button>();
+        if (button == null)
+        {
+            button = buttonObj.GetComponentInChildren<Button>();
+        }
+
+        if (button != null)
+        {
+            int capturedLessonIndex = currentLessonIndex;
+            int capturedExerciseIndex = index;
+
+            button.onClick.AddListener(() => OnLessonButtonClicked(capturedLessonIndex, capturedExerciseIndex));
+            Debug.Log($"[LessonButtonSpawner] Registered onClick for lesson {capturedLessonIndex}, exercise {capturedExerciseIndex}");
+        }
+        else
+        {
+            Debug.LogWarning($"[LessonButtonSpawner] No Button component found on {buttonObj.name}");
+        }
+
         spawnedButtons.Add(buttonObj);
         Debug.Log($"[LessonButtonSpawner] Spawned lesson button: {buttonObj.name}");
+    }
+
+    /// <summary>
+    /// Called when a lesson button is clicked
+    /// </summary>
+    private void OnLessonButtonClicked(int lessonIndex, int exerciseIndex)
+    {
+        Debug.Log($"[LessonButtonSpawner] Lesson button clicked: lesson {lessonIndex}, exercise {exerciseIndex}");
+
+        // Find panels if not cached
+        if (slidePanel == null)
+        {
+            slidePanel = FindObjectByName("SlidePanel");
+        }
+        if (selectLessonPanel == null)
+        {
+            selectLessonPanel = FindObjectByName("SelectLessonPanel");
+        }
+
+        if (slidePanel == null)
+        {
+            Debug.LogError("[LessonButtonSpawner] SlidePanel not found!");
+            return;
+        }
+
+        // Store current position of lesson panel
+        Vector3 currentPosition = Vector3.zero;
+        Quaternion currentRotation = Quaternion.identity;
+
+        if (selectLessonPanel != null)
+        {
+            currentPosition = selectLessonPanel.transform.position;
+            currentRotation = selectLessonPanel.transform.rotation;
+        }
+
+        // Set LessonManager to this lesson/exercise and get exercise data
+        string titleKey = "";
+        string slideKeyPrefix = "";
+        int slideCount = 3;
+
+        if (lessonManager != null)
+        {
+            lessonManager.SetLesson(lessonIndex, exerciseIndex);
+            Debug.Log($"[LessonButtonSpawner] Set LessonManager to lesson {lessonIndex}, exercise {exerciseIndex}");
+
+            // Get slide data from the current exercise
+            Exercise exercise = lessonManager.GetCurrentExercise();
+            if (exercise != null)
+            {
+                titleKey = exercise.titleKey;
+                slideKeyPrefix = exercise.slideKeyPrefix;
+                slideCount = exercise.slideCount;
+                Debug.Log($"[LessonButtonSpawner] Got exercise data: title={titleKey}, prefix={slideKeyPrefix}, count={slideCount}");
+            }
+        }
+
+        // Position slide panel at current lesson panel position
+        slidePanel.transform.position = currentPosition;
+        slidePanel.transform.rotation = currentRotation;
+
+        // Show slide panel FIRST (so Awake/Start runs and UI references are found)
+        slidePanel.SetActive(true);
+        Debug.Log($"[LessonButtonSpawner] Showed SlidePanel at {currentPosition}");
+
+        // Configure SlideManager with slide data AFTER panel is active
+        SlideManager slideManager = slidePanel.GetComponent<SlideManager>();
+        if (slideManager == null)
+        {
+            slideManager = SlideManager.Instance;
+        }
+
+        if (slideManager != null && !string.IsNullOrEmpty(slideKeyPrefix))
+        {
+            slideManager.SetSlideConfig(titleKey, slideKeyPrefix, slideCount);
+            Debug.Log($"[LessonButtonSpawner] Configured SlideManager: title={titleKey}, prefix={slideKeyPrefix}, count={slideCount}");
+        }
+        else
+        {
+            Debug.LogWarning("[LessonButtonSpawner] SlideManager not found or no slide data!");
+        }
+
+        // Hide lesson panel
+        if (selectLessonPanel != null)
+        {
+            selectLessonPanel.SetActive(false);
+            Debug.Log("[LessonButtonSpawner] Hidden SelectLessonPanel");
+        }
     }
 
     /// <summary>

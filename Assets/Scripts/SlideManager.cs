@@ -22,6 +22,10 @@ public class SlideManager : MonoBehaviour
 
     [Header("Panel References")]
     [SerializeField] private GameObject sheetPanel; // SheetPanel to move on lesson start
+    [SerializeField] private GameObject selectLessonPanel; // SelectLessonPanel to show on back
+
+    [Header("TopBar Buttons")]
+    [SerializeField] private Button backButton; // Back button in TopBar
 
     [Header("Code Block Settings")]
     [SerializeField] private Color codeBackgroundColor = new Color(0.169f, 0.169f, 0.169f, 1f); // #2B2B2B
@@ -80,9 +84,73 @@ public class SlideManager : MonoBehaviour
         {
             completeButton.onClick.AddListener(OnCompleteButtonClicked);
         }
+        if (backButton != null)
+        {
+            backButton.onClick.AddListener(OnBackButtonClicked);
+        }
 
         // Load first slide
         LoadSlide(0);
+    }
+
+    /// <summary>
+    /// Called when the back button in TopBar is clicked - returns to lesson selection
+    /// </summary>
+    private void OnBackButtonClicked()
+    {
+        Debug.Log("[SlideManager] Back button clicked - returning to lesson selection");
+
+        // Find SelectLessonPanel if not cached
+        if (selectLessonPanel == null)
+        {
+            selectLessonPanel = FindObjectByName("SelectLessonPanel");
+        }
+
+        if (selectLessonPanel == null)
+        {
+            Debug.LogError("[SlideManager] SelectLessonPanel not found!");
+            return;
+        }
+
+        // Store current position
+        Vector3 currentPosition = transform.position;
+        Quaternion currentRotation = transform.rotation;
+
+        // Position lesson panel at current slide panel position
+        selectLessonPanel.transform.position = currentPosition;
+        selectLessonPanel.transform.rotation = currentRotation;
+
+        // Show lesson panel
+        selectLessonPanel.SetActive(true);
+        Debug.Log($"[SlideManager] Showed SelectLessonPanel at {currentPosition}");
+
+        // Hide this slide panel
+        gameObject.SetActive(false);
+        Debug.Log("[SlideManager] Hidden SlidePanel");
+    }
+
+    /// <summary>
+    /// Finds a GameObject by name in the scene (including inactive)
+    /// </summary>
+    private GameObject FindObjectByName(string name)
+    {
+        foreach (GameObject root in UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects())
+        {
+            GameObject found = FindInChildren(root.transform, name);
+            if (found != null) return found;
+        }
+        return null;
+    }
+
+    private GameObject FindInChildren(Transform parent, string name)
+    {
+        if (parent.name == name) return parent.gameObject;
+        foreach (Transform child in parent)
+        {
+            GameObject found = FindInChildren(child, name);
+            if (found != null) return found;
+        }
+        return null;
     }
 
     /// <summary>
@@ -150,6 +218,21 @@ public class SlideManager : MonoBehaviour
             else
             {
                 Debug.LogWarning("[SlideManager] Could not find TopBar title at expected path");
+            }
+        }
+
+        // Find back button in TopBar
+        if (backButton == null)
+        {
+            Transform backBtnTransform = transform.Find("PanelInteractable/PanelCanvas/TopBar/Horizontal/Horizontal/PrimaryButton_IconAndLabel_UnityUIButton (2)");
+            if (backBtnTransform != null)
+            {
+                backButton = backBtnTransform.GetComponent<Button>();
+                Debug.Log("[SlideManager] Found backButton");
+            }
+            else
+            {
+                Debug.LogWarning("[SlideManager] Could not find back button at expected path");
             }
         }
 
@@ -279,6 +362,10 @@ public class SlideManager : MonoBehaviour
         if (completeButton != null)
         {
             completeButton.onClick.RemoveListener(OnCompleteButtonClicked);
+        }
+        if (backButton != null)
+        {
+            backButton.onClick.RemoveListener(OnBackButtonClicked);
         }
     }
 

@@ -29,6 +29,10 @@ public class SelectCoursePanelManager : MonoBehaviour
     [SerializeField] private int totalExercises = 10;
     [SerializeField] private int completedExercises = 0;
 
+    [Header("Navigation")]
+    [SerializeField] private Button backButton;
+    [SerializeField] private GameObject selectLanguagePanel;
+
     private void Awake()
     {
         // Auto-find UI references if not set
@@ -37,12 +41,113 @@ public class SelectCoursePanelManager : MonoBehaviour
 
     private void Start()
     {
+        SetupBackButton();
         UpdateDisplay();
     }
 
     private void OnEnable()
     {
         UpdateDisplay();
+    }
+
+    /// <summary>
+    /// Sets up the back button click handler
+    /// </summary>
+    private void SetupBackButton()
+    {
+        // Find back button if not set
+        if (backButton == null)
+        {
+            // Path: PanelInteractable/PanelCanvas/TopBar/Horizontal/Horizontal/PrimaryButton_IconAndLabel_UnityUIButton (2)
+            Transform buttonTransform = transform.Find("PanelInteractable/PanelCanvas/TopBar/Horizontal/Horizontal/PrimaryButton_IconAndLabel_UnityUIButton (2)");
+            if (buttonTransform != null)
+            {
+                backButton = buttonTransform.GetComponent<Button>();
+                Debug.Log("[SelectCoursePanelManager] Found back button");
+            }
+            else
+            {
+                Debug.LogWarning("[SelectCoursePanelManager] Back button not found");
+            }
+        }
+
+        // Find language panel if not set
+        if (selectLanguagePanel == null)
+        {
+            selectLanguagePanel = FindObjectByName("SelectLanguagePanel");
+            if (selectLanguagePanel != null)
+            {
+                Debug.Log("[SelectCoursePanelManager] Found SelectLanguagePanel");
+            }
+        }
+
+        // Add click handler
+        if (backButton != null)
+        {
+            backButton.onClick.AddListener(OnBackButtonClicked);
+            Debug.Log("[SelectCoursePanelManager] Added back button click handler");
+        }
+    }
+
+    /// <summary>
+    /// Called when the back button is clicked
+    /// </summary>
+    private void OnBackButtonClicked()
+    {
+        Debug.Log("[SelectCoursePanelManager] Back button clicked");
+
+        // Store current position
+        Vector3 currentPosition = transform.position;
+        Quaternion currentRotation = transform.rotation;
+
+        // Find language panel if not cached
+        if (selectLanguagePanel == null)
+        {
+            selectLanguagePanel = FindObjectByName("SelectLanguagePanel");
+        }
+
+        if (selectLanguagePanel != null)
+        {
+            // Position language panel at current course panel position
+            selectLanguagePanel.transform.position = currentPosition;
+            selectLanguagePanel.transform.rotation = currentRotation;
+
+            // Show language panel
+            selectLanguagePanel.SetActive(true);
+            Debug.Log($"[SelectCoursePanelManager] Showed SelectLanguagePanel at {currentPosition}");
+        }
+        else
+        {
+            Debug.LogError("[SelectCoursePanelManager] SelectLanguagePanel not found!");
+        }
+
+        // Hide this course panel
+        gameObject.SetActive(false);
+        Debug.Log("[SelectCoursePanelManager] Hidden SelectCoursePanel");
+    }
+
+    /// <summary>
+    /// Finds a GameObject by name in the scene
+    /// </summary>
+    private GameObject FindObjectByName(string name)
+    {
+        foreach (GameObject root in UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects())
+        {
+            GameObject found = FindInChildren(root.transform, name);
+            if (found != null) return found;
+        }
+        return null;
+    }
+
+    private GameObject FindInChildren(Transform parent, string name)
+    {
+        if (parent.name == name) return parent.gameObject;
+        foreach (Transform child in parent)
+        {
+            GameObject found = FindInChildren(child, name);
+            if (found != null) return found;
+        }
+        return null;
     }
 
     /// <summary>

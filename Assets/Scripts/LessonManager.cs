@@ -87,11 +87,14 @@ public class LessonManager : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Log("[LessonManager] Awake called");
         FindLineTexts();
     }
 
     private void Start()
     {
+        Debug.Log("[LessonManager] Start called");
+
         // Initialize with Python lesson 1, exercise 2 (variables) from senkou-code
         InitializeDefaultExercise();
         StartCoroutine(WaitForLocalizationAndDisplay());
@@ -102,6 +105,77 @@ public class LessonManager : MonoBehaviour
             consolePanelNextButton.onClick.AddListener(GoToNextExercise);
             Debug.Log("[LessonManager] Registered GoToNextExercise on consolePanelNextButton");
         }
+
+        // Setup SelectLanguagePanel to position in front of headset
+        Debug.Log("[LessonManager] Calling SetupSelectLanguagePanel");
+        SetupSelectLanguagePanel();
+    }
+
+    /// <summary>
+    /// Sets up SelectLanguagePanel (言語選択パネル) to appear 1m in front of the headset when activated
+    /// </summary>
+    private void SetupSelectLanguagePanel()
+    {
+        Debug.Log("[LessonManager] SetupSelectLanguagePanel started");
+
+        // Find SelectLanguagePanel even if inactive - search through all root objects
+        GameObject selectLanguagePanel = null;
+
+        // Search in all root objects
+        foreach (GameObject rootObj in UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects())
+        {
+            selectLanguagePanel = FindChildByName(rootObj.transform, "SelectLanguagePanel");
+            if (selectLanguagePanel != null) break;
+        }
+
+        if (selectLanguagePanel == null)
+        {
+            Debug.LogWarning("[LessonManager] SelectLanguagePanel not found in scene");
+            return;
+        }
+
+        Debug.Log($"[LessonManager] Found SelectLanguagePanel: {selectLanguagePanel.name}");
+
+        // Add PositionInFrontOfHeadset component if not already present
+        PositionInFrontOfHeadset positioner = selectLanguagePanel.GetComponent<PositionInFrontOfHeadset>();
+        if (positioner == null)
+        {
+            positioner = selectLanguagePanel.AddComponent<PositionInFrontOfHeadset>();
+            Debug.Log("[LessonManager] Added PositionInFrontOfHeadset component");
+        }
+
+        // Configure: 1m in front of headset, same height, facing headset
+        positioner.Configure(1.0f, 0f, true, true);
+
+        // Add SelectLanguagePanelController to handle button click events
+        SelectLanguagePanelController controller = selectLanguagePanel.GetComponent<SelectLanguagePanelController>();
+        if (controller == null)
+        {
+            controller = selectLanguagePanel.AddComponent<SelectLanguagePanelController>();
+            Debug.Log("[LessonManager] Added SelectLanguagePanelController component to SelectLanguagePanel");
+        }
+
+        // Activate the panel
+        selectLanguagePanel.SetActive(true);
+
+        Debug.Log("[LessonManager] SelectLanguagePanel activated and configured to appear 1m in front of headset");
+    }
+
+    /// <summary>
+    /// Recursively finds a child GameObject by name (works with inactive objects)
+    /// </summary>
+    private GameObject FindChildByName(Transform parent, string name)
+    {
+        if (parent.name == name)
+            return parent.gameObject;
+
+        foreach (Transform child in parent)
+        {
+            GameObject result = FindChildByName(child, name);
+            if (result != null)
+                return result;
+        }
+        return null;
     }
 
     private void OnDestroy()
