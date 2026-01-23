@@ -28,6 +28,26 @@ public class ButtonLabelHover : MonoBehaviour, IPointerEnterHandler, IPointerExi
         }
     }
 
+    private void OnEnable()
+    {
+        // Reset to unhovered state when panel becomes visible
+        ResetToNormalColors();
+    }
+
+    /// <summary>
+    /// Resets all labels to their normal (unhovered) colors
+    /// </summary>
+    public void ResetToNormalColors()
+    {
+        for (int i = 0; i < labels.Count; i++)
+        {
+            if (labels[i] != null && i < normalColors.Count)
+            {
+                labels[i].color = normalColors[i];
+            }
+        }
+    }
+
     public void OnPointerEnter(PointerEventData eventData)
     {
         foreach (var label in labels)
