@@ -29,16 +29,35 @@ public class PositionInFrontOfHeadset : MonoBehaviour
     [SerializeField] private int maxRetries = 30;
 
     private Coroutine positionCoroutine;
+    private bool skipNextReposition = false;
 
     private void OnEnable()
     {
         Debug.Log($"[PositionInFrontOfHeadset] OnEnable called on {gameObject.name}");
+
+        // Check if repositioning should be skipped
+        if (skipNextReposition)
+        {
+            Debug.Log($"[PositionInFrontOfHeadset] Skipping reposition for {gameObject.name}");
+            skipNextReposition = false;
+            return;
+        }
+
         // Use coroutine for more robust camera detection
         if (positionCoroutine != null)
         {
             StopCoroutine(positionCoroutine);
         }
         positionCoroutine = StartCoroutine(PositionWithRetry());
+    }
+
+    /// <summary>
+    /// Call this before SetActive(true) to skip the automatic repositioning once
+    /// </summary>
+    public void SkipNextReposition()
+    {
+        skipNextReposition = true;
+        Debug.Log($"[PositionInFrontOfHeadset] Will skip next reposition for {gameObject.name}");
     }
 
     private void OnDisable()

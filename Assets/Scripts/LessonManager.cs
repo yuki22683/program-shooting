@@ -1392,6 +1392,13 @@ public class LessonManager : MonoBehaviour
     {
         Debug.Log("[LessonManager] GoToNextExercise called");
 
+        // Mark current exercise as completed in ProgressManager
+        if (ProgressManager.Instance != null)
+        {
+            ProgressManager.Instance.SetLessonCompleted(currentLanguage, currentLessonIndex, currentExerciseIndex, true);
+            Debug.Log($"[LessonManager] Marked exercise {currentLanguage} course {currentLessonIndex} lesson {currentExerciseIndex} as completed");
+        }
+
         // Hide ConsolePanel
         if (consolePanel != null)
         {

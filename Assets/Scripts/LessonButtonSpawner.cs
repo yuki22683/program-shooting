@@ -20,9 +20,11 @@ public class LessonButtonSpawner : MonoBehaviour
 
     [Header("Lesson Selection")]
     [SerializeField] private int currentLessonIndex = 0;
+    [SerializeField] private int currentLanguageIndex = 0; // 0=Python, 1=JavaScript, etc.
 
     private List<GameObject> spawnedButtons = new List<GameObject>();
     private LessonManager lessonManager;
+    private string currentLanguage = "python";
 
     /// <summary>
     /// Exercise data structure for button spawning
@@ -198,6 +200,26 @@ public class LessonButtonSpawner : MonoBehaviour
     public void SetLessonIndex(int lessonIndex)
     {
         currentLessonIndex = lessonIndex;
+        SpawnLessonButtons();
+    }
+
+    /// <summary>
+    /// Sets the language index
+    /// </summary>
+    public void SetLanguageIndex(int languageIndex)
+    {
+        currentLanguageIndex = languageIndex;
+        currentLanguage = ProgressManager.GetLanguageString(languageIndex);
+    }
+
+    /// <summary>
+    /// Sets both course (lesson) index and language index, then respawns buttons
+    /// </summary>
+    public void SetCourseAndLanguage(int courseIndex, int languageIndex)
+    {
+        currentLessonIndex = courseIndex;
+        currentLanguageIndex = languageIndex;
+        currentLanguage = ProgressManager.GetLanguageString(languageIndex);
         SpawnLessonButtons();
     }
 
@@ -380,6 +402,16 @@ public class LessonButtonSpawner : MonoBehaviour
         GameObject buttonObj = Instantiate(lessonButtonPrefab, buttonContainer);
         buttonObj.name = $"TextTileButton_Lesson{index + 1}";
 
+        // Check progress for this lesson
+        bool isCompleted = false;
+        bool isLocked = false;
+
+        if (ProgressManager.Instance != null)
+        {
+            isCompleted = ProgressManager.Instance.IsLessonCompleted(currentLanguage, currentLessonIndex, index);
+            isLocked = !ProgressManager.Instance.IsLessonUnlocked(currentLanguage, currentLessonIndex, index);
+        }
+
         // Configure SelectLessonPanelManager component
         SelectLessonPanelManager panelManager = buttonObj.GetComponent<SelectLessonPanelManager>();
         if (panelManager == null)
@@ -403,16 +435,34 @@ public class LessonButtonSpawner : MonoBehaviour
         panelManager.LessonIndex = currentLessonIndex;
         panelManager.ExerciseIndex = index;
 
-        Debug.Log($"[LessonButtonSpawner] Configuring {buttonObj.name} with title={exerciseData.exerciseTitleKey}, desc={exerciseData.exerciseDescriptionKey}");
+        Debug.Log($"[LessonButtonSpawner] Configuring {buttonObj.name} with title={exerciseData.exerciseTitleKey}, completed={isCompleted}, locked={isLocked}");
 
-        // Configure panel with exercise data
+        // Configure panel with exercise data and progress state
         panelManager.Configure(
             exerciseData.exerciseTitleKey,
             exerciseData.exerciseDescriptionKey,
             exerciseData.difficultyKey,
-            exerciseData.isCompleted,
-            exerciseData.isLocked
+            isCompleted,
+            isLocked
         );
+
+        // Disable Animator and ButtonLabelHover if locked
+        if (isLocked)
+        {
+            Animator animator = buttonObj.GetComponent<Animator>();
+            if (animator != null)
+            {
+                animator.enabled = false;
+                Debug.Log($"[LessonButtonSpawner] Disabled Animator for locked exercise {index}");
+            }
+
+            ButtonLabelHover buttonLabelHover = buttonObj.GetComponent<ButtonLabelHover>();
+            if (buttonLabelHover != null)
+            {
+                buttonLabelHover.enabled = false;
+                Debug.Log($"[LessonButtonSpawner] Disabled ButtonLabelHover for locked exercise {index}");
+            }
+        }
 
         // Register onClick handler via AddListener
         Button button = buttonObj.GetComponent<Button>();
@@ -423,11 +473,14 @@ public class LessonButtonSpawner : MonoBehaviour
 
         if (button != null)
         {
+            // Keep button enabled even if locked (check lock state on click)
+            button.interactable = true;
+
             int capturedLessonIndex = currentLessonIndex;
             int capturedExerciseIndex = index;
 
             button.onClick.AddListener(() => OnLessonButtonClicked(capturedLessonIndex, capturedExerciseIndex));
-            Debug.Log($"[LessonButtonSpawner] Registered onClick for lesson {capturedLessonIndex}, exercise {capturedExerciseIndex}");
+            Debug.Log($"[LessonButtonSpawner] Registered onClick for lesson {capturedLessonIndex}, exercise {capturedExerciseIndex} (locked={isLocked})");
         }
         else
         {
@@ -444,6 +497,13 @@ public class LessonButtonSpawner : MonoBehaviour
     private void OnLessonButtonClicked(int lessonIndex, int exerciseIndex)
     {
         Debug.Log($"[LessonButtonSpawner] Lesson button clicked: lesson {lessonIndex}, exercise {exerciseIndex}");
+
+        // Check if lesson is locked
+        if (ProgressManager.Instance != null && !ProgressManager.Instance.IsLessonUnlocked(currentLanguage, lessonIndex, exerciseIndex))
+        {
+            Debug.Log($"[LessonButtonSpawner] Lesson {lessonIndex} exercise {exerciseIndex} is locked, ignoring click");
+            return;
+        }
 
         // Find panels if not cached
         if (slidePanel == null)

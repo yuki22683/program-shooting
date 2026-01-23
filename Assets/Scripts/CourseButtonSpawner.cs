@@ -20,6 +20,10 @@ public class CourseButtonSpawner : MonoBehaviour
     [Header("Course Data")]
     [SerializeField] private List<CourseData> courses = new List<CourseData>();
 
+    [Header("Language Selection")]
+    [SerializeField] private int currentLanguageIndex = 0; // 0=Python, 1=JavaScript, etc.
+    private string currentLanguage = "python";
+
     private List<GameObject> spawnedButtons = new List<GameObject>();
     
     [System.Serializable]
@@ -107,6 +111,20 @@ public class CourseButtonSpawner : MonoBehaviour
         foreach (Transform child in parent)
         {
             GameObject found = FindInChildren(child, name);
+            if (found != null) return found;
+        }
+        return null;
+    }
+
+    /// <summary>
+    /// Recursively finds a child transform by name
+    /// </summary>
+    private Transform FindDeepChild(Transform parent, string name)
+    {
+        foreach (Transform child in parent)
+        {
+            if (child.name == name) return child;
+            Transform found = FindDeepChild(child, name);
             if (found != null) return found;
         }
         return null;
@@ -290,6 +308,23 @@ public class CourseButtonSpawner : MonoBehaviour
         GameObject buttonObj = Instantiate(courseButtonPrefab, buttonContainer);
         buttonObj.name = $"TextTileButton_Course{index + 1}";
 
+        // Get progress from ProgressManager
+        int completedLessons = 0;
+        bool isCourseComplete = false;
+        bool isCourseLocked = false;
+
+        if (ProgressManager.Instance != null)
+        {
+            completedLessons = ProgressManager.Instance.GetCompletedLessonCount(
+                currentLanguage, index, courseData.totalExercises);
+            isCourseComplete = ProgressManager.Instance.IsCourseCompleted(currentLanguage, index);
+            isCourseLocked = !ProgressManager.Instance.IsCourseUnlocked(currentLanguage, index);
+            Debug.Log($"[CourseButtonSpawner] Course {index}: {completedLessons}/{courseData.totalExercises} completed, complete={isCourseComplete}, locked={isCourseLocked}");
+        }
+
+        // Update completed exercises from progress
+        courseData.completedExercises = completedLessons;
+
         // Configure SelectCoursePanelManager component
         SelectCoursePanelManager panelManager = buttonObj.GetComponent<SelectCoursePanelManager>();
         if (panelManager == null)
@@ -297,9 +332,42 @@ public class CourseButtonSpawner : MonoBehaviour
             panelManager = buttonObj.AddComponent<SelectCoursePanelManager>();
         }
 
-        // Use reflection or serialized fields to set the course data
-        // For now, we'll use a public method if available
+        // Configure panel with course data
         ConfigurePanelManager(panelManager, courseData);
+
+        // Show/hide icon_pass based on course completion
+        Transform iconPass = FindDeepChild(buttonObj.transform, "Icon_pass");
+        if (iconPass != null)
+        {
+            iconPass.gameObject.SetActive(isCourseComplete);
+            Debug.Log($"[CourseButtonSpawner] Set Icon_pass active={isCourseComplete} for course {index}");
+        }
+
+        // Show/hide icon_lock based on locked state
+        Transform iconLock = FindDeepChild(buttonObj.transform, "Icon_lock");
+        if (iconLock != null)
+        {
+            iconLock.gameObject.SetActive(isCourseLocked);
+            Debug.Log($"[CourseButtonSpawner] Set Icon_lock active={isCourseLocked} for course {index}");
+        }
+
+        // Disable Animator and ButtonLabelHover if locked
+        if (isCourseLocked)
+        {
+            Animator animator = buttonObj.GetComponent<Animator>();
+            if (animator != null)
+            {
+                animator.enabled = false;
+                Debug.Log($"[CourseButtonSpawner] Disabled Animator for locked course {index}");
+            }
+
+            ButtonLabelHover buttonLabelHover = buttonObj.GetComponent<ButtonLabelHover>();
+            if (buttonLabelHover != null)
+            {
+                buttonLabelHover.enabled = false;
+                Debug.Log($"[CourseButtonSpawner] Disabled ButtonLabelHover for locked course {index}");
+            }
+        }
 
         // Register onClick handler via AddListener
         Button button = buttonObj.GetComponent<Button>();
@@ -310,9 +378,12 @@ public class CourseButtonSpawner : MonoBehaviour
 
         if (button != null)
         {
+            // Keep button enabled even if locked (check lock state on click)
+            button.interactable = true;
+
             int capturedIndex = index; // Capture for closure
             button.onClick.AddListener(() => OnCourseButtonClicked(capturedIndex));
-            Debug.Log($"[CourseButtonSpawner] Registered onClick for course {capturedIndex}");
+            Debug.Log($"[CourseButtonSpawner] Registered onClick for course {capturedIndex} (locked={isCourseLocked})");
         }
         else
         {
@@ -329,6 +400,13 @@ public class CourseButtonSpawner : MonoBehaviour
     private void OnCourseButtonClicked(int courseIndex)
     {
         Debug.Log($"[CourseButtonSpawner] Course button clicked: index {courseIndex}");
+
+        // Check if course is locked
+        if (ProgressManager.Instance != null && !ProgressManager.Instance.IsCourseUnlocked(currentLanguage, courseIndex))
+        {
+            Debug.Log($"[CourseButtonSpawner] Course {courseIndex} is locked, ignoring click");
+            return;
+        }
 
         // Find panels if not cached
         if (selectLessonPanel == null)
@@ -365,8 +443,8 @@ public class CourseButtonSpawner : MonoBehaviour
 
         if (lessonSpawner != null)
         {
-            lessonSpawner.SetLessonIndex(courseIndex);
-            Debug.Log($"[CourseButtonSpawner] Set LessonButtonSpawner to course index {courseIndex}");
+            lessonSpawner.SetCourseAndLanguage(courseIndex, currentLanguageIndex);
+            Debug.Log($"[CourseButtonSpawner] Set LessonButtonSpawner to course {courseIndex}, language {currentLanguageIndex}");
         }
         else
         {
@@ -444,4 +522,19 @@ public class CourseButtonSpawner : MonoBehaviour
         }
         return null;
     }
+
+    /// <summary>
+    /// Sets the language index and respawns buttons
+    /// </summary>
+    public void SetLanguageIndex(int languageIndex)
+    {
+        currentLanguageIndex = languageIndex;
+        currentLanguage = ProgressManager.GetLanguageString(languageIndex);
+        SpawnCourseButtons();
+    }
+
+    /// <summary>
+    /// Gets the current language index
+    /// </summary>
+    public int CurrentLanguageIndex => currentLanguageIndex;
 }

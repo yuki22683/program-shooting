@@ -264,9 +264,10 @@ public class LanguageSelectionManager : MonoBehaviour
         }
         spawner.SetButtonContainer(content);
 
-        // Spawn course buttons
-        spawner.SpawnCourseButtons();
-        Debug.Log($"[LanguageSelectionManager] Updated course buttons for {languageId}");
+        // Set language index and spawn course buttons
+        int languageIndex = GetLanguageIndex(languageId);
+        spawner.SetLanguageIndex(languageIndex);
+        Debug.Log($"[LanguageSelectionManager] Updated course buttons for {languageId} (index {languageIndex})");
 
         // Also notify LessonManager of the selected language
         LessonManager lessonManager = FindObjectOfType<LessonManager>();
@@ -313,6 +314,36 @@ public class LanguageSelectionManager : MonoBehaviour
     /// Gets the currently selected language
     /// </summary>
     public string SelectedLanguage => selectedLanguage;
+
+    /// <summary>
+    /// Converts language ID string to index
+    /// </summary>
+    private int GetLanguageIndex(string languageId)
+    {
+        switch (languageId.ToLower())
+        {
+            case "python": return 0;
+            case "javascript": return 1;
+            case "typescript": return 2;
+            case "java": return 3;
+            case "csharp": return 4;
+            case "cpp": return 5;
+            case "go": return 6;
+            case "rust": return 7;
+            case "ruby": return 8;
+            case "php": return 9;
+            case "swift": return 10;
+            case "kotlin": return 11;
+            case "bash": return 12;
+            case "sql": return 13;
+            case "lua": return 14;
+            case "perl": return 15;
+            case "haskell": return 16;
+            case "elixir": return 17;
+            case "assembly": return 18;
+            default: return 0;
+        }
+    }
 
     /// <summary>
     /// Shows the language selection panel and hides the course panel

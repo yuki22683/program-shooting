@@ -51,6 +51,13 @@ public class SelectCoursePanelController : MonoBehaviour
         selectLanguagePanel.transform.position = currentPosition;
         selectLanguagePanel.transform.rotation = currentRotation;
 
+        // Skip automatic repositioning in PositionInFrontOfHeadset
+        PositionInFrontOfHeadset positioner = selectLanguagePanel.GetComponent<PositionInFrontOfHeadset>();
+        if (positioner != null)
+        {
+            positioner.SkipNextReposition();
+        }
+
         // Show language panel
         selectLanguagePanel.SetActive(true);
         Debug.Log($"[SelectCoursePanelController] Showed SelectLanguagePanel at {currentPosition}");
