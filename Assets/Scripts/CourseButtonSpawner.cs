@@ -139,6 +139,16 @@ public class CourseButtonSpawner : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        // Re-spawn buttons when panel becomes active to reflect latest progress
+        if (courseButtonPrefab != null && buttonContainer != null)
+        {
+            SpawnCourseButtons();
+            Debug.Log("[CourseButtonSpawner] OnEnable - re-spawned buttons to reflect progress");
+        }
+    }
+
     /// <summary>
     /// Loads the course button prefab from Resources if not already assigned
     /// </summary>

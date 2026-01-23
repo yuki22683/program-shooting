@@ -118,6 +118,16 @@ public class LessonButtonSpawner : MonoBehaviour
         SpawnLessonButtons();
     }
 
+    private void OnEnable()
+    {
+        // Re-spawn buttons when panel becomes active to reflect latest progress
+        if (lessonButtonPrefab != null && buttonContainer != null)
+        {
+            SpawnLessonButtons();
+            Debug.Log("[LessonButtonSpawner] OnEnable - re-spawned buttons to reflect progress");
+        }
+    }
+
     /// <summary>
     /// Automatically finds prefab and container references if not set
     /// </summary>
