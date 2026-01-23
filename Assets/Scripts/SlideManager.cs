@@ -100,6 +100,21 @@ public class SlideManager : MonoBehaviour
     {
         Debug.Log("[SlideManager] Back button clicked - returning to lesson selection");
 
+        // Mark lesson as completed if not already
+        LessonManager lessonManager = FindObjectOfType<LessonManager>();
+        if (lessonManager != null && ProgressManager.Instance != null)
+        {
+            string language = lessonManager.CurrentLanguage;
+            int lessonIndex = lessonManager.CurrentLessonIndex;
+            int exerciseIndex = lessonManager.CurrentExerciseIndex;
+
+            if (!ProgressManager.Instance.IsLessonCompleted(language, lessonIndex, exerciseIndex))
+            {
+                ProgressManager.Instance.SetLessonCompleted(language, lessonIndex, exerciseIndex, true);
+                Debug.Log($"[SlideManager] Marked exercise {language} course {lessonIndex} lesson {exerciseIndex} as completed");
+            }
+        }
+
         // Find SelectLessonPanel if not cached
         if (selectLessonPanel == null)
         {

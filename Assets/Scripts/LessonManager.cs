@@ -1557,6 +1557,7 @@ public class LessonManager : MonoBehaviour
 
     public int CurrentLessonIndex => currentLessonIndex;
     public int CurrentExerciseIndex => currentExerciseIndex;
+    public string CurrentLanguage => currentLanguage;
     public int TotalLessons => lessons.Count;
     public int TotalExercisesInCurrentLesson => GetCurrentLesson()?.exercises.Count ?? 0;
 
@@ -1936,6 +1937,16 @@ public class LessonManager : MonoBehaviour
         {
             Debug.LogWarning("[LessonManager] ConsolePanel is not assigned!");
             return;
+        }
+
+        // Mark lesson as completed if not already
+        if (ProgressManager.Instance != null)
+        {
+            if (!ProgressManager.Instance.IsLessonCompleted(currentLanguage, currentLessonIndex, currentExerciseIndex))
+            {
+                ProgressManager.Instance.SetLessonCompleted(currentLanguage, currentLessonIndex, currentExerciseIndex, true);
+                Debug.Log($"[LessonManager] Marked exercise {currentLanguage} course {currentLessonIndex} lesson {currentExerciseIndex} as completed");
+            }
         }
 
         // Position ConsolePanel 0.5m in front of the headset
