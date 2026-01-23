@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 7bf07bd4d8e774eb48e7273353252009
+timeCreated: 1514114680
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 21927
+  packageName: KY Magic Effects Free
+  packageVersion: 1.1.1
+  assetPath: Assets/KY_effects/Script/Lighting.cs
+  uploadId: 220560

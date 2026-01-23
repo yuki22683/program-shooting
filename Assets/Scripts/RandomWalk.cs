@@ -23,6 +23,9 @@ public class RandomWalk : MonoBehaviour
     [SerializeField] private float repulsionDistance = 0.15f;
     [SerializeField] private float repulsionStrength = 2.0f;
 
+    [Header("Behind Headset Repulsion")]
+    [SerializeField] private float behindRepulsionStrength = 3.0f;
+
     private Vector3 moveDirection;
     private bool isInitialized;
     private Collider ownCollider;
@@ -50,6 +53,12 @@ public class RandomWalk : MonoBehaviour
         if (CheckDistanceFromHeadset())
         {
             TurnTowardsHeadsetWithRandomAngle();
+        }
+
+        // Check if behind headset - repel to front
+        if (CheckBehindHeadset())
+        {
+            RepelToFrontOfHeadset();
         }
 
         // Check for wall collision using raycast
@@ -337,6 +346,69 @@ public class RandomWalk : MonoBehaviour
         moveDirection = randomizedDirection.normalized;
 
         Debug.Log($"[RandomWalk] Too far from headset, turning inward. New direction: {moveDirection}");
+    }
+
+    /// <summary>
+    /// Check if the block is behind the headset
+    /// </summary>
+    /// <returns>True if block is behind the headset's forward direction</returns>
+    private bool CheckBehindHeadset()
+    {
+        if (headsetTransform == null)
+        {
+            headsetTransform = Camera.main?.transform;
+            if (headsetTransform == null) return false;
+        }
+
+        // Vector from headset to block
+        Vector3 headsetToBlock = transform.position - headsetTransform.position;
+        headsetToBlock.y = 0; // Only check horizontal plane
+
+        // Headset forward direction (horizontal)
+        Vector3 headsetForward = headsetTransform.forward;
+        headsetForward.y = 0;
+        headsetForward.Normalize();
+
+        // If dot product is negative, block is behind headset
+        float dot = Vector3.Dot(headsetForward, headsetToBlock.normalized);
+        return dot < 0;
+    }
+
+    /// <summary>
+    /// Repel the block to move towards the front of the headset
+    /// </summary>
+    private void RepelToFrontOfHeadset()
+    {
+        if (headsetTransform == null)
+        {
+            headsetTransform = Camera.main?.transform;
+            if (headsetTransform == null) return;
+        }
+
+        // Get headset forward direction (horizontal)
+        Vector3 headsetForward = headsetTransform.forward;
+        headsetForward.y = 0;
+        headsetForward.Normalize();
+
+        // Calculate target direction: forward and slightly towards the side
+        Vector3 headsetToBlock = transform.position - headsetTransform.position;
+        headsetToBlock.y = 0;
+
+        // Determine which side (left or right) the block is on
+        float side = Vector3.Dot(headsetTransform.right, headsetToBlock);
+        Vector3 sideDirection = side >= 0 ? headsetTransform.right : -headsetTransform.right;
+        sideDirection.y = 0;
+        sideDirection.Normalize();
+
+        // Combine forward and side direction for a natural arc movement
+        Vector3 repelDirection = (headsetForward + sideDirection * 0.5f).normalized;
+
+        // Preserve some vertical movement
+        repelDirection.y = moveDirection.y * 0.3f;
+        repelDirection.Normalize();
+
+        // Blend with current direction for smoother transition
+        moveDirection = Vector3.Lerp(moveDirection, repelDirection, behindRepulsionStrength * Time.deltaTime).normalized;
     }
 
     /// <summary>

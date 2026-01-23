@@ -129,7 +129,7 @@ public class LessonManager : MonoBehaviour
         {
             titleKey = "python_lesson1_ex1_title",
             slideKeyPrefix = "python_lesson1_ex1",
-            slideCount = 3,
+            slideCount = 4,
             correctLines = new List<string> { "print('Hello, World!')" },
             comments = new List<LocalizedComment>
             {
@@ -143,7 +143,7 @@ public class LessonManager : MonoBehaviour
         {
             titleKey = "python_lesson1_ex2_title",
             slideKeyPrefix = "python_lesson1_ex2",
-            slideCount = 2,
+            slideCount = 3,
             correctLines = new List<string> { "name = 'Python'", "print(name)" },
             comments = new List<LocalizedComment>
             {
@@ -158,7 +158,7 @@ public class LessonManager : MonoBehaviour
         {
             titleKey = "python_lesson1_ex3_title",
             slideKeyPrefix = "python_lesson1_ex3",
-            slideCount = 2,
+            slideCount = 3,
             correctLines = new List<string> { "x = 10", "y = 5", "print(x + y)" },
             comments = new List<LocalizedComment>
             {
@@ -174,7 +174,7 @@ public class LessonManager : MonoBehaviour
         {
             titleKey = "python_lesson1_ex4_title",
             slideKeyPrefix = "python_lesson1_ex4",
-            slideCount = 2,
+            slideCount = 3,
             correctLines = new List<string> { "print(10 % 3)" },
             comments = new List<LocalizedComment>
             {
@@ -188,7 +188,7 @@ public class LessonManager : MonoBehaviour
         {
             titleKey = "python_lesson1_ex5_title",
             slideKeyPrefix = "python_lesson1_ex5",
-            slideCount = 2,
+            slideCount = 3,
             correctLines = new List<string> { "score = 50", "score += 10", "print(score)" },
             comments = new List<LocalizedComment>
             {
@@ -204,7 +204,7 @@ public class LessonManager : MonoBehaviour
         {
             titleKey = "python_lesson1_ex6_title",
             slideKeyPrefix = "python_lesson1_ex6",
-            slideCount = 2,
+            slideCount = 3,
             correctLines = new List<string> { "age = 10", "print(f'私は{age}歳です')" },
             comments = new List<LocalizedComment>
             {
@@ -219,7 +219,7 @@ public class LessonManager : MonoBehaviour
         {
             titleKey = "python_lesson1_ex7_title",
             slideKeyPrefix = "python_lesson1_ex7",
-            slideCount = 2,
+            slideCount = 3,
             correctLines = new List<string> { "colors = ['あか', 'あお']", "print(colors[1])" },
             comments = new List<LocalizedComment>
             {
@@ -234,7 +234,7 @@ public class LessonManager : MonoBehaviour
         {
             titleKey = "python_lesson1_ex8_title",
             slideKeyPrefix = "python_lesson1_ex8",
-            slideCount = 2,
+            slideCount = 3,
             correctLines = new List<string> { "score = 100", "if score > 80:", "    print('ごうかく！')" },
             comments = new List<LocalizedComment>
             {
@@ -250,7 +250,7 @@ public class LessonManager : MonoBehaviour
         {
             titleKey = "python_lesson1_ex9_title",
             slideKeyPrefix = "python_lesson1_ex9",
-            slideCount = 2,
+            slideCount = 3,
             correctLines = new List<string> { "age = 10", "if age >= 20:", "    print('おとな')", "else:", "    print('こども')" },
             comments = new List<LocalizedComment>
             {
@@ -266,7 +266,7 @@ public class LessonManager : MonoBehaviour
         {
             titleKey = "python_lesson1_ex10_title",
             slideKeyPrefix = "python_lesson1_ex10",
-            slideCount = 2,
+            slideCount = 3,
             correctLines = new List<string> { "score = 85", "if score >= 80 and score <= 100:", "    print('ごうかく！')" },
             comments = new List<LocalizedComment>
             {
@@ -281,7 +281,7 @@ public class LessonManager : MonoBehaviour
         {
             titleKey = "python_lesson1_ex11_title",
             slideKeyPrefix = "python_lesson1_ex11",
-            slideCount = 2,
+            slideCount = 3,
             correctLines = new List<string> { "names = ['たろう', 'はなこ']", "for name in names:", "    print(name)" },
             comments = new List<LocalizedComment>
             {
@@ -296,7 +296,7 @@ public class LessonManager : MonoBehaviour
         {
             titleKey = "python_lesson1_ex12_title",
             slideKeyPrefix = "python_lesson1_ex12",
-            slideCount = 2,
+            slideCount = 3,
             correctLines = new List<string> { "colors = {'みかん': 'オレンジ'}", "print(colors['みかん'])" },
             comments = new List<LocalizedComment>
             {
@@ -311,7 +311,7 @@ public class LessonManager : MonoBehaviour
         {
             titleKey = "python_lesson1_ex13_title",
             slideKeyPrefix = "python_lesson1_ex13",
-            slideCount = 2,
+            slideCount = 3,
             correctLines = new List<string> { "def greet():", "    print('こんにちは')", "greet()" },
             comments = new List<LocalizedComment>
             {
@@ -1597,8 +1597,8 @@ public class LessonManager : MonoBehaviour
 
     private void SpawnBlock(string tokenText, int index, int totalCount)
     {
-        // Calculate spread position for this block
-        Vector3 spawnPosition = CalculateSpreadPosition(index, totalCount);
+        // Calculate spread position for this block, avoiding overlap with existing blocks
+        Vector3 spawnPosition = CalculateNonOverlappingPosition(index, totalCount, tokenText);
 
         // Instantiate block
         GameObject block = Instantiate(blockPrefab, spawnPosition, Quaternion.identity, blockSpawnParent);
@@ -1672,6 +1672,98 @@ public class LessonManager : MonoBehaviour
 
         Debug.Log($"[LessonManager] Block {index}/{totalCount} spawned at angle {angle:F1}° radius {spreadRadius:F2}m");
         return finalPosition;
+    }
+
+    /// <summary>
+    /// Calculates a spawn position that doesn't overlap with existing blocks
+    /// </summary>
+    private Vector3 CalculateNonOverlappingPosition(int index, int totalCount, string tokenText)
+    {
+        // Calculate base position
+        Vector3 basePosition = CalculateSpreadPosition(index, totalCount);
+
+        // Estimate block size based on token length (same formula as TextBasedScaler)
+        float charCount = tokenText.Length;
+        float scaledCharCount = charCount * (3f / 4f);
+        scaledCharCount = Mathf.Max(scaledCharCount, 4f);
+        float blockWidth = scaledCharCount * 0.05f + 0.02f; // cubeScaleX formula
+        float blockHeight = 0.08f; // Approximate height
+
+        // Minimum distance to avoid overlap (half of both blocks + small margin)
+        float minDistance = blockWidth * 0.6f + 0.02f;
+
+        // Check for overlap with existing blocks and adjust if needed
+        int maxAttempts = 10;
+        Vector3 adjustedPosition = basePosition;
+        Transform headset = Camera.main?.transform;
+
+        for (int attempt = 0; attempt < maxAttempts; attempt++)
+        {
+            bool hasOverlap = false;
+            Vector3 totalPushDirection = Vector3.zero;
+
+            foreach (var existingBlock in spawnedBlocks)
+            {
+                if (existingBlock == null) continue;
+
+                // Get existing block's size
+                float existingWidth = 0.15f; // Default estimate
+                TextBasedScaler scaler = existingBlock.GetComponent<TextBasedScaler>();
+                if (scaler != null)
+                {
+                    Transform rayInteraction = existingBlock.transform.Find("RayInteraction");
+                    if (rayInteraction != null)
+                    {
+                        existingWidth = rayInteraction.localScale.x + 0.02f;
+                    }
+                }
+
+                float requiredDistance = (blockWidth + existingWidth) * 0.5f + 0.03f;
+                Vector3 toExisting = existingBlock.transform.position - adjustedPosition;
+                float distance = toExisting.magnitude;
+
+                if (distance < requiredDistance)
+                {
+                    hasOverlap = true;
+                    // Calculate push direction (away from existing block)
+                    Vector3 pushDir = -toExisting.normalized;
+                    if (pushDir.sqrMagnitude < 0.001f)
+                    {
+                        // If positions are nearly identical, push in random direction
+                        pushDir = new Vector3(
+                            UnityEngine.Random.Range(-1f, 1f),
+                            UnityEngine.Random.Range(-1f, 1f),
+                            UnityEngine.Random.Range(-0.3f, 0.3f)
+                        ).normalized;
+                    }
+                    float pushStrength = requiredDistance - distance + 0.01f;
+                    totalPushDirection += pushDir * pushStrength;
+                }
+            }
+
+            if (!hasOverlap)
+            {
+                break; // No overlap, position is good
+            }
+
+            // Apply push and try again
+            adjustedPosition += totalPushDirection;
+
+            // Keep the block in front of headset (don't let it go behind)
+            if (headset != null)
+            {
+                Vector3 toBlock = adjustedPosition - headset.position;
+                float forwardDist = Vector3.Dot(toBlock, headset.forward);
+                if (forwardDist < 0.3f)
+                {
+                    adjustedPosition = headset.position + headset.forward * 0.5f +
+                        headset.right * Vector3.Dot(toBlock, headset.right) +
+                        headset.up * Vector3.Dot(toBlock, headset.up);
+                }
+            }
+        }
+
+        return adjustedPosition;
     }
 
     /// <summary>

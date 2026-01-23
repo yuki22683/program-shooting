@@ -21,6 +21,10 @@ public class BlockShooter : MonoBehaviour
     private static RayInteractorCursorVisual[] cachedCursorVisuals;
     private static Color[] originalCursorHoverColor;
 
+    // Hand cursor visual caching (for hand tracking) - cache renderers directly
+    private static Renderer[] cachedHandCursorRenderers;
+    private static Color[] originalHandCursorColors;
+
     private static bool colorsInitialized;
 
     /// <summary>
@@ -111,6 +115,32 @@ public class BlockShooter : MonoBehaviour
             Debug.Log($"[BlockShooter] Initialized {cachedCursorVisuals.Length} cursor visuals");
         }
 
+        // Cache hand cursor visuals (reticle for hand tracking) - find renderers in children
+        var handCursorVisuals = FindObjectsOfType<HandRayInteractorCursorVisual>();
+        if (handCursorVisuals != null && handCursorVisuals.Length > 0)
+        {
+            var rendererList = new System.Collections.Generic.List<Renderer>();
+            var colorList = new System.Collections.Generic.List<Color>();
+
+            foreach (var handCursor in handCursorVisuals)
+            {
+                // Get all renderers in children (the actual cursor mesh)
+                var renderers = handCursor.GetComponentsInChildren<Renderer>(true);
+                foreach (var renderer in renderers)
+                {
+                    if (renderer != null && renderer.material != null)
+                    {
+                        rendererList.Add(renderer);
+                        colorList.Add(renderer.material.color);
+                    }
+                }
+            }
+
+            cachedHandCursorRenderers = rendererList.ToArray();
+            originalHandCursorColors = colorList.ToArray();
+            Debug.Log($"[BlockShooter] Initialized {cachedHandCursorRenderers.Length} hand cursor renderers");
+        }
+
         colorsInitialized = true;
     }
 
@@ -142,6 +172,18 @@ public class BlockShooter : MonoBehaviour
                 }
             }
         }
+
+        // Set hand cursor (reticle for hand tracking) color to red
+        if (cachedHandCursorRenderers != null)
+        {
+            foreach (var renderer in cachedHandCursorRenderers)
+            {
+                if (renderer != null && renderer.material != null)
+                {
+                    renderer.material.color = hoverRayColor;
+                }
+            }
+        }
     }
 
     private void RestoreRayColor()
@@ -169,6 +211,18 @@ public class BlockShooter : MonoBehaviour
                 if (cachedCursorVisuals[i] != null)
                 {
                     cachedCursorVisuals[i].HoverColor = originalCursorHoverColor[i];
+                }
+            }
+        }
+
+        // Restore hand cursor (reticle for hand tracking) colors
+        if (cachedHandCursorRenderers != null && originalHandCursorColors != null)
+        {
+            for (int i = 0; i < cachedHandCursorRenderers.Length; i++)
+            {
+                if (cachedHandCursorRenderers[i] != null && cachedHandCursorRenderers[i].material != null)
+                {
+                    cachedHandCursorRenderers[i].material.color = originalHandCursorColors[i];
                 }
             }
         }
