@@ -13,6 +13,12 @@ public class SelectCoursePanelManager : MonoBehaviour
     [SerializeField] private TMP_Text levelLabel;           // Label_Level - Difficulty level
     [SerializeField] private Image progressBarIn;           // ProgressBar_In - Progress bar fill
     [SerializeField] private TMP_Text progressLabel;        // Progress/Label - "completed/total" text
+    [SerializeField] private Image iconLevelImage;          // Icon_Level - Difficulty icon
+
+    [Header("Difficulty Colors")]
+    [SerializeField] private Color easyColor = new Color(0.0f, 0.8f, 1.0f, 1f);      // 水色 (Cyan)
+    [SerializeField] private Color mediumColor = new Color(0.6f, 1.0f, 0.2f, 1f);    // 黄緑 (Yellow-Green)
+    [SerializeField] private Color hardColor = new Color(1.0f, 0.5f, 0.0f, 1f);      // オレンジ (Orange)
 
     [Header("Lesson Data Keys")]
     [SerializeField] private string courseTitleKey = "python_lesson1_course_title";
@@ -23,6 +29,12 @@ public class SelectCoursePanelManager : MonoBehaviour
     [SerializeField] private int totalExercises = 10;
     [SerializeField] private int completedExercises = 0;
 
+    private void Awake()
+    {
+        // Auto-find UI references if not set
+        FindUIReferences();
+    }
+
     private void Start()
     {
         UpdateDisplay();
@@ -31,6 +43,123 @@ public class SelectCoursePanelManager : MonoBehaviour
     private void OnEnable()
     {
         UpdateDisplay();
+    }
+
+    /// <summary>
+    /// Automatically finds UI references in child objects if not already set
+    /// </summary>
+    private void FindUIReferences()
+    {
+        // Correct path: Content/Background/Elements/Vertical/Label (2)
+        // Find title label (Label (2))
+        if (titleLabel == null)
+        {
+            Transform titleTransform = transform.Find("Content/Background/Elements/Vertical/Label (2)");
+            if (titleTransform != null)
+            {
+                titleLabel = titleTransform.GetComponent<TMP_Text>();
+                Debug.Log("[SelectCoursePanelManager] Found titleLabel");
+            }
+            else
+            {
+                Debug.LogWarning("[SelectCoursePanelManager] Could not find titleLabel at Content/Background/Elements/Vertical/Label (2)");
+            }
+        }
+
+        // Find description label (Label (3))
+        if (descriptionLabel == null)
+        {
+            Transform descTransform = transform.Find("Content/Background/Elements/Vertical/Label (3)");
+            if (descTransform != null)
+            {
+                descriptionLabel = descTransform.GetComponent<TMP_Text>();
+                Debug.Log("[SelectCoursePanelManager] Found descriptionLabel");
+            }
+            else
+            {
+                Debug.LogWarning("[SelectCoursePanelManager] Could not find descriptionLabel at Content/Background/Elements/Vertical/Label (3)");
+            }
+        }
+
+        // Find level label (Label_Level)
+        if (levelLabel == null)
+        {
+            Transform levelTransform = transform.Find("Content/Background/Elements/Label_Level");
+            if (levelTransform != null)
+            {
+                levelLabel = levelTransform.GetComponent<TMP_Text>();
+                Debug.Log("[SelectCoursePanelManager] Found levelLabel");
+            }
+            else
+            {
+                Debug.LogWarning("[SelectCoursePanelManager] Could not find levelLabel at Content/Background/Elements/Label_Level");
+            }
+        }
+
+        // Find progress bar (ProgressBar_In)
+        if (progressBarIn == null)
+        {
+            Transform progressBarTransform = transform.Find("Content/Background/Elements/Progress/ProgressBar_In");
+            if (progressBarTransform != null)
+            {
+                progressBarIn = progressBarTransform.GetComponent<Image>();
+                Debug.Log("[SelectCoursePanelManager] Found progressBarIn");
+            }
+            else
+            {
+                Debug.LogWarning("[SelectCoursePanelManager] Could not find progressBarIn at Content/Background/Elements/Progress/ProgressBar_In");
+            }
+        }
+
+        // Find progress label (Progress/Label)
+        if (progressLabel == null)
+        {
+            Transform progressTransform = transform.Find("Content/Background/Elements/Progress/Label");
+            if (progressTransform != null)
+            {
+                progressLabel = progressTransform.GetComponent<TMP_Text>();
+                Debug.Log("[SelectCoursePanelManager] Found progressLabel");
+            }
+            else
+            {
+                Debug.LogWarning("[SelectCoursePanelManager] Could not find progressLabel at Content/Background/Elements/Progress/Label");
+            }
+        }
+
+        // Find Icon_Level image
+        if (iconLevelImage == null)
+        {
+            Transform iconTransform = transform.Find("Content/Background/Elements/Icon_Level");
+            if (iconTransform != null)
+            {
+                iconLevelImage = iconTransform.GetComponent<Image>();
+                Debug.Log("[SelectCoursePanelManager] Found iconLevelImage");
+            }
+            else
+            {
+                Debug.LogWarning("[SelectCoursePanelManager] Could not find iconLevelImage at Content/Background/Elements/Icon_Level");
+            }
+        }
+    }
+
+    /// <summary>
+    /// Recursively finds a child by name
+    /// </summary>
+    private Transform FindDeepChild(Transform parent, string name)
+    {
+        foreach (Transform child in parent)
+        {
+            if (child.name == name)
+            {
+                return child;
+            }
+            Transform found = FindDeepChild(child, name);
+            if (found != null)
+            {
+                return found;
+            }
+        }
+        return null;
     }
 
     /// <summary>
@@ -75,11 +204,42 @@ public class SelectCoursePanelManager : MonoBehaviour
             Debug.Log($"[SelectCoursePanelManager] Set level: {levelLabel.text}");
         }
 
+        // Update icon color based on difficulty
+        UpdateIconColor();
+
         // Update progress bar
         UpdateProgressBar();
 
         // Update progress label
         UpdateProgressLabel();
+    }
+
+    /// <summary>
+    /// Updates the Icon_Level color based on difficulty level
+    /// </summary>
+    private void UpdateIconColor()
+    {
+        if (iconLevelImage == null) return;
+
+        Color targetColor;
+        switch (difficultyKey)
+        {
+            case "difficulty_easy":
+                targetColor = easyColor;   // 水色
+                break;
+            case "difficulty_medium":
+                targetColor = mediumColor; // 黄緑
+                break;
+            case "difficulty_hard":
+                targetColor = hardColor;   // オレンジ
+                break;
+            default:
+                targetColor = easyColor;
+                break;
+        }
+
+        iconLevelImage.color = targetColor;
+        Debug.Log($"[SelectCoursePanelManager] Set icon color for {difficultyKey}");
     }
 
     /// <summary>
@@ -141,5 +301,29 @@ public class SelectCoursePanelManager : MonoBehaviour
             UpdateProgressLabel();
             Debug.Log($"[SelectCoursePanelManager] Synced with LessonManager: {totalExercises} exercises");
         }
+    }
+
+    /// <summary>
+    /// Sets the localization keys for this course panel
+    /// </summary>
+    public void SetLocalizationKeys(string titleKey, string descriptionKey, string levelKey)
+    {
+        courseTitleKey = titleKey;
+        courseDescriptionKey = descriptionKey;
+        difficultyKey = levelKey;
+        UpdateDisplay();
+    }
+
+    /// <summary>
+    /// Configures this panel with course data
+    /// </summary>
+    public void Configure(string titleKey, string descriptionKey, string levelKey, int total, int completed)
+    {
+        courseTitleKey = titleKey;
+        courseDescriptionKey = descriptionKey;
+        difficultyKey = levelKey;
+        totalExercises = total;
+        completedExercises = completed;
+        UpdateDisplay();
     }
 }
