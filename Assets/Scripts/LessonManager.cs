@@ -2713,7 +2713,7 @@ public class LessonManager : MonoBehaviour
         {
             titleKey = "c_lesson1_ex1_title",
             slideKeyPrefix = "c_lesson1_ex1",
-            slideCount = 2,
+            slideCount = 3,
             correctLines = new List<string> { "#include <stdio.h>", "int main() {", "    // 画面にメッセージを出す関数", "    printf(\"Hello, C!\\n\");", "    return 0;", "}" },
             comments = new List<LocalizedComment>
             {
@@ -2727,7 +2727,7 @@ public class LessonManager : MonoBehaviour
         {
             titleKey = "c_lesson1_ex2_title",
             slideKeyPrefix = "c_lesson1_ex2",
-            slideCount = 2,
+            slideCount = 3,
             correctLines = new List<string> { "#include <stdio.h>", "int main() {", "    // int（数字）ラベルのはこを作る", "    int count = 10;", "    // 中身を表示する", "    printf(\"%d\\n\", count);", "    return 0;", "}" },
             comments = new List<LocalizedComment>
             {
@@ -2742,7 +2742,7 @@ public class LessonManager : MonoBehaviour
         {
             titleKey = "c_lesson1_ex3_title",
             slideKeyPrefix = "c_lesson1_ex3",
-            slideCount = 2,
+            slideCount = 3,
             correctLines = new List<string> { "#include <stdio.h>", "int main() {", "    // はこに数字を入れる", "    int x = 10;", "    int y = 20;", "    // たし算した結果を表示する", "    printf(\"%d\\n\", x + y);", "    return 0;", "}" },
             comments = new List<LocalizedComment>
             {
@@ -2757,7 +2757,7 @@ public class LessonManager : MonoBehaviour
         {
             titleKey = "c_lesson1_ex4_title",
             slideKeyPrefix = "c_lesson1_ex4",
-            slideCount = 2,
+            slideCount = 3,
             correctLines = new List<string> { "#include <stdio.h>", "int main() {", "    // 10 を 3 で割ったあまりを出力する", "    printf(\"%d\\n\", 10 % 3);", "    return 0;", "}" },
             comments = new List<LocalizedComment>
             {
@@ -2771,7 +2771,7 @@ public class LessonManager : MonoBehaviour
         {
             titleKey = "c_lesson1_ex5_title",
             slideKeyPrefix = "c_lesson1_ex5",
-            slideCount = 2,
+            slideCount = 3,
             correctLines = new List<string> { "#include <stdio.h>", "int main() {", "    // scoreに50を入れる", "    int score = 50;", "    // 10点プラスする", "    score += 10;", "    // 結果を表示", "    printf(\"%d\\n\", score);", "    return 0;", "}" },
             comments = new List<LocalizedComment>
             {
@@ -2787,7 +2787,7 @@ public class LessonManager : MonoBehaviour
         {
             titleKey = "c_lesson1_ex6_title",
             slideKeyPrefix = "c_lesson1_ex6",
-            slideCount = 2,
+            slideCount = 3,
             correctLines = new List<string> { "#include <stdio.h>", "int main() {", "    // ageに10を入れる", "    int age = 10;", "    // 文章の中に中身を表示する", "    printf(\"I am %d years old\\n\", age);", "    return 0;", "}" },
             comments = new List<LocalizedComment>
             {
@@ -2802,7 +2802,7 @@ public class LessonManager : MonoBehaviour
         {
             titleKey = "c_lesson1_ex7_title",
             slideKeyPrefix = "c_lesson1_ex7",
-            slideCount = 2,
+            slideCount = 3,
             correctLines = new List<string> { "#include <stdio.h>", "int main() {", "    // 配列を作成", "    int scores[] = {100, 50};", "    // 2番目（番号は1）を出す", "    printf(\"%d\\n\", scores[1]);", "    return 0;", "}" },
             comments = new List<LocalizedComment>
             {
@@ -2817,7 +2817,7 @@ public class LessonManager : MonoBehaviour
         {
             titleKey = "c_lesson1_ex8_title",
             slideKeyPrefix = "c_lesson1_ex8",
-            slideCount = 2,
+            slideCount = 3,
             correctLines = new List<string> { "#include <stdio.h>", "int main() {", "    // scoreに100を入れる", "    int score = 100;", "    // > で「より大きい」を比較", "    if (score > 80) {", "        // メッセージを表示", "        printf(\"Pass!\\n\");", "    }", "    return 0;", "}" },
             comments = new List<LocalizedComment>
             {
@@ -2833,7 +2833,7 @@ public class LessonManager : MonoBehaviour
         {
             titleKey = "c_lesson1_ex9_title",
             slideKeyPrefix = "c_lesson1_ex9",
-            slideCount = 2,
+            slideCount = 3,
             correctLines = new List<string> { "#include <stdio.h>", "int main() {", "    // xに5を入れる", "    int x = 5;", "    // 10より大きいかを比較", "    if (x > 10) {", "        printf(\"Big\\n\");", "    // else で「それ以外」", "    } else {", "        printf(\"Small\\n\");", "    }", "    return 0;", "}" },
             comments = new List<LocalizedComment>
             {
@@ -2849,7 +2849,7 @@ public class LessonManager : MonoBehaviour
         {
             titleKey = "c_lesson1_ex10_title",
             slideKeyPrefix = "c_lesson1_ex10",
-            slideCount = 2,
+            slideCount = 3,
             correctLines = new List<string> { "#include <stdio.h>", "int main() {", "    // scoreに85を入れる", "    int score = 85;", "    // 両方の条件を満たすので && を使います", "    if (score >= 80 && score <= 100) {", "        printf(\"Excellent!\\n\");", "    }", "    return 0;", "}" },
             comments = new List<LocalizedComment>
             {
@@ -2864,7 +2864,7 @@ public class LessonManager : MonoBehaviour
         {
             titleKey = "c_lesson1_ex11_title",
             slideKeyPrefix = "c_lesson1_ex11",
-            slideCount = 2,
+            slideCount = 3,
             correctLines = new List<string> { "#include <stdio.h>", "int main() {", "    // i++ で1つ増やす", "    for (int i = 0; i < 3; i++) {", "        printf(\"Hey\\n\");", "    }", "    return 0;", "}" },
             comments = new List<LocalizedComment>
             {
@@ -2878,7 +2878,7 @@ public class LessonManager : MonoBehaviour
         {
             titleKey = "c_lesson1_ex12_title",
             slideKeyPrefix = "c_lesson1_ex12",
-            slideCount = 2,
+            slideCount = 3,
             correctLines = new List<string> { "#include <stdio.h>", "struct Book {", "    int price;", "};", "int main() {", "    struct Book b = {500};", "    // x でメンバにアクセス", "    printf(\"%d\\n\", b.price);", "    return 0;", "}" },
             comments = new List<LocalizedComment>
             {
@@ -2892,7 +2892,7 @@ public class LessonManager : MonoBehaviour
         {
             titleKey = "c_lesson1_ex13_title",
             slideKeyPrefix = "c_lesson1_ex13",
-            slideCount = 2,
+            slideCount = 3,
             correctLines = new List<string> { "#include <stdio.h>", "void greet() {", "    printf(\"Hello\\n\");", "}", "int main() {", "    // greet で関数を呼び出す", "    greet();", "    return 0;", "}" },
             comments = new List<LocalizedComment>
             {

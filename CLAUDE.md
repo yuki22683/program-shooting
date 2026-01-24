@@ -71,8 +71,22 @@ Grep: pattern="{lang}_lesson1_ex1_slide1_title" path=localizedText.json
 
 **参考サイトからスライドデータを取得する際の注意**:
 - 参考サイト（senkou-code）のtutorialSlides配列からスライド数を確認
-- slideCount = tutorialSlidesの要素数（「やってみよう」ページは通常含まない）
+- slideCount = tutorialSlidesの要素数 + 1（「やってみよう！」ページ分）
 - 各スライドのtitleとcontentをlocalizedText.jsonに追加
+
+**「やってみよう！」スライドの必須ルール**:
+- 最終スライドは「やってみよう！」ページとする（タイトル: "やってみよう！" / "Let's Try It!"）
+- **演習説明は必ず参考サイトの`description`フィールドから引用すること** ★重要
+  - 参照先: `C:\Work\git\senkou-code\data\lessons\{言語}.ts` の各exerciseの`description`
+  - 自分で文章を作成してはならない。参考サイトの文言をそのまま使用する
+- 末尾に「（準備ができたら「レッスン開始」を選択してください。）」を追加
+
+**例（c.tsのex1の場合）**:
+```
+参考サイトのdescription: "C言語を使って画面に「こんにちは」と表示させてみましょう。printf（プリントエフ）という関数（かんすう）を使います。"
+↓
+slide3_content: "C言語を使って画面に「こんにちは」と表示させてみましょう。printf（プリントエフ）という関数（かんすう）を使います。\n\n（準備ができたら「レッスン開始」を選択してください。）"
+```
 
 ## 必須: 修正後の動作確認
 

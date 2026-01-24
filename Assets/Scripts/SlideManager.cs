@@ -677,21 +677,92 @@ public class SlideManager : MonoBehaviour
 
     /// <summary>
     /// Parses content and splits it into text and code sections
-    /// Code sections are detected by lines starting with whitespace (2+ spaces)
+    /// Supports:
+    /// - Markdown code blocks (```language ... ```)
+    /// - Lines starting with 2+ spaces (legacy)
+    /// - Output lines starting with =>
+    /// Also converts inline `code` to styled text
     /// </summary>
     private List<ContentSection> ParseContent(string content)
     {
         List<ContentSection> sections = new List<ContentSection>();
         if (string.IsNullOrEmpty(content)) return sections;
 
+        // DEBUG: Check raw content
+        Debug.Log($"[SlideManager] ParseContent RAW length={content.Length}, has backslash-n={(content.Contains("\\n"))}, has triple backtick={(content.Contains("```"))}");
+
+        // Convert escaped newlines to actual newlines
+        // JSON stores \\n which becomes \n (literal backslash-n) after JSON parsing
+        // We need to convert this to actual newline characters
+        content = content.Replace("\\n", "\n");
+
+        // DEBUG: Check after replace
+        Debug.Log($"[SlideManager] ParseContent AFTER REPLACE has triple backtick={(content.Contains("```"))}");
+
         string[] lines = content.Split('\n');
+        Debug.Log($"[SlideManager] ParseContent: split into {lines.Length} lines");
+
+        // DEBUG: Log first few lines
+        for (int i = 0; i < Mathf.Min(5, lines.Length); i++)
+        {
+            Debug.Log($"[SlideManager] Line {i}: '{lines[i]}'");
+        }
         StringBuilder currentText = new StringBuilder();
         StringBuilder currentCode = new StringBuilder();
         bool inCodeBlock = false;
+        bool inMarkdownCodeBlock = false;
 
         foreach (string line in lines)
         {
-            // Check if line is code (starts with 2+ spaces or is indented code continuation)
+            // Check for markdown code block start/end (``` or ```language)
+            if (line.TrimStart().StartsWith("```"))
+            {
+                if (!inMarkdownCodeBlock)
+                {
+                    // Starting a markdown code block
+                    // Save any accumulated text first
+                    if (currentText.Length > 0)
+                    {
+                        sections.Add(new ContentSection
+                        {
+                            Type = ContentSectionType.Text,
+                            Content = ProcessInlineCode(currentText.ToString().TrimEnd('\n'))
+                        });
+                        currentText.Clear();
+                    }
+                    inMarkdownCodeBlock = true;
+                    inCodeBlock = true;
+                    // Don't add the ``` line itself to code
+                    continue;
+                }
+                else
+                {
+                    // Ending a markdown code block
+                    if (currentCode.Length > 0)
+                    {
+                        sections.Add(new ContentSection
+                        {
+                            Type = ContentSectionType.Code,
+                            Content = currentCode.ToString()
+                        });
+                        currentCode.Clear();
+                    }
+                    inMarkdownCodeBlock = false;
+                    inCodeBlock = false;
+                    // Don't add the closing ``` line
+                    continue;
+                }
+            }
+
+            // If inside markdown code block, add line as code
+            if (inMarkdownCodeBlock)
+            {
+                if (currentCode.Length > 0) currentCode.Append("\n");
+                currentCode.Append(line);
+                continue;
+            }
+
+            // Legacy: Check if line is code (starts with 2+ spaces or is indented code continuation)
             bool isCodeLine = line.StartsWith("  ") || (line.StartsWith("=>") && inCodeBlock);
 
             // Also treat "=>" output lines as code
@@ -708,7 +779,7 @@ public class SlideManager : MonoBehaviour
                     sections.Add(new ContentSection
                     {
                         Type = ContentSectionType.Text,
-                        Content = currentText.ToString().TrimEnd('\n')
+                        Content = ProcessInlineCode(currentText.ToString().TrimEnd('\n'))
                     });
                     currentText.Clear();
                 }
@@ -744,7 +815,7 @@ public class SlideManager : MonoBehaviour
             sections.Add(new ContentSection
             {
                 Type = ContentSectionType.Text,
-                Content = currentText.ToString().TrimEnd('\n')
+                Content = ProcessInlineCode(currentText.ToString().TrimEnd('\n'))
             });
         }
         if (currentCode.Length > 0)
@@ -757,6 +828,36 @@ public class SlideManager : MonoBehaviour
         }
 
         return sections;
+    }
+
+    /// <summary>
+    /// Processes inline code (text between backticks) and converts to styled text
+    /// Example: `code here` becomes <color=#DCDCAA><b>code here</b></color>
+    /// </summary>
+    private string ProcessInlineCode(string text)
+    {
+        if (string.IsNullOrEmpty(text)) return text;
+
+        // DEBUG: Check for backticks
+        int backtickCount = 0;
+        foreach (char c in text) if (c == '`') backtickCount++;
+        Debug.Log($"[SlideManager] ProcessInlineCode: text length={text.Length}, backtick count={backtickCount}");
+
+        // Get the color for inline code (use function definition color for visibility)
+        string codeColor = ColorToHex(TextBasedScaler.SyntaxColors.FunctionDef);
+
+        // Replace `code` with colored/styled version
+        // Use regex to match content between backticks
+        var regex = new Regex(@"`([^`]+)`");
+        var result = regex.Replace(text, match =>
+        {
+            string code = match.Groups[1].Value;
+            Debug.Log($"[SlideManager] Found inline code: {code}");
+            return $"<color={codeColor}><b>{code}</b></color>";
+        });
+
+        Debug.Log($"[SlideManager] ProcessInlineCode result length={result.Length}");
+        return result;
     }
 
     /// <summary>
@@ -778,6 +879,11 @@ public class SlideManager : MonoBehaviour
             Debug.LogWarning("[SlideManager] Content container or template not found");
             return;
         }
+
+        // DEBUG: Log raw content
+        Debug.Log($"[SlideManager] Raw content length: {rawContent?.Length ?? 0}");
+        Debug.Log($"[SlideManager] Contains backtick: {rawContent?.Contains("`") ?? false}");
+        Debug.Log($"[SlideManager] Contains triple backtick: {rawContent?.Contains("```") ?? false}");
 
         // Parse content into sections
         List<ContentSection> sections = ParseContent(rawContent);
