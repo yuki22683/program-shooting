@@ -124,7 +124,7 @@ public class SelectLanguagePanelController : MonoBehaviour
             case "java": return 3;
             case "csharp": return 4;
             case "cpp": return 5;
-            case "c": return 5; // C uses same index as C++ for now
+            case "c": return 19;
             case "go": return 6;
             case "rust": return 7;
             case "ruby": return 8;

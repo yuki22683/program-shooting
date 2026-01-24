@@ -254,6 +254,24 @@ public class CourseButtonSpawner : MonoBehaviour
             case "typescript":
                 InitializeTypeScriptCourses();
                 break;
+            case "java":
+                InitializeJavaCourses();
+                break;
+            case "c":
+                InitializeCCourses();
+                break;
+            case "cpp":
+                InitializeCppCourses();
+                break;
+            case "csharp":
+                InitializeCSharpCourses();
+                break;
+            case "go":
+                InitializeGoCourses();
+                break;
+            case "assembly":
+                InitializeAssemblyCourses();
+                break;
             default:
                 Debug.LogWarning($"[CourseButtonSpawner] Unknown language: {language}, defaulting to Python");
                 InitializePythonCourses();
@@ -409,6 +427,270 @@ public class CourseButtonSpawner : MonoBehaviour
         });
 
         Debug.Log("[CourseButtonSpawner] Initialized 4 TypeScript courses");
+    }
+
+    /// <summary>
+    /// Initializes Java courses
+    /// </summary>
+    private void InitializeJavaCourses()
+    {
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "java_lesson1_course_title",
+            courseDescriptionKey = "java_lesson1_course_description",
+            difficultyKey = "difficulty_easy",
+            totalExercises = 13,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "java_lesson2_course_title",
+            courseDescriptionKey = "java_lesson2_course_description",
+            difficultyKey = "difficulty_easy",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "java_lesson3_course_title",
+            courseDescriptionKey = "java_lesson3_course_description",
+            difficultyKey = "difficulty_medium",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "java_lesson4_course_title",
+            courseDescriptionKey = "java_lesson4_course_description",
+            difficultyKey = "difficulty_medium",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "java_lesson5_course_title",
+            courseDescriptionKey = "java_lesson5_course_description",
+            difficultyKey = "difficulty_hard",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        Debug.Log("[CourseButtonSpawner] Initialized 5 Java courses");
+    }
+
+    /// <summary>
+    /// Initializes C courses
+    /// </summary>
+    private void InitializeCCourses()
+    {
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "c_lesson1_course_title",
+            courseDescriptionKey = "c_lesson1_course_description",
+            difficultyKey = "difficulty_easy",
+            totalExercises = 13,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "c_lesson2_course_title",
+            courseDescriptionKey = "c_lesson2_course_description",
+            difficultyKey = "difficulty_medium",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "c_lesson3_course_title",
+            courseDescriptionKey = "c_lesson3_course_description",
+            difficultyKey = "difficulty_medium",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "c_lesson4_course_title",
+            courseDescriptionKey = "c_lesson4_course_description",
+            difficultyKey = "difficulty_hard",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        Debug.Log("[CourseButtonSpawner] Initialized 4 C courses");
+    }
+
+    /// <summary>
+    /// Initializes C++ courses
+    /// </summary>
+    private void InitializeCppCourses()
+    {
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "cpp_lesson1_course_title",
+            courseDescriptionKey = "cpp_lesson1_course_description",
+            difficultyKey = "difficulty_easy",
+            totalExercises = 13,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "cpp_lesson2_course_title",
+            courseDescriptionKey = "cpp_lesson2_course_description",
+            difficultyKey = "difficulty_medium",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "cpp_lesson3_course_title",
+            courseDescriptionKey = "cpp_lesson3_course_description",
+            difficultyKey = "difficulty_medium",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "cpp_lesson4_course_title",
+            courseDescriptionKey = "cpp_lesson4_course_description",
+            difficultyKey = "difficulty_hard",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        Debug.Log("[CourseButtonSpawner] Initialized 4 C++ courses");
+    }
+
+    /// <summary>
+    /// Initializes C# courses
+    /// </summary>
+    private void InitializeCSharpCourses()
+    {
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "csharp_lesson1_course_title",
+            courseDescriptionKey = "csharp_lesson1_course_description",
+            difficultyKey = "difficulty_easy",
+            totalExercises = 13,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "csharp_lesson2_course_title",
+            courseDescriptionKey = "csharp_lesson2_course_description",
+            difficultyKey = "difficulty_medium",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "csharp_lesson3_course_title",
+            courseDescriptionKey = "csharp_lesson3_course_description",
+            difficultyKey = "difficulty_medium",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "csharp_lesson4_course_title",
+            courseDescriptionKey = "csharp_lesson4_course_description",
+            difficultyKey = "difficulty_hard",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        Debug.Log("[CourseButtonSpawner] Initialized 4 C# courses");
+    }
+
+    /// <summary>
+    /// Initializes Go courses
+    /// </summary>
+    private void InitializeGoCourses()
+    {
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "go_lesson1_course_title",
+            courseDescriptionKey = "go_lesson1_course_description",
+            difficultyKey = "difficulty_easy",
+            totalExercises = 13,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "go_lesson2_course_title",
+            courseDescriptionKey = "go_lesson2_course_description",
+            difficultyKey = "difficulty_medium",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "go_lesson3_course_title",
+            courseDescriptionKey = "go_lesson3_course_description",
+            difficultyKey = "difficulty_medium",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "go_lesson4_course_title",
+            courseDescriptionKey = "go_lesson4_course_description",
+            difficultyKey = "difficulty_hard",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        Debug.Log("[CourseButtonSpawner] Initialized 4 Go courses");
+    }
+
+    /// <summary>
+    /// Initializes Assembly courses
+    /// </summary>
+    private void InitializeAssemblyCourses()
+    {
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "assembly_lesson1_course_title",
+            courseDescriptionKey = "assembly_lesson1_course_description",
+            difficultyKey = "difficulty_medium",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "assembly_lesson2_course_title",
+            courseDescriptionKey = "assembly_lesson2_course_description",
+            difficultyKey = "difficulty_hard",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "assembly_lesson3_course_title",
+            courseDescriptionKey = "assembly_lesson3_course_description",
+            difficultyKey = "difficulty_hard",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        Debug.Log("[CourseButtonSpawner] Initialized 3 Assembly courses");
     }
 
     /// <summary>

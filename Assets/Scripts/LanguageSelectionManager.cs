@@ -341,6 +341,7 @@ public class LanguageSelectionManager : MonoBehaviour
             case "haskell": return 16;
             case "elixir": return 17;
             case "assembly": return 18;
+            case "c": return 19;
             default: return 0;
         }
     }

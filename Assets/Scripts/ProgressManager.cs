@@ -219,6 +219,7 @@ public class ProgressManager : MonoBehaviour
             case 16: return "haskell";
             case 17: return "elixir";
             case 18: return "assembly";
+            case 19: return "c";
             default: return "python";
         }
     }
