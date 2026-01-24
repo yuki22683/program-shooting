@@ -91,6 +91,55 @@ public class SelectLanguagePanelController : MonoBehaviour
         selectCoursePanel.transform.rotation = rot;
         selectCoursePanel.SetActive(true);
         Debug.Log($"[SelectLanguagePanelController] Showed SelectCoursePanel at position: {pos}");
+
+        // Update course panel to show courses for the selected language AFTER showing the panel
+        // This ensures CourseButtonSpawner.Awake() has run and references are initialized
+        int languageIndex = GetLanguageIndex(languageId);
+        CourseButtonSpawner spawner = selectCoursePanel.GetComponent<CourseButtonSpawner>();
+        if (spawner == null)
+        {
+            spawner = selectCoursePanel.GetComponentInChildren<CourseButtonSpawner>();
+        }
+        if (spawner != null)
+        {
+            spawner.SetLanguageIndex(languageIndex);
+            Debug.Log($"[SelectLanguagePanelController] Set CourseButtonSpawner to language {languageId} (index {languageIndex})");
+        }
+        else
+        {
+            Debug.LogWarning("[SelectLanguagePanelController] CourseButtonSpawner not found on SelectCoursePanel");
+        }
+    }
+
+    /// <summary>
+    /// Converts language ID string to index
+    /// </summary>
+    private int GetLanguageIndex(string languageId)
+    {
+        switch (languageId.ToLower())
+        {
+            case "python": return 0;
+            case "javascript": return 1;
+            case "typescript": return 2;
+            case "java": return 3;
+            case "csharp": return 4;
+            case "cpp": return 5;
+            case "c": return 5; // C uses same index as C++ for now
+            case "go": return 6;
+            case "rust": return 7;
+            case "ruby": return 8;
+            case "php": return 9;
+            case "swift": return 10;
+            case "kotlin": return 11;
+            case "bash": return 12;
+            case "sql": return 13;
+            case "lua": return 14;
+            case "perl": return 15;
+            case "haskell": return 16;
+            case "elixir": return 17;
+            case "assembly": return 18;
+            default: return 0;
+        }
     }
 
     private GameObject FindObjectByName(string name)

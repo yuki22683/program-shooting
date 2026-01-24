@@ -229,9 +229,42 @@ public class CourseButtonSpawner : MonoBehaviour
     }
 
     /// <summary>
-    /// Initializes default course data for Python lessons
+    /// Initializes course data based on the current language
     /// </summary>
     private void InitializeDefaultCourses()
+    {
+        InitializeCoursesForLanguage(currentLanguage);
+    }
+
+    /// <summary>
+    /// Initializes courses for the specified language
+    /// </summary>
+    private void InitializeCoursesForLanguage(string language)
+    {
+        courses.Clear();
+
+        switch (language.ToLower())
+        {
+            case "python":
+                InitializePythonCourses();
+                break;
+            case "javascript":
+                InitializeJavaScriptCourses();
+                break;
+            case "typescript":
+                InitializeTypeScriptCourses();
+                break;
+            default:
+                Debug.LogWarning($"[CourseButtonSpawner] Unknown language: {language}, defaulting to Python");
+                InitializePythonCourses();
+                break;
+        }
+    }
+
+    /// <summary>
+    /// Initializes Python courses
+    /// </summary>
+    private void InitializePythonCourses()
     {
         courses.Add(new CourseData
         {
@@ -247,7 +280,7 @@ public class CourseButtonSpawner : MonoBehaviour
             courseTitleKey = "python_lesson2_course_title",
             courseDescriptionKey = "python_lesson2_course_description",
             difficultyKey = "difficulty_easy",
-            totalExercises = 10,
+            totalExercises = 12,
             completedExercises = 0
         });
 
@@ -278,9 +311,106 @@ public class CourseButtonSpawner : MonoBehaviour
             completedExercises = 0
         });
 
-        Debug.Log("[CourseButtonSpawner] Initialized 5 default courses");
+        Debug.Log("[CourseButtonSpawner] Initialized 5 Python courses");
     }
-    
+
+    /// <summary>
+    /// Initializes JavaScript courses
+    /// </summary>
+    private void InitializeJavaScriptCourses()
+    {
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "javascript_lesson1_course_title",
+            courseDescriptionKey = "javascript_lesson1_course_description",
+            difficultyKey = "difficulty_easy",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "javascript_lesson2_course_title",
+            courseDescriptionKey = "javascript_lesson2_course_description",
+            difficultyKey = "difficulty_medium",
+            totalExercises = 13,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "javascript_lesson3_course_title",
+            courseDescriptionKey = "javascript_lesson3_course_description",
+            difficultyKey = "difficulty_hard",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "javascript_lesson4_course_title",
+            courseDescriptionKey = "javascript_lesson4_course_description",
+            difficultyKey = "difficulty_hard",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "javascript_lesson5_course_title",
+            courseDescriptionKey = "javascript_lesson5_course_description",
+            difficultyKey = "difficulty_hard",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        Debug.Log("[CourseButtonSpawner] Initialized 5 JavaScript courses");
+    }
+
+    /// <summary>
+    /// Initializes TypeScript courses
+    /// </summary>
+    private void InitializeTypeScriptCourses()
+    {
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "typescript_lesson1_course_title",
+            courseDescriptionKey = "typescript_lesson1_course_description",
+            difficultyKey = "difficulty_easy",
+            totalExercises = 13,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "typescript_lesson2_course_title",
+            courseDescriptionKey = "typescript_lesson2_course_description",
+            difficultyKey = "difficulty_medium",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "typescript_lesson3_course_title",
+            courseDescriptionKey = "typescript_lesson3_course_description",
+            difficultyKey = "difficulty_hard",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "typescript_lesson4_course_title",
+            courseDescriptionKey = "typescript_lesson4_course_description",
+            difficultyKey = "difficulty_hard",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        Debug.Log("[CourseButtonSpawner] Initialized 4 TypeScript courses");
+    }
+
     /// <summary>
     /// Spawns all course buttons based on the course data list
     /// </summary>
@@ -540,6 +670,8 @@ public class CourseButtonSpawner : MonoBehaviour
     {
         currentLanguageIndex = languageIndex;
         currentLanguage = ProgressManager.GetLanguageString(languageIndex);
+        // Reinitialize courses for the new language
+        InitializeCoursesForLanguage(currentLanguage);
         SpawnCourseButtons();
     }
 

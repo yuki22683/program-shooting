@@ -1,0 +1,1504 @@
+{
+  "language": "javascript",
+  "totalCourses": 5,
+  "courses": [
+    {
+      "courseId": "javascript-1",
+      "courseNum": 1,
+      "titleKey": "javascript_lesson1_course_title",
+      "descriptionKey": "javascript_lesson1_course_description",
+      "difficulty": "easy",
+      "exercises": [
+        {
+          "title": "javascript_lesson1_ex1_title",
+          "comments": [
+            "javascript_lesson1_ex1_comment1"
+          ],
+          "slideKeyPrefix": "javascript_lesson1_ex1",
+          "slideCount": 2,
+          "correctCode": "// 画面に「Hello, JavaScript!」と出す関数\nconsole.log('Hello, JavaScript!');",
+          "correctLines": [
+            "// 画面に「Hello, JavaScript!」と出す関数",
+            "console.log('Hello, JavaScript!');"
+          ],
+          "candidates": {
+            "functions": [
+              "console.log"
+            ],
+            "strings": [
+              "Hello, JavaScript!"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson1_ex2_title",
+          "comments": [
+            "javascript_lesson1_ex2_comment1",
+            "javascript_lesson1_ex2_comment2"
+          ],
+          "slideKeyPrefix": "javascript_lesson1_ex2",
+          "slideCount": 2,
+          "correctCode": "// nameという名前のはこを作る\nconst name = 'JavaScript';\n// はこの中身を出す\nconsole.log(name);",
+          "correctLines": [
+            "// nameという名前のはこを作る",
+            "const name = 'JavaScript';",
+            "// はこの中身を出す",
+            "console.log(name);"
+          ],
+          "candidates": {
+            "variables": [
+              "name"
+            ],
+            "functions": [
+              "console.log"
+            ],
+            "strings": [
+              "JavaScript"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson1_ex3_title",
+          "comments": [
+            "javascript_lesson1_ex3_comment1",
+            "javascript_lesson1_ex3_comment2",
+            "javascript_lesson1_ex3_comment3"
+          ],
+          "slideKeyPrefix": "javascript_lesson1_ex3",
+          "slideCount": 2,
+          "correctCode": "// xに10を入れる\nconst x = 10;\n// yに5を入れる\nconst y = 5;\n// x + y を表示する\nconsole.log(x + y);",
+          "correctLines": [
+            "// xに10を入れる",
+            "const x = 10;",
+            "// yに5を入れる",
+            "const y = 5;",
+            "// x + y を表示する",
+            [
+              "console.log(x + y);",
+              "console.log(y + x);"
+            ]
+          ],
+          "candidates": {
+            "variables": [
+              "x",
+              "y"
+            ],
+            "functions": [
+              "console.log"
+            ],
+            "operators": [
+              "+"
+            ],
+            "numbers": [
+              "10",
+              "5"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson1_ex4_title",
+          "comments": [
+            "javascript_lesson1_ex4_comment1",
+            "javascript_lesson1_ex4_comment2"
+          ],
+          "slideKeyPrefix": "javascript_lesson1_ex4",
+          "slideCount": 2,
+          "correctCode": "// age というはこに 10 を入れる\nconst age = 10;\n// 文章の中に age の中身を入れる\nconsole.log(`私は${age}歳です`);",
+          "correctLines": [
+            "// age というはこに 10 を入れる",
+            "const age = 10;",
+            "// 文章の中に age の中身を入れる",
+            "console.log(`私は${age}歳です`);"
+          ],
+          "candidates": {
+            "variables": [
+              "age"
+            ],
+            "functions": [
+              "console.log"
+            ],
+            "numbers": [
+              "10"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson1_ex5_title",
+          "comments": [
+            "javascript_lesson1_ex5_comment1",
+            "javascript_lesson1_ex5_comment2"
+          ],
+          "slideKeyPrefix": "javascript_lesson1_ex5",
+          "slideCount": 2,
+          "correctCode": "// 'あか', 'あお' の順で colors という配列を作る\nconst colors = ['あか', 'あお'];\n// 2番目のデータ（番号は1）を出す\nconsole.log(colors[1]);",
+          "correctLines": [
+            "// 'あか', 'あお' の順で colors という配列を作る",
+            "const colors = ['あか', 'あお'];",
+            "// 2番目のデータ（1番）を出す",
+            "console.log(colors[1]);"
+          ],
+          "candidates": {
+            "variables": [
+              "colors"
+            ],
+            "functions": [
+              "console.log"
+            ],
+            "strings": [
+              "あか",
+              "あお"
+            ],
+            "numbers": [
+              "1"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson1_ex6_title",
+          "comments": [
+            "javascript_lesson1_ex6_comment1",
+            "javascript_lesson1_ex6_comment2",
+            "javascript_lesson1_ex6_comment3"
+          ],
+          "slideKeyPrefix": "javascript_lesson1_ex6",
+          "slideCount": 2,
+          "correctCode": "// score に 100 を入れる\nconst score = 100;\n// もし 80 より大きかったら\nif (score > 80) {\n    // メッセージを表示する\n    console.log('ごうかく！');\n}",
+          "correctLines": [
+            "// score に 100 を入れる",
+            "const score = 100;",
+            "// もし 80 より大きかったら",
+            "if (score > 80) {",
+            "    // メッセージを表示する",
+            "    console.log('ごうかく！');",
+            "}"
+          ],
+          "candidates": {
+            "variables": [
+              "score"
+            ],
+            "functions": [
+              "console.log"
+            ],
+            "operators": [
+              ">"
+            ],
+            "strings": [
+              "ごうかく！"
+            ],
+            "numbers": [
+              "100"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson1_ex7_title",
+          "comments": [
+            "javascript_lesson1_ex7_comment1",
+            "javascript_lesson1_ex7_comment2",
+            "javascript_lesson1_ex7_comment3"
+          ],
+          "slideKeyPrefix": "javascript_lesson1_ex7",
+          "slideCount": 2,
+          "correctCode": "// age に 10 を入れる\nconst age = 10;\n// 20さい以上かどうかで分ける\nif (age >= 20) {\n    console.log('おとな');\n} else {\n    // それ以外の場合\n    console.log('こども');\n}",
+          "correctLines": [
+            "// age に 10 を入れる",
+            "const age = 10;",
+            "// 20さい以上かどうかで分ける",
+            "if (age >= 20) {",
+            "    console.log('おとな');",
+            "// 「そうでなければ」を表すキーワード",
+            "} else {",
+            "    // それ以外の場合",
+            "    console.log('こども');",
+            "}"
+          ],
+          "candidates": {
+            "variables": [
+              "age"
+            ],
+            "functions": [
+              "console.log"
+            ],
+            "strings": [
+              "こども"
+            ],
+            "numbers": [
+              "10"
+            ],
+            "keywords": [
+              "else"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson1_ex8_title",
+          "comments": [
+            "javascript_lesson1_ex8_comment1",
+            "javascript_lesson1_ex8_comment2",
+            "javascript_lesson1_ex8_comment3"
+          ],
+          "slideKeyPrefix": "javascript_lesson1_ex8",
+          "slideCount": 2,
+          "correctCode": "// 配列を作る（'たろう', 'はなこ'の順）\nconst names = ['たろう', 'はなこ'];\n// 順番に取り出すループ\nfor (const name of names) {\n    // 取り出した名前を表示\n    console.log(name);\n}",
+          "correctLines": [
+            "// 配列を作る（'たろう', 'はなこ'の順）",
+            "const names = ['たろう', 'はなこ'];",
+            "// 順番に取り出すループ",
+            "for (const name of names) {",
+            "    // 取り出した名前を表示",
+            "    console.log(name);",
+            "}"
+          ],
+          "candidates": {
+            "variables": [
+              "name",
+              "names"
+            ],
+            "functions": [
+              "console.log"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson1_ex9_title",
+          "comments": [
+            "javascript_lesson1_ex9_comment1",
+            "javascript_lesson1_ex9_comment2"
+          ],
+          "slideKeyPrefix": "javascript_lesson1_ex9",
+          "slideCount": 2,
+          "correctCode": "// オブジェクトを作る（nameは'たろう'）\nconst user = { name: 'たろう' };\n// 名前の中身を出す\nconsole.log(user.name);",
+          "correctLines": [
+            "// オブジェクトを作る（nameは'たろう'）",
+            "const user = { name: 'たろう' };",
+            "// 名前の中身を出す",
+            "console.log(user.name);"
+          ],
+          "candidates": {
+            "variables": [
+              "user"
+            ],
+            "functions": [
+              "console.log"
+            ],
+            "strings": [
+              "name",
+              "たろう"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson1_ex10_title",
+          "comments": [
+            "javascript_lesson1_ex10_comment1",
+            "javascript_lesson1_ex10_comment2",
+            "javascript_lesson1_ex10_comment3"
+          ],
+          "slideKeyPrefix": "javascript_lesson1_ex10",
+          "slideCount": 2,
+          "correctCode": "// greet という関数を定義する（'こんにちは'と表示）\nfunction greet() {\n    // 'こんにちは'と表示\n    console.log('こんにちは');\n}\n// 関数を動かす\ngreet();",
+          "correctLines": [
+            "// greet という関数を定義する（'こんにちは'と表示）",
+            "function greet() {",
+            "    // 'こんにちは'と表示",
+            "    console.log('こんにちは');",
+            "}",
+            "// 関数を動かす",
+            "greet();"
+          ],
+          "candidates": {
+            "functions": [
+              "greet",
+              "console.log"
+            ],
+            "strings": [
+              "こんにちは"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "courseId": "javascript-2",
+      "courseNum": 2,
+      "titleKey": "javascript_lesson2_course_title",
+      "descriptionKey": "javascript_lesson2_course_description",
+      "difficulty": "medium",
+      "exercises": [
+        {
+          "title": "javascript_lesson2_ex1_title",
+          "comments": [
+            "javascript_lesson2_ex1_comment1",
+            "javascript_lesson2_ex1_comment2"
+          ],
+          "slideKeyPrefix": "javascript_lesson2_ex1",
+          "slideCount": 2,
+          "correctCode": "// => でアロー関数を定義する\nconst square = x => x * x;\n\n// 使ってみる（引数は5）\nconsole.log(square(5));",
+          "correctLines": [
+            "// => でアロー関数を定義する",
+            "const square = x => x * x;",
+            "",
+            "// 使ってみる",
+            "console.log(square(5));"
+          ],
+          "candidates": {
+            "operators": [
+              "=>",
+              "->",
+              "=",
+              ":"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson2_ex2_title",
+          "comments": [
+            "javascript_lesson2_ex2_comment1",
+            "javascript_lesson2_ex2_comment2",
+            "javascript_lesson2_ex2_comment3"
+          ],
+          "slideKeyPrefix": "javascript_lesson2_ex2",
+          "slideCount": 2,
+          "correctCode": "// [1, 2, 3] の各要素を3倍にする\nconst nums = [1, 2, 3];\n// map メソッドで変換する\nconst tripled = nums.map(n => n * 3);\n// tripledを表示\nconsole.log(tripled);",
+          "correctLines": [
+            "// [1, 2, 3] の各要素を3倍にする",
+            "const nums = [1, 2, 3];",
+            "// map メソッドで変換する",
+            [
+              "const tripled = nums.map(n => n * 3);",
+              "const tripled = nums.map(n => 3 * n);"
+            ],
+            "console.log(tripled);"
+          ],
+          "candidates": {
+            "functions": [
+              "map",
+              "filter",
+              "forEach",
+              "reduce"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson2_ex3_title",
+          "comments": [
+            "javascript_lesson2_ex3_comment1",
+            "javascript_lesson2_ex3_comment2"
+          ],
+          "slideKeyPrefix": "javascript_lesson2_ex3",
+          "slideCount": 2,
+          "correctCode": "// 10を3で割った余りを計算\nconst remainder = 10 % 3;\n// 結果を表示\nconsole.log(remainder);",
+          "correctLines": [
+            "// 10を3で割った余りを計算",
+            "const remainder = 10 % 3;",
+            "// 結果を表示",
+            "console.log(remainder);"
+          ],
+          "candidates": {
+            "operators": [
+              "%",
+              "/",
+              "*",
+              "+"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson2_ex4_title",
+          "comments": [
+            "javascript_lesson2_ex4_comment1",
+            "javascript_lesson2_ex4_comment2",
+            "javascript_lesson2_ex4_comment3",
+            "javascript_lesson2_ex4_comment4"
+          ],
+          "slideKeyPrefix": "javascript_lesson2_ex4",
+          "slideCount": 2,
+          "correctCode": "// 初期値を設定\nlet total = 0;\n// totalに10を足す\ntotal += 10;\n// totalに5を足す\ntotal += 5;\n// 結果を表示\nconsole.log(total);",
+          "correctLines": [
+            "// 初期値を設定",
+            "let total = 0;",
+            "// totalに10を足す",
+            "total += 10;",
+            "// totalに5を足す",
+            "total += 5;",
+            "// 結果を表示",
+            "console.log(total);"
+          ],
+          "candidates": {
+            "operators": [
+              "+=",
+              "-=",
+              "*=",
+              "/="
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson2_ex5_title",
+          "comments": [
+            "javascript_lesson2_ex5_comment1",
+            "javascript_lesson2_ex5_comment2"
+          ],
+          "slideKeyPrefix": "javascript_lesson2_ex5",
+          "slideCount": 2,
+          "correctCode": "// 年齢を設定\nconst age = 25;\n// 20以上かつ30未満かどうか判定\nif (age >= 20 && age < 30) {\n    console.log('20代です');\n}",
+          "correctLines": [
+            "// 年齢を設定",
+            "const age = 25;",
+            "// 20以上かつ30未満かどうか判定",
+            "if (age >= 20 && age < 30) {",
+            "    console.log('20代です');",
+            "}"
+          ],
+          "candidates": {
+            "operators": [
+              "&&",
+              "||",
+              "!"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson2_ex6_title",
+          "comments": [
+            "javascript_lesson2_ex6_comment1",
+            "javascript_lesson2_ex6_comment2",
+            "javascript_lesson2_ex6_comment3"
+          ],
+          "slideKeyPrefix": "javascript_lesson2_ex6",
+          "slideCount": 2,
+          "correctCode": "// [5, 15, 8, 20] から 10より大きい数だけ取り出す\nconst nums = [5, 15, 8, 20];\n// filter メソッドで絞り込む\nconst big = nums.filter(n => n > 10);\n// bigを表示\nconsole.log(big);",
+          "correctLines": [
+            "// [5, 15, 8, 20] から 10より大きい数だけ取り出す",
+            "const nums = [5, 15, 8, 20];",
+            "// filter メソッドで絞り込む",
+            "const big = nums.filter(n => n > 10);",
+            "console.log(big);"
+          ],
+          "candidates": {
+            "functions": [
+              "filter",
+              "map",
+              "find",
+              "some"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson2_ex7_title",
+          "comments": [
+            "javascript_lesson2_ex7_comment1",
+            "javascript_lesson2_ex7_comment2",
+            "javascript_lesson2_ex7_comment3"
+          ],
+          "slideKeyPrefix": "javascript_lesson2_ex7",
+          "slideCount": 2,
+          "correctCode": "// [10, 20, 30] の合計を計算\nconst nums = [10, 20, 30];\n// reduce メソッドで累積値 acc を使う\nconst total = nums.reduce((acc, n) => acc + n, 0);\n// totalを表示\nconsole.log(total);",
+          "correctLines": [
+            "// [10, 20, 30] の合計を計算",
+            "const nums = [10, 20, 30];",
+            "// reduce メソッドで累積値 acc を使う",
+            "const total = nums.reduce((acc, n) => acc + n, 0);",
+            "console.log(total);"
+          ],
+          "candidates": {
+            "functions": [
+              "reduce"
+            ],
+            "variables": [
+              "acc",
+              "sum",
+              "total"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson2_ex8_title",
+          "comments": [
+            "javascript_lesson2_ex8_comment1",
+            "javascript_lesson2_ex8_comment2",
+            "javascript_lesson2_ex8_comment3",
+            "javascript_lesson2_ex8_comment4"
+          ],
+          "slideKeyPrefix": "javascript_lesson2_ex8",
+          "slideCount": 2,
+          "correctCode": "// ['red', 'green', 'blue'] から値を取り出す\nconst colors = ['red', 'green', 'blue'];\n// second で2番目の要素を受け取る\nconst [first, second] = colors;\n// firstを表示\nconsole.log(first);\n// secondを表示\nconsole.log(second);",
+          "correctLines": [
+            "// ['red', 'green', 'blue'] から値を取り出す",
+            "const colors = ['red', 'green', 'blue'];",
+            "// second で2番目の要素を受け取る",
+            "const [first, second] = colors;",
+            "console.log(first);",
+            "console.log(second);"
+          ],
+          "candidates": {
+            "variables": [
+              "second",
+              "third",
+              "last",
+              "next"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson2_ex9_title",
+          "comments": [
+            "javascript_lesson2_ex9_comment1",
+            "javascript_lesson2_ex9_comment2",
+            "javascript_lesson2_ex9_comment3",
+            "javascript_lesson2_ex9_comment4"
+          ],
+          "slideKeyPrefix": "javascript_lesson2_ex9",
+          "slideCount": 2,
+          "correctCode": "// name: 'Alice', score: 100 のオブジェクトから値を取り出す\nconst user = { name: 'Alice', score: 100 };\n// name プロパティを取り出す\nconst { name, score } = user;\n// nameを表示\nconsole.log(name);\n// scoreを表示\nconsole.log(score);",
+          "correctLines": [
+            "// name: 'Alice', score: 100 のオブジェクトから値を取り出す",
+            "const user = { name: 'Alice', score: 100 };",
+            "// name プロパティを取り出す",
+            "const { name, score } = user;",
+            "console.log(name);",
+            "console.log(score);"
+          ],
+          "candidates": {
+            "variables": [
+              "name",
+              "user",
+              "value",
+              "key"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson2_ex10_title",
+          "comments": [
+            "javascript_lesson2_ex10_comment1",
+            "javascript_lesson2_ex10_comment2",
+            "javascript_lesson2_ex10_comment3",
+            "javascript_lesson2_ex10_comment4"
+          ],
+          "slideKeyPrefix": "javascript_lesson2_ex10",
+          "slideCount": 2,
+          "correctCode": "// [1, 2] と [3, 4] の2つの配列を合体させる\nconst arr1 = [1, 2];\n// arr2を定義する\nconst arr2 = [3, 4];\n// ... スプレッド演算子で展開する\nconst merged = [...arr1, ...arr2];\n// mergedを表示\nconsole.log(merged);",
+          "correctLines": [
+            "// [1, 2] と [3, 4] の2つの配列を合体させる",
+            "const arr1 = [1, 2];",
+            "const arr2 = [3, 4];",
+            "// ... スプレッド演算子で展開する",
+            "const merged = [...arr1, ...arr2];",
+            "console.log(merged);"
+          ],
+          "candidates": {
+            "operators": [
+              "...",
+              "..",
+              "***",
+              "::"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson2_ex11_title",
+          "comments": [
+            "javascript_lesson2_ex11_comment1",
+            "javascript_lesson2_ex11_comment2",
+            "javascript_lesson2_ex11_comment3"
+          ],
+          "slideKeyPrefix": "javascript_lesson2_ex11",
+          "slideCount": 2,
+          "correctCode": "// 数値 5 が正か負かを判定\nconst num = 5;\n// ? で三項演算子を使う\nconst sign = num >= 0 ? 'positive' : 'negative';\n// signを表示\nconsole.log(sign);",
+          "correctLines": [
+            "// 数値 5 が正か負かを判定",
+            "const num = 5;",
+            "// ? で三項演算子を使う",
+            "const sign = num >= 0 ? 'positive' : 'negative';",
+            "console.log(sign);"
+          ],
+          "candidates": {
+            "operators": [
+              "?",
+              ":",
+              "&&",
+              "||"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson2_ex12_title",
+          "comments": [
+            "javascript_lesson2_ex12_comment1",
+            "javascript_lesson2_ex12_comment2",
+            "javascript_lesson2_ex12_comment3"
+          ],
+          "slideKeyPrefix": "javascript_lesson2_ex12",
+          "slideCount": 2,
+          "correctCode": "// [1, 3, 4, 7, 8] から最初の偶数を見つける\nconst numbers = [1, 3, 4, 7, 8];\n// find メソッドで最初の要素を探す\nconst firstEven = numbers.find(n => n % 2 === 0);\n// firstEvenを表示\nconsole.log(firstEven);",
+          "correctLines": [
+            "// [1, 3, 4, 7, 8] から最初の偶数を見つける",
+            "const numbers = [1, 3, 4, 7, 8];",
+            "// find メソッドで最初の要素を探す",
+            "const firstEven = numbers.find(n => n % 2 === 0);",
+            "console.log(firstEven);"
+          ],
+          "candidates": {
+            "functions": [
+              "find",
+              "filter",
+              "some",
+              "findIndex"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson2_ex13_title",
+          "comments": [
+            "javascript_lesson2_ex13_comment1",
+            "javascript_lesson2_ex13_comment2",
+            "javascript_lesson2_ex13_comment3",
+            "javascript_lesson2_ex13_comment4"
+          ],
+          "slideKeyPrefix": "javascript_lesson2_ex13",
+          "slideCount": 2,
+          "correctCode": "// x = 10, y = 20 をプロパティとして持つオブジェクトを作る\nconst x = 10;\nconst y = 20;\n// ショートハンドで x をプロパティとして追加する\nconst point = { x, y };\n// point.xを表示\nconsole.log(point.x);\n// point.yを表示\nconsole.log(point.y);",
+          "correctLines": [
+            "// x = 10, y = 20 をプロパティとして持つオブジェクトを作る",
+            "const x = 10;",
+            "const y = 20;",
+            "// ショートハンドで x をプロパティとして追加する",
+            "const point = { x, y };",
+            "console.log(point.x);",
+            "console.log(point.y);"
+          ],
+          "candidates": {
+            "variables": [
+              "x",
+              "x: x",
+              "point",
+              "value"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "courseId": "javascript-3",
+      "courseNum": 3,
+      "titleKey": "javascript_lesson3_course_title",
+      "descriptionKey": "javascript_lesson3_course_description",
+      "difficulty": "hard",
+      "exercises": [
+        {
+          "title": "javascript_lesson3_ex1_title",
+          "comments": [
+            "javascript_lesson3_ex1_comment1",
+            "javascript_lesson3_ex1_comment2",
+            "javascript_lesson3_ex1_comment3"
+          ],
+          "slideKeyPrefix": "javascript_lesson3_ex1",
+          "slideCount": 2,
+          "correctCode": "// Promise コンストラクタで作成\nconst p = new Promise((resolve) => {\n  // 'Hello Promise!' で解決\n  resolve('Hello Promise!');\n});\n\n// then でコールバックを登録\np.then(msg => console.log(msg));",
+          "correctLines": [
+            "// Promise コンストラクタで作成",
+            "const p = new Promise((resolve) => {",
+            "  resolve('Hello Promise!');",
+            "});",
+            "",
+            "p.then(msg => console.log(msg));"
+          ],
+          "candidates": {
+            "keywords": [
+              "Promise",
+              "Function",
+              "Object"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson3_ex2_title",
+          "comments": [
+            "javascript_lesson3_ex2_comment1",
+            "javascript_lesson3_ex2_comment2"
+          ],
+          "slideKeyPrefix": "javascript_lesson3_ex2",
+          "slideCount": 2,
+          "correctCode": "// resolve で即座に解決するPromise\nPromise.resolve(42)\n  // then で結果を処理\n  .then(n => console.log(n * 2));",
+          "correctLines": [
+            "// resolve で即座に解決するPromise",
+            "Promise.resolve(42)",
+            "  .then(n => console.log(n * 2));"
+          ],
+          "candidates": {
+            "methods": [
+              "resolve",
+              "reject",
+              "all"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson3_ex3_title",
+          "comments": [
+            "javascript_lesson3_ex3_comment1",
+            "javascript_lesson3_ex3_comment2",
+            "javascript_lesson3_ex3_comment3"
+          ],
+          "slideKeyPrefix": "javascript_lesson3_ex3",
+          "slideCount": 2,
+          "correctCode": "// async キーワードで非同期関数を定義\nasync function getMessage() {\n  // return で値を返す\n  return 'Async works!';\n}\n\n// then でメッセージを出力\ngetMessage().then(msg => console.log(msg));",
+          "correctLines": [
+            "// async キーワードで非同期関数を定義",
+            "async function getMessage() {",
+            "  return 'Async works!';",
+            "}",
+            "",
+            "getMessage().then(msg => console.log(msg));"
+          ],
+          "candidates": {
+            "keywords": [
+              "async",
+              "await",
+              "function"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson3_ex4_title",
+          "comments": [
+            "javascript_lesson3_ex4_comment1",
+            "javascript_lesson3_ex4_comment2",
+            "javascript_lesson3_ex4_comment3",
+            "javascript_lesson3_ex4_comment4",
+            "javascript_lesson3_ex4_comment5"
+          ],
+          "slideKeyPrefix": "javascript_lesson3_ex4",
+          "slideCount": 2,
+          "correctCode": "// awaitでPromiseを待つ\n// async で非同期関数を宣言\nasync function main() {\n  // await でPromiseの結果を待つ\n  const value = await Promise.resolve(100);\n  // console.log で出力\n  console.log(value);\n}\n\n// main() で関数を呼び出す\nmain();",
+          "correctLines": [
+            "// awaitでPromiseを待つ",
+            "async function main() {",
+            "  // await でPromiseの結果を待つ",
+            "  const value = await Promise.resolve(100);",
+            "  console.log(value);",
+            "}",
+            "",
+            "main();"
+          ],
+          "candidates": {
+            "keywords": [
+              "await",
+              "async",
+              "return"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson3_ex5_title",
+          "comments": [
+            "javascript_lesson3_ex5_comment1",
+            "javascript_lesson3_ex5_comment2",
+            "javascript_lesson3_ex5_comment3"
+          ],
+          "slideKeyPrefix": "javascript_lesson3_ex5",
+          "slideCount": 2,
+          "correctCode": "// p1 = 10, p2 = 20 で解決し、複数のPromiseを同時に実行\nconst p1 = Promise.resolve(10);\nconst p2 = Promise.resolve(20);\n// all で全てのPromiseを待つ\nPromise.all([p1, p2]).then(nums => {\n  // nums[0] + nums[1] で合計を計算\n  console.log(nums[0] + nums[1]);\n});",
+          "correctLines": [
+            "// 複数のPromiseを同時に実行",
+            "const p1 = Promise.resolve(10);",
+            "const p2 = Promise.resolve(20);",
+            "// all で全てのPromiseを待つ",
+            "Promise.all([p1, p2]).then(nums => {",
+            "  console.log(nums[0] + nums[1]);",
+            "});"
+          ],
+          "candidates": {
+            "methods": [
+              "all",
+              "race",
+              "resolve"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson3_ex6_title",
+          "comments": [
+            "javascript_lesson3_ex6_comment1",
+            "javascript_lesson3_ex6_comment2",
+            "javascript_lesson3_ex6_comment3",
+            "javascript_lesson3_ex6_comment4",
+            "javascript_lesson3_ex6_comment5",
+            "javascript_lesson3_ex6_comment6"
+          ],
+          "slideKeyPrefix": "javascript_lesson3_ex6",
+          "slideCount": 2,
+          "correctCode": "// class キーワードでクラスを定義\nclass Dog {\n  // constructor でインスタンスを初期化\n  constructor(name) {\n    // this.name にnameを代入\n    this.name = name;\n  }\n  bark() {\n    // テンプレートリテラルで出力\n    console.log(`${this.name}: Woof!`);\n  }\n}\n\n// new でインスタンスを作成\nconst dog = new Dog('Pochi');\n// bark() メソッドを呼び出し\ndog.bark();",
+          "correctLines": [
+            "// class キーワードでクラスを定義",
+            "class Dog {",
+            "  constructor(name) {",
+            "    this.name = name;",
+            "  }",
+            "  bark() {",
+            "    console.log(`${this.name}: Woof!`);",
+            "  }",
+            "}",
+            "",
+            "const dog = new Dog('Pochi');",
+            "dog.bark();"
+          ],
+          "candidates": {
+            "keywords": [
+              "class",
+              "function",
+              "const"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson3_ex7_title",
+          "comments": [
+            "javascript_lesson3_ex7_comment1",
+            "javascript_lesson3_ex7_comment2",
+            "javascript_lesson3_ex7_comment3",
+            "javascript_lesson3_ex7_comment4",
+            "javascript_lesson3_ex7_comment5",
+            "javascript_lesson3_ex7_comment6",
+            "javascript_lesson3_ex7_comment7"
+          ],
+          "slideKeyPrefix": "javascript_lesson3_ex7",
+          "slideCount": 2,
+          "correctCode": "// 親クラス\n// class でクラスを定義\nclass Animal {\n  // speak メソッドを定義\n  speak() { console.log('...'); }\n}\n\n// extends で親クラスを継承する\nclass Cat extends Animal {\n  // speak メソッドをオーバーライド\n  speak() { console.log('Meow!'); }\n}\n\n// new でインスタンスを作成\nconst cat = new Cat();\n// speak() を呼び出し\ncat.speak();",
+          "correctLines": [
+            "// 親クラス",
+            "class Animal {",
+            "  speak() { console.log('...'); }",
+            "}",
+            "",
+            "// extends で親クラスを継承する",
+            "class Cat extends Animal {",
+            "  speak() { console.log('Meow!'); }",
+            "}",
+            "",
+            "const cat = new Cat();",
+            "cat.speak();"
+          ],
+          "candidates": {
+            "keywords": [
+              "extends",
+              "implements",
+              "with"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson3_ex8_title",
+          "comments": [
+            "javascript_lesson3_ex8_comment1",
+            "javascript_lesson3_ex8_comment2",
+            "javascript_lesson3_ex8_comment3",
+            "javascript_lesson3_ex8_comment4",
+            "javascript_lesson3_ex8_comment5"
+          ],
+          "slideKeyPrefix": "javascript_lesson3_ex8",
+          "slideCount": 2,
+          "correctCode": "// 静的メソッドを持つクラス\n// class でクラスを定義\nclass Calculator {\n  // static でクラスメソッドを定義\n  static multiply(a, b) {\n    // return で戻り値\n    return a * b;\n  }\n}\n\n// クラス名.メソッド名() で静的メソッドを呼び出し\nconsole.log(Calculator.multiply(3, 4));",
+          "correctLines": [
+            "// 静的メソッドを持つクラス",
+            "class Calculator {",
+            "  // static でクラスメソッドを定義",
+            "  static multiply(a, b) {",
+            "    return a * b;",
+            "  }",
+            "}",
+            "",
+            "console.log(Calculator.multiply(3, 4));"
+          ],
+          "candidates": {
+            "keywords": [
+              "static",
+              "public",
+              "private"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson3_ex9_title",
+          "comments": [
+            "javascript_lesson3_ex9_comment1",
+            "javascript_lesson3_ex9_comment2",
+            "javascript_lesson3_ex9_comment3"
+          ],
+          "slideKeyPrefix": "javascript_lesson3_ex9",
+          "slideCount": 2,
+          "correctCode": "// user: { name: 'Bob' } を持つオブジェクトを定義し、Optional Chainingで安全にアクセス\nconst data = { user: { name: 'Bob' } };\n// ?. で安全にプロパティにアクセス\nconsole.log(data?.user?.name);\n// 存在しないプロパティにアクセス\nconsole.log(data?.profile?.age);",
+          "correctLines": [
+            "// Optional Chainingで安全にアクセス",
+            "const data = { user: { name: 'Bob' } };",
+            "// ?. で安全にプロパティにアクセス",
+            "console.log(data?.user?.name);",
+            "console.log(data?.profile?.age);"
+          ],
+          "candidates": {
+            "operators": [
+              "?.",
+              ".",
+              "?."
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson3_ex10_title",
+          "comments": [
+            "javascript_lesson3_ex10_comment1",
+            "javascript_lesson3_ex10_comment2",
+            "javascript_lesson3_ex10_comment3"
+          ],
+          "slideKeyPrefix": "javascript_lesson3_ex10",
+          "slideCount": 2,
+          "correctCode": "// undefined を代入し、Nullish Coalescingでデフォルト値\nconst value = undefined;\n// ?? でnull/undefinedのデフォルト値を設定\nconst result = value ?? 'default';\n// console.log で結果を出力\nconsole.log(result);",
+          "correctLines": [
+            "// Nullish Coalescingでデフォルト値",
+            "const value = undefined;",
+            "// ?? でnull/undefinedのデフォルト値を設定",
+            "const result = value ?? 'default';",
+            "console.log(result);"
+          ],
+          "candidates": {
+            "operators": [
+              "??",
+              "||",
+              "&&"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "courseId": "javascript-4",
+      "courseNum": 4,
+      "titleKey": "javascript_lesson4_course_title",
+      "descriptionKey": "javascript_lesson4_course_description",
+      "difficulty": "hard",
+      "exercises": [
+        {
+          "title": "javascript_lesson4_ex1_title",
+          "comments": [
+            "javascript_lesson4_ex1_comment1",
+            "javascript_lesson4_ex1_comment2",
+            "javascript_lesson4_ex1_comment3"
+          ],
+          "slideKeyPrefix": "javascript_lesson4_ex1",
+          "slideCount": 1,
+          "correctCode": "// [80, 90, 75, 85] の配列を定義\nconst scores = [80, 90, 75, 85];\n// every で全要素をチェック\nconst allPassed = scores.every(score => score >= 60);\n// 結果を出力\nconsole.log(allPassed);",
+          "correctLines": [
+            "const scores = [80, 90, 75, 85];",
+            "const allPassed = scores.every(score => score >= 60);",
+            "console.log(allPassed);"
+          ],
+          "candidates": {
+            "keywords": [
+              "every",
+              "some",
+              "all"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson4_ex2_title",
+          "comments": [
+            "javascript_lesson4_ex2_comment1",
+            "javascript_lesson4_ex2_comment2",
+            "javascript_lesson4_ex2_comment3"
+          ],
+          "slideKeyPrefix": "javascript_lesson4_ex2",
+          "slideCount": 1,
+          "correctCode": "// [15, 22, 17, 19] の配列を定義\nconst ages = [15, 22, 17, 19];\n// some でいずれかの要素をチェック\nconst hasAdult = ages.some(age => age >= 20);\n// 結果を出力\nconsole.log(hasAdult);",
+          "correctLines": [
+            "const ages = [15, 22, 17, 19];",
+            "const hasAdult = ages.some(age => age >= 20);",
+            "console.log(hasAdult);"
+          ],
+          "candidates": {
+            "keywords": [
+              "some",
+              "every",
+              "any"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson4_ex3_title",
+          "comments": [
+            "javascript_lesson4_ex3_comment1",
+            "javascript_lesson4_ex3_comment2",
+            "javascript_lesson4_ex3_comment3"
+          ],
+          "slideKeyPrefix": "javascript_lesson4_ex3",
+          "slideCount": 1,
+          "correctCode": "// ['hello', 'world'] の配列を定義\nconst words = ['hello', 'world'];\n// flatMap でmapと平坦化を同時に行う\nconst chars = words.flatMap(w => w.split(''));\n// 結果を出力\nconsole.log(chars);",
+          "correctLines": [
+            "const words = ['hello', 'world'];",
+            "const chars = words.flatMap(w => w.split(''));",
+            "console.log(chars);"
+          ],
+          "candidates": {
+            "keywords": [
+              "flatMap",
+              "map",
+              "flat"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson4_ex4_title",
+          "comments": [
+            "javascript_lesson4_ex4_comment1",
+            "javascript_lesson4_ex4_comment2",
+            "javascript_lesson4_ex4_comment3"
+          ],
+          "slideKeyPrefix": "javascript_lesson4_ex4",
+          "slideCount": 1,
+          "correctCode": "// name: 'Taro', age: 25 のオブジェクトを定義\nconst user = { name: 'Taro', age: 25 };\n// entries でキーと値のペアを取得\nfor (const [key, value] of Object.entries(user)) {\n  // テンプレートリテラルで出力\n  console.log(`${key}: ${value}`);\n}",
+          "correctLines": [
+            "const user = { name: 'Taro', age: 25 };",
+            "for (const [key, value] of Object.entries(user)) {",
+            "  console.log(`${key}: ${value}`);",
+            "}"
+          ],
+          "candidates": {
+            "keywords": [
+              "entries",
+              "keys",
+              "values"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson4_ex5_title",
+          "comments": [
+            "javascript_lesson4_ex5_comment1",
+            "javascript_lesson4_ex5_comment2",
+            "javascript_lesson4_ex5_comment3"
+          ],
+          "slideKeyPrefix": "javascript_lesson4_ex5",
+          "slideCount": 1,
+          "correctCode": "// name: 'Python', version: '3.12' のキーと値のペアの配列を定義\nconst pairs = [['name', 'Python'], ['version', '3.12']];\n// fromEntries で配列からオブジェクトを作成\nconst obj = Object.fromEntries(pairs);\n// 結果を出力\nconsole.log(obj);",
+          "correctLines": [
+            "const pairs = [['name', 'Python'], ['version', '3.12']];",
+            "const obj = Object.fromEntries(pairs);",
+            "console.log(obj);"
+          ],
+          "candidates": {
+            "keywords": [
+              "fromEntries",
+              "entries",
+              "create"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson4_ex6_title",
+          "comments": [
+            "javascript_lesson4_ex6_comment1",
+            "javascript_lesson4_ex6_comment2",
+            "javascript_lesson4_ex6_comment3"
+          ],
+          "slideKeyPrefix": "javascript_lesson4_ex6",
+          "slideCount": 1,
+          "correctCode": "// => でアロー関数を連鎖させる\nconst multiply = a => b => a * b;\n// 部分適用で2倍する関数を作成\nconst double = multiply(2);\n// 結果を出力\nconsole.log(double(5));",
+          "correctLines": [
+            "const multiply = a => b => a * b;",
+            "const double = multiply(2);",
+            "console.log(double(5));"
+          ],
+          "candidates": {
+            "keywords": [
+              "=>",
+              "->",
+              "function"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson4_ex7_title",
+          "comments": [
+            "javascript_lesson4_ex7_comment1",
+            "javascript_lesson4_ex7_comment2",
+            "javascript_lesson4_ex7_comment3",
+            "javascript_lesson4_ex7_comment4",
+            "javascript_lesson4_ex7_comment5"
+          ],
+          "slideKeyPrefix": "javascript_lesson4_ex7",
+          "slideCount": 1,
+          "correctCode": "// g を先に実行してfに渡す\nconst compose = (f, g) => x => f(g(x));\n// 2乗する関数\nconst square = x => x * x;\n// 符号を反転する関数\nconst negate = x => -x;\n// 関数を合成\nconst squareThenNegate = compose(negate, square);\n// 結果を出力\nconsole.log(squareThenNegate(3));",
+          "correctLines": [
+            "const compose = (f, g) => x => f(g(x));",
+            "const square = x => x * x;",
+            "const negate = x => -x;",
+            "const squareThenNegate = compose(negate, square);",
+            "console.log(squareThenNegate(3));"
+          ],
+          "candidates": {
+            "keywords": [
+              "g",
+              "f",
+              "x"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson4_ex8_title",
+          "comments": [
+            "javascript_lesson4_ex8_comment1",
+            "javascript_lesson4_ex8_comment2",
+            "javascript_lesson4_ex8_comment3",
+            "javascript_lesson4_ex8_comment4",
+            "javascript_lesson4_ex8_comment5"
+          ],
+          "slideKeyPrefix": "javascript_lesson4_ex8",
+          "slideCount": 1,
+          "correctCode": "// function でカウンター生成関数を定義\nfunction createCounter() {\n  // let で変数を初期化\n  let count = 0;\n  // ++ でインクリメントして返す\n  return () => ++count;\n}\n// カウンターを作成\nconst counter = createCounter();\n// 3回呼び出して結果を出力\nconsole.log(counter());\nconsole.log(counter());\nconsole.log(counter());",
+          "correctLines": [
+            "function createCounter() {",
+            "  let count = 0;",
+            "  return () => ++count;",
+            "}",
+            "const counter = createCounter();",
+            "console.log(counter());",
+            "console.log(counter());",
+            "console.log(counter());"
+          ],
+          "candidates": {
+            "keywords": [
+              "++",
+              "--",
+              "+="
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson4_ex9_title",
+          "comments": [
+            "javascript_lesson4_ex9_comment1",
+            "javascript_lesson4_ex9_comment2",
+            "javascript_lesson4_ex9_comment3",
+            "javascript_lesson4_ex9_comment4",
+            "javascript_lesson4_ex9_comment5",
+            "javascript_lesson4_ex9_comment6",
+            "javascript_lesson4_ex9_comment7"
+          ],
+          "slideKeyPrefix": "javascript_lesson4_ex9",
+          "slideCount": 1,
+          "correctCode": "// function でメモ化関数を定義\nfunction memoize(fn) {\n  // const でキャッシュオブジェクトを作成\n  const cache = {};\n  return (x) => {\n    // in でオブジェクトにキーが存在するかチェック\n    if (!(x in cache)) {\n      // キャッシュに結果を保存\n      cache[x] = fn(x);\n    }\n    // return でキャッシュから返す\n    return cache[x];\n  };\n}\n// メモ化されたsquare関数を作成\nconst square = memoize(x => x * x);\n// 結果を出力\nconsole.log(square(5));\nconsole.log(square(5));",
+          "correctLines": [
+            "function memoize(fn) {",
+            "  const cache = {};",
+            "  return (x) => {",
+            "    if (!(x in cache)) {",
+            "      cache[x] = fn(x);",
+            "    }",
+            "    return cache[x];",
+            "  };",
+            "}",
+            "const square = memoize(x => x * x);",
+            "console.log(square(5));",
+            "console.log(square(5));"
+          ],
+          "candidates": {
+            "keywords": [
+              "in",
+              "of",
+              "has"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson4_ex10_title",
+          "comments": [
+            "javascript_lesson4_ex10_comment1",
+            "javascript_lesson4_ex10_comment2",
+            "javascript_lesson4_ex10_comment3",
+            "javascript_lesson4_ex10_comment4",
+            "javascript_lesson4_ex10_comment5",
+            "javascript_lesson4_ex10_comment6",
+            "javascript_lesson4_ex10_comment7"
+          ],
+          "slideKeyPrefix": "javascript_lesson4_ex10",
+          "slideCount": 1,
+          "correctCode": "// const でパイプライン関数を定義\nconst pipe = (...fns) => x =>\n  // reduce で累積値 v を使って関数を連鎖\n  fns.reduce((v, f) => f(v), x);\n\n// +1, *2, -3 の順で関数を連結\nconst process = pipe(\n  // +1 する関数\n  x => x + 1,\n  // *2 する関数\n  x => x * 2,\n  // -3 する関数\n  x => x - 3\n);\n// 結果を出力\nconsole.log(process(5));",
+          "correctLines": [
+            "const pipe = (...fns) => x =>",
+            "  fns.reduce((v, f) => f(v), x);",
+            "",
+            "const process = pipe(",
+            "  x => x + 1,",
+            "  x => x * 2,",
+            "  x => x - 3",
+            ");",
+            "console.log(process(5));"
+          ],
+          "candidates": {
+            "keywords": [
+              "reduce",
+              "v"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "courseId": "javascript-5",
+      "courseNum": 5,
+      "titleKey": "javascript_lesson5_course_title",
+      "descriptionKey": "javascript_lesson5_course_description",
+      "difficulty": "hard",
+      "exercises": [
+        {
+          "title": "javascript_lesson5_ex1_title",
+          "comments": [
+            "javascript_lesson5_ex1_comment1"
+          ],
+          "slideKeyPrefix": "javascript_lesson5_ex1",
+          "slideCount": 1,
+          "correctCode": "// / で正規表現リテラルを定義\nconst pattern = /javascript/i;\nconsole.log(pattern.test('I love JavaScript'));",
+          "correctLines": [
+            "const pattern = /javascript/i;",
+            "console.log(pattern.test('I love JavaScript'));"
+          ],
+          "candidates": {
+            "keywords": [
+              "/",
+              "\"",
+              "'"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson5_ex2_title",
+          "comments": [
+            "javascript_lesson5_ex2_comment1"
+          ],
+          "slideKeyPrefix": "javascript_lesson5_ex2",
+          "slideCount": 1,
+          "correctCode": "const emailPattern = /\\w+@\\w+\\.\\w+/;\n// test() で 'test@example.com' と 'invalid-email' をテスト\nconsole.log(emailPattern.test('test@example.com'));\nconsole.log(emailPattern.test('invalid-email'));",
+          "correctLines": [
+            "const emailPattern = /\\w+@\\w+\\.\\w+/;",
+            "console.log(emailPattern.test('test@example.com'));",
+            "console.log(emailPattern.test('invalid-email'));"
+          ],
+          "candidates": {
+            "keywords": [
+              "test(",
+              "match(",
+              "exec("
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson5_ex3_title",
+          "comments": [
+            "javascript_lesson5_ex3_comment1"
+          ],
+          "slideKeyPrefix": "javascript_lesson5_ex3",
+          "slideCount": 1,
+          "correctCode": "const text = 'Contact: 090-1234-5678 or 080-9876-5432';\n// match() で 090-1234-5678 と 080-9876-5432 を抽出\nconst phones = text.match(/\\d{3}-\\d{4}-\\d{4}/g);\nconsole.log(phones);",
+          "correctLines": [
+            "const text = 'Contact: 090-1234-5678 or 080-9876-5432';",
+            "const phones = text.match(/\\d{3}-\\d{4}-\\d{4}/g);",
+            "console.log(phones);"
+          ],
+          "candidates": {
+            "keywords": [
+              "match(",
+              "/"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson5_ex4_title",
+          "comments": [
+            "javascript_lesson5_ex4_comment1"
+          ],
+          "slideKeyPrefix": "javascript_lesson5_ex4",
+          "slideCount": 1,
+          "correctCode": "const text = 'Hello   World   JavaScript';\n// replace() で連続する空白を1つの空白に置換\nconst result = text.replace(/\\s+/g, ' ');\nconsole.log(result);",
+          "correctLines": [
+            "const text = 'Hello   World   JavaScript';",
+            "const result = text.replace(/\\s+/g, ' ');",
+            "console.log(result);"
+          ],
+          "candidates": {
+            "keywords": [
+              "replace(",
+              "/"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson5_ex5_title",
+          "comments": [
+            "javascript_lesson5_ex5_comment1"
+          ],
+          "slideKeyPrefix": "javascript_lesson5_ex5",
+          "slideCount": 1,
+          "correctCode": "try {\n  const result = JSON.parse('invalid json');\n// catch でエラーをキャッチ\n} catch (e) {\n  console.log('Error:', e.message);\n}",
+          "correctLines": [
+            "try {",
+            "  const result = JSON.parse('invalid json');",
+            "} catch (e) {",
+            "  console.log('Error:', e.message);",
+            "}"
+          ],
+          "candidates": {
+            "keywords": [
+              "catch",
+              "except",
+              "handle"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson5_ex6_title",
+          "comments": [
+            "javascript_lesson5_ex6_comment1"
+          ],
+          "slideKeyPrefix": "javascript_lesson5_ex6",
+          "slideCount": 1,
+          "correctCode": "function process() {\n  try {\n    console.log('Processing...');\n    throw new Error('Error!');\n  } catch (e) {\n    console.log('Caught:', e.message);\n  // finally で常に実行されるブロック\n  } finally {\n    console.log('Cleanup done');\n  }\n}\nprocess();",
+          "correctLines": [
+            "function process() {",
+            "  try {",
+            "    console.log('Processing...');",
+            "    throw new Error('Error!');",
+            "  } catch (e) {",
+            "    console.log('Caught:', e.message);",
+            "  } finally {",
+            "    console.log('Cleanup done');",
+            "  }",
+            "}",
+            "process();"
+          ],
+          "candidates": {
+            "keywords": [
+              "finally",
+              "always",
+              "end"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson5_ex7_title",
+          "comments": [
+            "javascript_lesson5_ex7_comment1"
+          ],
+          "slideKeyPrefix": "javascript_lesson5_ex7",
+          "slideCount": 1,
+          "correctCode": "// extends でErrorクラスを継承\nclass ValidationError extends Error {\n  constructor(message) {\n    super(message);\n    this.name = 'ValidationError';\n  }\n}\n\ntry {\n  throw new ValidationError('Invalid input');\n} catch (e) {\n  console.log(`${e.name}: ${e.message}`);\n}",
+          "correctLines": [
+            "class ValidationError extends Error {",
+            "  constructor(message) {",
+            "    super(message);",
+            "    this.name = 'ValidationError';",
+            "  }",
+            "}",
+            "",
+            "try {",
+            "  throw new ValidationError('Invalid input');",
+            "} catch (e) {",
+            "  console.log(`${e.name}: ${e.message}`);",
+            "}"
+          ],
+          "candidates": {
+            "keywords": [
+              "extends",
+              "implements",
+              "inherits"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson5_ex8_title",
+          "comments": [
+            "javascript_lesson5_ex8_comment1"
+          ],
+          "slideKeyPrefix": "javascript_lesson5_ex8",
+          "slideCount": 1,
+          "correctCode": "// Symbol でユニークな識別子を作成し、name: 'Taro', secret: 'password123' を持つオブジェクトを定義\nconst secret = Symbol('secret');\nconst user = {\n  name: 'Taro',\n  [secret]: 'password123'\n};\nconsole.log(user.name);\nconsole.log(user[secret]);",
+          "correctLines": [
+            "const secret = Symbol('secret');",
+            "const user = {",
+            "  name: 'Taro',",
+            "  [secret]: 'password123'",
+            "};",
+            "console.log(user.name);",
+            "console.log(user[secret]);"
+          ],
+          "candidates": {
+            "keywords": [
+              "Symbol",
+              "Unique",
+              "Key"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson5_ex9_title",
+          "comments": [
+            "javascript_lesson5_ex9_comment1"
+          ],
+          "slideKeyPrefix": "javascript_lesson5_ex9",
+          "slideCount": 1,
+          "correctCode": "// WeakMap で弱参照のMapを作成\nconst privateData = new WeakMap();\n\nclass User {\n  constructor(name) {\n    privateData.set(this, { password: 'secret' });\n    this.name = name;\n  }\n  getPassword() {\n    return privateData.get(this).password;\n  }\n}\n\nconst user = new User('Taro');\nconsole.log(user.getPassword());",
+          "correctLines": [
+            "const privateData = new WeakMap();",
+            "",
+            "class User {",
+            "  constructor(name) {",
+            "    privateData.set(this, { password: 'secret' });",
+            "    this.name = name;",
+            "  }",
+            "  getPassword() {",
+            "    return privateData.get(this).password;",
+            "  }",
+            "}",
+            "",
+            "const user = new User('Taro');",
+            "console.log(user.getPassword());"
+          ],
+          "candidates": {
+            "keywords": [
+              "WeakMap",
+              "Map",
+              "HashMap"
+            ]
+          }
+        },
+        {
+          "title": "javascript_lesson5_ex10_title",
+          "comments": [
+            "javascript_lesson5_ex10_comment1"
+          ],
+          "slideKeyPrefix": "javascript_lesson5_ex10",
+          "slideCount": 1,
+          "correctCode": "const handler = {\n  get(target, prop) {\n    console.log(`Getting ${prop}`);\n    return target[prop];\n  }\n};\n// name: 'Taro' を持つオブジェクトの操作をインターセプト\nconst user = new Proxy({ name: 'Taro' }, handler);\nconsole.log(user.name);",
+          "correctLines": [
+            "const handler = {",
+            "  get(target, prop) {",
+            "    console.log(`Getting ${prop}`);",
+            "    return target[prop];",
+            "  }",
+            "};",
+            "",
+            "const user = new Proxy({ name: 'Taro' }, handler);",
+            "console.log(user.name);"
+          ],
+          "candidates": {
+            "keywords": [
+              "Proxy",
+              "Handler",
+              "Wrapper"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

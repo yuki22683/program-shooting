@@ -35,6 +35,7 @@ public class LocalizationManager : MonoBehaviour
 
 	void LoadLocalizationData()
 	{
+		// Load base localization (common UI strings)
 		TextAsset jsonFile = Resources.Load<TextAsset>("localizedText");
 		TextAsset jsonFilePrivacyPolicy = Resources.Load<TextAsset>("localizedPrivacyPolicyText");
 		if (jsonFile == null)
@@ -45,6 +46,19 @@ public class LocalizationManager : MonoBehaviour
 
 		allLanguages = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, string>>>(jsonFile.text);
 		allLanguagesPrivacyPolicy = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, string>>>(jsonFilePrivacyPolicy.text);
+
+		// Load programming language lesson files and merge
+		string[] lessonFiles = { "pythonLessons", "javascriptLessons", "typescriptLessons", "javaLessons", "cLessons", "cppLessons", "csharpLessons", "assemblyLessons" };
+		foreach (var fileName in lessonFiles)
+		{
+			TextAsset lessonFile = Resources.Load<TextAsset>(fileName);
+			if (lessonFile != null)
+			{
+				var lessonData = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, string>>>(lessonFile.text);
+				MergeLocalizationData(lessonData);
+				Debug.Log($"[LocalizationManager] Loaded {fileName}.json");
+			}
+		}
 
         if (DataManager.gameSettings.languageSettings.languageCode == "")
         {
@@ -65,6 +79,25 @@ public class LocalizationManager : MonoBehaviour
 		{
 			Debug.LogWarning($"Language '{languageCode}' not found. Falling back to English.");
 			localizedTextsPrivacyPolicy = allLanguagesPrivacyPolicy.ContainsKey("en") ? allLanguagesPrivacyPolicy["en"] : new Dictionary<string, string>();
+		}
+	}
+
+	private void MergeLocalizationData(Dictionary<string, Dictionary<string, string>> sourceData)
+	{
+		if (sourceData == null) return;
+
+		foreach (var langPair in sourceData)
+		{
+			string langCode = langPair.Key;
+			if (!allLanguages.ContainsKey(langCode))
+			{
+				allLanguages[langCode] = new Dictionary<string, string>();
+			}
+
+			foreach (var textPair in langPair.Value)
+			{
+				allLanguages[langCode][textPair.Key] = textPair.Value;
+			}
 		}
 	}
 

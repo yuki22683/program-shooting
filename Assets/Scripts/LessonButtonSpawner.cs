@@ -266,43 +266,76 @@ public class LessonButtonSpawner : MonoBehaviour
     }
 
     /// <summary>
-    /// Gets exercise data for the specified lesson
+    /// Gets exercise data for the specified lesson based on current language
     /// </summary>
     private List<ExerciseButtonData> GetExercisesForLesson(int lessonIndex)
     {
-        List<ExerciseButtonData> exercises = new List<ExerciseButtonData>();
+        // Get exercises based on language
+        switch (currentLanguage.ToLower())
+        {
+            case "python":
+                return GetPythonExercisesForLesson(lessonIndex);
+            case "javascript":
+                return GetJavaScriptExercisesForLesson(lessonIndex);
+            case "typescript":
+                return GetTypeScriptExercisesForLesson(lessonIndex);
+            default:
+                Debug.LogWarning($"[LessonButtonSpawner] Unknown language: {currentLanguage}, defaulting to Python");
+                return GetPythonExercisesForLesson(lessonIndex);
+        }
+    }
 
-        // Define exercises based on lesson index
-        // Each lesson has different number of exercises with different difficulties
+    /// <summary>
+    /// Gets Python exercise data for the specified lesson
+    /// </summary>
+    private List<ExerciseButtonData> GetPythonExercisesForLesson(int lessonIndex)
+    {
         switch (lessonIndex)
         {
-            case 0: // Lesson 1 - Python I
-                exercises = GetLesson1Exercises();
-                break;
-            case 1: // Lesson 2 - Python II
-                exercises = GetLesson2Exercises();
-                break;
-            case 2: // Lesson 3 - Python III
-                exercises = GetLesson3Exercises();
-                break;
-            case 3: // Lesson 4 - Python IV
-                exercises = GetLesson4Exercises();
-                break;
-            case 4: // Lesson 5 - Python V
-                exercises = GetLesson5Exercises();
-                break;
-            default:
-                exercises = GetLesson1Exercises();
-                break;
+            case 0: return GetPythonLesson1Exercises();
+            case 1: return GetPythonLesson2Exercises();
+            case 2: return GetPythonLesson3Exercises();
+            case 3: return GetPythonLesson4Exercises();
+            case 4: return GetPythonLesson5Exercises();
+            default: return GetPythonLesson1Exercises();
         }
+    }
 
-        return exercises;
+    /// <summary>
+    /// Gets JavaScript exercise data for the specified lesson
+    /// </summary>
+    private List<ExerciseButtonData> GetJavaScriptExercisesForLesson(int lessonIndex)
+    {
+        switch (lessonIndex)
+        {
+            case 0: return GetJavaScriptLesson1Exercises();
+            case 1: return GetJavaScriptLesson2Exercises();
+            case 2: return GetJavaScriptLesson3Exercises();
+            case 3: return GetJavaScriptLesson4Exercises();
+            case 4: return GetJavaScriptLesson5Exercises();
+            default: return GetJavaScriptLesson1Exercises();
+        }
+    }
+
+    /// <summary>
+    /// Gets TypeScript exercise data for the specified lesson
+    /// </summary>
+    private List<ExerciseButtonData> GetTypeScriptExercisesForLesson(int lessonIndex)
+    {
+        switch (lessonIndex)
+        {
+            case 0: return GetTypeScriptLesson1Exercises();
+            case 1: return GetTypeScriptLesson2Exercises();
+            case 2: return GetTypeScriptLesson3Exercises();
+            case 3: return GetTypeScriptLesson4Exercises();
+            default: return GetTypeScriptLesson1Exercises();
+        }
     }
 
     /// <summary>
     /// Lesson 1 exercises (13 exercises, all easy)
     /// </summary>
-    private List<ExerciseButtonData> GetLesson1Exercises()
+    private List<ExerciseButtonData> GetPythonLesson1Exercises()
     {
         return new List<ExerciseButtonData>
         {
@@ -325,7 +358,7 @@ public class LessonButtonSpawner : MonoBehaviour
     /// <summary>
     /// Lesson 2 exercises (12 exercises, all easy)
     /// </summary>
-    private List<ExerciseButtonData> GetLesson2Exercises()
+    private List<ExerciseButtonData> GetPythonLesson2Exercises()
     {
         return new List<ExerciseButtonData>
         {
@@ -347,7 +380,7 @@ public class LessonButtonSpawner : MonoBehaviour
     /// <summary>
     /// Lesson 3 exercises (10 exercises, medium difficulty)
     /// </summary>
-    private List<ExerciseButtonData> GetLesson3Exercises()
+    private List<ExerciseButtonData> GetPythonLesson3Exercises()
     {
         return new List<ExerciseButtonData>
         {
@@ -367,7 +400,7 @@ public class LessonButtonSpawner : MonoBehaviour
     /// <summary>
     /// Lesson 4 exercises (10 exercises, medium difficulty)
     /// </summary>
-    private List<ExerciseButtonData> GetLesson4Exercises()
+    private List<ExerciseButtonData> GetPythonLesson4Exercises()
     {
         return new List<ExerciseButtonData>
         {
@@ -387,7 +420,7 @@ public class LessonButtonSpawner : MonoBehaviour
     /// <summary>
     /// Lesson 5 exercises (10 exercises, hard difficulty)
     /// </summary>
-    private List<ExerciseButtonData> GetLesson5Exercises()
+    private List<ExerciseButtonData> GetPythonLesson5Exercises()
     {
         return new List<ExerciseButtonData>
         {
@@ -403,6 +436,201 @@ public class LessonButtonSpawner : MonoBehaviour
             new ExerciseButtonData { exerciseTitleKey = "python_lesson5_ex10_title", exerciseDescriptionKey = "python_lesson5_ex10_description", difficultyKey = "difficulty_hard" }
         };
     }
+
+    #region JavaScript Exercises
+
+    /// <summary>
+    /// JavaScript Lesson 1 exercises (10 exercises, easy)
+    /// </summary>
+    private List<ExerciseButtonData> GetJavaScriptLesson1Exercises()
+    {
+        return new List<ExerciseButtonData>
+        {
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson1_ex1_title", exerciseDescriptionKey = "javascript_lesson1_ex1_description", difficultyKey = "difficulty_easy" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson1_ex2_title", exerciseDescriptionKey = "javascript_lesson1_ex2_description", difficultyKey = "difficulty_easy" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson1_ex3_title", exerciseDescriptionKey = "javascript_lesson1_ex3_description", difficultyKey = "difficulty_easy" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson1_ex4_title", exerciseDescriptionKey = "javascript_lesson1_ex4_description", difficultyKey = "difficulty_easy" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson1_ex5_title", exerciseDescriptionKey = "javascript_lesson1_ex5_description", difficultyKey = "difficulty_easy" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson1_ex6_title", exerciseDescriptionKey = "javascript_lesson1_ex6_description", difficultyKey = "difficulty_easy" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson1_ex7_title", exerciseDescriptionKey = "javascript_lesson1_ex7_description", difficultyKey = "difficulty_easy" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson1_ex8_title", exerciseDescriptionKey = "javascript_lesson1_ex8_description", difficultyKey = "difficulty_easy" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson1_ex9_title", exerciseDescriptionKey = "javascript_lesson1_ex9_description", difficultyKey = "difficulty_easy" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson1_ex10_title", exerciseDescriptionKey = "javascript_lesson1_ex10_description", difficultyKey = "difficulty_easy" }
+        };
+    }
+
+    /// <summary>
+    /// JavaScript Lesson 2 exercises (13 exercises, medium)
+    /// </summary>
+    private List<ExerciseButtonData> GetJavaScriptLesson2Exercises()
+    {
+        return new List<ExerciseButtonData>
+        {
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson2_ex1_title", exerciseDescriptionKey = "javascript_lesson2_ex1_description", difficultyKey = "difficulty_medium" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson2_ex2_title", exerciseDescriptionKey = "javascript_lesson2_ex2_description", difficultyKey = "difficulty_medium" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson2_ex3_title", exerciseDescriptionKey = "javascript_lesson2_ex3_description", difficultyKey = "difficulty_medium" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson2_ex4_title", exerciseDescriptionKey = "javascript_lesson2_ex4_description", difficultyKey = "difficulty_medium" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson2_ex5_title", exerciseDescriptionKey = "javascript_lesson2_ex5_description", difficultyKey = "difficulty_medium" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson2_ex6_title", exerciseDescriptionKey = "javascript_lesson2_ex6_description", difficultyKey = "difficulty_medium" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson2_ex7_title", exerciseDescriptionKey = "javascript_lesson2_ex7_description", difficultyKey = "difficulty_medium" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson2_ex8_title", exerciseDescriptionKey = "javascript_lesson2_ex8_description", difficultyKey = "difficulty_medium" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson2_ex9_title", exerciseDescriptionKey = "javascript_lesson2_ex9_description", difficultyKey = "difficulty_medium" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson2_ex10_title", exerciseDescriptionKey = "javascript_lesson2_ex10_description", difficultyKey = "difficulty_medium" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson2_ex11_title", exerciseDescriptionKey = "javascript_lesson2_ex11_description", difficultyKey = "difficulty_medium" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson2_ex12_title", exerciseDescriptionKey = "javascript_lesson2_ex12_description", difficultyKey = "difficulty_medium" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson2_ex13_title", exerciseDescriptionKey = "javascript_lesson2_ex13_description", difficultyKey = "difficulty_medium" }
+        };
+    }
+
+    /// <summary>
+    /// JavaScript Lesson 3 exercises (10 exercises, hard)
+    /// </summary>
+    private List<ExerciseButtonData> GetJavaScriptLesson3Exercises()
+    {
+        return new List<ExerciseButtonData>
+        {
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson3_ex1_title", exerciseDescriptionKey = "javascript_lesson3_ex1_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson3_ex2_title", exerciseDescriptionKey = "javascript_lesson3_ex2_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson3_ex3_title", exerciseDescriptionKey = "javascript_lesson3_ex3_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson3_ex4_title", exerciseDescriptionKey = "javascript_lesson3_ex4_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson3_ex5_title", exerciseDescriptionKey = "javascript_lesson3_ex5_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson3_ex6_title", exerciseDescriptionKey = "javascript_lesson3_ex6_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson3_ex7_title", exerciseDescriptionKey = "javascript_lesson3_ex7_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson3_ex8_title", exerciseDescriptionKey = "javascript_lesson3_ex8_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson3_ex9_title", exerciseDescriptionKey = "javascript_lesson3_ex9_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson3_ex10_title", exerciseDescriptionKey = "javascript_lesson3_ex10_description", difficultyKey = "difficulty_hard" }
+        };
+    }
+
+    /// <summary>
+    /// JavaScript Lesson 4 exercises (10 exercises, hard)
+    /// </summary>
+    private List<ExerciseButtonData> GetJavaScriptLesson4Exercises()
+    {
+        return new List<ExerciseButtonData>
+        {
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson4_ex1_title", exerciseDescriptionKey = "javascript_lesson4_ex1_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson4_ex2_title", exerciseDescriptionKey = "javascript_lesson4_ex2_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson4_ex3_title", exerciseDescriptionKey = "javascript_lesson4_ex3_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson4_ex4_title", exerciseDescriptionKey = "javascript_lesson4_ex4_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson4_ex5_title", exerciseDescriptionKey = "javascript_lesson4_ex5_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson4_ex6_title", exerciseDescriptionKey = "javascript_lesson4_ex6_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson4_ex7_title", exerciseDescriptionKey = "javascript_lesson4_ex7_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson4_ex8_title", exerciseDescriptionKey = "javascript_lesson4_ex8_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson4_ex9_title", exerciseDescriptionKey = "javascript_lesson4_ex9_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson4_ex10_title", exerciseDescriptionKey = "javascript_lesson4_ex10_description", difficultyKey = "difficulty_hard" }
+        };
+    }
+
+    /// <summary>
+    /// JavaScript Lesson 5 exercises (10 exercises, hard)
+    /// </summary>
+    private List<ExerciseButtonData> GetJavaScriptLesson5Exercises()
+    {
+        return new List<ExerciseButtonData>
+        {
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson5_ex1_title", exerciseDescriptionKey = "javascript_lesson5_ex1_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson5_ex2_title", exerciseDescriptionKey = "javascript_lesson5_ex2_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson5_ex3_title", exerciseDescriptionKey = "javascript_lesson5_ex3_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson5_ex4_title", exerciseDescriptionKey = "javascript_lesson5_ex4_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson5_ex5_title", exerciseDescriptionKey = "javascript_lesson5_ex5_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson5_ex6_title", exerciseDescriptionKey = "javascript_lesson5_ex6_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson5_ex7_title", exerciseDescriptionKey = "javascript_lesson5_ex7_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson5_ex8_title", exerciseDescriptionKey = "javascript_lesson5_ex8_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson5_ex9_title", exerciseDescriptionKey = "javascript_lesson5_ex9_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "javascript_lesson5_ex10_title", exerciseDescriptionKey = "javascript_lesson5_ex10_description", difficultyKey = "difficulty_hard" }
+        };
+    }
+
+    #endregion
+
+
+    #region TypeScript Exercises
+
+    /// <summary>
+    /// TypeScript Lesson 1 exercises (13 exercises, easy)
+    /// </summary>
+    private List<ExerciseButtonData> GetTypeScriptLesson1Exercises()
+    {
+        return new List<ExerciseButtonData>
+        {
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson1_ex1_title", exerciseDescriptionKey = "typescript_lesson1_ex1_description", difficultyKey = "difficulty_easy" },
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson1_ex2_title", exerciseDescriptionKey = "typescript_lesson1_ex2_description", difficultyKey = "difficulty_easy" },
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson1_ex3_title", exerciseDescriptionKey = "typescript_lesson1_ex3_description", difficultyKey = "difficulty_easy" },
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson1_ex4_title", exerciseDescriptionKey = "typescript_lesson1_ex4_description", difficultyKey = "difficulty_easy" },
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson1_ex5_title", exerciseDescriptionKey = "typescript_lesson1_ex5_description", difficultyKey = "difficulty_easy" },
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson1_ex6_title", exerciseDescriptionKey = "typescript_lesson1_ex6_description", difficultyKey = "difficulty_easy" },
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson1_ex7_title", exerciseDescriptionKey = "typescript_lesson1_ex7_description", difficultyKey = "difficulty_easy" },
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson1_ex8_title", exerciseDescriptionKey = "typescript_lesson1_ex8_description", difficultyKey = "difficulty_easy" },
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson1_ex9_title", exerciseDescriptionKey = "typescript_lesson1_ex9_description", difficultyKey = "difficulty_easy" },
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson1_ex10_title", exerciseDescriptionKey = "typescript_lesson1_ex10_description", difficultyKey = "difficulty_easy" },
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson1_ex11_title", exerciseDescriptionKey = "typescript_lesson1_ex11_description", difficultyKey = "difficulty_easy" },
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson1_ex12_title", exerciseDescriptionKey = "typescript_lesson1_ex12_description", difficultyKey = "difficulty_easy" },
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson1_ex13_title", exerciseDescriptionKey = "typescript_lesson1_ex13_description", difficultyKey = "difficulty_easy" }
+        };
+    }
+
+    /// <summary>
+    /// TypeScript Lesson 2 exercises (10 exercises, medium)
+    /// </summary>
+    private List<ExerciseButtonData> GetTypeScriptLesson2Exercises()
+    {
+        return new List<ExerciseButtonData>
+        {
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson2_ex1_title", exerciseDescriptionKey = "typescript_lesson2_ex1_description", difficultyKey = "difficulty_medium" },
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson2_ex2_title", exerciseDescriptionKey = "typescript_lesson2_ex2_description", difficultyKey = "difficulty_medium" },
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson2_ex3_title", exerciseDescriptionKey = "typescript_lesson2_ex3_description", difficultyKey = "difficulty_medium" },
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson2_ex4_title", exerciseDescriptionKey = "typescript_lesson2_ex4_description", difficultyKey = "difficulty_medium" },
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson2_ex5_title", exerciseDescriptionKey = "typescript_lesson2_ex5_description", difficultyKey = "difficulty_medium" },
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson2_ex6_title", exerciseDescriptionKey = "typescript_lesson2_ex6_description", difficultyKey = "difficulty_medium" },
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson2_ex7_title", exerciseDescriptionKey = "typescript_lesson2_ex7_description", difficultyKey = "difficulty_medium" },
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson2_ex8_title", exerciseDescriptionKey = "typescript_lesson2_ex8_description", difficultyKey = "difficulty_medium" },
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson2_ex9_title", exerciseDescriptionKey = "typescript_lesson2_ex9_description", difficultyKey = "difficulty_medium" },
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson2_ex10_title", exerciseDescriptionKey = "typescript_lesson2_ex10_description", difficultyKey = "difficulty_medium" }
+        };
+    }
+
+    /// <summary>
+    /// TypeScript Lesson 3 exercises (10 exercises, hard)
+    /// </summary>
+    private List<ExerciseButtonData> GetTypeScriptLesson3Exercises()
+    {
+        return new List<ExerciseButtonData>
+        {
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson3_ex1_title", exerciseDescriptionKey = "typescript_lesson3_ex1_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson3_ex2_title", exerciseDescriptionKey = "typescript_lesson3_ex2_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson3_ex3_title", exerciseDescriptionKey = "typescript_lesson3_ex3_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson3_ex4_title", exerciseDescriptionKey = "typescript_lesson3_ex4_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson3_ex5_title", exerciseDescriptionKey = "typescript_lesson3_ex5_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson3_ex6_title", exerciseDescriptionKey = "typescript_lesson3_ex6_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson3_ex7_title", exerciseDescriptionKey = "typescript_lesson3_ex7_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson3_ex8_title", exerciseDescriptionKey = "typescript_lesson3_ex8_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson3_ex9_title", exerciseDescriptionKey = "typescript_lesson3_ex9_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson3_ex10_title", exerciseDescriptionKey = "typescript_lesson3_ex10_description", difficultyKey = "difficulty_hard" }
+        };
+    }
+
+    /// <summary>
+    /// TypeScript Lesson 4 exercises (10 exercises, hard)
+    /// </summary>
+    private List<ExerciseButtonData> GetTypeScriptLesson4Exercises()
+    {
+        return new List<ExerciseButtonData>
+        {
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson4_ex1_title", exerciseDescriptionKey = "typescript_lesson4_ex1_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson4_ex2_title", exerciseDescriptionKey = "typescript_lesson4_ex2_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson4_ex3_title", exerciseDescriptionKey = "typescript_lesson4_ex3_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson4_ex4_title", exerciseDescriptionKey = "typescript_lesson4_ex4_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson4_ex5_title", exerciseDescriptionKey = "typescript_lesson4_ex5_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson4_ex6_title", exerciseDescriptionKey = "typescript_lesson4_ex6_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson4_ex7_title", exerciseDescriptionKey = "typescript_lesson4_ex7_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson4_ex8_title", exerciseDescriptionKey = "typescript_lesson4_ex8_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson4_ex9_title", exerciseDescriptionKey = "typescript_lesson4_ex9_description", difficultyKey = "difficulty_hard" },
+            new ExerciseButtonData { exerciseTitleKey = "typescript_lesson4_ex10_title", exerciseDescriptionKey = "typescript_lesson4_ex10_description", difficultyKey = "difficulty_hard" }
+        };
+    }
+
+    #endregion
 
     /// <summary>
     /// Spawns a single lesson button
@@ -548,8 +776,9 @@ public class LessonButtonSpawner : MonoBehaviour
 
         if (lessonManager != null)
         {
-            lessonManager.SetLesson(lessonIndex, exerciseIndex);
-            Debug.Log($"[LessonButtonSpawner] Set LessonManager to lesson {lessonIndex}, exercise {exerciseIndex}");
+            // Use SetLanguageAndLesson to ensure correct language exercises are loaded
+            lessonManager.SetLanguageAndLesson(currentLanguage, lessonIndex, exerciseIndex);
+            Debug.Log($"[LessonButtonSpawner] Set LessonManager to language {currentLanguage}, lesson {lessonIndex}, exercise {exerciseIndex}");
 
             // Get slide data from the current exercise
             Exercise exercise = lessonManager.GetCurrentExercise();
