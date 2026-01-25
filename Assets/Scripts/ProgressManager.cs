@@ -16,7 +16,7 @@ public class ProgressManager : MonoBehaviour
     private const string COURSE_COMPLETE_KEY_FORMAT = "course_complete_{0}_{1}";
 
     // Lesson counts per course (0-indexed course)
-    private static readonly int[] LESSON_COUNTS = { 13, 12, 10, 10, 10 }; // Python lessons 1-5
+    private static readonly int[] LESSON_COUNTS = { 13, 14, 10, 10, 10 }; // Python lessons 1-5
 
     private void Awake()
     {

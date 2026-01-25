@@ -5552,6 +5552,39 @@ public class LessonManager : MonoBehaviour
             case "go":
                 InitializeGoLessons();
                 break;
+            case "rust":
+                InitializeRustLessons();
+                break;
+            case "ruby":
+                InitializeRubyLessons();
+                break;
+            case "php":
+                InitializePHPLessons();
+                break;
+            case "swift":
+                InitializeSwiftLessons();
+                break;
+            case "kotlin":
+                InitializeKotlinLessons();
+                break;
+            case "bash":
+                InitializeBashLessons();
+                break;
+            case "sql":
+                InitializeSQLLessons();
+                break;
+            case "lua":
+                InitializeLuaLessons();
+                break;
+            case "perl":
+                InitializePerlLessons();
+                break;
+            case "haskell":
+                InitializeHaskellLessons();
+                break;
+            case "elixir":
+                InitializeElixirLessons();
+                break;
             default:
                 Debug.LogWarning($"[LessonManager] Unknown language: {language}, defaulting to Python");
                 InitializePythonLessons();
@@ -7703,6 +7736,5192 @@ public class LessonManager : MonoBehaviour
     private string ColorToHex(Color color)
     {
         return $"#{ColorUtility.ToHtmlStringRGB(color)}";
+    }
+
+    
+    private void InitializeRustLessons()
+    {
+        lessons.Clear();
+
+        // ==================== LESSON 1: Rust (ラスト) に挑戦！ ====================
+        var lesson1 = new Lesson { titleKey = "rust_lesson1_title" };
+
+        // Ex1: 画面にメッセージを出しましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "rust_lesson1_ex1_title",
+            slideKeyPrefix = "rust_lesson1_ex1",
+            slideCount = 3,
+            correctLines = new List<string> { "fn main() {", "    // Hello, Rust! と表示する", "    println!(\"Hello, Rust!\");", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 1, commentPrefix = "//", localizationKey = "rust_lesson1_ex1_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex2: 便利な「はこ」変数（へんすう）
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "rust_lesson1_ex2_title",
+            slideKeyPrefix = "rust_lesson1_ex2",
+            slideCount = 3,
+            correctLines = new List<string> { "fn main() {", "    // x に 10 を入れる", "    let x = 10;", "    // y に 5 を入れる", "    let y = 5;", "    // + でたし算する", "    println!(\"{}\", x + y);", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 1, commentPrefix = "//", localizationKey = "rust_lesson1_ex2_comment1" },
+                new LocalizedComment { lineIndex = 3, commentPrefix = "//", localizationKey = "rust_lesson1_ex2_comment2" },
+                new LocalizedComment { lineIndex = 5, commentPrefix = "//", localizationKey = "rust_lesson1_ex2_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex3: 剰余演算子（%）
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "rust_lesson1_ex3_title",
+            slideKeyPrefix = "rust_lesson1_ex3",
+            slideCount = 2,
+            correctLines = new List<string> { "fn main() {", "    // 10 を 3 で割ったあまりを出力する", "    println!(\"{}\", 10 % 3);", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 1, commentPrefix = "//", localizationKey = "rust_lesson1_ex3_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex4: 累算代入演算子（+=、-=）
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "rust_lesson1_ex4_title",
+            slideKeyPrefix = "rust_lesson1_ex4",
+            slideCount = 2,
+            correctLines = new List<string> { "fn main() {", "    // mut で変更可能にする", "    let mut hp = 100;", "    // += で 20 を足す", "    hp += 20;", "    // -= で 50 を引く", "    hp -= 50;", "    println!(\"{}\", hp);", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 1, commentPrefix = "//", localizationKey = "rust_lesson1_ex4_comment1" },
+                new LocalizedComment { lineIndex = 3, commentPrefix = "//", localizationKey = "rust_lesson1_ex4_comment2" },
+                new LocalizedComment { lineIndex = 5, commentPrefix = "//", localizationKey = "rust_lesson1_ex4_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex5: 「もし〜なら」で分けましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "rust_lesson1_ex5_title",
+            slideKeyPrefix = "rust_lesson1_ex5",
+            slideCount = 2,
+            correctLines = new List<string> { "fn main() {", "    // score に 100 を入れる", "    let score = 100;", "    // > で比較する", "    if score > 80 {", "        println!(\"Great!\");", "    }", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 1, commentPrefix = "//", localizationKey = "rust_lesson1_ex5_comment1" },
+                new LocalizedComment { lineIndex = 3, commentPrefix = "//", localizationKey = "rust_lesson1_ex5_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex6: 論理演算子（&&、||）
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "rust_lesson1_ex6_title",
+            slideKeyPrefix = "rust_lesson1_ex6",
+            slideCount = 2,
+            correctLines = new List<string> { "fn main() {", "    let score = 80;", "    let bonus = 10;", "    // && で両方の条件をチェック", "    if score >= 70 && bonus > 0 {", "        println!(\"Bonus Pass\");", "    }", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 3, commentPrefix = "//", localizationKey = "rust_lesson1_ex6_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex7: たくさんのデータをまとめましょう「ベクタ」
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "rust_lesson1_ex7_title",
+            slideKeyPrefix = "rust_lesson1_ex7",
+            slideCount = 3,
+            correctLines = new List<string> { "fn main() {", "    // colors というベクタを作る（'あか', 'あお'の順）", "    let colors = vec![\"あか\", \"あお\"];", "    // 2番目のデータ（1番）を出す", "    println!(\"{}\", colors[1]);", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 1, commentPrefix = "//", localizationKey = "rust_lesson1_ex7_comment1" },
+                new LocalizedComment { lineIndex = 3, commentPrefix = "//", localizationKey = "rust_lesson1_ex7_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex8: 名前で引き出す「辞書」
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "rust_lesson1_ex8_title",
+            slideKeyPrefix = "rust_lesson1_ex8",
+            slideCount = 3,
+            correctLines = new List<string> { "use std::collections::HashMap;", "fn main() {", "    // 辞書を作る（キーは'みかん'、値は'オレンジ'）", "    let mut colors = HashMap::new();", "    // キーと値を追加", "    colors.insert(\"みかん\", \"オレンジ\");", "    // 中身を出す", "    println!(\"{}\", colors[\"みかん\"]);", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "rust_lesson1_ex8_comment1" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "rust_lesson1_ex8_comment2" },
+                new LocalizedComment { lineIndex = 6, commentPrefix = "//", localizationKey = "rust_lesson1_ex8_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        lessons.Add(lesson1);
+
+        // ==================== LESSON 2: Rust II - 所有権とトレイト ====================
+        var lesson2 = new Lesson { titleKey = "rust_lesson2_title" };
+
+        // Ex1: 所有権の基本
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "rust_lesson2_ex1_title",
+            slideKeyPrefix = "rust_lesson2_ex1",
+            slideCount = 3,
+            correctLines = new List<string> { "fn main() {", "    let s1 = String::from(\"hello\");", "    // s1 の所有権を移動", "    let s2 = s1;", "    println!(\"{}\", s2);", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "rust_lesson2_ex1_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex2: 参照と借用
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "rust_lesson2_ex2_title",
+            slideKeyPrefix = "rust_lesson2_ex2",
+            slideCount = 3,
+            correctLines = new List<string> { "fn print_len(s: &String) {", "    println!(\"{}\", s.len());", "}", "fn main() {", "    let text = String::from(\"hello\");", "    // & で参照を渡す", "    print_len(&text);", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 5, commentPrefix = "//", localizationKey = "rust_lesson2_ex2_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex3: 可変参照
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "rust_lesson2_ex3_title",
+            slideKeyPrefix = "rust_lesson2_ex3",
+            slideCount = 3,
+            correctLines = new List<string> { "fn add_world(s: &mut String) {", "    s.push_str(\" world\");", "}", "fn main() {", "    // mut で可変変数にする", "    let mut text = String::from(\"hello\");", "    add_world(&mut text);", "    println!(\"{}\", text);", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "rust_lesson2_ex3_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex4: 構造体を定義しよう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "rust_lesson2_ex4_title",
+            slideKeyPrefix = "rust_lesson2_ex4",
+            slideCount = 3,
+            correctLines = new List<string> { "// struct で構造体を定義", "struct Rect {", "    width: i32,", "    height: i32,", "}", "fn main() {", "    let r = Rect { width: 3, height: 4 };", "    println!(\"{}\", r.width);", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "rust_lesson2_ex4_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex5: impl でメソッドを追加
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "rust_lesson2_ex5_title",
+            slideKeyPrefix = "rust_lesson2_ex5",
+            slideCount = 3,
+            correctLines = new List<string> { "struct Square {", "    side: i32,", "}", "// impl でメソッドを実装", "impl Square {", "    fn area(&self) -> i32 {", "        self.side * self.side", "    }", "}", "fn main() {", "    let s = Square { side: 5 };", "    println!(\"{}\", s.area());", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 3, commentPrefix = "//", localizationKey = "rust_lesson2_ex5_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex6: enum で状態を表す
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "rust_lesson2_ex6_title",
+            slideKeyPrefix = "rust_lesson2_ex6",
+            slideCount = 3,
+            correctLines = new List<string> { "// enum で列挙型を定義", "enum Direction {", "    Up,", "    Down,", "}", "fn main() {", "    let d = Direction::Up;", "    match d {", "        Direction::Up => println!(\"up\"),", "        Direction::Down => println!(\"down\"),", "    }", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "rust_lesson2_ex6_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex7: Option<T> で null を安全に
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "rust_lesson2_ex7_title",
+            slideKeyPrefix = "rust_lesson2_ex7",
+            slideCount = 3,
+            correctLines = new List<string> { "fn main() {", "    // Some で値があることを示す", "    let val: Option<i32> = Some(42);", "    match val {", "        Some(n) => println!(\"{}\", n),", "        None => println!(\"none\"),", "    }", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 1, commentPrefix = "//", localizationKey = "rust_lesson2_ex7_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex8: Result<T, E> でエラー処理
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "rust_lesson2_ex8_title",
+            slideKeyPrefix = "rust_lesson2_ex8",
+            slideCount = 3,
+            correctLines = new List<string> { "fn half(n: i32) -> Result<i32, String> {", "    if n % 2 != 0 {", "        return Err(\"odd\".to_string());", "    }", "    // Ok で成功を返す", "    Ok(n / 2)", "}", "fn main() {", "    match half(10) {", "        Ok(v) => println!(\"{}\", v),", "        Err(e) => println!(\"{}\", e),", "    }", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "rust_lesson2_ex8_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex9: トレイトを定義しよう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "rust_lesson2_ex9_title",
+            slideKeyPrefix = "rust_lesson2_ex9",
+            slideCount = 3,
+            correctLines = new List<string> { "// trait でトレイトを定義", "trait Speak {", "    fn speak(&self);", "}", "struct Dog;", "impl Speak for Dog {", "    fn speak(&self) {", "        println!(\"woof\");", "    }", "}", "fn main() {", "    let d = Dog;", "    d.speak();", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "rust_lesson2_ex9_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex10: ジェネリクスを使おう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "rust_lesson2_ex10_title",
+            slideKeyPrefix = "rust_lesson2_ex10",
+            slideCount = 3,
+            correctLines = new List<string> { "// T を型パラメータとして使う", "fn print_val<T: std::fmt::Display>(val: T) {", "    println!(\"{}\", val);", "}", "fn main() {", "    print_val(42);", "    print_val(\"hello\");", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "rust_lesson2_ex10_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        lessons.Add(lesson2);
+
+        // ==================== LESSON 3: Rust III - ライフタイムとイテレータ ====================
+        var lesson3 = new Lesson { titleKey = "rust_lesson3_title" };
+
+        // Ex1: ライフタイムの基本
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "rust_lesson3_ex1_title",
+            slideKeyPrefix = "rust_lesson3_ex1",
+            slideCount = 3,
+            correctLines = new List<string> { "// 'a でライフタイムを定義", "fn first<'a>(s: &'a str) -> &'a str {", "    &s[..1]", "}", "", "fn main() {", "    let s = String::from(\"Hello\");", "    println!(\"{}\", first(&s));", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "rust_lesson3_ex1_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex2: クロージャの基本
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "rust_lesson3_ex2_title",
+            slideKeyPrefix = "rust_lesson3_ex2",
+            slideCount = 3,
+            correctLines = new List<string> { "fn main() {", "    // |x| でクロージャの引数を定義", "    let double = |x| x * 2;", "    println!(\"{}\", double(5));", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 1, commentPrefix = "//", localizationKey = "rust_lesson3_ex2_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex3: イテレータの基本
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "rust_lesson3_ex3_title",
+            slideKeyPrefix = "rust_lesson3_ex3",
+            slideCount = 3,
+            correctLines = new List<string> { "fn main() {", "    let nums = vec![1, 2, 3];", "    // iter でイテレータを取得", "    for n in nums.iter() {", "        println!(\"{}\", n);", "    }", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "rust_lesson3_ex3_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex4: map でイテレータ変換
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "rust_lesson3_ex4_title",
+            slideKeyPrefix = "rust_lesson3_ex4",
+            slideCount = 3,
+            correctLines = new List<string> { "fn main() {", "    let nums = vec![1, 2, 3];", "    // map で各要素を変換", "    let squared: Vec<_> = nums.iter().map(|x| x * x).collect();", "    println!(\"{:?}\", squared);", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "rust_lesson3_ex4_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex5: filter で絞り込み
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "rust_lesson3_ex5_title",
+            slideKeyPrefix = "rust_lesson3_ex5",
+            slideCount = 3,
+            correctLines = new List<string> { "fn main() {", "    let nums = vec![1, 2, 3, 4, 5];", "    // filter で条件に合う要素を絞り込む", "    let big: Vec<_> = nums.iter().filter(|x| **x > 2).collect();", "    println!(\"{:?}\", big);", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "rust_lesson3_ex5_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex6: fold で畳み込み
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "rust_lesson3_ex6_title",
+            slideKeyPrefix = "rust_lesson3_ex6",
+            slideCount = 3,
+            correctLines = new List<string> { "fn main() {", "    let nums = vec![1, 2, 3, 4];", "    // fold で畳み込み", "    let product = nums.iter().fold(1, |acc, x| acc * x);", "    println!(\"{}\", product);", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "rust_lesson3_ex6_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex7: ? 演算子でエラー伝播
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "rust_lesson3_ex7_title",
+            slideKeyPrefix = "rust_lesson3_ex7",
+            slideCount = 3,
+            correctLines = new List<string> { "fn divide(a: i32, b: i32) -> Result<i32, &'static str> {", "    if b == 0 {", "        Err(\"division by zero\")", "    } else {", "        Ok(a / b)", "    }", "}", "", "fn calc() -> Result<i32, &'static str> {", "    // ? でエラーを伝播", "    let x = divide(10, 2)?;", "    Ok(x * 2)", "}", "", "fn main() {", "    println!(\"{:?}\", calc());", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 9, commentPrefix = "//", localizationKey = "rust_lesson3_ex7_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex8: unwrap_or でデフォルト値
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "rust_lesson3_ex8_title",
+            slideKeyPrefix = "rust_lesson3_ex8",
+            slideCount = 3,
+            correctLines = new List<string> { "fn main() {", "    let x: Option<i32> = None;", "    // unwrap_or でデフォルト値を設定", "    let value = x.unwrap_or(42);", "    println!(\"{}\", value);", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "rust_lesson3_ex8_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex9: Vec のメソッド push
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "rust_lesson3_ex9_title",
+            slideKeyPrefix = "rust_lesson3_ex9",
+            slideCount = 3,
+            correctLines = new List<string> { "fn main() {", "    let mut nums = Vec::new();", "    // push で要素を追加", "    nums.push(10);", "    nums.push(20);", "    println!(\"{:?}\", nums);", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "rust_lesson3_ex9_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex10: String と &str
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "rust_lesson3_ex10_title",
+            slideKeyPrefix = "rust_lesson3_ex10",
+            slideCount = 3,
+            correctLines = new List<string> { "fn main() {", "    let s: &str = \"Hello\";", "    // to_string で String に変換", "    let owned: String = s.to_string();", "    println!(\"{}\", owned);", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "rust_lesson3_ex10_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        lessons.Add(lesson3);
+
+        // ==================== LESSON 4: Rust IV - トレイトとスマートポインタ ====================
+        var lesson4 = new Lesson { titleKey = "rust_lesson4_title" };
+
+        // Ex1: トレイトの定義
+        lesson4.exercises.Add(new Exercise
+        {
+            titleKey = "rust_lesson4_ex1_title",
+            slideKeyPrefix = "rust_lesson4_ex1",
+            slideCount = 3,
+            correctLines = new List<string> { "// trait でトレイトを定義", "trait Speak {", "    fn speak(&self) -> String;", "}", "", "struct Dog;", "", "impl Speak for Dog {", "    fn speak(&self) -> String {", "        String::from(\"Woof!\")", "    }", "}", "", "fn main() {", "    let dog = Dog;", "    println!(\"{}\", dog.speak());", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "rust_lesson4_ex1_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex2: derive 属性
+        lesson4.exercises.Add(new Exercise
+        {
+            titleKey = "rust_lesson4_ex2_title",
+            slideKeyPrefix = "rust_lesson4_ex2",
+            slideCount = 3,
+            correctLines = new List<string> { "// derive でトレイトを自動実装", "#[derive(Debug)]", "struct User {", "    name: String,", "    age: u32,", "}", "", "fn main() {", "    let user = User { name: String::from(\"Alice\"), age: 30 };", "    println!(\"{:?}\", user);", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "rust_lesson4_ex2_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex3: Box<T>
+        lesson4.exercises.Add(new Exercise
+        {
+            titleKey = "rust_lesson4_ex3_title",
+            slideKeyPrefix = "rust_lesson4_ex3",
+            slideCount = 3,
+            correctLines = new List<string> { "fn main() {", "    // Box::new でヒープに格納", "    let x = Box::new(42);", "    println!(\"{}\", *x);", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 1, commentPrefix = "//", localizationKey = "rust_lesson4_ex3_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex4: Rc<T>
+        lesson4.exercises.Add(new Exercise
+        {
+            titleKey = "rust_lesson4_ex4_title",
+            slideKeyPrefix = "rust_lesson4_ex4",
+            slideCount = 3,
+            correctLines = new List<string> { "use std::rc::Rc;", "", "fn main() {", "    let a = Rc::new(String::from(\"Hello\"));", "    // clone で参照カウントを増やす", "    let b = Rc::clone(&a);", "    println!(\"{} {}\", a, b);", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "rust_lesson4_ex4_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex5: HashMap
+        lesson4.exercises.Add(new Exercise
+        {
+            titleKey = "rust_lesson4_ex5_title",
+            slideKeyPrefix = "rust_lesson4_ex5",
+            slideCount = 3,
+            correctLines = new List<string> { "use std::collections::HashMap;", "", "fn main() {", "    let mut map = HashMap::new();", "    // insert でキーと値を追加", "    map.insert(\"a\", 1);", "    map.insert(\"b\", 2);", "    println!(\"{:?}\", map.get(\"a\"));", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "rust_lesson4_ex5_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex6: HashSet
+        lesson4.exercises.Add(new Exercise
+        {
+            titleKey = "rust_lesson4_ex6_title",
+            slideKeyPrefix = "rust_lesson4_ex6",
+            slideCount = 3,
+            correctLines = new List<string> { "// HashSet をインポート", "use std::collections::HashSet;", "", "fn main() {", "    let mut set = HashSet::new();", "    set.insert(1);", "    set.insert(2);", "    set.insert(1);", "    println!(\"{}\", set.len());", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "rust_lesson4_ex6_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex7: match ガード
+        lesson4.exercises.Add(new Exercise
+        {
+            titleKey = "rust_lesson4_ex7_title",
+            slideKeyPrefix = "rust_lesson4_ex7",
+            slideCount = 3,
+            correctLines = new List<string> { "fn main() {", "    let num = 7;", "    match num {", "        // if でマッチガードを追加", "        n if n % 2 == 0 => println!(\"even\"),", "        _ => println!(\"odd\"),", "    }", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 3, commentPrefix = "//", localizationKey = "rust_lesson4_ex7_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex8: impl Trait
+        lesson4.exercises.Add(new Exercise
+        {
+            titleKey = "rust_lesson4_ex8_title",
+            slideKeyPrefix = "rust_lesson4_ex8",
+            slideCount = 3,
+            correctLines = new List<string> { "// impl でトレイトを実装する型を返す", "fn doubles(n: i32) -> impl Iterator<Item = i32> {", "    (0..n).map(|x| x * 2)", "}", "", "fn main() {", "    for x in doubles(3) {", "        println!(\"{}\", x);", "    }", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "rust_lesson4_ex8_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex9: collect で変換
+        lesson4.exercises.Add(new Exercise
+        {
+            titleKey = "rust_lesson4_ex9_title",
+            slideKeyPrefix = "rust_lesson4_ex9",
+            slideCount = 3,
+            correctLines = new List<string> { "fn main() {", "    // collect で Vec に変換", "    let nums: Vec<i32> = (1..=5).collect();", "    println!(\"{:?}\", nums);", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 1, commentPrefix = "//", localizationKey = "rust_lesson4_ex9_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex10: enumerate でインデックス付き
+        lesson4.exercises.Add(new Exercise
+        {
+            titleKey = "rust_lesson4_ex10_title",
+            slideKeyPrefix = "rust_lesson4_ex10",
+            slideCount = 3,
+            correctLines = new List<string> { "fn main() {", "    let items = vec![\"a\", \"b\", \"c\"];", "    // 1番目の i にインデックス、2番目の item に要素が入る", "    for (i, item) in items.iter().enumerate() {", "        println!(\"{}: {}\", i, item);", "    }", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "rust_lesson4_ex10_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        lessons.Add(lesson4);
+
+        currentLessonIndex = 0;
+        currentExerciseIndex = 0;
+    }
+
+
+    private void InitializeRubyLessons()
+    {
+        lessons.Clear();
+
+        // ==================== LESSON 1: Ruby (ルビー) に挑戦！ ====================
+        var lesson1 = new Lesson { titleKey = "ruby_lesson1_title" };
+
+        // Ex1: 画面に文字を出してみましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "ruby_lesson1_ex1_title",
+            slideKeyPrefix = "ruby_lesson1_ex1",
+            slideCount = 3,
+            correctLines = new List<string> { "# 「Hello, Ruby!」と出力する関数", "puts 'Hello, Ruby!'" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "ruby_lesson1_ex1_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex2: 便利な「はこ」変数（へんすう）
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "ruby_lesson1_ex2_title",
+            slideKeyPrefix = "ruby_lesson1_ex2",
+            slideCount = 3,
+            correctLines = new List<string> { "# nameというはこに 'Ruby' を入れる", "name = 'Ruby'", "# はこの中身を画面に出す", "puts name" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "ruby_lesson1_ex2_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "ruby_lesson1_ex2_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex3: コンピュータで計算しましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "ruby_lesson1_ex3_title",
+            slideKeyPrefix = "ruby_lesson1_ex3",
+            slideCount = 3,
+            correctLines = new List<string> { "# xというはこに 10 を入れる", "x = 10", "# yというはこに 5 を入れる", "y = 5", "# x と y をたした答えを出す", "puts x + y" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "ruby_lesson1_ex3_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "ruby_lesson1_ex3_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "#", localizationKey = "ruby_lesson1_ex3_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex4: 剰余演算子（%）
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "ruby_lesson1_ex4_title",
+            slideKeyPrefix = "ruby_lesson1_ex4",
+            slideCount = 3,
+            correctLines = new List<string> { "# 10 を 3 で割ったあまりを出力する", "puts 10 % 3" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "ruby_lesson1_ex4_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex5: 累算代入演算子（+=、-=）
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "ruby_lesson1_ex5_title",
+            slideKeyPrefix = "ruby_lesson1_ex5",
+            slideCount = 3,
+            correctLines = new List<string> { "# scoreに50を入れる", "score = 50", "# 10点プラスする", "score += 10", "# 結果を表示", "puts score" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "ruby_lesson1_ex5_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "ruby_lesson1_ex5_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "#", localizationKey = "ruby_lesson1_ex5_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex6: 文章の中に変数を入れましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "ruby_lesson1_ex6_title",
+            slideKeyPrefix = "ruby_lesson1_ex6",
+            slideCount = 3,
+            correctLines = new List<string> { "# ageというはこに 10 を入れる", "age = 10", "# 式展開を使ってメッセージを出す", "puts \"私は#{age}歳です\"" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "ruby_lesson1_ex6_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "ruby_lesson1_ex6_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex7: たくさんのデータをまとめましょう「配列」
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "ruby_lesson1_ex7_title",
+            slideKeyPrefix = "ruby_lesson1_ex7",
+            slideCount = 3,
+            correctLines = new List<string> { "# colorsという配列を作る", "colors = ['赤', '青', '緑']", "# 2番目のデータ（インデックス1）を出す", "puts colors[1]" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "ruby_lesson1_ex7_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "ruby_lesson1_ex7_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex8: 「もし〜なら」で分ける if文
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "ruby_lesson1_ex8_title",
+            slideKeyPrefix = "ruby_lesson1_ex8",
+            slideCount = 3,
+            correctLines = new List<string> { "# scoreに100を入れる", "score = 100", "# もし80より大きかったら", "if score > 80", "  # メッセージを表示する", "  puts '合格！'", "end" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "ruby_lesson1_ex8_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "ruby_lesson1_ex8_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "#", localizationKey = "ruby_lesson1_ex8_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex9: ちがう場合は？ if-else文
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "ruby_lesson1_ex9_title",
+            slideKeyPrefix = "ruby_lesson1_ex9",
+            slideCount = 3,
+            correctLines = new List<string> { "# ageに10を入れる", "age = 10", "# 20歳以上かどうかで分ける", "if age >= 20", "  # 大人と表示", "  puts '大人'", "# else でそれ以外の場合", "else", "  # それ以外の場合", "  puts '子供'", "end" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "ruby_lesson1_ex9_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "ruby_lesson1_ex9_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "#", localizationKey = "ruby_lesson1_ex9_comment3" },
+                new LocalizedComment { lineIndex = 6, commentPrefix = "#", localizationKey = "ruby_lesson1_ex9_comment4" },
+                new LocalizedComment { lineIndex = 8, commentPrefix = "#", localizationKey = "ruby_lesson1_ex9_comment5" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex10: 論理演算子（and, or）
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "ruby_lesson1_ex10_title",
+            slideKeyPrefix = "ruby_lesson1_ex10",
+            slideCount = 3,
+            correctLines = new List<string> { "# scoreに85を入れる", "score = 85", "# 80以上 かつ 100以下 ならメッセージを出す", "if score >= 80 and score <= 100", "  # 結果を表示", "  puts '合格！'", "end" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "ruby_lesson1_ex10_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "ruby_lesson1_ex10_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "#", localizationKey = "ruby_lesson1_ex10_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex11: ぐるぐる回す each
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "ruby_lesson1_ex11_title",
+            slideKeyPrefix = "ruby_lesson1_ex11",
+            slideCount = 3,
+            correctLines = new List<string> { "# 名前の配列を作る", "names = ['太郎', '花子']", "# 順番に取り出すループ", "names.each do |name|", "  # 取り出した名前を表示", "  puts name", "end" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "ruby_lesson1_ex11_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "ruby_lesson1_ex11_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "#", localizationKey = "ruby_lesson1_ex11_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex12: 名前で探しましょう「ハッシュ」
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "ruby_lesson1_ex12_title",
+            slideKeyPrefix = "ruby_lesson1_ex12",
+            slideCount = 3,
+            correctLines = new List<string> { "# ハッシュを作る", "fruits = {'みかん' => 'オレンジ'}", "# キーを指定して値を取り出す", "puts fruits['みかん']" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "ruby_lesson1_ex12_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "ruby_lesson1_ex12_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex13: 自分だけの関数を作ろう「メソッド」
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "ruby_lesson1_ex13_title",
+            slideKeyPrefix = "ruby_lesson1_ex13",
+            slideCount = 3,
+            correctLines = new List<string> { "# greetというメソッドを定義", "def greet", "  # こんにちは と表示", "  puts 'こんにちは'", "end", "# メソッドを呼び出す", "greet" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "ruby_lesson1_ex13_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "ruby_lesson1_ex13_comment2" },
+                new LocalizedComment { lineIndex = 5, commentPrefix = "#", localizationKey = "ruby_lesson1_ex13_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        lessons.Add(lesson1);
+
+        // ==================== LESSON 2: Ruby II - ブロックとオブジェクト指向 ====================
+        var lesson2 = new Lesson { titleKey = "ruby_lesson2_title" };
+
+        // Ex1: ブロックを使おう - each
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "ruby_lesson2_ex1_title",
+            slideKeyPrefix = "ruby_lesson2_ex1",
+            slideCount = 3,
+            correctLines = new List<string> { "# numsに配列を代入（1, 2, 3）", "nums = [1, 2, 3]", "# eachで各要素を処理", "nums.each do |n|", "  # putsで出力", "  puts n", "# endで終了", "end" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "ruby_lesson2_ex1_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "ruby_lesson2_ex1_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "#", localizationKey = "ruby_lesson2_ex1_comment3" },
+                new LocalizedComment { lineIndex = 6, commentPrefix = "#", localizationKey = "ruby_lesson2_ex1_comment4" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex2: map で変換しよう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "ruby_lesson2_ex2_title",
+            slideKeyPrefix = "ruby_lesson2_ex2",
+            slideCount = 3,
+            correctLines = new List<string> { "# numsに配列を代入（1, 2, 3）", "nums = [1, 2, 3]", "# mapで各要素を変換", "doubled = nums.map { |n| n * 2 }", "# putsで出力", "puts doubled" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "ruby_lesson2_ex2_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "ruby_lesson2_ex2_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "#", localizationKey = "ruby_lesson2_ex2_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex3: select で絞り込もう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "ruby_lesson2_ex3_title",
+            slideKeyPrefix = "ruby_lesson2_ex3",
+            slideCount = 3,
+            correctLines = new List<string> { "# numsに配列を代入（1, 2, 3, 4, 5）", "nums = [1, 2, 3, 4, 5]", "# selectで条件に合う要素を抽出", "big = nums.select { |n| n >= 3 }", "# putsで出力", "puts big" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "ruby_lesson2_ex3_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "ruby_lesson2_ex3_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "#", localizationKey = "ruby_lesson2_ex3_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex4: シンボルを使おう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "ruby_lesson2_ex4_title",
+            slideKeyPrefix = "ruby_lesson2_ex4",
+            slideCount = 3,
+            correctLines = new List<string> { "# itemにハッシュを代入", "item = { name: 'Apple', price: 100 }", "# :でシンボルを指定してアクセス", "puts item[:price]" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "ruby_lesson2_ex4_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "ruby_lesson2_ex4_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex5: クラスを定義しよう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "ruby_lesson2_ex5_title",
+            slideKeyPrefix = "ruby_lesson2_ex5",
+            slideCount = 3,
+            correctLines = new List<string> { "# classでクラスを定義", "class Cat", "  # initializeを定義", "  def initialize(name)", "    # @nameに代入", "    @name = name", "  # endで終了", "  end", "  # greetを定義", "  def greet", "    # @nameを出力", "    puts @name", "  # endで終了", "  end", "# endで終了", "end", "# catにインスタンスを代入", "cat = Cat.new('Tama')", "# greetを呼び出し", "cat.greet" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "ruby_lesson2_ex5_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "ruby_lesson2_ex5_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "#", localizationKey = "ruby_lesson2_ex5_comment3" },
+                new LocalizedComment { lineIndex = 6, commentPrefix = "#", localizationKey = "ruby_lesson2_ex5_comment4" },
+                new LocalizedComment { lineIndex = 8, commentPrefix = "#", localizationKey = "ruby_lesson2_ex5_comment5" },
+                new LocalizedComment { lineIndex = 10, commentPrefix = "#", localizationKey = "ruby_lesson2_ex5_comment6" },
+                new LocalizedComment { lineIndex = 12, commentPrefix = "#", localizationKey = "ruby_lesson2_ex5_comment7" },
+                new LocalizedComment { lineIndex = 14, commentPrefix = "#", localizationKey = "ruby_lesson2_ex5_comment8" },
+                new LocalizedComment { lineIndex = 16, commentPrefix = "#", localizationKey = "ruby_lesson2_ex5_comment9" },
+                new LocalizedComment { lineIndex = 18, commentPrefix = "#", localizationKey = "ruby_lesson2_ex5_comment10" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex6: アクセサを使おう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "ruby_lesson2_ex6_title",
+            slideKeyPrefix = "ruby_lesson2_ex6",
+            slideCount = 3,
+            correctLines = new List<string> { "# classでクラスを定義", "class Item", "  # attr_accessorで読み書き可能に", "  attr_accessor :price", "# endで終了", "end", "# itemにインスタンスを代入", "item = Item.new", "# priceに値を代入", "item.price = 200", "# priceを出力", "puts item.price" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "ruby_lesson2_ex6_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "ruby_lesson2_ex6_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "#", localizationKey = "ruby_lesson2_ex6_comment3" },
+                new LocalizedComment { lineIndex = 6, commentPrefix = "#", localizationKey = "ruby_lesson2_ex6_comment4" },
+                new LocalizedComment { lineIndex = 8, commentPrefix = "#", localizationKey = "ruby_lesson2_ex6_comment5" },
+                new LocalizedComment { lineIndex = 10, commentPrefix = "#", localizationKey = "ruby_lesson2_ex6_comment6" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex7: 継承を学ぼう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "ruby_lesson2_ex7_title",
+            slideKeyPrefix = "ruby_lesson2_ex7",
+            slideCount = 3,
+            correctLines = new List<string> { "# classでクラスを定義", "class Vehicle", "  # moveを定義", "  def move", "    # movingを出力", "    puts 'moving'", "  # endで終了", "  end", "# endで終了", "end", "# <で親クラスを継承", "class Car < Vehicle", "# endで終了", "end", "# carにインスタンスを代入", "car = Car.new", "# moveを呼び出し", "car.move" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "ruby_lesson2_ex7_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "ruby_lesson2_ex7_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "#", localizationKey = "ruby_lesson2_ex7_comment3" },
+                new LocalizedComment { lineIndex = 6, commentPrefix = "#", localizationKey = "ruby_lesson2_ex7_comment4" },
+                new LocalizedComment { lineIndex = 8, commentPrefix = "#", localizationKey = "ruby_lesson2_ex7_comment5" },
+                new LocalizedComment { lineIndex = 10, commentPrefix = "#", localizationKey = "ruby_lesson2_ex7_comment6" },
+                new LocalizedComment { lineIndex = 12, commentPrefix = "#", localizationKey = "ruby_lesson2_ex7_comment7" },
+                new LocalizedComment { lineIndex = 14, commentPrefix = "#", localizationKey = "ruby_lesson2_ex7_comment8" },
+                new LocalizedComment { lineIndex = 16, commentPrefix = "#", localizationKey = "ruby_lesson2_ex7_comment9" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex8: モジュールで機能を追加
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "ruby_lesson2_ex8_title",
+            slideKeyPrefix = "ruby_lesson2_ex8",
+            slideCount = 3,
+            correctLines = new List<string> { "# moduleでモジュールを定義", "module Speakable", "  # speakを定義", "  def speak", "    # speakingを出力", "    puts 'speaking'", "  # endで終了", "  end", "# endで終了", "end", "# classでクラスを定義", "class Robot", "  # includeでモジュールを取り込み", "  include Speakable", "# endで終了", "end", "# robotにインスタンスを代入", "robot = Robot.new", "# speakを呼び出し", "robot.speak" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "ruby_lesson2_ex8_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "ruby_lesson2_ex8_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "#", localizationKey = "ruby_lesson2_ex8_comment3" },
+                new LocalizedComment { lineIndex = 6, commentPrefix = "#", localizationKey = "ruby_lesson2_ex8_comment4" },
+                new LocalizedComment { lineIndex = 8, commentPrefix = "#", localizationKey = "ruby_lesson2_ex8_comment5" },
+                new LocalizedComment { lineIndex = 10, commentPrefix = "#", localizationKey = "ruby_lesson2_ex8_comment6" },
+                new LocalizedComment { lineIndex = 12, commentPrefix = "#", localizationKey = "ruby_lesson2_ex8_comment7" },
+                new LocalizedComment { lineIndex = 14, commentPrefix = "#", localizationKey = "ruby_lesson2_ex8_comment8" },
+                new LocalizedComment { lineIndex = 16, commentPrefix = "#", localizationKey = "ruby_lesson2_ex8_comment9" },
+                new LocalizedComment { lineIndex = 18, commentPrefix = "#", localizationKey = "ruby_lesson2_ex8_comment10" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex9: 例外処理 begin-rescue
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "ruby_lesson2_ex9_title",
+            slideKeyPrefix = "ruby_lesson2_ex9",
+            slideCount = 3,
+            correctLines = new List<string> { "# beginで開始", "begin", "  # raiseでエラーを発生", "  raise 'oops'", "# rescueで例外を捕捉", "rescue => e", "  # caughtを出力", "  puts 'caught'", "# endで終了", "end" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "ruby_lesson2_ex9_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "ruby_lesson2_ex9_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "#", localizationKey = "ruby_lesson2_ex9_comment3" },
+                new LocalizedComment { lineIndex = 6, commentPrefix = "#", localizationKey = "ruby_lesson2_ex9_comment4" },
+                new LocalizedComment { lineIndex = 8, commentPrefix = "#", localizationKey = "ruby_lesson2_ex9_comment5" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex10: ラムダを使おう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "ruby_lesson2_ex10_title",
+            slideKeyPrefix = "ruby_lesson2_ex10",
+            slideCount = 3,
+            correctLines = new List<string> { "# ->でラムダを定義", "double = ->(n) { n * 2 }", "# callで実行", "puts double.call(5)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "ruby_lesson2_ex10_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "ruby_lesson2_ex10_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        lessons.Add(lesson2);
+
+        // ==================== LESSON 3: Ruby III - メタプログラミングと関数型スタイル ====================
+        var lesson3 = new Lesson { titleKey = "ruby_lesson3_title" };
+
+        // Ex1: yieldとブロック
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "ruby_lesson3_ex1_title",
+            slideKeyPrefix = "ruby_lesson3_ex1",
+            slideCount = 3,
+            correctLines = new List<string>(),
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+
+        // Ex2: Procオブジェクト
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "ruby_lesson3_ex2_title",
+            slideKeyPrefix = "ruby_lesson3_ex2",
+            slideCount = 3,
+            correctLines = new List<string>(),
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+
+        // Ex3: ラムダ
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "ruby_lesson3_ex3_title",
+            slideKeyPrefix = "ruby_lesson3_ex3",
+            slideCount = 3,
+            correctLines = new List<string>(),
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+
+        // Ex4: シンボルとProc変換
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "ruby_lesson3_ex4_title",
+            slideKeyPrefix = "ruby_lesson3_ex4",
+            slideCount = 3,
+            correctLines = new List<string>(),
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+
+        // Ex5: reduceメソッド
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "ruby_lesson3_ex5_title",
+            slideKeyPrefix = "ruby_lesson3_ex5",
+            slideCount = 3,
+            correctLines = new List<string>(),
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+
+        // Ex6: selectとreject
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "ruby_lesson3_ex6_title",
+            slideKeyPrefix = "ruby_lesson3_ex6",
+            slideCount = 3,
+            correctLines = new List<string>(),
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+
+        // Ex7: スプラット演算子
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "ruby_lesson3_ex7_title",
+            slideKeyPrefix = "ruby_lesson3_ex7",
+            slideCount = 3,
+            correctLines = new List<string>(),
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+
+        // Ex8: method_missing
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "ruby_lesson3_ex8_title",
+            slideKeyPrefix = "ruby_lesson3_ex8",
+            slideCount = 3,
+            correctLines = new List<string>(),
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+
+        // Ex9: Struct
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "ruby_lesson3_ex9_title",
+            slideKeyPrefix = "ruby_lesson3_ex9",
+            slideCount = 3,
+            correctLines = new List<string>(),
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+
+        // Ex10: tapメソッド
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "ruby_lesson3_ex10_title",
+            slideKeyPrefix = "ruby_lesson3_ex10",
+            slideCount = 3,
+            correctLines = new List<string>(),
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+
+        lessons.Add(lesson3);
+
+        currentLessonIndex = 0;
+        currentExerciseIndex = 0;
+    }
+
+
+    private void InitializePHPLessons()
+    {
+        lessons.Clear();
+
+        // ==================== LESSON 1: PHP (ピーエイチピー) に挑戦！ ====================
+        var lesson1 = new Lesson { titleKey = "php_lesson1_title" };
+
+        // Ex1: 画面に文字を出してみましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "php_lesson1_ex1_title",
+            slideKeyPrefix = "php_lesson1_ex1",
+            slideCount = 3,
+            correctLines = new List<string> { "<?php", "  // 画面にメッセージを出す関数", "  echo \"Hello, PHP!\";", "?>" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 1, commentPrefix = "//", localizationKey = "php_lesson1_ex1_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex2: 便利な「はこ」
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "php_lesson1_ex2_title",
+            slideKeyPrefix = "php_lesson1_ex2",
+            slideCount = 3,
+            correctLines = new List<string> { "<?php", "  // x というはこに 10 を入れる", "  $x = 10;", "  // 中身を表示する", "  echo $x;", "?>" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 1, commentPrefix = "//", localizationKey = "php_lesson1_ex2_comment1" },
+                new LocalizedComment { lineIndex = 3, commentPrefix = "//", localizationKey = "php_lesson1_ex2_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex3: コンピュータで計算しましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "php_lesson1_ex3_title",
+            slideKeyPrefix = "php_lesson1_ex3",
+            slideCount = 3,
+            correctLines = new List<string> { "<?php", "  // はこに数字を入れる", "  $a = 5;", "  $b = 3;", "  // たし算した結果を表示する", "  echo $a + $b;", "?>" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 1, commentPrefix = "//", localizationKey = "php_lesson1_ex3_comment1" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "php_lesson1_ex3_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex4: 剰余演算子（%）
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "php_lesson1_ex4_title",
+            slideKeyPrefix = "php_lesson1_ex4",
+            slideCount = 3,
+            correctLines = new List<string> { "<?php", "  // 10 を 3 で割ったあまりを出力する", "  echo 10 % 3;", "?>" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 1, commentPrefix = "//", localizationKey = "php_lesson1_ex4_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex5: 累算代入演算子（+=、-=）
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "php_lesson1_ex5_title",
+            slideKeyPrefix = "php_lesson1_ex5",
+            slideCount = 3,
+            correctLines = new List<string> { "<?php", "  // scoreに50を入れる", "  $score = 50;", "  // 10点プラスする", "  $score += 10;", "  // 結果を表示", "  echo $score;", "?>" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 1, commentPrefix = "//", localizationKey = "php_lesson1_ex5_comment1" },
+                new LocalizedComment { lineIndex = 3, commentPrefix = "//", localizationKey = "php_lesson1_ex5_comment2" },
+                new LocalizedComment { lineIndex = 5, commentPrefix = "//", localizationKey = "php_lesson1_ex5_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex6: 文章の中に「はこ」を入れましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "php_lesson1_ex6_title",
+            slideKeyPrefix = "php_lesson1_ex6",
+            slideCount = 3,
+            correctLines = new List<string> { "<?php", "  // ageに20を入れる", "  $age = 20;", "  // 文章の中に中身を表示する", "  echo \"I am $age years old.\";", "?>" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 1, commentPrefix = "//", localizationKey = "php_lesson1_ex6_comment1" },
+                new LocalizedComment { lineIndex = 3, commentPrefix = "//", localizationKey = "php_lesson1_ex6_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex7: データをならべる「配列」
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "php_lesson1_ex7_title",
+            slideKeyPrefix = "php_lesson1_ex7",
+            slideCount = 3,
+            correctLines = new List<string> { "<?php", "  // 配列を作る", "  $fruits = ['りんご', 'バナナ'];", "  // 2番目のデータを表示する", "  echo $fruits[1];", "?>" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 1, commentPrefix = "//", localizationKey = "php_lesson1_ex7_comment1" },
+                new LocalizedComment { lineIndex = 3, commentPrefix = "//", localizationKey = "php_lesson1_ex7_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex8: 「もし〜なら」で分けましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "php_lesson1_ex8_title",
+            slideKeyPrefix = "php_lesson1_ex8",
+            slideCount = 3,
+            correctLines = new List<string> { "<?php", "  // scoreに100を入れる", "  $score = 100;", "  // >で大きいか比較", "  if ($score > 80) {", "    // メッセージ（'Excellent'）", "    echo \"Excellent\";", "  }", "?>" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 1, commentPrefix = "//", localizationKey = "php_lesson1_ex8_comment1" },
+                new LocalizedComment { lineIndex = 3, commentPrefix = "//", localizationKey = "php_lesson1_ex8_comment2" },
+                new LocalizedComment { lineIndex = 5, commentPrefix = "//", localizationKey = "php_lesson1_ex8_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex9: ちがう場合はどうしましょう？
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "php_lesson1_ex9_title",
+            slideKeyPrefix = "php_lesson1_ex9",
+            slideCount = 3,
+            correctLines = new List<string> { "<?php", "  // ageに18を入れる", "  $age = 18;", "  // 20以上かを比較する演算子", "  if ($age >= 20) {", "    // 20歳以上のときのメッセージ（'Adult'）", "    echo \"Adult\";", "  // elseで「そうでなければ」", "  } else {", "    // それ以外のメッセージ（'Minor'）", "    echo \"Minor\";", "  }", "?>" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 1, commentPrefix = "//", localizationKey = "php_lesson1_ex9_comment1" },
+                new LocalizedComment { lineIndex = 3, commentPrefix = "//", localizationKey = "php_lesson1_ex9_comment2" },
+                new LocalizedComment { lineIndex = 5, commentPrefix = "//", localizationKey = "php_lesson1_ex9_comment3" },
+                new LocalizedComment { lineIndex = 7, commentPrefix = "//", localizationKey = "php_lesson1_ex9_comment4" },
+                new LocalizedComment { lineIndex = 9, commentPrefix = "//", localizationKey = "php_lesson1_ex9_comment5" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex10: 論理演算子（&&、||）
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "php_lesson1_ex10_title",
+            slideKeyPrefix = "php_lesson1_ex10",
+            slideCount = 3,
+            correctLines = new List<string> { "<?php", "  // scoreに85を入れる", "  $score = 85;", "  // 80以上 かつ 100以下 ならメッセージを出す", "  if ($score >= 80 && $score <= 100) {", "    // 結果を出力", "    echo \"Pass\";", "  }", "?>" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 1, commentPrefix = "//", localizationKey = "php_lesson1_ex10_comment1" },
+                new LocalizedComment { lineIndex = 3, commentPrefix = "//", localizationKey = "php_lesson1_ex10_comment2" },
+                new LocalizedComment { lineIndex = 5, commentPrefix = "//", localizationKey = "php_lesson1_ex10_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex11: 中身を全部出してみましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "php_lesson1_ex11_title",
+            slideKeyPrefix = "php_lesson1_ex11",
+            slideCount = 3,
+            correctLines = new List<string> { "<?php", "  $nums = [1, 2, 3];", "  // asで各要素を取り出す", "  foreach ($nums as $n) {", "    echo $n;", "  }", "?>" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "php_lesson1_ex11_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex12: 名前で探しましょう「連想配列」
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "php_lesson1_ex12_title",
+            slideKeyPrefix = "php_lesson1_ex12",
+            slideCount = 3,
+            correctLines = new List<string> { "<?php", "  $user = ['name' => 'Alice'];", "  // nameでキーを指定してアクセス", "  echo $user['name'];", "?>" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "php_lesson1_ex12_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex13: 自分だけの関数を作りましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "php_lesson1_ex13_title",
+            slideKeyPrefix = "php_lesson1_ex13",
+            slideCount = 3,
+            correctLines = new List<string> { "<?php", "  function greet() {", "    echo \"Hello\";", "  }", "  // 関数を実行する", "  greet();", "?>" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "php_lesson1_ex13_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        lessons.Add(lesson1);
+
+        // ==================== LESSON 2: PHP II - クラスとデータベース ====================
+        var lesson2 = new Lesson { titleKey = "php_lesson2_title" };
+
+        // Ex1: クラスを定義しよう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "php_lesson2_ex1_title",
+            slideKeyPrefix = "php_lesson2_ex1",
+            slideCount = 3,
+            correctLines = new List<string> { "<?php", "// classでクラスを定義", "class Cat {", "    // publicでアクセス修飾子", "    public $name;", "}", "// newでインスタンスを作成", "$cat = new Cat();", "// ->でプロパティにアクセス", "$cat->name = 'Tama';", "// echoで出力", "echo $cat->name;", "?>" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 1, commentPrefix = "//", localizationKey = "php_lesson2_ex1_comment1" },
+                new LocalizedComment { lineIndex = 3, commentPrefix = "//", localizationKey = "php_lesson2_ex1_comment2" },
+                new LocalizedComment { lineIndex = 6, commentPrefix = "//", localizationKey = "php_lesson2_ex1_comment3" },
+                new LocalizedComment { lineIndex = 8, commentPrefix = "//", localizationKey = "php_lesson2_ex1_comment4" },
+                new LocalizedComment { lineIndex = 10, commentPrefix = "//", localizationKey = "php_lesson2_ex1_comment5" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex2: コンストラクタを使おう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "php_lesson2_ex2_title",
+            slideKeyPrefix = "php_lesson2_ex2",
+            slideCount = 3,
+            correctLines = new List<string> { "<?php", "// classでクラスを定義", "class Counter {", "    // publicでアクセス修飾子", "    public $count;", "    // __constructでコンストラクタを定義", "    public function __construct($c) {", "        // $thisで自分自身を参照", "        $this->count = $c;", "    }", "}", "// newでインスタンスを作成", "$cnt = new Counter(5);", "// echoで出力", "echo $cnt->count;", "?>" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 1, commentPrefix = "//", localizationKey = "php_lesson2_ex2_comment1" },
+                new LocalizedComment { lineIndex = 3, commentPrefix = "//", localizationKey = "php_lesson2_ex2_comment2" },
+                new LocalizedComment { lineIndex = 5, commentPrefix = "//", localizationKey = "php_lesson2_ex2_comment3" },
+                new LocalizedComment { lineIndex = 7, commentPrefix = "//", localizationKey = "php_lesson2_ex2_comment4" },
+                new LocalizedComment { lineIndex = 11, commentPrefix = "//", localizationKey = "php_lesson2_ex2_comment5" },
+                new LocalizedComment { lineIndex = 13, commentPrefix = "//", localizationKey = "php_lesson2_ex2_comment6" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex3: 継承を学ぼう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "php_lesson2_ex3_title",
+            slideKeyPrefix = "php_lesson2_ex3",
+            slideCount = 3,
+            correctLines = new List<string> { "<?php", "// classでクラスを定義", "class Vehicle {", "    // functionで関数を定義", "    public function move() {", "        // echoで出力", "        echo 'moving';", "    }", "}", "// extendsで継承", "class Car extends Vehicle { }", "// newでインスタンスを作成", "$car = new Car();", "// ->でメソッドを呼び出し", "$car->move();", "?>" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 1, commentPrefix = "//", localizationKey = "php_lesson2_ex3_comment1" },
+                new LocalizedComment { lineIndex = 3, commentPrefix = "//", localizationKey = "php_lesson2_ex3_comment2" },
+                new LocalizedComment { lineIndex = 5, commentPrefix = "//", localizationKey = "php_lesson2_ex3_comment3" },
+                new LocalizedComment { lineIndex = 9, commentPrefix = "//", localizationKey = "php_lesson2_ex3_comment4" },
+                new LocalizedComment { lineIndex = 11, commentPrefix = "//", localizationKey = "php_lesson2_ex3_comment5" },
+                new LocalizedComment { lineIndex = 13, commentPrefix = "//", localizationKey = "php_lesson2_ex3_comment6" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex4: インターフェースを使おう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "php_lesson2_ex4_title",
+            slideKeyPrefix = "php_lesson2_ex4",
+            slideCount = 3,
+            correctLines = new List<string> { "<?php", "// interfaceでインターフェースを定義", "interface Runner {", "    // functionでメソッドを宣言", "    public function run();", "}", "// implementsでインターフェースを実装", "class Robot implements Runner {", "    // functionでメソッドを実装", "    public function run() {", "        // echoで出力", "        echo 'running';", "    }", "}", "// newでインスタンスを作成", "$r = new Robot();", "// ->でメソッドを呼び出し", "$r->run();", "?>" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 1, commentPrefix = "//", localizationKey = "php_lesson2_ex4_comment1" },
+                new LocalizedComment { lineIndex = 3, commentPrefix = "//", localizationKey = "php_lesson2_ex4_comment2" },
+                new LocalizedComment { lineIndex = 6, commentPrefix = "//", localizationKey = "php_lesson2_ex4_comment3" },
+                new LocalizedComment { lineIndex = 8, commentPrefix = "//", localizationKey = "php_lesson2_ex4_comment4" },
+                new LocalizedComment { lineIndex = 10, commentPrefix = "//", localizationKey = "php_lesson2_ex4_comment5" },
+                new LocalizedComment { lineIndex = 14, commentPrefix = "//", localizationKey = "php_lesson2_ex4_comment6" },
+                new LocalizedComment { lineIndex = 16, commentPrefix = "//", localizationKey = "php_lesson2_ex4_comment7" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex5: 配列の array_map
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "php_lesson2_ex5_title",
+            slideKeyPrefix = "php_lesson2_ex5",
+            slideCount = 3,
+            correctLines = new List<string> { "<?php", "// 配列を定義（1, 2, 3）", "$nums = [1, 2, 3];", "// array_mapで各要素を変換", "$squared = array_map(fn($n) => $n * $n, $nums);", "// print_rで配列を出力", "print_r($squared);", "?>" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 1, commentPrefix = "//", localizationKey = "php_lesson2_ex5_comment1" },
+                new LocalizedComment { lineIndex = 3, commentPrefix = "//", localizationKey = "php_lesson2_ex5_comment2" },
+                new LocalizedComment { lineIndex = 5, commentPrefix = "//", localizationKey = "php_lesson2_ex5_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex6: 配列の array_filter
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "php_lesson2_ex6_title",
+            slideKeyPrefix = "php_lesson2_ex6",
+            slideCount = 3,
+            correctLines = new List<string> { "<?php", "// 配列を定義", "$nums = [1, 2, 3, 4, 5];", "// array_filterで条件に合う要素を抽出", "$result = array_filter($nums, fn($n) => $n >= 3);", "// print_rで配列を出力", "print_r($result);", "?>" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 1, commentPrefix = "//", localizationKey = "php_lesson2_ex6_comment1" },
+                new LocalizedComment { lineIndex = 3, commentPrefix = "//", localizationKey = "php_lesson2_ex6_comment2" },
+                new LocalizedComment { lineIndex = 5, commentPrefix = "//", localizationKey = "php_lesson2_ex6_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex7: アロー関数を使おう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "php_lesson2_ex7_title",
+            slideKeyPrefix = "php_lesson2_ex7",
+            slideCount = 3,
+            correctLines = new List<string> { "<?php", "// fnでアロー関数を定義", "$triple = fn($n) => $n * 3;", "// echoで出力", "echo $triple(7);", "?>" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 1, commentPrefix = "//", localizationKey = "php_lesson2_ex7_comment1" },
+                new LocalizedComment { lineIndex = 3, commentPrefix = "//", localizationKey = "php_lesson2_ex7_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex8: 例外処理 try-catch
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "php_lesson2_ex8_title",
+            slideKeyPrefix = "php_lesson2_ex8",
+            slideCount = 3,
+            correctLines = new List<string> { "<?php", "// tryで例外を発生させる可能性があるコードを囲む", "try {", "    // throwで例外を投げる", "    throw new Exception('oops');", "// catchで例外を捕捉", "} catch (Exception $e) {", "    // echoで出力", "    echo 'caught';", "}", "?>" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 1, commentPrefix = "//", localizationKey = "php_lesson2_ex8_comment1" },
+                new LocalizedComment { lineIndex = 3, commentPrefix = "//", localizationKey = "php_lesson2_ex8_comment2" },
+                new LocalizedComment { lineIndex = 5, commentPrefix = "//", localizationKey = "php_lesson2_ex8_comment3" },
+                new LocalizedComment { lineIndex = 7, commentPrefix = "//", localizationKey = "php_lesson2_ex8_comment4" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex9: 名前空間を使おう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "php_lesson2_ex9_title",
+            slideKeyPrefix = "php_lesson2_ex9",
+            slideCount = 3,
+            correctLines = new List<string> { "<?php", "// namespaceで名前空間を宣言", "namespace App;", "// classでクラスを定義", "class Hello {", "    // functionでメソッドを定義", "    public function say() {", "        // echoで出力", "        echo 'hello';", "    }", "}", "// newでインスタンスを作成", "$h = new Hello();", "// ->でメソッドを呼び出し", "$h->say();", "?>" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 1, commentPrefix = "//", localizationKey = "php_lesson2_ex9_comment1" },
+                new LocalizedComment { lineIndex = 3, commentPrefix = "//", localizationKey = "php_lesson2_ex9_comment2" },
+                new LocalizedComment { lineIndex = 5, commentPrefix = "//", localizationKey = "php_lesson2_ex9_comment3" },
+                new LocalizedComment { lineIndex = 7, commentPrefix = "//", localizationKey = "php_lesson2_ex9_comment4" },
+                new LocalizedComment { lineIndex = 11, commentPrefix = "//", localizationKey = "php_lesson2_ex9_comment5" },
+                new LocalizedComment { lineIndex = 13, commentPrefix = "//", localizationKey = "php_lesson2_ex9_comment6" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex10: Null合体演算子 ??
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "php_lesson2_ex10_title",
+            slideKeyPrefix = "php_lesson2_ex10",
+            slideCount = 3,
+            correctLines = new List<string> { "<?php", "// nullを代入", "$value = null;", "// ??でnullの場合のデフォルト値を指定", "echo $value ?? 'default';", "?>" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 1, commentPrefix = "//", localizationKey = "php_lesson2_ex10_comment1" },
+                new LocalizedComment { lineIndex = 3, commentPrefix = "//", localizationKey = "php_lesson2_ex10_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        lessons.Add(lesson2);
+
+        // ==================== LESSON 3: PHP III - モダンPHPとクロージャ ====================
+        var lesson3 = new Lesson { titleKey = "php_lesson3_title" };
+
+        // Ex1: クロージャ（無名関数）
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "php_lesson3_ex1_title",
+            slideKeyPrefix = "php_lesson3_ex1",
+            slideCount = 3,
+            correctLines = new List<string> { "// functionで無名関数を定義", "$doubler = function($x) {", "    // *で乗算", "    return $x * 2;", "};" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "php_lesson3_ex1_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "php_lesson3_ex1_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex2: アロー関数
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "php_lesson3_ex2_title",
+            slideKeyPrefix = "php_lesson3_ex2",
+            slideCount = 3,
+            correctLines = new List<string> { "// fnでアロー関数、=>で式を記述", "$cube = fn($x) => $x ** 3;" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "php_lesson3_ex2_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex3: Null合体演算子
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "php_lesson3_ex3_title",
+            slideKeyPrefix = "php_lesson3_ex3",
+            slideCount = 3,
+            correctLines = new List<string> { "// nullを代入", "$name = null;", "// ??でNull合体演算子", "$result = $name ?? 'Guest';" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "php_lesson3_ex3_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "php_lesson3_ex3_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex4: スプレッド演算子
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "php_lesson3_ex4_title",
+            slideKeyPrefix = "php_lesson3_ex4",
+            slideCount = 3,
+            correctLines = new List<string> { "// ...で配列を展開", "$merged = [...[1, 2], ...[3, 4]];" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "php_lesson3_ex4_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex5: match式
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "php_lesson3_ex5_title",
+            slideKeyPrefix = "php_lesson3_ex5",
+            slideCount = 3,
+            correctLines = new List<string> { "// 変数を定義", "$grade = 'A';", "// matchで式によるパターンマッチ", "$message = match($grade) {", "    // =>で値をマッピング", "    'A' => 'Excellent',", "    // =>で値をマッピング", "    'B' => 'Good',", "    // defaultでデフォルトケース", "    default => 'Try harder'", "};" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "php_lesson3_ex5_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "php_lesson3_ex5_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "php_lesson3_ex5_comment3" },
+                new LocalizedComment { lineIndex = 6, commentPrefix = "//", localizationKey = "php_lesson3_ex5_comment4" },
+                new LocalizedComment { lineIndex = 8, commentPrefix = "//", localizationKey = "php_lesson3_ex5_comment5" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex6: 名前付き引数
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "php_lesson3_ex6_title",
+            slideKeyPrefix = "php_lesson3_ex6",
+            slideCount = 3,
+            correctLines = new List<string> { "// functionで関数を定義", "function createUser($name, $age) {", "    // returnで連想配列を返す", "    return ['name' => $name, 'age' => $age];", "}", "// age, nameの順で名前付き引数を指定", "$user = createUser(age: 30, name: 'Alice');" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "php_lesson3_ex6_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "php_lesson3_ex6_comment2" },
+                new LocalizedComment { lineIndex = 5, commentPrefix = "//", localizationKey = "php_lesson3_ex6_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex7: トレイト
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "php_lesson3_ex7_title",
+            slideKeyPrefix = "php_lesson3_ex7",
+            slideCount = 3,
+            correctLines = new List<string> { "// traitでトレイトを定義", "trait HelloTrait {", "    // functionでメソッドを定義", "    public function sayHello() {", "        // returnで値を返す", "        return 'Hello!';", "    }", "}", "// classでクラスを定義", "class Greeter {", "    // useでトレイトを使用", "    use HelloTrait;", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "php_lesson3_ex7_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "php_lesson3_ex7_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "php_lesson3_ex7_comment3" },
+                new LocalizedComment { lineIndex = 8, commentPrefix = "//", localizationKey = "php_lesson3_ex7_comment4" },
+                new LocalizedComment { lineIndex = 10, commentPrefix = "//", localizationKey = "php_lesson3_ex7_comment5" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex8: ジェネレータ
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "php_lesson3_ex8_title",
+            slideKeyPrefix = "php_lesson3_ex8",
+            slideCount = 3,
+            correctLines = new List<string> { "// functionで関数を定義", "function rangeGen($n) {", "    // forでループ", "    for ($i = 1; $i <= $n; $i++) {", "        // yieldで値を一つずつ返す", "        yield $i;", "    }", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "php_lesson3_ex8_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "php_lesson3_ex8_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "php_lesson3_ex8_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex9: 配列の分割代入
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "php_lesson3_ex9_title",
+            slideKeyPrefix = "php_lesson3_ex9",
+            slideCount = 3,
+            correctLines = new List<string> { "// name、age、cityに分割代入", "[$name, $age, $city] = ['Alice', 25, 'Tokyo'];" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "php_lesson3_ex9_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex10: コンストラクタプロパティ昇格
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "php_lesson3_ex10_title",
+            slideKeyPrefix = "php_lesson3_ex10",
+            slideCount = 3,
+            correctLines = new List<string> { "// classでクラスを定義", "class Person {", "    // __constructでコンストラクタを定義", "    public function __construct(", "        // publicでアクセス修飾子", "        public string $name,", "        // publicでアクセス修飾子", "        public int $age", "    ) {}", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "php_lesson3_ex10_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "php_lesson3_ex10_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "php_lesson3_ex10_comment3" },
+                new LocalizedComment { lineIndex = 6, commentPrefix = "//", localizationKey = "php_lesson3_ex10_comment4" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        lessons.Add(lesson3);
+
+        currentLessonIndex = 0;
+        currentExerciseIndex = 0;
+    }
+
+
+    private void InitializeSwiftLessons()
+    {
+        lessons.Clear();
+
+        // ==================== LESSON 1: Swift (スウィフト) に挑戦！ ====================
+        var lesson1 = new Lesson { titleKey = "swift_lesson1_title" };
+
+        // Ex1: 画面にメッセージを出しましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "swift_lesson1_ex1_title",
+            slideKeyPrefix = "swift_lesson1_ex1",
+            slideCount = 5,
+            correctLines = new List<string> { "// Hello, World!と出力する関数", "print(\"Hello, World!\")" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "swift_lesson1_ex1_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex2: 便利な「はこ」変数（へんすう）
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "swift_lesson1_ex2_title",
+            slideKeyPrefix = "swift_lesson1_ex2",
+            slideCount = 5,
+            correctLines = new List<string> { "// x に 10 を入れる", "let x = 10", "// y に 5 を入れる", "let y = 5", "// + でたし算する", "print(x + y)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "swift_lesson1_ex2_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "swift_lesson1_ex2_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "swift_lesson1_ex2_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex3: 剰余演算子（%）
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "swift_lesson1_ex3_title",
+            slideKeyPrefix = "swift_lesson1_ex3",
+            slideCount = 4,
+            correctLines = new List<string> { "// 10 を 3 で割ったあまりを出力する", "print(10 % 3)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "swift_lesson1_ex3_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex4: 累算代入演算子（+=、-=）
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "swift_lesson1_ex4_title",
+            slideKeyPrefix = "swift_lesson1_ex4",
+            slideCount = 5,
+            correctLines = new List<string> { "// var で変更可能な変数を作る", "var hp = 100", "// += で 20 を足す", "hp += 20", "// -= で 50 を引く", "hp -= 50", "print(hp)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "swift_lesson1_ex4_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "swift_lesson1_ex4_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "swift_lesson1_ex4_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex5: 「もし〜なら」で分けましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "swift_lesson1_ex5_title",
+            slideKeyPrefix = "swift_lesson1_ex5",
+            slideCount = 5,
+            correctLines = new List<string> { "// score に 100 を入れる", "let score = 100", "// > で比較する", "if score > 80 {", "    print(\"Great!\")", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "swift_lesson1_ex5_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "swift_lesson1_ex5_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex6: 論理演算子（&&、||）
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "swift_lesson1_ex6_title",
+            slideKeyPrefix = "swift_lesson1_ex6",
+            slideCount = 5,
+            correctLines = new List<string> { "let score = 80", "let bonus = 10", "// && で両方の条件をチェック", "if score >= 70 && bonus > 0 {", "    print(\"Bonus Pass\")", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "swift_lesson1_ex6_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex7: たくさんのデータをまとめましょう「配列」
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "swift_lesson1_ex7_title",
+            slideKeyPrefix = "swift_lesson1_ex7",
+            slideCount = 5,
+            correctLines = new List<string> { "// colors という配列を作る（'あか', 'あお'の順）", "let colors = [\"あか\", \"あお\"]", "// 2番目のデータ（1番）を出す", "print(colors[1])" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "swift_lesson1_ex7_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "swift_lesson1_ex7_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex8: 名前で引き出す「辞書」
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "swift_lesson1_ex8_title",
+            slideKeyPrefix = "swift_lesson1_ex8",
+            slideCount = 5,
+            correctLines = new List<string> { "// 辞書を作る（キーは'みかん'、値は'オレンジ'）", "let colors = [\"みかん\": \"オレンジ\"]", "// 中身を出す", "print(colors[\"みかん\"]!)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "swift_lesson1_ex8_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "swift_lesson1_ex8_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        lessons.Add(lesson1);
+
+        // ==================== LESSON 2: Swift II - オプショナルとプロトコル ====================
+        var lesson2 = new Lesson { titleKey = "swift_lesson2_title" };
+
+        // Ex1: オプショナルを学ぼう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "swift_lesson2_ex1_title",
+            slideKeyPrefix = "swift_lesson2_ex1",
+            slideCount = 5,
+            correctLines = new List<string> { "// ?でオプショナル型", "var num: Int? = 42", "// nilチェック", "if num != nil {", "    // !でアンラップ", "    print(num!)", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "swift_lesson2_ex1_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "swift_lesson2_ex1_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "swift_lesson2_ex1_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex2: オプショナルバインディング
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "swift_lesson2_ex2_title",
+            slideKeyPrefix = "swift_lesson2_ex2",
+            slideCount = 4,
+            correctLines = new List<string> { "// ?でオプショナル型", "var val: Int? = 100", "// letで値を取り出す", "if let n = val {", "    // 値を出力", "    print(n)", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "swift_lesson2_ex2_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "swift_lesson2_ex2_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "swift_lesson2_ex2_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex3: 構造体を作ろう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "swift_lesson2_ex3_title",
+            slideKeyPrefix = "swift_lesson2_ex3",
+            slideCount = 5,
+            correctLines = new List<string> { "// structで構造体を定義", "struct Rect {", "    // widthプロパティ", "    var width: Int", "    // heightプロパティ", "    var height: Int", "}", "// インスタンスを作成", "let r = Rect(width: 3, height: 4)", "// widthを出力", "print(r.width)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "swift_lesson2_ex3_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "swift_lesson2_ex3_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "swift_lesson2_ex3_comment3" },
+                new LocalizedComment { lineIndex = 7, commentPrefix = "//", localizationKey = "swift_lesson2_ex3_comment4" },
+                new LocalizedComment { lineIndex = 9, commentPrefix = "//", localizationKey = "swift_lesson2_ex3_comment5" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex4: クラスを作ろう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "swift_lesson2_ex4_title",
+            slideKeyPrefix = "swift_lesson2_ex4",
+            slideCount = 5,
+            correctLines = new List<string> { "// classでクラスを定義", "class Cat {", "    // nameプロパティ", "    var name: String", "    // initでイニシャライザ", "    init(name: String) {", "        // selfで自身のプロパティにアクセス", "        self.name = name", "    }", "}", "// インスタンスを作成", "let cat = Cat(name: \"Tama\")", "// nameを出力", "print(cat.name)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "swift_lesson2_ex4_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "swift_lesson2_ex4_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "swift_lesson2_ex4_comment3" },
+                new LocalizedComment { lineIndex = 6, commentPrefix = "//", localizationKey = "swift_lesson2_ex4_comment4" },
+                new LocalizedComment { lineIndex = 10, commentPrefix = "//", localizationKey = "swift_lesson2_ex4_comment5" },
+                new LocalizedComment { lineIndex = 12, commentPrefix = "//", localizationKey = "swift_lesson2_ex4_comment6" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex5: プロトコルを使おう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "swift_lesson2_ex5_title",
+            slideKeyPrefix = "swift_lesson2_ex5",
+            slideCount = 5,
+            correctLines = new List<string> { "// protocolでプロトコルを定義", "protocol Speaker {", "    // speakメソッドを宣言", "    func speak()", "}", "// Speakerに準拠", "struct Dog: Speaker {", "    // speakメソッドを実装", "    func speak() {", "        // woofと出力", "        print(\"woof\")", "    }", "}", "// インスタンスを作成", "let d = Dog()", "// speakを呼び出し", "d.speak()" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "swift_lesson2_ex5_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "swift_lesson2_ex5_comment2" },
+                new LocalizedComment { lineIndex = 5, commentPrefix = "//", localizationKey = "swift_lesson2_ex5_comment3" },
+                new LocalizedComment { lineIndex = 7, commentPrefix = "//", localizationKey = "swift_lesson2_ex5_comment4" },
+                new LocalizedComment { lineIndex = 9, commentPrefix = "//", localizationKey = "swift_lesson2_ex5_comment5" },
+                new LocalizedComment { lineIndex = 13, commentPrefix = "//", localizationKey = "swift_lesson2_ex5_comment6" },
+                new LocalizedComment { lineIndex = 15, commentPrefix = "//", localizationKey = "swift_lesson2_ex5_comment7" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex6: クロージャを使おう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "swift_lesson2_ex6_title",
+            slideKeyPrefix = "swift_lesson2_ex6",
+            slideCount = 5,
+            correctLines = new List<string> { "// inで引数と処理を分ける", "let double = { (n: Int) in", "    // n * 2を返す", "    return n * 2", "}", "// doubleを呼び出し", "print(double(5))" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "swift_lesson2_ex6_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "swift_lesson2_ex6_comment2" },
+                new LocalizedComment { lineIndex = 5, commentPrefix = "//", localizationKey = "swift_lesson2_ex6_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex7: map で変換しよう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "swift_lesson2_ex7_title",
+            slideKeyPrefix = "swift_lesson2_ex7",
+            slideCount = 5,
+            correctLines = new List<string> { "// 配列を作成", "let nums = [1, 2, 3]", "// mapで各要素を変換", "let squared = nums.map { $0 * $0 }", "// 結果を出力", "print(squared)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "swift_lesson2_ex7_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "swift_lesson2_ex7_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "swift_lesson2_ex7_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex8: filter で絞り込もう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "swift_lesson2_ex8_title",
+            slideKeyPrefix = "swift_lesson2_ex8",
+            slideCount = 4,
+            correctLines = new List<string> { "// 配列を作成", "let nums = [1, 2, 3, 4, 5]", "// filterで条件に合う要素を抽出", "let result = nums.filter { $0 >= 3 }", "// 結果を出力", "print(result)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "swift_lesson2_ex8_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "swift_lesson2_ex8_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "swift_lesson2_ex8_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex9: guard で早期リターン
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "swift_lesson2_ex9_title",
+            slideKeyPrefix = "swift_lesson2_ex9",
+            slideCount = 5,
+            correctLines = new List<string> { "// 関数を定義", "func check(_ val: Int?) {", "    // guardで早期リターン", "    guard let n = val else {", "        // nilと出力", "        print(\"nil\")", "        // 早期リターン", "        return", "    }", "    // nを出力", "    print(n)", "}", "// 関数を呼び出し", "check(10)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "swift_lesson2_ex9_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "swift_lesson2_ex9_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "swift_lesson2_ex9_comment3" },
+                new LocalizedComment { lineIndex = 6, commentPrefix = "//", localizationKey = "swift_lesson2_ex9_comment4" },
+                new LocalizedComment { lineIndex = 9, commentPrefix = "//", localizationKey = "swift_lesson2_ex9_comment5" },
+                new LocalizedComment { lineIndex = 12, commentPrefix = "//", localizationKey = "swift_lesson2_ex9_comment6" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex10: 列挙型を使おう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "swift_lesson2_ex10_title",
+            slideKeyPrefix = "swift_lesson2_ex10",
+            slideCount = 5,
+            correctLines = new List<string> { "// enumで列挙型を定義", "enum Color {", "    // caseでケースを定義", "    case red, green, blue", "}", "// Color.redを代入", "let c = Color.red", "// switchでパターンマッチ", "switch c {", "case .red:", "    // 赤色を出力", "    print(\"red\")", "case .green:", "    // 緑色を出力", "    print(\"green\")", "case .blue:", "    // 青色を出力", "    print(\"blue\")", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "swift_lesson2_ex10_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "swift_lesson2_ex10_comment2" },
+                new LocalizedComment { lineIndex = 5, commentPrefix = "//", localizationKey = "swift_lesson2_ex10_comment3" },
+                new LocalizedComment { lineIndex = 7, commentPrefix = "//", localizationKey = "swift_lesson2_ex10_comment4" },
+                new LocalizedComment { lineIndex = 10, commentPrefix = "//", localizationKey = "swift_lesson2_ex10_comment5" },
+                new LocalizedComment { lineIndex = 13, commentPrefix = "//", localizationKey = "swift_lesson2_ex10_comment6" },
+                new LocalizedComment { lineIndex = 16, commentPrefix = "//", localizationKey = "swift_lesson2_ex10_comment7" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        lessons.Add(lesson2);
+
+        // ==================== LESSON 3: Swift III - 並行処理とResult ====================
+        var lesson3 = new Lesson { titleKey = "swift_lesson3_title" };
+
+        // Ex1: Result型
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "swift_lesson3_ex1_title",
+            slideKeyPrefix = "swift_lesson3_ex1",
+            slideCount = 5,
+            correctLines = new List<string> { "// エラー型を定義", "enum MyError: Error { case negative }", "", "// 関数を定義", "func check(_ n: Int) -> Result<Int, MyError> {", "    // 負の場合は失敗", "    if n < 0 { return .failure(.negative) }", "    // successで成功を返す", "    return .success(n)", "}", "", "// 関数を呼び出し", "let result = check(10)", "// switchでパターンマッチ", "switch result {", "// 成功の場合", "case .success(let v): print(v)", "// 失敗の場合", "case .failure(_): print(\"error\")", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "swift_lesson3_ex1_comment1" },
+                new LocalizedComment { lineIndex = 3, commentPrefix = "//", localizationKey = "swift_lesson3_ex1_comment2" },
+                new LocalizedComment { lineIndex = 5, commentPrefix = "//", localizationKey = "swift_lesson3_ex1_comment3" },
+                new LocalizedComment { lineIndex = 7, commentPrefix = "//", localizationKey = "swift_lesson3_ex1_comment4" },
+                new LocalizedComment { lineIndex = 11, commentPrefix = "//", localizationKey = "swift_lesson3_ex1_comment5" },
+                new LocalizedComment { lineIndex = 13, commentPrefix = "//", localizationKey = "swift_lesson3_ex1_comment6" },
+                new LocalizedComment { lineIndex = 15, commentPrefix = "//", localizationKey = "swift_lesson3_ex1_comment7" },
+                new LocalizedComment { lineIndex = 17, commentPrefix = "//", localizationKey = "swift_lesson3_ex1_comment8" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex2: compactMap
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "swift_lesson3_ex2_title",
+            slideKeyPrefix = "swift_lesson3_ex2",
+            slideCount = 4,
+            correctLines = new List<string> { "// 配列を作成", "let nums = [\"1\", \"a\", \"2\", \"b\", \"3\"]", "// compactMapでnilを除外して変換", "let ints = nums.compactMap { Int($0) }", "// 結果を出力", "print(ints)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "swift_lesson3_ex2_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "swift_lesson3_ex2_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "swift_lesson3_ex2_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex3: reduce
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "swift_lesson3_ex3_title",
+            slideKeyPrefix = "swift_lesson3_ex3",
+            slideCount = 5,
+            correctLines = new List<string> { "// 配列を作成", "let nums = [1, 2, 3, 4, 5]", "// reduceで畳み込み", "let product = nums.reduce(1) { $0 * $1 }", "// 結果を出力", "print(product)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "swift_lesson3_ex3_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "swift_lesson3_ex3_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "swift_lesson3_ex3_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex4: lazy
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "swift_lesson3_ex4_title",
+            slideKeyPrefix = "swift_lesson3_ex4",
+            slideCount = 4,
+            correctLines = new List<string> { "// 配列を作成", "let nums = [1, 2, 3, 4, 5]", "// lazyで遅延評価", "let result = nums.lazy.map { $0 * 10 }.first!", "// 結果を出力", "print(result)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "swift_lesson3_ex4_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "swift_lesson3_ex4_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "swift_lesson3_ex4_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex5: where 句
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "swift_lesson3_ex5_title",
+            slideKeyPrefix = "swift_lesson3_ex5",
+            slideCount = 4,
+            correctLines = new List<string> { "// 配列を作成", "let nums = [1, -2, 3, -4, 5]", "// whereで条件を追加", "for n in nums where n > 0 {", "    // nを出力", "    print(n)", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "swift_lesson3_ex5_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "swift_lesson3_ex5_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "swift_lesson3_ex5_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex6: defer
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "swift_lesson3_ex6_title",
+            slideKeyPrefix = "swift_lesson3_ex6",
+            slideCount = 5,
+            correctLines = new List<string> { "// 関数を定義", "func test() {", "    // deferでスコープ終了時に実行", "    defer { print(\"end\") }", "    // startと出力", "    print(\"start\")", "}", "// 関数を呼び出し", "test()" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "swift_lesson3_ex6_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "swift_lesson3_ex6_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "swift_lesson3_ex6_comment3" },
+                new LocalizedComment { lineIndex = 7, commentPrefix = "//", localizationKey = "swift_lesson3_ex6_comment4" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex7: associatedtype
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "swift_lesson3_ex7_title",
+            slideKeyPrefix = "swift_lesson3_ex7",
+            slideCount = 5,
+            correctLines = new List<string> { "// プロトコルを定義", "protocol Stack {", "    // associatedtypeで関連型を定義", "    associatedtype Element", "    // pushメソッドを宣言", "    mutating func push(_ item: Element)", "}", "", "// Stackに準拠", "struct IntStack: Stack {", "    // items配列", "    var items: [Int] = []", "    // pushメソッドを実装", "    mutating func push(_ item: Int) {", "        // 要素を追加", "        items.append(item)", "    }", "}", "", "// インスタンスを作成", "var s = IntStack()", "// 要素を追加", "s.push(10)", "// itemsを出力", "print(s.items)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "swift_lesson3_ex7_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "swift_lesson3_ex7_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "swift_lesson3_ex7_comment3" },
+                new LocalizedComment { lineIndex = 8, commentPrefix = "//", localizationKey = "swift_lesson3_ex7_comment4" },
+                new LocalizedComment { lineIndex = 10, commentPrefix = "//", localizationKey = "swift_lesson3_ex7_comment5" },
+                new LocalizedComment { lineIndex = 12, commentPrefix = "//", localizationKey = "swift_lesson3_ex7_comment6" },
+                new LocalizedComment { lineIndex = 14, commentPrefix = "//", localizationKey = "swift_lesson3_ex7_comment7" },
+                new LocalizedComment { lineIndex = 19, commentPrefix = "//", localizationKey = "swift_lesson3_ex7_comment8" },
+                new LocalizedComment { lineIndex = 21, commentPrefix = "//", localizationKey = "swift_lesson3_ex7_comment9" },
+                new LocalizedComment { lineIndex = 23, commentPrefix = "//", localizationKey = "swift_lesson3_ex7_comment10" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex8: throws と rethrows
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "swift_lesson3_ex8_title",
+            slideKeyPrefix = "swift_lesson3_ex8",
+            slideCount = 5,
+            correctLines = new List<string> { "// エラー型を定義", "enum MyError: Error { case invalid }", "", "// throwsでエラーを投げる可能性を示す", "func check(_ n: Int) throws -> Int {", "    // 負の場合はエラー", "    if n < 0 { throw MyError.invalid }", "    // 値を返す", "    return n", "}", "", "// do-catchでエラー処理", "do {", "    // tryで呼び出し", "    let v = try check(10)", "    // 値を出力", "    print(v)", "} catch {", "    // エラーを出力", "    print(\"error\")", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "swift_lesson3_ex8_comment1" },
+                new LocalizedComment { lineIndex = 3, commentPrefix = "//", localizationKey = "swift_lesson3_ex8_comment2" },
+                new LocalizedComment { lineIndex = 5, commentPrefix = "//", localizationKey = "swift_lesson3_ex8_comment3" },
+                new LocalizedComment { lineIndex = 7, commentPrefix = "//", localizationKey = "swift_lesson3_ex8_comment4" },
+                new LocalizedComment { lineIndex = 11, commentPrefix = "//", localizationKey = "swift_lesson3_ex8_comment5" },
+                new LocalizedComment { lineIndex = 13, commentPrefix = "//", localizationKey = "swift_lesson3_ex8_comment6" },
+                new LocalizedComment { lineIndex = 15, commentPrefix = "//", localizationKey = "swift_lesson3_ex8_comment7" },
+                new LocalizedComment { lineIndex = 18, commentPrefix = "//", localizationKey = "swift_lesson3_ex8_comment8" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex9: Set（集合）
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "swift_lesson3_ex9_title",
+            slideKeyPrefix = "swift_lesson3_ex9",
+            slideCount = 5,
+            correctLines = new List<string> { "// Setで重複なしのコレクション", "var s: Set = [1, 2, 2, 3, 3, 3]", "// 要素数を出力", "print(s.count)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "swift_lesson3_ex9_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "swift_lesson3_ex9_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex10: mutating
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "swift_lesson3_ex10_title",
+            slideKeyPrefix = "swift_lesson3_ex10",
+            slideCount = 5,
+            correctLines = new List<string> { "// 構造体を定義", "struct Counter {", "    // countプロパティ", "    var count = 0", "    // mutatingで構造体を変更可能に", "    mutating func increment() {", "        // countを1増やす", "        count += 1", "    }", "}", "", "// インスタンスを作成", "var c = Counter()", "// 1回目のincrementを呼び出し", "c.increment()", "// 2回目のincrementを呼び出し", "c.increment()", "// countを出力", "print(c.count)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "swift_lesson3_ex10_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "swift_lesson3_ex10_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "swift_lesson3_ex10_comment3" },
+                new LocalizedComment { lineIndex = 6, commentPrefix = "//", localizationKey = "swift_lesson3_ex10_comment4" },
+                new LocalizedComment { lineIndex = 11, commentPrefix = "//", localizationKey = "swift_lesson3_ex10_comment5" },
+                new LocalizedComment { lineIndex = 13, commentPrefix = "//", localizationKey = "swift_lesson3_ex10_comment6" },
+                new LocalizedComment { lineIndex = 15, commentPrefix = "//", localizationKey = "swift_lesson3_ex10_comment7" },
+                new LocalizedComment { lineIndex = 17, commentPrefix = "//", localizationKey = "swift_lesson3_ex10_comment8" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        lessons.Add(lesson3);
+
+        currentLessonIndex = 0;
+        currentExerciseIndex = 0;
+    }
+
+
+    private void InitializeKotlinLessons()
+    {
+        lessons.Clear();
+
+        // ==================== LESSON 1: Kotlin (コトリン) に挑戦！ ====================
+        var lesson1 = new Lesson { titleKey = "kotlin_lesson1_title" };
+
+        // Ex1: 画面にメッセージを出しましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "kotlin_lesson1_ex1_title",
+            slideKeyPrefix = "kotlin_lesson1_ex1",
+            slideCount = 5,
+            correctLines = new List<string> { "// Hello, World!と出力する関数", "println(\"Hello, World!\")" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "kotlin_lesson1_ex1_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex2: 便利な「はこ」変数（へんすう）
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "kotlin_lesson1_ex2_title",
+            slideKeyPrefix = "kotlin_lesson1_ex2",
+            slideCount = 5,
+            correctLines = new List<string> { "// x に 10 を入れる", "val x = 10", "// y に 5 を入れる", "val y = 5", "// + でたし算する", "println(x + y)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "kotlin_lesson1_ex2_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "kotlin_lesson1_ex2_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "kotlin_lesson1_ex2_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex3: 剰余演算子（%）
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "kotlin_lesson1_ex3_title",
+            slideKeyPrefix = "kotlin_lesson1_ex3",
+            slideCount = 4,
+            correctLines = new List<string> { "// 10 を 3 で割ったあまりを出力する", "println(10 % 3)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "kotlin_lesson1_ex3_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex4: 累算代入演算子（+=、-=）
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "kotlin_lesson1_ex4_title",
+            slideKeyPrefix = "kotlin_lesson1_ex4",
+            slideCount = 5,
+            correctLines = new List<string> { "// var で変更可能な変数を作る", "var hp = 100", "// += で 20 を足す", "hp += 20", "// -= で 50 を引く", "hp -= 50", "println(hp)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "kotlin_lesson1_ex4_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "kotlin_lesson1_ex4_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "kotlin_lesson1_ex4_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex5: 「もし〜なら」で分けましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "kotlin_lesson1_ex5_title",
+            slideKeyPrefix = "kotlin_lesson1_ex5",
+            slideCount = 5,
+            correctLines = new List<string> { "// score に 100 を入れる", "val score = 100", "// > で比較する", "if (score > 80) {", "    println(\"Great!\")", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "kotlin_lesson1_ex5_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "kotlin_lesson1_ex5_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex6: 論理演算子（&&、||）
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "kotlin_lesson1_ex6_title",
+            slideKeyPrefix = "kotlin_lesson1_ex6",
+            slideCount = 5,
+            correctLines = new List<string> { "val score = 80", "val bonus = 10", "// && で両方の条件をチェック", "if (score >= 70 && bonus > 0) {", "    println(\"Bonus Pass\")", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "kotlin_lesson1_ex6_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex7: たくさんのデータをまとめましょう「リスト」
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "kotlin_lesson1_ex7_title",
+            slideKeyPrefix = "kotlin_lesson1_ex7",
+            slideCount = 5,
+            correctLines = new List<string> { "// colors というリストを作る（'あか', 'あお'の順）", "val colors = listOf(\"あか\", \"あお\")", "// 2番目のデータ（1番）を出す", "println(colors[1])" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "kotlin_lesson1_ex7_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "kotlin_lesson1_ex7_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex8: 名前で引き出す「辞書」
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "kotlin_lesson1_ex8_title",
+            slideKeyPrefix = "kotlin_lesson1_ex8",
+            slideCount = 5,
+            correctLines = new List<string> { "// 辞書を作る（キーは'みかん'、値は'オレンジ'）", "val colors = mapOf(\"みかん\" to \"オレンジ\")", "// 中身を出す", "println(colors[\"みかん\"])" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "kotlin_lesson1_ex8_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "kotlin_lesson1_ex8_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        lessons.Add(lesson1);
+
+        // ==================== LESSON 2: Kotlin II - Null安全とラムダ ====================
+        var lesson2 = new Lesson { titleKey = "kotlin_lesson2_title" };
+
+        // Ex1: Null安全を学ぼう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "kotlin_lesson2_ex1_title",
+            slideKeyPrefix = "kotlin_lesson2_ex1",
+            slideCount = 5,
+            correctLines = new List<string> { "// ? で nullable 型にする", "var num: Int? = 42", "// null チェックをする", "if (num != null) {", "    // num を出力する", "    println(num)", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "kotlin_lesson2_ex1_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "kotlin_lesson2_ex1_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "kotlin_lesson2_ex1_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex2: セーフコール演算子 ?.
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "kotlin_lesson2_ex2_title",
+            slideKeyPrefix = "kotlin_lesson2_ex2",
+            slideCount = 4,
+            correctLines = new List<string> { "// nullable 型の変数を宣言する", "val text: String? = \"Hello\"", "// ?. で安全にプロパティにアクセスする", "println(text?.length)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "kotlin_lesson2_ex2_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "kotlin_lesson2_ex2_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex3: エルビス演算子 ?:
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "kotlin_lesson2_ex3_title",
+            slideKeyPrefix = "kotlin_lesson2_ex3",
+            slideCount = 4,
+            correctLines = new List<string> { "// nullable 型の変数を宣言する", "val value: Int? = null", "// ?: でデフォルト値を指定する", "println(value ?: 0)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "kotlin_lesson2_ex3_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "kotlin_lesson2_ex3_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex4: データクラスを使おう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "kotlin_lesson2_ex4_title",
+            slideKeyPrefix = "kotlin_lesson2_ex4",
+            slideCount = 4,
+            correctLines = new List<string> { "// data でデータクラスを定義する", "data class Point(val x: Int, val y: Int)", "// Point のインスタンスを作成する", "val p = Point(3, 4)", "// p を出力する", "println(p)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "kotlin_lesson2_ex4_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "kotlin_lesson2_ex4_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "kotlin_lesson2_ex4_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex5: ラムダ式を使おう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "kotlin_lesson2_ex5_title",
+            slideKeyPrefix = "kotlin_lesson2_ex5",
+            slideCount = 5,
+            correctLines = new List<string> { "// -> で引数と処理を区切る", "val double = { n: Int -> n * 2 }", "// double(5) を出力する", "println(double(5))" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "kotlin_lesson2_ex5_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "kotlin_lesson2_ex5_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex6: map で変換しよう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "kotlin_lesson2_ex6_title",
+            slideKeyPrefix = "kotlin_lesson2_ex6",
+            slideCount = 5,
+            correctLines = new List<string> { "// listOf でリストを作成する", "val nums = listOf(1, 2, 3)", "// map で各要素を変換する", "val squared = nums.map { it * it }", "// squared を出力する", "println(squared)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "kotlin_lesson2_ex6_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "kotlin_lesson2_ex6_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "kotlin_lesson2_ex6_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex7: filter で絞り込もう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "kotlin_lesson2_ex7_title",
+            slideKeyPrefix = "kotlin_lesson2_ex7",
+            slideCount = 5,
+            correctLines = new List<string> { "// listOf でリストを作成する", "val nums = listOf(1, 2, 3, 4, 5)", "// filter で条件に合う要素を抽出する", "val result = nums.filter { it >= 3 }", "// result を出力する", "println(result)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "kotlin_lesson2_ex7_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "kotlin_lesson2_ex7_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "kotlin_lesson2_ex7_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex8: when 式を使おう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "kotlin_lesson2_ex8_title",
+            slideKeyPrefix = "kotlin_lesson2_ex8",
+            slideCount = 5,
+            correctLines = new List<string> { "// x に 2 を代入する", "val x = 2", "// when で分岐する", "val result = when (x) {", "    // 1 の場合", "    1 -> \"one\"", "    // 2 の場合", "    2 -> \"two\"", "    // その他の場合", "    else -> \"other\"", "}", "// result を出力する", "println(result)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "kotlin_lesson2_ex8_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "kotlin_lesson2_ex8_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "kotlin_lesson2_ex8_comment3" },
+                new LocalizedComment { lineIndex = 6, commentPrefix = "//", localizationKey = "kotlin_lesson2_ex8_comment4" },
+                new LocalizedComment { lineIndex = 8, commentPrefix = "//", localizationKey = "kotlin_lesson2_ex8_comment5" },
+                new LocalizedComment { lineIndex = 11, commentPrefix = "//", localizationKey = "kotlin_lesson2_ex8_comment6" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex9: 拡張関数を作ろう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "kotlin_lesson2_ex9_title",
+            slideKeyPrefix = "kotlin_lesson2_ex9",
+            slideCount = 5,
+            correctLines = new List<string> { "// this でレシーバを参照する", "fun Int.double() = this * 2", "// 5.double() を出力する", "println(5.double())" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "kotlin_lesson2_ex9_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "kotlin_lesson2_ex9_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex10: スコープ関数 let
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "kotlin_lesson2_ex10_title",
+            slideKeyPrefix = "kotlin_lesson2_ex10",
+            slideCount = 5,
+            correctLines = new List<string> { "// nullable 型の変数を宣言する", "val num: Int? = 42", "// let で処理を実行する", "num?.let { println(it * 2) }" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "kotlin_lesson2_ex10_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "kotlin_lesson2_ex10_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        lessons.Add(lesson2);
+
+        // ==================== LESSON 3: Kotlin III - コルーチンとDSL ====================
+        var lesson3 = new Lesson { titleKey = "kotlin_lesson3_title" };
+
+        // Ex1: suspend 関数
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "kotlin_lesson3_ex1_title",
+            slideKeyPrefix = "kotlin_lesson3_ex1",
+            slideCount = 6,
+            correctLines = new List<string> { "// coroutines をインポートする", "import kotlinx.coroutines.*", "", "// suspend で一時停止可能な関数にする", "suspend fun getMessage(): String {", "    // 100ミリ秒待機する", "    delay(100)", "    // \"Hello\" を返す", "    return \"Hello\"", "}", "", "// main 関数を定義する", "fun main() = runBlocking {", "    // getMessage() を出力する", "    println(getMessage())", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex1_comment1" },
+                new LocalizedComment { lineIndex = 3, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex1_comment2" },
+                new LocalizedComment { lineIndex = 5, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex1_comment3" },
+                new LocalizedComment { lineIndex = 7, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex1_comment4" },
+                new LocalizedComment { lineIndex = 11, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex1_comment5" },
+                new LocalizedComment { lineIndex = 13, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex1_comment6" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex2: sequence（シーケンス）
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "kotlin_lesson3_ex2_title",
+            slideKeyPrefix = "kotlin_lesson3_ex2",
+            slideCount = 6,
+            correctLines = new List<string> { "// main 関数を定義する", "fun main() {", "    // generateSequence で無限シーケンスを生成する", "    val nums = generateSequence(1) { it * 2 }", "        // 4つ取得する", "        .take(4)", "        // リストに変換する", "        .toList()", "    // nums を出力する", "    println(nums)", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex2_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex2_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex2_comment3" },
+                new LocalizedComment { lineIndex = 6, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex2_comment4" },
+                new LocalizedComment { lineIndex = 8, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex2_comment5" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex3: inline 関数
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "kotlin_lesson3_ex3_title",
+            slideKeyPrefix = "kotlin_lesson3_ex3",
+            slideCount = 6,
+            correctLines = new List<string> { "// inline で関数をインライン化する", "inline fun repeat(times: Int, action: (Int) -> Unit) {", "    // 0 から times まで繰り返す", "    for (i in 0 until times) action(i)", "}", "", "// main 関数を定義する", "fun main() {", "    // repeat を呼び出す", "    repeat(3) { println(it) }", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex3_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex3_comment2" },
+                new LocalizedComment { lineIndex = 6, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex3_comment3" },
+                new LocalizedComment { lineIndex = 8, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex3_comment4" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex4: reified 型パラメータ
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "kotlin_lesson3_ex4_title",
+            slideKeyPrefix = "kotlin_lesson3_ex4",
+            slideCount = 6,
+            correctLines = new List<string> { "// reified で実行時に型情報を使う", "inline fun <reified T> checkType(value: Any): Boolean {", "    // value が T 型かチェックする", "    return value is T", "}", "", "// main 関数を定義する", "fun main() {", "    // String 型かチェックする", "    println(checkType<String>(\"test\"))", "    // Int 型かチェックする", "    println(checkType<Int>(\"test\"))", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex4_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex4_comment2" },
+                new LocalizedComment { lineIndex = 6, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex4_comment3" },
+                new LocalizedComment { lineIndex = 8, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex4_comment4" },
+                new LocalizedComment { lineIndex = 10, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex4_comment5" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex5: apply スコープ関数
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "kotlin_lesson3_ex5_title",
+            slideKeyPrefix = "kotlin_lesson3_ex5",
+            slideCount = 6,
+            correctLines = new List<string> { "// data class を定義する", "data class Config(var host: String = \"\", var port: Int = 0)", "", "// main 関数を定義する", "fun main() {", "    // apply で設定してオブジェクトを返す", "    val cfg = Config().apply {", "        // hostを設定する", "        host = \"localhost\"", "        // portを設定する", "        port = 8080", "    }", "    // cfg を出力する", "    println(cfg)", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex5_comment1" },
+                new LocalizedComment { lineIndex = 3, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex5_comment2" },
+                new LocalizedComment { lineIndex = 5, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex5_comment3" },
+                new LocalizedComment { lineIndex = 7, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex5_comment4" },
+                new LocalizedComment { lineIndex = 9, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex5_comment5" },
+                new LocalizedComment { lineIndex = 12, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex5_comment6" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex6: also スコープ関数
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "kotlin_lesson3_ex6_title",
+            slideKeyPrefix = "kotlin_lesson3_ex6",
+            slideCount = 6,
+            correctLines = new List<string> { "// main 関数を定義する", "fun main() {", "    // also で副作用を実行してオブジェクトを返す", "    val num = 42.also {", "        // 値を出力する", "        println(\"Value: $it\")", "    }", "    // num を出力する", "    println(num)", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex6_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex6_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex6_comment3" },
+                new LocalizedComment { lineIndex = 7, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex6_comment4" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex7: run スコープ関数
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "kotlin_lesson3_ex7_title",
+            slideKeyPrefix = "kotlin_lesson3_ex7",
+            slideCount = 6,
+            correctLines = new List<string> { "// main 関数を定義する", "fun main() {", "    // run でブロックを実行して結果を返す", "    val result = \"Hello World\".run {", "        // スペースで分割してサイズを取得する", "        split(\" \").size", "    }", "    // result を出力する", "    println(result)", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex7_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex7_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex7_comment3" },
+                new LocalizedComment { lineIndex = 7, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex7_comment4" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex8: takeIf と takeUnless
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "kotlin_lesson3_ex8_title",
+            slideKeyPrefix = "kotlin_lesson3_ex8",
+            slideCount = 6,
+            correctLines = new List<string> { "// main 関数を定義する", "fun main() {", "    // takeIf で条件を満たせば値を返す", "    val num = 10.takeIf { it > 5 }", "    // num を出力する", "    println(num)", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex8_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex8_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex8_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex9: groupBy
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "kotlin_lesson3_ex9_title",
+            slideKeyPrefix = "kotlin_lesson3_ex9",
+            slideCount = 6,
+            correctLines = new List<string> { "// main 関数を定義する", "fun main() {", "    // listOf でリストを作成する", "    val nums = listOf(1, 2, 3, 4, 5)", "    // groupBy でグループ化する", "    val grouped = nums.groupBy { it % 2 }", "    // grouped を出力する", "    println(grouped)", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex9_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex9_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex9_comment3" },
+                new LocalizedComment { lineIndex = 6, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex9_comment4" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex10: fold と reduce
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "kotlin_lesson3_ex10_title",
+            slideKeyPrefix = "kotlin_lesson3_ex10",
+            slideCount = 6,
+            correctLines = new List<string> { "// main 関数を定義する", "fun main() {", "    // listOf でリスト(1, 2, 3, 4)を作成する", "    val nums = listOf(1, 2, 3, 4)", "    // fold で畳み込む", "    val product = nums.fold(1) { acc, n -> acc * n }", "    // product を出力する", "    println(product)", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex10_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex10_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex10_comment3" },
+                new LocalizedComment { lineIndex = 6, commentPrefix = "//", localizationKey = "kotlin_lesson3_ex10_comment4" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        lessons.Add(lesson3);
+
+        // ==================== LESSON 4: Kotlin IV - Sealed ClassとDelegation ====================
+        var lesson4 = new Lesson { titleKey = "kotlin_lesson4_title" };
+
+        // Ex1: Sealed Class
+        lesson4.exercises.Add(new Exercise
+        {
+            titleKey = "kotlin_lesson4_ex1_title",
+            slideKeyPrefix = "kotlin_lesson4_ex1",
+            slideCount = 6,
+            correctLines = new List<string> { "// sealed で継承を制限する", "sealed class Shape", "// Circle クラスを定義する", "class Circle(val radius: Double) : Shape()", "// Rectangle クラスを定義する", "class Rectangle(val w: Double, val h: Double) : Shape()", "", "// 面積を計算する関数", "fun area(s: Shape): Double = when (s) {", "    // Circle の場合 (radius * radius)", "    is Circle -> 3.14 * s.radius * s.radius", "    // Rectangle の場合 (w * h)", "    is Rectangle -> s.w * s.h", "}", "", "// main 関数を定義する", "fun main() {", "    // area を出力する", "    println(area(Circle(2.0)))", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex1_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex1_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex1_comment3" },
+                new LocalizedComment { lineIndex = 7, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex1_comment4" },
+                new LocalizedComment { lineIndex = 9, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex1_comment5" },
+                new LocalizedComment { lineIndex = 11, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex1_comment6" },
+                new LocalizedComment { lineIndex = 15, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex1_comment7" },
+                new LocalizedComment { lineIndex = 17, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex1_comment8" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex2: object 宣言
+        lesson4.exercises.Add(new Exercise
+        {
+            titleKey = "kotlin_lesson4_ex2_title",
+            slideKeyPrefix = "kotlin_lesson4_ex2",
+            slideCount = 6,
+            correctLines = new List<string> { "// object でシングルトンを定義する", "object Counter {", "    // count を初期化する", "    private var count = 0", "    // increment 関数を定義する", "    fun increment() { count++ }", "    // get 関数を定義する", "    fun get() = count", "}", "", "// main 関数を定義する", "fun main() {", "    // 1回目の increment を呼び出す", "    Counter.increment()", "    // 2回目の increment を呼び出す", "    Counter.increment()", "    // get を出力する", "    println(Counter.get())", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex2_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex2_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex2_comment3" },
+                new LocalizedComment { lineIndex = 6, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex2_comment4" },
+                new LocalizedComment { lineIndex = 10, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex2_comment5" },
+                new LocalizedComment { lineIndex = 12, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex2_comment6" },
+                new LocalizedComment { lineIndex = 14, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex2_comment7" },
+                new LocalizedComment { lineIndex = 16, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex2_comment8" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex3: 委譲プロパティ by lazy
+        lesson4.exercises.Add(new Exercise
+        {
+            titleKey = "kotlin_lesson4_ex3_title",
+            slideKeyPrefix = "kotlin_lesson4_ex3",
+            slideCount = 6,
+            correctLines = new List<string> { "// Config クラスを定義する", "class Config {", "    // lazy で遅延初期化する", "    val value: Int by lazy {", "        // \"Init\" を出力する", "        println(\"Init\")", "        // 42 を返す", "        42", "    }", "}", "", "// main 関数を定義する", "fun main() {", "    // Config のインスタンスを作成する", "    val c = Config()", "    // \"Created\" を出力する", "    println(\"Created\")", "    // c.value を出力する", "    println(c.value)", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex3_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex3_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex3_comment3" },
+                new LocalizedComment { lineIndex = 6, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex3_comment4" },
+                new LocalizedComment { lineIndex = 11, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex3_comment5" },
+                new LocalizedComment { lineIndex = 13, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex3_comment6" },
+                new LocalizedComment { lineIndex = 15, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex3_comment7" },
+                new LocalizedComment { lineIndex = 17, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex3_comment8" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex4: lateinit 修飾子
+        lesson4.exercises.Add(new Exercise
+        {
+            titleKey = "kotlin_lesson4_ex4_title",
+            slideKeyPrefix = "kotlin_lesson4_ex4",
+            slideCount = 6,
+            correctLines = new List<string> { "// Service クラスを定義する", "class Service {", "    // lateinit で後から初期化を宣言する", "    lateinit var config: String", "    ", "    // setup 関数を定義する", "    fun setup(c: String) { config = c }", "}", "", "// main 関数を定義する", "fun main() {", "    // Service のインスタンスを作成する", "    val s = Service()", "    // setup を呼び出す", "    s.setup(\"OK\")", "    // s.config を出力する", "    println(s.config)", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex4_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex4_comment2" },
+                new LocalizedComment { lineIndex = 5, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex4_comment3" },
+                new LocalizedComment { lineIndex = 9, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex4_comment4" },
+                new LocalizedComment { lineIndex = 11, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex4_comment5" },
+                new LocalizedComment { lineIndex = 13, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex4_comment6" },
+                new LocalizedComment { lineIndex = 15, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex4_comment7" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex5: inline 関数
+        lesson4.exercises.Add(new Exercise
+        {
+            titleKey = "kotlin_lesson4_ex5_title",
+            slideKeyPrefix = "kotlin_lesson4_ex5",
+            slideCount = 6,
+            correctLines = new List<string> { "// inline でインライン展開する", "inline fun repeat(times: Int, action: (Int) -> Unit) {", "    // 0 から times まで繰り返す", "    for (i in 0 until times) {", "        // action を呼び出す", "        action(i)", "    }", "}", "", "// main 関数を定義する", "fun main() {", "    // repeat を呼び出す", "    repeat(3) { println(it) }", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex5_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex5_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex5_comment3" },
+                new LocalizedComment { lineIndex = 9, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex5_comment4" },
+                new LocalizedComment { lineIndex = 11, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex5_comment5" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex6: reified 型パラメータ
+        lesson4.exercises.Add(new Exercise
+        {
+            titleKey = "kotlin_lesson4_ex6_title",
+            slideKeyPrefix = "kotlin_lesson4_ex6",
+            slideCount = 6,
+            correctLines = new List<string> { "// reified で型情報を保持する", "inline fun <reified T> typeOf(): String {", "    // 型名を返す", "    return T::class.simpleName ?: \"Unknown\"", "}", "", "// main 関数を定義する", "fun main() {", "    // typeOf<String>() を出力する", "    println(typeOf<String >())", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex6_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex6_comment2" },
+                new LocalizedComment { lineIndex = 6, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex6_comment3" },
+                new LocalizedComment { lineIndex = 8, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex6_comment4" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex7: 拡張関数
+        lesson4.exercises.Add(new Exercise
+        {
+            titleKey = "kotlin_lesson4_ex7_title",
+            slideKeyPrefix = "kotlin_lesson4_ex7",
+            slideCount = 6,
+            correctLines = new List<string> { "// isEven() で拡張関数を定義する", "fun Int.isEven() = this % 2 == 0", "", "// main 関数を定義する", "fun main() {", "    // 4.isEven() を出力する", "    println(4.isEven())", "    // 7.isEven() を出力する", "    println(7.isEven())", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex7_comment1" },
+                new LocalizedComment { lineIndex = 3, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex7_comment2" },
+                new LocalizedComment { lineIndex = 5, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex7_comment3" },
+                new LocalizedComment { lineIndex = 7, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex7_comment4" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex8: scope 関数 let
+        lesson4.exercises.Add(new Exercise
+        {
+            titleKey = "kotlin_lesson4_ex8_title",
+            slideKeyPrefix = "kotlin_lesson4_ex8",
+            slideCount = 6,
+            correctLines = new List<string> { "// main 関数を定義する", "fun main() {", "    // let で変換処理を行う", "    val result = \"hello\".let {", "        // 大文字に変換する", "        it.uppercase()", "    }", "    // result を出力する", "    println(result)", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex8_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex8_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex8_comment3" },
+                new LocalizedComment { lineIndex = 7, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex8_comment4" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex9: scope 関数 apply
+        lesson4.exercises.Add(new Exercise
+        {
+            titleKey = "kotlin_lesson4_ex9_title",
+            slideKeyPrefix = "kotlin_lesson4_ex9",
+            slideCount = 6,
+            correctLines = new List<string> { "// data class を定義する", "data class Config(var host: String = \"\", var port: Int = 0)", "", "// main 関数を定義する", "fun main() {", "    // apply でオブジェクトを設定する", "    val config = Config().apply {", "        // hostに\"localhost\"、portに8080を設定", "        host = \"localhost\"", "        // port を設定する", "        port = 8080", "    }", "    // config を出力する", "    println(\"${config.host}:${config.port}\")", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex9_comment1" },
+                new LocalizedComment { lineIndex = 3, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex9_comment2" },
+                new LocalizedComment { lineIndex = 5, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex9_comment3" },
+                new LocalizedComment { lineIndex = 7, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex9_comment4" },
+                new LocalizedComment { lineIndex = 9, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex9_comment5" },
+                new LocalizedComment { lineIndex = 12, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex9_comment6" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex10: typealias
+        lesson4.exercises.Add(new Exercise
+        {
+            titleKey = "kotlin_lesson4_ex10_title",
+            slideKeyPrefix = "kotlin_lesson4_ex10",
+            slideCount = 6,
+            correctLines = new List<string> { "// typealias で型に別名をつける", "typealias StringList = List<String>", "", "// printAll 関数を定義する", "fun printAll(items: StringList) {", "    // forEach で各要素を出力する", "    items.forEach { println(it) }", "}", "", "// main 関数を定義する", "fun main() {", "    // printAll を呼び出す", "    printAll(listOf(\"A\", \"B\", \"C\"))", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex10_comment1" },
+                new LocalizedComment { lineIndex = 3, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex10_comment2" },
+                new LocalizedComment { lineIndex = 5, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex10_comment3" },
+                new LocalizedComment { lineIndex = 9, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex10_comment4" },
+                new LocalizedComment { lineIndex = 11, commentPrefix = "//", localizationKey = "kotlin_lesson4_ex10_comment5" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        lessons.Add(lesson4);
+
+        currentLessonIndex = 0;
+        currentExerciseIndex = 0;
+    }
+
+
+    private void InitializeBashLessons()
+    {
+        lessons.Clear();
+
+        // ==================== LESSON 1: Bash (バッシュ) に挑戦！ ====================
+        var lesson1 = new Lesson { titleKey = "bash_lesson1_title" };
+
+        // Ex1: 画面にメッセージを出しましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "bash_lesson1_ex1_title",
+            slideKeyPrefix = "bash_lesson1_ex1",
+            slideCount = 4,
+            correctLines = new List<string> { "# 画面にメッセージを出す関数", "echo \"Hello, World!\"" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "bash_lesson1_ex1_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex2: 便利な「はこ」
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "bash_lesson1_ex2_title",
+            slideKeyPrefix = "bash_lesson1_ex2",
+            slideCount = 4,
+            correctLines = new List<string> { "# 'Bash' と入力する", "name=\"Bash\"", "# はこの名前 'name' と入力する", "echo $name" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "bash_lesson1_ex2_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "bash_lesson1_ex2_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex3: コンピュータで計算しましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "bash_lesson1_ex3_title",
+            slideKeyPrefix = "bash_lesson1_ex3",
+            slideCount = 3,
+            correctLines = new List<string> { "# はこに数字を入れる", "a=5", "b=3", "# +でたし算", "echo $((a + b))" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "bash_lesson1_ex3_comment1" },
+                new LocalizedComment { lineIndex = 3, commentPrefix = "#", localizationKey = "bash_lesson1_ex3_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex4: 「もし〜なら」で分けましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "bash_lesson1_ex4_title",
+            slideKeyPrefix = "bash_lesson1_ex4",
+            slideCount = 4,
+            correctLines = new List<string> { "# scoreに100を入れる", "score=100", "# -gtで「より大きい」を指定", "if [ $score -gt 80 ]; then", "    # メッセージ（'Great'）", "    echo \"Great\"", "# fiでif文を閉じる", "fi" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "bash_lesson1_ex4_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "bash_lesson1_ex4_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "#", localizationKey = "bash_lesson1_ex4_comment3" },
+                new LocalizedComment { lineIndex = 6, commentPrefix = "#", localizationKey = "bash_lesson1_ex4_comment4" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex5: ちがう場合はどうしましょう？
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "bash_lesson1_ex5_title",
+            slideKeyPrefix = "bash_lesson1_ex5",
+            slideCount = 3,
+            correctLines = new List<string> { "# ageに18を入れる", "age=18", "# 20以上かを比較する演算子", "if [ $age -ge 20 ]; then", "    # 20歳以上のときのメッセージ（'Adult'）", "    echo \"Adult\"", "# elseでそれ以外の場合", "else", "    # それ以外のメッセージ（'Minor'）", "    echo \"Minor\"", "fi" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "bash_lesson1_ex5_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "bash_lesson1_ex5_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "#", localizationKey = "bash_lesson1_ex5_comment3" },
+                new LocalizedComment { lineIndex = 6, commentPrefix = "#", localizationKey = "bash_lesson1_ex5_comment4" },
+                new LocalizedComment { lineIndex = 8, commentPrefix = "#", localizationKey = "bash_lesson1_ex5_comment5" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex6: 中身を全部出してみましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "bash_lesson1_ex6_title",
+            slideKeyPrefix = "bash_lesson1_ex6",
+            slideCount = 3,
+            correctLines = new List<string> { "names=(\"Alice\" \"Bob\")", "# inで配列の中身を取り出す", "for name in \"${names[@]}\"; do", "    echo $name", "# doneでループを終了", "done" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 1, commentPrefix = "#", localizationKey = "bash_lesson1_ex6_comment1" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "#", localizationKey = "bash_lesson1_ex6_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex7: 自分だけの関数を作りましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "bash_lesson1_ex7_title",
+            slideKeyPrefix = "bash_lesson1_ex7",
+            slideCount = 3,
+            correctLines = new List<string> { "greet() {", "    echo \"Hello\"", "}", "# greetで関数を呼び出す", "greet" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 3, commentPrefix = "#", localizationKey = "bash_lesson1_ex7_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        lessons.Add(lesson1);
+
+        // ==================== LESSON 2: Bash II - スクリプトと自動化 ====================
+        var lesson2 = new Lesson { titleKey = "bash_lesson2_title" };
+
+        // Ex1: 配列を使おう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "bash_lesson2_ex1_title",
+            slideKeyPrefix = "bash_lesson2_ex1",
+            slideCount = 3,
+            correctLines = new List<string> { "# 配列を定義（10, 20, 30）", "nums=(10 20 30)", "# 3番目の要素にアクセスするインデックス（0から数える）", "echo ${nums[2]}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "bash_lesson2_ex1_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "bash_lesson2_ex1_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex2: 文字列の長さを取得
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "bash_lesson2_ex2_title",
+            slideKeyPrefix = "bash_lesson2_ex2",
+            slideCount = 3,
+            correctLines = new List<string> { "# 変数に文字列を代入", "word=\"Bash\"", "# 文字列の長さを取得する記号", "echo ${#word}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "bash_lesson2_ex2_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "bash_lesson2_ex2_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex3: 文字列の部分取得
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "bash_lesson2_ex3_title",
+            slideKeyPrefix = "bash_lesson2_ex3",
+            slideCount = 3,
+            correctLines = new List<string> { "# 変数に文字列を代入", "text=\"Hello World\"", "# Worldが始まる位置（0から数える）", "echo ${text:6:5}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "bash_lesson2_ex3_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "bash_lesson2_ex3_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex4: 関数に引数を渡す
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "bash_lesson2_ex4_title",
+            slideKeyPrefix = "bash_lesson2_ex4",
+            slideCount = 3,
+            correctLines = new List<string> { "# 関数を定義", "add() {", "    # 最初の引数を参照する変数", "    echo $(($1 + $2))", "}", "# 関数を呼び出す", "add 3 5" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "bash_lesson2_ex4_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "bash_lesson2_ex4_comment2" },
+                new LocalizedComment { lineIndex = 5, commentPrefix = "#", localizationKey = "bash_lesson2_ex4_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex5: 戻り値を使おう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "bash_lesson2_ex5_title",
+            slideKeyPrefix = "bash_lesson2_ex5",
+            slideCount = 3,
+            correctLines = new List<string> { "# 関数を定義", "square() {", "    # 引数を2乗する", "    echo $(($1 * $1))", "}", "# コマンドの出力を取得する構文", "result=$(square 4)", "# 結果を表示", "echo $result" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "bash_lesson2_ex5_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "bash_lesson2_ex5_comment2" },
+                new LocalizedComment { lineIndex = 5, commentPrefix = "#", localizationKey = "bash_lesson2_ex5_comment3" },
+                new LocalizedComment { lineIndex = 7, commentPrefix = "#", localizationKey = "bash_lesson2_ex5_comment4" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex6: while ループ
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "bash_lesson2_ex6_title",
+            slideKeyPrefix = "bash_lesson2_ex6",
+            slideCount = 3,
+            correctLines = new List<string> { "# 変数を初期化", "i=1", "# 条件が真の間繰り返すキーワード", "while [ $i -le 3 ]; do", "    # 変数を表示", "    echo $i", "    # 変数をインクリメント", "    i=$((i + 1))", "done" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "bash_lesson2_ex6_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "bash_lesson2_ex6_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "#", localizationKey = "bash_lesson2_ex6_comment3" },
+                new LocalizedComment { lineIndex = 6, commentPrefix = "#", localizationKey = "bash_lesson2_ex6_comment4" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex7: case で分岐
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "bash_lesson2_ex7_title",
+            slideKeyPrefix = "bash_lesson2_ex7",
+            slideCount = 3,
+            correctLines = new List<string> { "# 変数に値を代入", "fruit=\"apple\"", "# パターンマッチで分岐するキーワード", "case $fruit in", "    # appleの場合", "    apple) echo \"red\";;", "    # bananaの場合", "    banana) echo \"yellow\";;", "    # その他の場合", "    *) echo \"unknown\";;", "esac" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "bash_lesson2_ex7_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "bash_lesson2_ex7_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "#", localizationKey = "bash_lesson2_ex7_comment3" },
+                new LocalizedComment { lineIndex = 6, commentPrefix = "#", localizationKey = "bash_lesson2_ex7_comment4" },
+                new LocalizedComment { lineIndex = 8, commentPrefix = "#", localizationKey = "bash_lesson2_ex7_comment5" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex8: コマンド置換
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "bash_lesson2_ex8_title",
+            slideKeyPrefix = "bash_lesson2_ex8",
+            slideCount = 3,
+            correctLines = new List<string> { "# コマンドの出力を変数に格納する構文", "files=$(echo \"test\")", "# 変数を表示", "echo \"Files: $files\"" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "bash_lesson2_ex8_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "bash_lesson2_ex8_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex9: read で入力を受け取る
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "bash_lesson2_ex9_title",
+            slideKeyPrefix = "bash_lesson2_ex9",
+            slideCount = 3,
+            correctLines = new List<string> { "# 標準入力を変数に読み込むコマンド", "echo \"input:\" && read val && echo \"You entered: $val\"" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "bash_lesson2_ex9_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex10: ヒアドキュメント
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "bash_lesson2_ex10_title",
+            slideKeyPrefix = "bash_lesson2_ex10",
+            slideCount = 3,
+            correctLines = new List<string> { "# ヒアドキュメントを開始する演算子", "cat <<END", "# 1行目のテキストを入力", "Hello", "# 2行目のテキストを入力", "World", "END" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "bash_lesson2_ex10_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "bash_lesson2_ex10_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "#", localizationKey = "bash_lesson2_ex10_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        lessons.Add(lesson2);
+
+        // ==================== LESSON 3: Bash III - ファイルとパイプライン ====================
+        var lesson3 = new Lesson { titleKey = "bash_lesson3_title" };
+
+        // Ex1: パイプでコマンドをつなぐ
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "bash_lesson3_ex1_title",
+            slideKeyPrefix = "bash_lesson3_ex1",
+            slideCount = 3,
+            correctLines = new List<string> { "# |でパイプを使う", "echo \"hello world\" | wc -w" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "bash_lesson3_ex1_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex2: ファイルにリダイレクト
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "bash_lesson3_ex2_title",
+            slideKeyPrefix = "bash_lesson3_ex2",
+            slideCount = 3,
+            correctLines = new List<string> { "# >でファイルに出力", "echo \"test\" > /tmp/out.txt && cat /tmp/out.txt" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "bash_lesson3_ex2_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex3: ファイルから読み込む
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "bash_lesson3_ex3_title",
+            slideKeyPrefix = "bash_lesson3_ex3",
+            slideCount = 3,
+            correctLines = new List<string> { "echo \"line1\" > /tmp/in.txt", "# <でファイルから読み込む", "wc -l < /tmp/in.txt" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 1, commentPrefix = "#", localizationKey = "bash_lesson3_ex3_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex4: エラー出力をリダイレクト
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "bash_lesson3_ex4_title",
+            slideKeyPrefix = "bash_lesson3_ex4",
+            slideCount = 3,
+            correctLines = new List<string> { "# 2>でエラー出力をリダイレクト", "ls /nonexistent 2> /dev/null && echo \"ok\" || echo \"error hidden\"" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "bash_lesson3_ex4_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex5: テストでファイルを確認
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "bash_lesson3_ex5_title",
+            slideKeyPrefix = "bash_lesson3_ex5",
+            slideCount = 3,
+            correctLines = new List<string> { "# -fでファイルが存在するか確認", "if [ -f /etc/passwd ]; then", "    echo \"file exists\"", "fi" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "bash_lesson3_ex5_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex6: xargs でコマンドに渡す
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "bash_lesson3_ex6_title",
+            slideKeyPrefix = "bash_lesson3_ex6",
+            slideCount = 3,
+            correctLines = new List<string> { "# xargsで引数に変換", "echo \"hello world\" | xargs echo \"Message:\"" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "bash_lesson3_ex6_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex7: sed で置換
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "bash_lesson3_ex7_title",
+            slideKeyPrefix = "bash_lesson3_ex7",
+            slideCount = 3,
+            correctLines = new List<string> { "# sedで置換", "echo \"cat\" | sed 's/cat/dog/'" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "bash_lesson3_ex7_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex8: awk でフィールドを抽出
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "bash_lesson3_ex8_title",
+            slideKeyPrefix = "bash_lesson3_ex8",
+            slideCount = 3,
+            correctLines = new List<string> { "# awkでフィールドを抽出", "echo \"apple 100 yen\" | awk '{print $2}'" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "bash_lesson3_ex8_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex9: sort で並べ替え
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "bash_lesson3_ex9_title",
+            slideKeyPrefix = "bash_lesson3_ex9",
+            slideCount = 3,
+            correctLines = new List<string> { "# sortで並べ替え", "echo -e \"banana\\napple\\ncherry\" | sort" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "bash_lesson3_ex9_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex10: uniq で重複を除去
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "bash_lesson3_ex10_title",
+            slideKeyPrefix = "bash_lesson3_ex10",
+            slideCount = 3,
+            correctLines = new List<string> { "# uniqで重複を除去", "echo -e \"a\\nb\\na\\nb\" | sort | uniq" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "bash_lesson3_ex10_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        lessons.Add(lesson3);
+
+        currentLessonIndex = 0;
+        currentExerciseIndex = 0;
+    }
+
+
+    private void InitializeSQLLessons()
+    {
+        lessons.Clear();
+
+        // ==================== LESSON 1: SQL (エスキューエル) に挑戦！ ====================
+        var lesson1 = new Lesson { titleKey = "sql_lesson1_title" };
+
+        // Ex1: 画面に文字を出してみましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "sql_lesson1_ex1_title",
+            slideKeyPrefix = "sql_lesson1_ex1",
+            slideCount = 4,
+            correctLines = new List<string> { "-- SELECTでデータを取得", "SELECT 'Hello, World!';" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "sql_lesson1_ex1_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex2: データに名前をつけましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "sql_lesson1_ex2_title",
+            slideKeyPrefix = "sql_lesson1_ex2",
+            slideCount = 4,
+            correctLines = new List<string> { "-- 文字にgreetingという名前をつける", "SELECT 'こんにちは' AS greeting;" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "sql_lesson1_ex2_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex3: 数字を足し算しましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "sql_lesson1_ex3_title",
+            slideKeyPrefix = "sql_lesson1_ex3",
+            slideCount = 4,
+            correctLines = new List<string> { "-- 100と50を足し算する", "SELECT 100 + 50 AS total;" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "sql_lesson1_ex3_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex4: いくつもの値を表示しましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "sql_lesson1_ex4_title",
+            slideKeyPrefix = "sql_lesson1_ex4",
+            slideCount = 4,
+            correctLines = new List<string> { "-- 名前と年齢を表示", "SELECT 'Taro' AS name, 10 AS age;" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "sql_lesson1_ex4_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex5: 条件で絞り込みましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "sql_lesson1_ex5_title",
+            slideKeyPrefix = "sql_lesson1_ex5",
+            slideCount = 4,
+            correctLines = new List<string> { "-- 10より大きいかチェック", "SELECT 1 WHERE 15 > 10;" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "sql_lesson1_ex5_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex6: 文字をつなげましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "sql_lesson1_ex6_title",
+            slideKeyPrefix = "sql_lesson1_ex6",
+            slideCount = 4,
+            correctLines = new List<string> { "-- 文字をつなげる", "SELECT 'SQL' || 'は楽しい！';" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "sql_lesson1_ex6_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex7: 大きい順に並べ替えましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "sql_lesson1_ex7_title",
+            slideKeyPrefix = "sql_lesson1_ex7",
+            slideCount = 4,
+            correctLines = new List<string> { "-- 降順で並べる", "SELECT 1 AS num ORDER BY num DESC;" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "sql_lesson1_ex7_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex8: 条件を組み合わせましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "sql_lesson1_ex8_title",
+            slideKeyPrefix = "sql_lesson1_ex8",
+            slideCount = 4,
+            correctLines = new List<string> { "-- 両方の条件をチェック", "SELECT 1 WHERE 10 > 5 AND 20 > 10;" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "sql_lesson1_ex8_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex9: CASEで条件分岐しましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "sql_lesson1_ex9_title",
+            slideKeyPrefix = "sql_lesson1_ex9",
+            slideCount = 4,
+            correctLines = new List<string> { "-- 条件分岐", "SELECT CASE WHEN 10 > 5 THEN '大きい' ELSE '小さい' END;" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "sql_lesson1_ex9_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex10: NULLをチェックしましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "sql_lesson1_ex10_title",
+            slideKeyPrefix = "sql_lesson1_ex10",
+            slideCount = 4,
+            correctLines = new List<string> { "-- NULLチェック", "SELECT CASE WHEN NULL IS NULL THEN 1 ELSE 0 END;" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "sql_lesson1_ex10_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        lessons.Add(lesson1);
+
+        // ==================== LESSON 2: SQL II - テーブル操作とJOIN ====================
+        var lesson2 = new Lesson { titleKey = "sql_lesson2_title" };
+
+        // Ex1: WHERE で絞り込み
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "sql_lesson2_ex1_title",
+            slideKeyPrefix = "sql_lesson2_ex1",
+            slideCount = 3,
+            correctLines = new List<string> { "-- WHEREで条件を指定", "SELECT 'found' WHERE 10 > 5;" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "sql_lesson2_ex1_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex2: ORDER BY で並べ替え
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "sql_lesson2_ex2_title",
+            slideKeyPrefix = "sql_lesson2_ex2",
+            slideCount = 4,
+            correctLines = new List<string> { "-- SELECT文でデータを作成", "SELECT 1 AS num UNION SELECT 3 UNION SELECT 2", "-- ORDERで並べ替え", "ORDER BY num;" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "sql_lesson2_ex2_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "--", localizationKey = "sql_lesson2_ex2_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex3: LIMIT で件数制限
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "sql_lesson2_ex3_title",
+            slideKeyPrefix = "sql_lesson2_ex3",
+            slideCount = 3,
+            correctLines = new List<string> { "-- SELECT文でデータを作成", "SELECT 1 UNION SELECT 2 UNION SELECT 3", "-- LIMITで件数制限", "LIMIT 2;" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "sql_lesson2_ex3_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "--", localizationKey = "sql_lesson2_ex3_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex4: COUNT で件数を数える
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "sql_lesson2_ex4_title",
+            slideKeyPrefix = "sql_lesson2_ex4",
+            slideCount = 3,
+            correctLines = new List<string> { "-- COUNTで行数を数える", "SELECT COUNT(*) FROM (SELECT 1 UNION SELECT 2 UNION SELECT 3);" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "sql_lesson2_ex4_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex5: SUM で合計を計算
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "sql_lesson2_ex5_title",
+            slideKeyPrefix = "sql_lesson2_ex5",
+            slideCount = 3,
+            correctLines = new List<string> { "-- SUMで合計を計算", "SELECT SUM(n) FROM (SELECT 1 AS n UNION SELECT 2 UNION SELECT 3);" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "sql_lesson2_ex5_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex6: AVG で平均を計算
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "sql_lesson2_ex6_title",
+            slideKeyPrefix = "sql_lesson2_ex6",
+            slideCount = 3,
+            correctLines = new List<string> { "-- AVGで平均を計算", "SELECT AVG(n) FROM (SELECT 10 AS n UNION SELECT 20 UNION SELECT 30);" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "sql_lesson2_ex6_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex7: GROUP BY でグループ化
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "sql_lesson2_ex7_title",
+            slideKeyPrefix = "sql_lesson2_ex7",
+            slideCount = 3,
+            correctLines = new List<string> { "-- SELECT文でデータを取得", "SELECT category, COUNT(*) FROM (", "  -- カテゴリを定義", "  SELECT 'A' AS category UNION ALL", "  -- データを追加", "  SELECT 'A' UNION ALL SELECT 'B'", "-- GROUPでグループ化", ") GROUP BY category;" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "sql_lesson2_ex7_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "--", localizationKey = "sql_lesson2_ex7_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "--", localizationKey = "sql_lesson2_ex7_comment3" },
+                new LocalizedComment { lineIndex = 6, commentPrefix = "--", localizationKey = "sql_lesson2_ex7_comment4" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex8: HAVING でグループを絞り込み
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "sql_lesson2_ex8_title",
+            slideKeyPrefix = "sql_lesson2_ex8",
+            slideCount = 3,
+            correctLines = new List<string> { "-- SELECT文でデータを取得", "SELECT category, COUNT(*) AS cnt FROM (", "  -- カテゴリを定義", "  SELECT 'A' AS category UNION ALL", "  -- データを追加", "  SELECT 'A' UNION ALL SELECT 'B'", "-- HAVINGでグループを絞り込み", ") GROUP BY category HAVING cnt > 1;" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "sql_lesson2_ex8_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "--", localizationKey = "sql_lesson2_ex8_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "--", localizationKey = "sql_lesson2_ex8_comment3" },
+                new LocalizedComment { lineIndex = 6, commentPrefix = "--", localizationKey = "sql_lesson2_ex8_comment4" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex9: CASE で条件分岐
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "sql_lesson2_ex9_title",
+            slideKeyPrefix = "sql_lesson2_ex9",
+            slideCount = 4,
+            correctLines = new List<string> { "-- SELECT CASE と入力して条件分岐", "SELECT CASE", "  -- 条件を指定", "  WHEN 85 >= 80 THEN 'pass'", "  -- それ以外の場合", "  ELSE 'fail'", "-- ENDで終了", "END;" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "sql_lesson2_ex9_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "--", localizationKey = "sql_lesson2_ex9_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "--", localizationKey = "sql_lesson2_ex9_comment3" },
+                new LocalizedComment { lineIndex = 6, commentPrefix = "--", localizationKey = "sql_lesson2_ex9_comment4" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex10: COALESCE でNULL処理
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "sql_lesson2_ex10_title",
+            slideKeyPrefix = "sql_lesson2_ex10",
+            slideCount = 3,
+            correctLines = new List<string> { "-- COALESCEでNULL処理", "SELECT COALESCE(NULL, 'default');" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "sql_lesson2_ex10_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        lessons.Add(lesson2);
+
+        // ==================== LESSON 3: SQL III - サブクエリと高度な操作 ====================
+        var lesson3 = new Lesson { titleKey = "sql_lesson3_title" };
+
+        // Ex1: サブクエリ（WHERE内）
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "sql_lesson3_ex1_title",
+            slideKeyPrefix = "sql_lesson3_ex1",
+            slideCount = 3,
+            correctLines = new List<string> { "-- SELECTでサブクエリを作成", "SELECT 'found' WHERE 5 > (SELECT 3);" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "sql_lesson3_ex1_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex2: EXISTS で存在チェック
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "sql_lesson3_ex2_title",
+            slideKeyPrefix = "sql_lesson3_ex2",
+            slideCount = 3,
+            correctLines = new List<string> { "-- EXISTSで存在チェック", "SELECT 'has data' WHERE EXISTS (SELECT 1);" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "sql_lesson3_ex2_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex3: UNION で結合
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "sql_lesson3_ex3_title",
+            slideKeyPrefix = "sql_lesson3_ex3",
+            slideCount = 3,
+            correctLines = new List<string> { "-- UNIONで結果を結合", "SELECT 'A' UNION SELECT 'B' UNION SELECT 'C';" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "sql_lesson3_ex3_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex4: INNER JOIN
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "sql_lesson3_ex4_title",
+            slideKeyPrefix = "sql_lesson3_ex4",
+            slideCount = 3,
+            correctLines = new List<string> { "-- SELECTで列を取得", "SELECT a.x, b.y FROM", "  -- テーブルaを作成", "  (SELECT 1 AS id, 'A' AS x) a", "  -- INNERで内部結合", "  INNER JOIN", "  -- テーブルbを作成", "  (SELECT 1 AS id, 'B' AS y) b", "  -- 結合条件を指定", "  ON a.id = b.id;" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "sql_lesson3_ex4_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "--", localizationKey = "sql_lesson3_ex4_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "--", localizationKey = "sql_lesson3_ex4_comment3" },
+                new LocalizedComment { lineIndex = 6, commentPrefix = "--", localizationKey = "sql_lesson3_ex4_comment4" },
+                new LocalizedComment { lineIndex = 8, commentPrefix = "--", localizationKey = "sql_lesson3_ex4_comment5" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex5: LEFT JOIN
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "sql_lesson3_ex5_title",
+            slideKeyPrefix = "sql_lesson3_ex5",
+            slideCount = 3,
+            correctLines = new List<string> { "-- SELECTで列を取得", "SELECT a.x, b.y FROM", "  -- テーブルaを作成", "  (SELECT 1 AS id, 'A' AS x) a", "  -- LEFTで左外部結合", "  LEFT JOIN", "  -- テーブルbを作成", "  (SELECT 2 AS id, 'B' AS y) b", "  -- 結合条件を指定", "  ON a.id = b.id;" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "sql_lesson3_ex5_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "--", localizationKey = "sql_lesson3_ex5_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "--", localizationKey = "sql_lesson3_ex5_comment3" },
+                new LocalizedComment { lineIndex = 6, commentPrefix = "--", localizationKey = "sql_lesson3_ex5_comment4" },
+                new LocalizedComment { lineIndex = 8, commentPrefix = "--", localizationKey = "sql_lesson3_ex5_comment5" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex6: MAX と MIN
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "sql_lesson3_ex6_title",
+            slideKeyPrefix = "sql_lesson3_ex6",
+            slideCount = 3,
+            correctLines = new List<string> { "-- MAXで最大値を取得", "SELECT MAX(n) FROM (SELECT 5 AS n UNION SELECT 10 UNION SELECT 3);" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "sql_lesson3_ex6_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex7: DISTINCT で重複除去
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "sql_lesson3_ex7_title",
+            slideKeyPrefix = "sql_lesson3_ex7",
+            slideCount = 3,
+            correctLines = new List<string> { "-- SELECT DISTINCT と入力して重複除去", "SELECT DISTINCT n FROM (", "  -- データを作成", "  SELECT 1 AS n UNION ALL", "  -- 重複データを追加", "  SELECT 1 UNION ALL", "  -- 異なるデータを追加", "  SELECT 2", ");" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "sql_lesson3_ex7_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "--", localizationKey = "sql_lesson3_ex7_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "--", localizationKey = "sql_lesson3_ex7_comment3" },
+                new LocalizedComment { lineIndex = 6, commentPrefix = "--", localizationKey = "sql_lesson3_ex7_comment4" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex8: LIKE でパターン検索
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "sql_lesson3_ex8_title",
+            slideKeyPrefix = "sql_lesson3_ex8",
+            slideCount = 3,
+            correctLines = new List<string> { "-- LIKEでパターン検索", "SELECT 'matched' WHERE 'Hello' LIKE 'H%';" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "sql_lesson3_ex8_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex9: BETWEEN で範囲指定
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "sql_lesson3_ex9_title",
+            slideKeyPrefix = "sql_lesson3_ex9",
+            slideCount = 3,
+            correctLines = new List<string> { "-- BETWEENで範囲指定", "SELECT 'in range' WHERE 5 BETWEEN 1 AND 10;" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "sql_lesson3_ex9_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex10: IN で複数値マッチ
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "sql_lesson3_ex10_title",
+            slideKeyPrefix = "sql_lesson3_ex10",
+            slideCount = 3,
+            correctLines = new List<string> { "-- INで複数値マッチ", "SELECT 'found' WHERE 'B' IN ('A', 'B', 'C');" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "sql_lesson3_ex10_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        lessons.Add(lesson3);
+
+        // ==================== LESSON 4: SQL IV - CTEとウィンドウ関数 ====================
+        var lesson4 = new Lesson { titleKey = "sql_lesson4_title" };
+
+        // Ex1: CTE（WITH句）
+        lesson4.exercises.Add(new Exercise
+        {
+            titleKey = "sql_lesson4_ex1_title",
+            slideKeyPrefix = "sql_lesson4_ex1",
+            slideCount = 3,
+            correctLines = new List<string> { "WITH nums AS (", "  SELECT 1 AS n UNION SELECT 2 UNION SELECT 3", ")", "SELECT * FROM nums;" },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+
+        // Ex2: ROW_NUMBER()
+        lesson4.exercises.Add(new Exercise
+        {
+            titleKey = "sql_lesson4_ex2_title",
+            slideKeyPrefix = "sql_lesson4_ex2",
+            slideCount = 3,
+            correctLines = new List<string> { "SELECT", "  val,", "  ROW_NUMBER() OVER (ORDER BY val) AS rn", "FROM (SELECT 'A' AS val UNION SELECT 'B' UNION SELECT 'C');" },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+
+        // Ex3: RANK()
+        lesson4.exercises.Add(new Exercise
+        {
+            titleKey = "sql_lesson4_ex3_title",
+            slideKeyPrefix = "sql_lesson4_ex3",
+            slideCount = 3,
+            correctLines = new List<string> { "SELECT", "  val,", "  RANK() OVER (ORDER BY val) AS rnk", "FROM (SELECT 1 AS val UNION ALL SELECT 1 UNION ALL SELECT 2);" },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+
+        // Ex4: SUM() OVER
+        lesson4.exercises.Add(new Exercise
+        {
+            titleKey = "sql_lesson4_ex4_title",
+            slideKeyPrefix = "sql_lesson4_ex4",
+            slideCount = 3,
+            correctLines = new List<string> { "SELECT", "  val,", "  SUM(val) OVER (ORDER BY val) AS running", "FROM (SELECT 1 AS val UNION ALL SELECT 2 UNION ALL SELECT 3);" },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+
+        // Ex5: CASE WHEN
+        lesson4.exercises.Add(new Exercise
+        {
+            titleKey = "sql_lesson4_ex5_title",
+            slideKeyPrefix = "sql_lesson4_ex5",
+            slideCount = 3,
+            correctLines = new List<string> { "SELECT", "  CASE WHEN 1 > 0 THEN 'yes' ELSE 'no' END AS result;" },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+
+        // Ex6: COALESCE
+        lesson4.exercises.Add(new Exercise
+        {
+            titleKey = "sql_lesson4_ex6_title",
+            slideKeyPrefix = "sql_lesson4_ex6",
+            slideCount = 3,
+            correctLines = new List<string> { "SELECT COALESCE(NULL, NULL, 'default') AS val;" },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+
+        // Ex7: INSERT 文
+        lesson4.exercises.Add(new Exercise
+        {
+            titleKey = "sql_lesson4_ex7_title",
+            slideKeyPrefix = "sql_lesson4_ex7",
+            slideCount = 3,
+            correctLines = new List<string> { "CREATE TABLE test(x TEXT);", "INSERT INTO test VALUES ('hello');", "SELECT * FROM test;" },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+
+        // Ex8: UPDATE 文
+        lesson4.exercises.Add(new Exercise
+        {
+            titleKey = "sql_lesson4_ex8_title",
+            slideKeyPrefix = "sql_lesson4_ex8",
+            slideCount = 3,
+            correctLines = new List<string> { "CREATE TABLE test(x TEXT);", "INSERT INTO test VALUES ('old');", "UPDATE test SET x = 'new';", "SELECT * FROM test;" },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+
+        // Ex9: DELETE 文
+        lesson4.exercises.Add(new Exercise
+        {
+            titleKey = "sql_lesson4_ex9_title",
+            slideKeyPrefix = "sql_lesson4_ex9",
+            slideCount = 3,
+            correctLines = new List<string> { "CREATE TABLE test(x INT);", "INSERT INTO test VALUES (1), (2), (3);", "DELETE FROM test WHERE x = 2;", "SELECT * FROM test;" },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+
+        // Ex10: GROUP_CONCAT
+        lesson4.exercises.Add(new Exercise
+        {
+            titleKey = "sql_lesson4_ex10_title",
+            slideKeyPrefix = "sql_lesson4_ex10",
+            slideCount = 3,
+            correctLines = new List<string> { "SELECT GROUP_CONCAT(val, '-') FROM", "  (SELECT 'A' AS val UNION SELECT 'B' UNION SELECT 'C');" },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+
+        lessons.Add(lesson4);
+
+        currentLessonIndex = 0;
+        currentExerciseIndex = 0;
+    }
+
+
+    private void InitializeLuaLessons()
+    {
+        lessons.Clear();
+
+        // ==================== LESSON 1: Lua (ルア) に挑戦！ ====================
+        var lesson1 = new Lesson { titleKey = "lua_lesson1_title" };
+
+        // Ex1: 画面にメッセージを出してみましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "lua_lesson1_ex1_title",
+            slideKeyPrefix = "lua_lesson1_ex1",
+            slideCount = 4,
+            correctLines = new List<string> { "-- Hello, Lua!を表示", "print(\"Hello, Lua!\")" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "lua_lesson1_ex1_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex2: 自分専用の「はこ」
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "lua_lesson1_ex2_title",
+            slideKeyPrefix = "lua_lesson1_ex2",
+            slideCount = 3,
+            correctLines = new List<string> { "-- 10を入力", "local x = 10", "-- xを入力", "print(x)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "lua_lesson1_ex2_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "--", localizationKey = "lua_lesson1_ex2_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex3: コンピュータで計算しましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "lua_lesson1_ex3_title",
+            slideKeyPrefix = "lua_lesson1_ex3",
+            slideCount = 3,
+            correctLines = new List<string> { "-- 5を入力", "local a = 5", "-- 3を入力", "local b = 3", "-- +でたし算", "print(a + b)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "lua_lesson1_ex3_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "--", localizationKey = "lua_lesson1_ex3_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "--", localizationKey = "lua_lesson1_ex3_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        lessons.Add(lesson1);
+
+        // ==================== LESSON 3: Lua III - エラー処理とモジュール ====================
+        var lesson3 = new Lesson { titleKey = "lua_lesson3_title" };
+
+        // Ex1: pcall でエラーを捕捉
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "lua_lesson3_ex1_title",
+            slideKeyPrefix = "lua_lesson3_ex1",
+            slideCount = 3,
+            correctLines = new List<string> { "-- pcallでエラーを捕捉", "local ok, result = pcall(function()", "    return 10 + 5", "end)", "-- 成功したら出力", "if ok then", "    -- 結果を出力", "    print(result)", "end" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "lua_lesson3_ex1_comment1" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "--", localizationKey = "lua_lesson3_ex1_comment2" },
+                new LocalizedComment { lineIndex = 6, commentPrefix = "--", localizationKey = "lua_lesson3_ex1_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex2: error でエラーを発生
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "lua_lesson3_ex2_title",
+            slideKeyPrefix = "lua_lesson3_ex2",
+            slideCount = 3,
+            correctLines = new List<string> { "local ok, msg = pcall(function()", "    -- errorでエラーを発生", "    error(\"test error\")", "end)", "print(msg:match(\"test error\") and \"caught\" or \"not caught\")" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 1, commentPrefix = "--", localizationKey = "lua_lesson3_ex2_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex3: assert で検証
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "lua_lesson3_ex3_title",
+            slideKeyPrefix = "lua_lesson3_ex3",
+            slideCount = 3,
+            correctLines = new List<string> { "-- assertで検証", "local value = assert(10 > 5, \"should be true\")", "print(value and \"pass\" or \"fail\")" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "lua_lesson3_ex3_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex4: 型を確認しよう
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "lua_lesson3_ex4_title",
+            slideKeyPrefix = "lua_lesson3_ex4",
+            slideCount = 3,
+            correctLines = new List<string> { "-- typeで型を確認", "local t = {}", "-- 型を出力", "print(type(t))" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "lua_lesson3_ex4_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "--", localizationKey = "lua_lesson3_ex4_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex5: tostring で文字列に変換
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "lua_lesson3_ex5_title",
+            slideKeyPrefix = "lua_lesson3_ex5",
+            slideCount = 3,
+            correctLines = new List<string> { "-- tostringで文字列に変換", "local n = 100", "-- 文字列に変換して連結", "print(\"Value: \" .. tostring(n))" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "lua_lesson3_ex5_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "--", localizationKey = "lua_lesson3_ex5_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex6: tonumber で数値に変換
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "lua_lesson3_ex6_title",
+            slideKeyPrefix = "lua_lesson3_ex6",
+            slideCount = 3,
+            correctLines = new List<string> { "-- tonumberで数値に変換", "local s = \"50\"", "-- 数値に変換", "local n = tonumber(s)", "print(n + 10)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "lua_lesson3_ex6_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "--", localizationKey = "lua_lesson3_ex6_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex7: 文字列を連結
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "lua_lesson3_ex7_title",
+            slideKeyPrefix = "lua_lesson3_ex7",
+            slideCount = 3,
+            correctLines = new List<string> { "-- ..で文字列を連結", "local a = \"Lua\"", "local b = \"Script\"", "-- 連結して出力", "print(a .. b)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "lua_lesson3_ex7_comment1" },
+                new LocalizedComment { lineIndex = 3, commentPrefix = "--", localizationKey = "lua_lesson3_ex7_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex8: 文字列の長さを取得
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "lua_lesson3_ex8_title",
+            slideKeyPrefix = "lua_lesson3_ex8",
+            slideCount = 3,
+            correctLines = new List<string> { "-- #で長さを取得", "local s = \"Lua\"", "-- 長さを出力", "print(#s)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "lua_lesson3_ex8_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "--", localizationKey = "lua_lesson3_ex8_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex9: 条件演算子のパターン
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "lua_lesson3_ex9_title",
+            slideKeyPrefix = "lua_lesson3_ex9",
+            slideCount = 3,
+            correctLines = new List<string> { "-- and/orで条件分岐", "local age = 20", "-- 条件に応じて値を決める", "local status = age >= 18 and \"adult\" or \"child\"", "print(status)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "lua_lesson3_ex9_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "--", localizationKey = "lua_lesson3_ex9_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex10: ループを制御しよう
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "lua_lesson3_ex10_title",
+            slideKeyPrefix = "lua_lesson3_ex10",
+            slideCount = 3,
+            correctLines = new List<string> { "-- breakでループを抜ける", "for i = 1, 10 do", "    -- 3を超えたらループを抜ける", "    if i > 3 then break end", "    print(i)", "end" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "lua_lesson3_ex10_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "--", localizationKey = "lua_lesson3_ex10_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        lessons.Add(lesson3);
+
+        currentLessonIndex = 0;
+        currentExerciseIndex = 0;
+    }
+
+
+    private void InitializePerlLessons()
+    {
+        lessons.Clear();
+
+        // ==================== LESSON 1: Perl (パール) に挑戦！ ====================
+        var lesson1 = new Lesson { titleKey = "perl_lesson1_title" };
+
+        // Ex1: 画面に文字を出してみましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "perl_lesson1_ex1_title",
+            slideKeyPrefix = "perl_lesson1_ex1",
+            slideCount = 5,
+            correctLines = new List<string> { "# printで出力", "print \"Hello, World!\\n\";" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "perl_lesson1_ex1_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex2: 変数を使ってみましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "perl_lesson1_ex2_title",
+            slideKeyPrefix = "perl_lesson1_ex2",
+            slideCount = 4,
+            correctLines = new List<string> { "# 変数に文字を入れる", "my $message = \"Perl\";", "print \"$message\\n\";" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "perl_lesson1_ex2_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex3: 計算をしてみましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "perl_lesson1_ex3_title",
+            slideKeyPrefix = "perl_lesson1_ex3",
+            slideCount = 4,
+            correctLines = new List<string> { "# 足し算する", "my $a = 7;", "my $b = 3;", "# 2つの変数を足し算する", "my $sum = $a + $b;", "print \"$sum\\n\";" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "perl_lesson1_ex3_comment1" },
+                new LocalizedComment { lineIndex = 3, commentPrefix = "#", localizationKey = "perl_lesson1_ex3_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex4: 文字をつなげましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "perl_lesson1_ex4_title",
+            slideKeyPrefix = "perl_lesson1_ex4",
+            slideCount = 4,
+            correctLines = new List<string> { "# 文字をつなげる", "my $greeting = \"Hello, \" . \"Perl!\";", "print \"$greeting\\n\";" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "perl_lesson1_ex4_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex5: 配列を使いましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "perl_lesson1_ex5_title",
+            slideKeyPrefix = "perl_lesson1_ex5",
+            slideCount = 4,
+            correctLines = new List<string> { "# 配列を作る", "my @fruits = (\"りんご\", \"みかん\", \"ぶどう\");", "print \"$fruits[0]\\n\";" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "perl_lesson1_ex5_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex6: if文で条件分岐しましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "perl_lesson1_ex6_title",
+            slideKeyPrefix = "perl_lesson1_ex6",
+            slideCount = 4,
+            correctLines = new List<string> { "# 条件分岐", "my $score = 100;", "# もしスコアが100なら", "if ($score == 100) {", "  print \"満点！\\n\";", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "perl_lesson1_ex6_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "perl_lesson1_ex6_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex7: if-elseを使いましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "perl_lesson1_ex7_title",
+            slideKeyPrefix = "perl_lesson1_ex7",
+            slideCount = 4,
+            correctLines = new List<string> { "# if-else", "my $num = 5;", "if ($num >= 10) {", "  print \"大きい\\n\";", "# そうでなければ", "} else {", "  print \"小さい\\n\";", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "perl_lesson1_ex7_comment1" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "#", localizationKey = "perl_lesson1_ex7_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex8: foreachでループしましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "perl_lesson1_ex8_title",
+            slideKeyPrefix = "perl_lesson1_ex8",
+            slideCount = 4,
+            correctLines = new List<string> { "# 配列をループ", "my @animals = (\"犬\", \"猫\", \"鳥\");", "# 配列の各要素について繰り返す", "foreach my $animal (@animals) {", "  print \"$animal\\n\";", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "perl_lesson1_ex8_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "perl_lesson1_ex8_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex9: ハッシュを使いましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "perl_lesson1_ex9_title",
+            slideKeyPrefix = "perl_lesson1_ex9",
+            slideCount = 4,
+            correctLines = new List<string> { "# ハッシュを作る", "my %fruit = (\"color\" => \"赤\");", "print \"$fruit{color}\\n\";" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "perl_lesson1_ex9_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex10: サブルーチンを作りましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "perl_lesson1_ex10_title",
+            slideKeyPrefix = "perl_lesson1_ex10",
+            slideCount = 4,
+            correctLines = new List<string> { "# サブルーチンを定義", "sub welcome {", "  print \"Welcome!\\n\";", "}", "", "# 呼び出し", "welcome();" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "perl_lesson1_ex10_comment1" },
+                new LocalizedComment { lineIndex = 5, commentPrefix = "#", localizationKey = "perl_lesson1_ex10_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        lessons.Add(lesson1);
+
+        // ==================== LESSON 2: Perl II - 正規表現とリファレンス ====================
+        var lesson2 = new Lesson { titleKey = "perl_lesson2_title" };
+
+        // Ex1: 正規表現でマッチング
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "perl_lesson2_ex1_title",
+            slideKeyPrefix = "perl_lesson2_ex1",
+            slideCount = 3,
+            correctLines = new List<string> { "# 変数に文字列を代入", "my $text = \"hello world\";", "# =~でパターンマッチング", "if ($text =~ /world/) {", "    # printで出力", "    print \"found\\n\";", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "perl_lesson2_ex1_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "perl_lesson2_ex1_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "#", localizationKey = "perl_lesson2_ex1_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex2: 正規表現で置換
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "perl_lesson2_ex2_title",
+            slideKeyPrefix = "perl_lesson2_ex2",
+            slideCount = 3,
+            correctLines = new List<string> { "# 変数に文字列を代入", "my $text = \"cat\";", "# sで置換", "$text =~ s/cat/dog/;", "# printで出力", "print \"$text\\n\";" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "perl_lesson2_ex2_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "perl_lesson2_ex2_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "#", localizationKey = "perl_lesson2_ex2_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex3: 配列を使おう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "perl_lesson2_ex3_title",
+            slideKeyPrefix = "perl_lesson2_ex3",
+            slideCount = 3,
+            correctLines = new List<string> { "# @で配列を宣言", "my @fruits = (\"apple\", \"banana\");", "# printで出力", "print $fruits[1] . \"\\n\";" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "perl_lesson2_ex3_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "perl_lesson2_ex3_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex4: ハッシュを使おう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "perl_lesson2_ex4_title",
+            slideKeyPrefix = "perl_lesson2_ex4",
+            slideCount = 3,
+            correctLines = new List<string> { "# %でハッシュを宣言", "my %scores = (\"math\" => 90);", "# printで出力", "print $scores{\"math\"} . \"\\n\";" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "perl_lesson2_ex4_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "perl_lesson2_ex4_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex5: foreach でループ
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "perl_lesson2_ex5_title",
+            slideKeyPrefix = "perl_lesson2_ex5",
+            slideCount = 3,
+            correctLines = new List<string> { "# 配列を宣言（1, 2, 3）", "my @nums = (1, 2, 3);", "# foreachで各要素を処理", "foreach my $n (@nums) {", "    # printで出力", "    print \"$n\\n\";", "}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "perl_lesson2_ex5_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "perl_lesson2_ex5_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "#", localizationKey = "perl_lesson2_ex5_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex6: サブルーチンを作ろう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "perl_lesson2_ex6_title",
+            slideKeyPrefix = "perl_lesson2_ex6",
+            slideCount = 3,
+            correctLines = new List<string> { "# subでサブルーチンを定義", "sub double {", "    # shiftで引数を取得", "    my $n = shift;", "    # returnで戻り値を返す", "    return $n * 2;", "}", "# printで出力", "print double(5) . \"\\n\";" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "perl_lesson2_ex6_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "perl_lesson2_ex6_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "#", localizationKey = "perl_lesson2_ex6_comment3" },
+                new LocalizedComment { lineIndex = 7, commentPrefix = "#", localizationKey = "perl_lesson2_ex6_comment4" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex7: リファレンスを学ぼう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "perl_lesson2_ex7_title",
+            slideKeyPrefix = "perl_lesson2_ex7",
+            slideCount = 3,
+            correctLines = new List<string> { "# 配列を宣言（10, 20）", "my @nums = (10, 20);", "# \\でリファレンスを作成", "my $ref = \\@nums;", "# printで出力", "print $ref->[1] . \"\\n\";" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "perl_lesson2_ex7_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "perl_lesson2_ex7_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "#", localizationKey = "perl_lesson2_ex7_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex8: 無名配列リファレンス
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "perl_lesson2_ex8_title",
+            slideKeyPrefix = "perl_lesson2_ex8",
+            slideCount = 3,
+            correctLines = new List<string> { "# [で無名配列を作成", "my $ref = [5, 10, 15];", "# printで出力", "print $ref->[2] . \"\\n\";" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "perl_lesson2_ex8_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "perl_lesson2_ex8_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex9: map で変換
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "perl_lesson2_ex9_title",
+            slideKeyPrefix = "perl_lesson2_ex9",
+            slideCount = 3,
+            correctLines = new List<string> { "# 配列を宣言（1, 2, 3）", "my @nums = (1, 2, 3);", "# mapで各要素を変換", "my @squared = map { $_ * $_ } @nums;", "# printで出力", "print \"@squared\\n\";" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "perl_lesson2_ex9_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "perl_lesson2_ex9_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "#", localizationKey = "perl_lesson2_ex9_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex10: grep でフィルタ
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "perl_lesson2_ex10_title",
+            slideKeyPrefix = "perl_lesson2_ex10",
+            slideCount = 3,
+            correctLines = new List<string> { "# 配列を宣言（1, 2, 3, 4, 5）", "my @nums = (1, 2, 3, 4, 5);", "# grepで条件に合う要素を抽出", "my @result = grep { $_ >= 3 } @nums;", "# printで出力", "print \"@result\\n\";" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "perl_lesson2_ex10_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "perl_lesson2_ex10_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "#", localizationKey = "perl_lesson2_ex10_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        lessons.Add(lesson2);
+
+        // ==================== LESSON 3: Perl III - ファイル処理と高度な機能 ====================
+        var lesson3 = new Lesson { titleKey = "perl_lesson3_title" };
+
+        // Ex1: ファイルを開こう
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "perl_lesson3_ex1_title",
+            slideKeyPrefix = "perl_lesson3_ex1",
+            slideCount = 3,
+            correctLines = new List<string> { "open(my $fh, \">\", \"/tmp/test.txt\") or die;", "print $fh \"hello\\n\";", "close($fh);", "print \"written\\n\";" },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+
+        // Ex2: ファイルを閉じよう
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "perl_lesson3_ex2_title",
+            slideKeyPrefix = "perl_lesson3_ex2",
+            slideCount = 3,
+            correctLines = new List<string> { "open(my $fh, \">\", \"/tmp/test2.txt\") or die;", "print $fh \"data\\n\";", "close($fh);", "print \"closed\\n\";" },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+
+        // Ex3: chomp で改行を除去
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "perl_lesson3_ex3_title",
+            slideKeyPrefix = "perl_lesson3_ex3",
+            slideCount = 3,
+            correctLines = new List<string> { "my $text = \"hello\\n\";", "chomp($text);", "print \"[$text]\\n\";" },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+
+        // Ex4: split で文字列を分割
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "perl_lesson3_ex4_title",
+            slideKeyPrefix = "perl_lesson3_ex4",
+            slideCount = 3,
+            correctLines = new List<string> { "my $data = \"apple:banana:cherry\";", "my @fruits = split(/:/, $data);", "print $fruits[1] . \"\\n\";" },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+
+        // Ex5: join で配列を結合
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "perl_lesson3_ex5_title",
+            slideKeyPrefix = "perl_lesson3_ex5",
+            slideCount = 3,
+            correctLines = new List<string> { "my @words = (\"Hello\", \"World\");", "my $sentence = join(\" \", @words);", "print \"$sentence\\n\";" },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+
+        // Ex6: push で配列に追加
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "perl_lesson3_ex6_title",
+            slideKeyPrefix = "perl_lesson3_ex6",
+            slideCount = 3,
+            correctLines = new List<string> { "my @nums = (1, 2);", "push(@nums, 3);", "print \"@nums\\n\";" },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+
+        // Ex7: pop で配列から取り出す
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "perl_lesson3_ex7_title",
+            slideKeyPrefix = "perl_lesson3_ex7",
+            slideCount = 3,
+            correctLines = new List<string> { "my @nums = (10, 20, 30);", "my $last = pop(@nums);", "print \"$last\\n\";" },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+
+        // Ex8: sort で配列を並べ替え
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "perl_lesson3_ex8_title",
+            slideKeyPrefix = "perl_lesson3_ex8",
+            slideCount = 3,
+            correctLines = new List<string> { "my @words = (\"banana\", \"apple\", \"cherry\");", "my @sorted = sort @words;", "print \"$sorted[0]\\n\";" },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+
+        // Ex9: reverse で配列を逆順に
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "perl_lesson3_ex9_title",
+            slideKeyPrefix = "perl_lesson3_ex9",
+            slideCount = 3,
+            correctLines = new List<string> { "my @nums = (1, 2, 3);", "my @rev = reverse @nums;", "print \"@rev\\n\";" },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+
+        // Ex10: length で文字列の長さ
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "perl_lesson3_ex10_title",
+            slideKeyPrefix = "perl_lesson3_ex10",
+            slideCount = 3,
+            correctLines = new List<string> { "my $text = \"Perl\";", "my $len = length($text);", "print \"$len\\n\";" },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+
+        lessons.Add(lesson3);
+
+        currentLessonIndex = 0;
+        currentExerciseIndex = 0;
+    }
+
+
+    private void InitializeHaskellLessons()
+    {
+        lessons.Clear();
+
+        // ==================== LESSON 2: Haskell II - 関数と型 ====================
+        var lesson2 = new Lesson { titleKey = "haskell_lesson2_title" };
+
+        // Ex1: 関数を定義しよう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "haskell_lesson2_ex1_title",
+            slideKeyPrefix = "haskell_lesson2_ex1",
+            slideCount = 3,
+            correctLines = new List<string> { "-- *で掛け算", "triple x = x * 3", "-- tripleを入力", "main = print (triple 4)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "haskell_lesson2_ex1_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "--", localizationKey = "haskell_lesson2_ex1_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex2: 型注釈を書こう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "haskell_lesson2_ex2_title",
+            slideKeyPrefix = "haskell_lesson2_ex2",
+            slideCount = 3,
+            correctLines = new List<string> { "-- ::で型注釈", "square :: Int -> Int", "-- *で掛け算", "square x = x * x", "-- squareを入力", "main = print (square 5)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "haskell_lesson2_ex2_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "--", localizationKey = "haskell_lesson2_ex2_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "--", localizationKey = "haskell_lesson2_ex2_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex3: リストを使おう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "haskell_lesson2_ex3_title",
+            slideKeyPrefix = "haskell_lesson2_ex3",
+            slideCount = 3,
+            correctLines = new List<string> { "-- [1, 2, 3]を入力", "nums = [1, 2, 3]", "-- headで先頭要素を取得", "main = print (head nums)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "haskell_lesson2_ex3_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "--", localizationKey = "haskell_lesson2_ex3_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex4: map で変換しよう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "haskell_lesson2_ex4_title",
+            slideKeyPrefix = "haskell_lesson2_ex4",
+            slideCount = 3,
+            correctLines = new List<string> { "-- mapで各要素を変換", "main = print (map (*2) [1, 2, 3])" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "haskell_lesson2_ex4_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex5: filter で絞り込もう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "haskell_lesson2_ex5_title",
+            slideKeyPrefix = "haskell_lesson2_ex5",
+            slideCount = 3,
+            correctLines = new List<string> { "-- filterで条件に合う要素を抽出", "main = print (filter (>=3) [1, 2, 3, 4, 5])" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "haskell_lesson2_ex5_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex6: パターンマッチを使おう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "haskell_lesson2_ex6_title",
+            slideKeyPrefix = "haskell_lesson2_ex6",
+            slideCount = 3,
+            correctLines = new List<string> { "-- 0を入力", "fib 0 = 0", "-- 1を入力", "fib 1 = 1", "-- 2を引いて再帰", "fib n = fib (n - 1) + fib (n - 2)", "-- fibを入力", "main = print (fib 6)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "haskell_lesson2_ex6_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "--", localizationKey = "haskell_lesson2_ex6_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "--", localizationKey = "haskell_lesson2_ex6_comment3" },
+                new LocalizedComment { lineIndex = 6, commentPrefix = "--", localizationKey = "haskell_lesson2_ex6_comment4" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex7: ガードで条件分岐
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "haskell_lesson2_ex7_title",
+            slideKeyPrefix = "haskell_lesson2_ex7",
+            slideCount = 3,
+            correctLines = new List<string> { "-- xを入力", "sign x", "  -- >で大なり比較", "  | x > 0     = \"positive\"", "  -- <で小なり比較", "  | x < 0     = \"negative\"", "  -- otherwiseはそれ以外の場合", "  | otherwise = \"zero\"", "-- signを入力", "main = putStrLn (sign 5)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "haskell_lesson2_ex7_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "--", localizationKey = "haskell_lesson2_ex7_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "--", localizationKey = "haskell_lesson2_ex7_comment3" },
+                new LocalizedComment { lineIndex = 6, commentPrefix = "--", localizationKey = "haskell_lesson2_ex7_comment4" },
+                new LocalizedComment { lineIndex = 8, commentPrefix = "--", localizationKey = "haskell_lesson2_ex7_comment5" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex8: ラムダ式を使おう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "haskell_lesson2_ex8_title",
+            slideKeyPrefix = "haskell_lesson2_ex8",
+            slideCount = 3,
+            correctLines = new List<string> { "-- \\でラムダ式を開始", "main = print (map (\\x -> x * x) [1, 2, 3])" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "haskell_lesson2_ex8_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex9: リスト内包表記
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "haskell_lesson2_ex9_title",
+            slideKeyPrefix = "haskell_lesson2_ex9",
+            slideCount = 3,
+            correctLines = new List<string> { "-- <-でリストから要素を取り出す", "main = print [x * x | x <- [1..5]]" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "haskell_lesson2_ex9_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex10: foldr で畳み込み
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "haskell_lesson2_ex10_title",
+            slideKeyPrefix = "haskell_lesson2_ex10",
+            slideCount = 3,
+            correctLines = new List<string> { "-- foldrで畳み込み", "main = print (foldr (+) 0 [1, 2, 3, 4, 5])" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "haskell_lesson2_ex10_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        lessons.Add(lesson2);
+
+        // ==================== LESSON 3: Haskell III - 高階関数とモナド ====================
+        var lesson3 = new Lesson { titleKey = "haskell_lesson3_title" };
+
+        // Ex1: map関数
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "haskell_lesson3_ex1_title",
+            slideKeyPrefix = "haskell_lesson3_ex1",
+            slideCount = 2,
+            correctLines = new List<string> { "-- Intを入力", "double :: Int -> Int", "-- *で掛け算", "double x = x * 2", "", "-- 各要素に関数を適用してリストを変換する関数", "doubled = map double [1, 2, 3, 4, 5]" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "haskell_lesson3_ex1_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "--", localizationKey = "haskell_lesson3_ex1_comment2" },
+                new LocalizedComment { lineIndex = 5, commentPrefix = "--", localizationKey = "haskell_lesson3_ex1_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex2: filter関数
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "haskell_lesson3_ex2_title",
+            slideKeyPrefix = "haskell_lesson3_ex2",
+            slideCount = 2,
+            correctLines = new List<string> { "-- Boolを入力", "isEven :: Int -> Bool", "-- ==で等価比較", "isEven x = x `mod` 2 == 0", "", "-- 条件を満たす要素だけを抽出する関数", "evens = filter isEven [1, 2, 3, 4, 5, 6]" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "haskell_lesson3_ex2_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "--", localizationKey = "haskell_lesson3_ex2_comment2" },
+                new LocalizedComment { lineIndex = 5, commentPrefix = "--", localizationKey = "haskell_lesson3_ex2_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex3: ラムダ式
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "haskell_lesson3_ex3_title",
+            slideKeyPrefix = "haskell_lesson3_ex3",
+            slideCount = 2,
+            correctLines = new List<string> { "-- ラムダ式を開始する記号", "squared = map (\\x -> x * x) [1, 2, 3, 4, 5]" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "haskell_lesson3_ex3_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex4: foldr（右畳み込み）
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "haskell_lesson3_ex4_title",
+            slideKeyPrefix = "haskell_lesson3_ex4",
+            slideCount = 2,
+            correctLines = new List<string> { "-- Intを入力", "sumList :: [Int] -> Int", "-- リストを右から畳み込む関数", "sumList xs = foldr (+) 0 xs", "-- sumListを入力", "total = sumList [1, 2, 3, 4, 5]" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "haskell_lesson3_ex4_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "--", localizationKey = "haskell_lesson3_ex4_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "--", localizationKey = "haskell_lesson3_ex4_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex5: 関数合成
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "haskell_lesson3_ex5_title",
+            slideKeyPrefix = "haskell_lesson3_ex5",
+            slideCount = 2,
+            correctLines = new List<string> { "-- Intを入力", "squareDouble :: Int -> Int", "-- 2つの関数を合成する演算子", "squareDouble = (^2) . (*2)", "-- squareDoubleを入力", "result = squareDouble 3" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "haskell_lesson3_ex5_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "--", localizationKey = "haskell_lesson3_ex5_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "--", localizationKey = "haskell_lesson3_ex5_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex6: Maybe型
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "haskell_lesson3_ex6_title",
+            slideKeyPrefix = "haskell_lesson3_ex6",
+            slideCount = 2,
+            correctLines = new List<string> { "-- Maybe Intを入力", "safeDiv :: Int -> Int -> Maybe Int", "-- 値がないことを表すMaybeのコンストラクタ", "safeDiv _ 0 = Nothing", "-- Justを入力", "safeDiv x y = Just (x `div` y)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "haskell_lesson3_ex6_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "--", localizationKey = "haskell_lesson3_ex6_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "--", localizationKey = "haskell_lesson3_ex6_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex7: Either型
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "haskell_lesson3_ex7_title",
+            slideKeyPrefix = "haskell_lesson3_ex7",
+            slideCount = 2,
+            correctLines = new List<string> { "-- Either String Intを入力", "validateAge :: Int -> Either String Int", "-- ageを入力", "validateAge age", "  -- 失敗・エラーを表すEitherのコンストラクタ", "  | age < 0   = Left \"Age cannot be negative\"", "  -- Rightを入力", "  | otherwise = Right age" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "haskell_lesson3_ex7_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "--", localizationKey = "haskell_lesson3_ex7_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "--", localizationKey = "haskell_lesson3_ex7_comment3" },
+                new LocalizedComment { lineIndex = 6, commentPrefix = "--", localizationKey = "haskell_lesson3_ex7_comment4" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex8: fmap（ファンクタ）
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "haskell_lesson3_ex8_title",
+            slideKeyPrefix = "haskell_lesson3_ex8",
+            slideCount = 2,
+            correctLines = new List<string> { "-- Maybe Intを入力", "doubleJust :: Maybe Int -> Maybe Int", "-- Functor内の値に関数を適用する関数", "doubleJust = fmap (*2)", "-- doubleJustを入力", "result = doubleJust (Just 5)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "haskell_lesson3_ex8_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "--", localizationKey = "haskell_lesson3_ex8_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "--", localizationKey = "haskell_lesson3_ex8_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex9: do記法
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "haskell_lesson3_ex9_title",
+            slideKeyPrefix = "haskell_lesson3_ex9",
+            slideCount = 2,
+            correctLines = new List<string> { "-- Maybe Intを入力", "addMaybe :: Maybe Int -> Maybe Int -> Maybe Int", "-- モナド操作を順次実行する記法", "addMaybe mx my = do", "  -- mxを入力", "  x <- mx", "  -- myを入力", "  y <- my", "  -- +で足し算", "  return (x + y)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "haskell_lesson3_ex9_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "--", localizationKey = "haskell_lesson3_ex9_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "--", localizationKey = "haskell_lesson3_ex9_comment3" },
+                new LocalizedComment { lineIndex = 6, commentPrefix = "--", localizationKey = "haskell_lesson3_ex9_comment4" },
+                new LocalizedComment { lineIndex = 8, commentPrefix = "--", localizationKey = "haskell_lesson3_ex9_comment5" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex10: リスト内包表記
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "haskell_lesson3_ex10_title",
+            slideKeyPrefix = "haskell_lesson3_ex10",
+            slideCount = 2,
+            correctLines = new List<string> { "-- [Int]を入力", "squares :: [Int]", "-- リスト内包表記で式と生成器を区切る記号", "squares = [x * x | x <- [1..5]]" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "--", localizationKey = "haskell_lesson3_ex10_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "--", localizationKey = "haskell_lesson3_ex10_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        lessons.Add(lesson3);
+
+        currentLessonIndex = 0;
+        currentExerciseIndex = 0;
+    }
+
+
+    private void InitializeElixirLessons()
+    {
+        lessons.Clear();
+
+        // ==================== LESSON 1: Elixir (エリクサー) に挑戦！ ====================
+        var lesson1 = new Lesson { titleKey = "elixir_lesson1_title" };
+
+        // Ex1: 画面に文字を出してみましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "elixir_lesson1_ex1_title",
+            slideKeyPrefix = "elixir_lesson1_ex1",
+            slideCount = 4,
+            correctLines = new List<string> { "# Hello, Elixir!を表示", "IO.puts \"Hello, Elixir!\"" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "elixir_lesson1_ex1_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex2: 便利な「はこ」
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "elixir_lesson1_ex2_title",
+            slideKeyPrefix = "elixir_lesson1_ex2",
+            slideCount = 3,
+            correctLines = new List<string> { "# 10を入力", "x = 10", "# xを入力", "IO.puts x" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "elixir_lesson1_ex2_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "elixir_lesson1_ex2_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex3: コンピュータで計算しましょう
+        lesson1.exercises.Add(new Exercise
+        {
+            titleKey = "elixir_lesson1_ex3_title",
+            slideKeyPrefix = "elixir_lesson1_ex3",
+            slideCount = 3,
+            correctLines = new List<string> { "# 5を入力", "a = 5", "# 3を入力", "b = 3", "# +でたし算", "IO.puts a + b" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "elixir_lesson1_ex3_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "elixir_lesson1_ex3_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "#", localizationKey = "elixir_lesson1_ex3_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        lessons.Add(lesson1);
+
+        // ==================== LESSON 2: Elixir II - パターンマッチと並行処理 ====================
+        var lesson2 = new Lesson { titleKey = "elixir_lesson2_title" };
+
+        // Ex1: パターンマッチングの基本
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "elixir_lesson2_ex1_title",
+            slideKeyPrefix = "elixir_lesson2_ex1",
+            slideCount = 3,
+            correctLines = new List<string> { "# yでタプルの2番目を受け取る", "{x, y} = {10, 20}", "# xを入力", "IO.puts x" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "elixir_lesson2_ex1_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "elixir_lesson2_ex1_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex2: リストのパターンマッチ
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "elixir_lesson2_ex2_title",
+            slideKeyPrefix = "elixir_lesson2_ex2",
+            slideCount = 3,
+            correctLines = new List<string> { "# |でリストを分解", "[head | tail] = [1, 2, 3]", "# headを入力", "IO.puts head" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "elixir_lesson2_ex2_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "elixir_lesson2_ex2_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex3: パイプ演算子を使おう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "elixir_lesson2_ex3_title",
+            slideKeyPrefix = "elixir_lesson2_ex3",
+            slideCount = 3,
+            correctLines = new List<string> { "# 1..5で範囲を作成", "1..5", "# |>でパイプ", "|> Enum.sum()", "# |>でパイプ", "|> IO.puts()" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "elixir_lesson2_ex3_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "elixir_lesson2_ex3_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "#", localizationKey = "elixir_lesson2_ex3_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex4: Enum.map で変換
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "elixir_lesson2_ex4_title",
+            slideKeyPrefix = "elixir_lesson2_ex4",
+            slideCount = 3,
+            correctLines = new List<string> { "# mapで各要素を変換", "result = Enum.map([1, 2, 3], fn x -> x * x end)", "# resultを入力", "IO.inspect result" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "elixir_lesson2_ex4_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "elixir_lesson2_ex4_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex5: Enum.filter で絞り込み
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "elixir_lesson2_ex5_title",
+            slideKeyPrefix = "elixir_lesson2_ex5",
+            slideCount = 3,
+            correctLines = new List<string> { "# filterで条件に合う要素を抽出", "result = Enum.filter([1, 2, 3, 4, 5], fn x -> x >= 3 end)", "# resultを入力", "IO.inspect result" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "elixir_lesson2_ex5_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "elixir_lesson2_ex5_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex6: case でパターンマッチ
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "elixir_lesson2_ex6_title",
+            slideKeyPrefix = "elixir_lesson2_ex6",
+            slideCount = 3,
+            correctLines = new List<string> { "# 2を入力", "x = 2", "# caseでパターンマッチ", "result = case x do", "  1 -> \"one\"", "  2 -> \"two\"", "  _ -> \"other\"", "end", "# resultを入力", "IO.puts result" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "elixir_lesson2_ex6_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "elixir_lesson2_ex6_comment2" },
+                new LocalizedComment { lineIndex = 8, commentPrefix = "#", localizationKey = "elixir_lesson2_ex6_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex7: 関数を定義しよう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "elixir_lesson2_ex7_title",
+            slideKeyPrefix = "elixir_lesson2_ex7",
+            slideCount = 3,
+            correctLines = new List<string> { "# defmoduleでモジュールを定義", "defmodule Calc do", "  # defで関数を定義", "  def triple(x), do: x * 3", "end", "# Calc.triple(4)を入力", "IO.puts Calc.triple(4)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "elixir_lesson2_ex7_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "elixir_lesson2_ex7_comment2" },
+                new LocalizedComment { lineIndex = 5, commentPrefix = "#", localizationKey = "elixir_lesson2_ex7_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex8: 再帰で計算しよう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "elixir_lesson2_ex8_title",
+            slideKeyPrefix = "elixir_lesson2_ex8",
+            slideCount = 3,
+            correctLines = new List<string> { "# defmoduleでモジュールを定義", "defmodule Math do", "  def factorial(0), do: 1", "  # factorialを再帰的に呼び出す", "  def factorial(n), do: n * factorial(n - 1)", "end", "# Math.factorial(5)を入力", "IO.puts Math.factorial(5)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "elixir_lesson2_ex8_comment1" },
+                new LocalizedComment { lineIndex = 3, commentPrefix = "#", localizationKey = "elixir_lesson2_ex8_comment2" },
+                new LocalizedComment { lineIndex = 6, commentPrefix = "#", localizationKey = "elixir_lesson2_ex8_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex9: プロセスを作ろう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "elixir_lesson2_ex9_title",
+            slideKeyPrefix = "elixir_lesson2_ex9",
+            slideCount = 3,
+            correctLines = new List<string> { "# spawnでプロセスを作成", "spawn(fn -> IO.puts \"hello\" end)", "# 100を入力", "Process.sleep(100)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "elixir_lesson2_ex9_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "elixir_lesson2_ex9_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex10: メッセージを送ろう
+        lesson2.exercises.Add(new Exercise
+        {
+            titleKey = "elixir_lesson2_ex10_title",
+            slideKeyPrefix = "elixir_lesson2_ex10",
+            slideCount = 3,
+            correctLines = new List<string> { "# sendでメッセージを送る", "send(self(), {:msg, 42})", "# receiveでメッセージを受け取る", "receive do", "  {:msg, n} -> IO.puts n", "end" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "elixir_lesson2_ex10_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "elixir_lesson2_ex10_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        lessons.Add(lesson2);
+
+        // ==================== LESSON 3: Elixir III - 構造体とプロトコル ====================
+        var lesson3 = new Lesson { titleKey = "elixir_lesson3_title" };
+
+        // Ex1: 構造体（Struct）
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "elixir_lesson3_ex1_title",
+            slideKeyPrefix = "elixir_lesson3_ex1",
+            slideCount = 2,
+            correctLines = new List<string> { "# defmoduleでモジュールを定義", "defmodule Person do", "  # defstructで構造体を定義", "  defstruct name: \"\", email: \"\"", "# endでモジュールを閉じる", "end", "", "# nameに\"Bob\"、emailに\"bob@example.com\"を指定して構造体を作成", "person = %Person{name: \"Bob\", email: \"bob@example.com\"}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "elixir_lesson3_ex1_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "elixir_lesson3_ex1_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "#", localizationKey = "elixir_lesson3_ex1_comment3" },
+                new LocalizedComment { lineIndex = 7, commentPrefix = "#", localizationKey = "elixir_lesson3_ex1_comment4" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex2: 構造体の更新
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "elixir_lesson3_ex2_title",
+            slideKeyPrefix = "elixir_lesson3_ex2",
+            slideCount = 2,
+            correctLines = new List<string> { "# defmoduleでモジュールを定義", "defmodule Product do", "  # defstructで構造体を定義", "  defstruct name: \"\", price: 0", "# endでモジュールを閉じる", "end", "", "# nameに\"Book\"、priceに1000を指定して構造体を作成", "product = %Product{name: \"Book\", price: 1000}", "# |で辞書を更新（priceを1200に）", "updated = %{product | price: 1200}" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "elixir_lesson3_ex2_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "elixir_lesson3_ex2_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "#", localizationKey = "elixir_lesson3_ex2_comment3" },
+                new LocalizedComment { lineIndex = 7, commentPrefix = "#", localizationKey = "elixir_lesson3_ex2_comment4" },
+                new LocalizedComment { lineIndex = 9, commentPrefix = "#", localizationKey = "elixir_lesson3_ex2_comment5" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex3: Enum.reduce
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "elixir_lesson3_ex3_title",
+            slideKeyPrefix = "elixir_lesson3_ex3",
+            slideCount = 2,
+            correctLines = new List<string> { "# リストを定義", "numbers = [1, 2, 3, 4, 5]", "# reduceで畳み込み", "sum = Enum.reduce(numbers, 0, fn x, acc -> x + acc end)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "elixir_lesson3_ex3_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "elixir_lesson3_ex3_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex4: Enum.group_by
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "elixir_lesson3_ex4_title",
+            slideKeyPrefix = "elixir_lesson3_ex4",
+            slideCount = 2,
+            correctLines = new List<string> { "# Alice(25), Bob(30), Carol(25) のタプルのリストを定義", "users = [{\"Alice\", 25}, {\"Bob\", 30}, {\"Carol\", 25}]", "# group_byでグループ化", "grouped = Enum.group_by(users, fn {_name, age} -> age end)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "elixir_lesson3_ex4_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "elixir_lesson3_ex4_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex5: 内包表記（for）
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "elixir_lesson3_ex5_title",
+            slideKeyPrefix = "elixir_lesson3_ex5",
+            slideCount = 2,
+            correctLines = new List<string> { "# forで内包表記", "squares = for x <- 1..5, do: x * x" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "elixir_lesson3_ex5_comment1" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex6: with式
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "elixir_lesson3_ex6_title",
+            slideKeyPrefix = "elixir_lesson3_ex6",
+            slideCount = 2,
+            correctLines = new List<string> { "# defで関数を定義", "def process(map) do", "  # withでパターンマッチを連鎖", "  with {:ok, name} <- Map.fetch(map, :name),", "       {:ok, age} <- Map.fetch(map, :age) do", "    {:ok, \"#{name} is #{age} years old\"}", "  # elseでエラー処理", "  else", "    :error -> {:error, \"Missing field\"}", "  # endでブロックを閉じる", "  end", "# endで関数を閉じる", "end" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "elixir_lesson3_ex6_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "elixir_lesson3_ex6_comment2" },
+                new LocalizedComment { lineIndex = 6, commentPrefix = "#", localizationKey = "elixir_lesson3_ex6_comment3" },
+                new LocalizedComment { lineIndex = 9, commentPrefix = "#", localizationKey = "elixir_lesson3_ex6_comment4" },
+                new LocalizedComment { lineIndex = 11, commentPrefix = "#", localizationKey = "elixir_lesson3_ex6_comment5" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex7: プロトコルの定義
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "elixir_lesson3_ex7_title",
+            slideKeyPrefix = "elixir_lesson3_ex7",
+            slideCount = 2,
+            correctLines = new List<string> { "# defprotocolでプロトコルを定義", "defprotocol Describable do", "  # defで関数を宣言", "  def describe(data)", "# endでプロトコルを閉じる", "end" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "elixir_lesson3_ex7_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "elixir_lesson3_ex7_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "#", localizationKey = "elixir_lesson3_ex7_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex8: プロトコルの実装
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "elixir_lesson3_ex8_title",
+            slideKeyPrefix = "elixir_lesson3_ex8",
+            slideCount = 2,
+            correctLines = new List<string> { "# defimplでプロトコルを実装", "defimpl Describable, for: Map do", "  # defで関数を定義", "  def describe(map) do", "    \"Map with #{map_size(map)} keys\"", "  # endで関数を閉じる", "  end", "# endでブロックを閉じる", "end" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "elixir_lesson3_ex8_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "elixir_lesson3_ex8_comment2" },
+                new LocalizedComment { lineIndex = 5, commentPrefix = "#", localizationKey = "elixir_lesson3_ex8_comment3" },
+                new LocalizedComment { lineIndex = 7, commentPrefix = "#", localizationKey = "elixir_lesson3_ex8_comment4" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex9: Agent
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "elixir_lesson3_ex9_title",
+            slideKeyPrefix = "elixir_lesson3_ex9",
+            slideCount = 2,
+            correctLines = new List<string> { "# start_linkでAgentを開始", "{:ok, counter} = Agent.start_link(fn -> 0 end)", "# updateでAgentの状態を更新", "Agent.update(counter, fn state -> state + 1 end)", "# getでAgentの状態を取得", "value = Agent.get(counter, fn state -> state end)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "elixir_lesson3_ex9_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "elixir_lesson3_ex9_comment2" },
+                new LocalizedComment { lineIndex = 4, commentPrefix = "#", localizationKey = "elixir_lesson3_ex9_comment3" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        // Ex10: Task
+        lesson3.exercises.Add(new Exercise
+        {
+            titleKey = "elixir_lesson3_ex10_title",
+            slideKeyPrefix = "elixir_lesson3_ex10",
+            slideCount = 2,
+            correctLines = new List<string> { "# asyncで非同期タスクを開始", "task = Task.async(fn -> 1 + 2 end)", "# awaitでタスクの結果を待機", "result = Task.await(task)" },
+            comments = new List<LocalizedComment>
+            {
+                new LocalizedComment { lineIndex = 0, commentPrefix = "#", localizationKey = "elixir_lesson3_ex10_comment1" },
+                new LocalizedComment { lineIndex = 2, commentPrefix = "#", localizationKey = "elixir_lesson3_ex10_comment2" },
+            },
+            expectedOutput = new List<string>()
+        });
+
+        lessons.Add(lesson3);
+
+        currentLessonIndex = 0;
+        currentExerciseIndex = 0;
     }
 
     #endregion

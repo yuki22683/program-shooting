@@ -272,6 +272,39 @@ public class CourseButtonSpawner : MonoBehaviour
             case "assembly":
                 InitializeAssemblyCourses();
                 break;
+            case "rust":
+                InitializeRustCourses();
+                break;
+            case "ruby":
+                InitializeRubyCourses();
+                break;
+            case "php":
+                InitializePHPCourses();
+                break;
+            case "swift":
+                InitializeSwiftCourses();
+                break;
+            case "kotlin":
+                InitializeKotlinCourses();
+                break;
+            case "bash":
+                InitializeBashCourses();
+                break;
+            case "sql":
+                InitializeSQLCourses();
+                break;
+            case "lua":
+                InitializeLuaCourses();
+                break;
+            case "perl":
+                InitializePerlCourses();
+                break;
+            case "haskell":
+                InitializeHaskellCourses();
+                break;
+            case "elixir":
+                InitializeElixirCourses();
+                break;
             default:
                 Debug.LogWarning($"[CourseButtonSpawner] Unknown language: {language}, defaulting to Python");
                 InitializePythonCourses();
@@ -298,7 +331,7 @@ public class CourseButtonSpawner : MonoBehaviour
             courseTitleKey = "python_lesson2_course_title",
             courseDescriptionKey = "python_lesson2_course_description",
             difficultyKey = "difficulty_easy",
-            totalExercises = 12,
+            totalExercises = 14,
             completedExercises = 0
         });
 
@@ -691,6 +724,400 @@ public class CourseButtonSpawner : MonoBehaviour
         });
 
         Debug.Log("[CourseButtonSpawner] Initialized 3 Assembly courses");
+    }
+
+    /// <summary>
+    /// Initializes Rust courses
+    /// </summary>
+    private void InitializeRustCourses()
+    {
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "rust_lesson1_course_title",
+            courseDescriptionKey = "rust_lesson1_course_description",
+            difficultyKey = "difficulty_easy",
+            totalExercises = 8,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "rust_lesson2_course_title",
+            courseDescriptionKey = "rust_lesson2_course_description",
+            difficultyKey = "difficulty_medium",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "rust_lesson3_course_title",
+            courseDescriptionKey = "rust_lesson3_course_description",
+            difficultyKey = "difficulty_medium",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "rust_lesson4_course_title",
+            courseDescriptionKey = "rust_lesson4_course_description",
+            difficultyKey = "difficulty_hard",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        Debug.Log("[CourseButtonSpawner] Initialized 4 Rust courses");
+    }
+
+    /// <summary>
+    /// Initializes Ruby courses
+    /// </summary>
+    private void InitializeRubyCourses()
+    {
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "ruby_lesson1_course_title",
+            courseDescriptionKey = "ruby_lesson1_course_description",
+            difficultyKey = "difficulty_easy",
+            totalExercises = 13,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "ruby_lesson2_course_title",
+            courseDescriptionKey = "ruby_lesson2_course_description",
+            difficultyKey = "difficulty_medium",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "ruby_lesson3_course_title",
+            courseDescriptionKey = "ruby_lesson3_course_description",
+            difficultyKey = "difficulty_hard",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        Debug.Log("[CourseButtonSpawner] Initialized 3 Ruby courses");
+    }
+
+    /// <summary>
+    /// Initializes PHP courses
+    /// </summary>
+    private void InitializePHPCourses()
+    {
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "php_lesson1_course_title",
+            courseDescriptionKey = "php_lesson1_course_description",
+            difficultyKey = "difficulty_easy",
+            totalExercises = 13,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "php_lesson2_course_title",
+            courseDescriptionKey = "php_lesson2_course_description",
+            difficultyKey = "difficulty_medium",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "php_lesson3_course_title",
+            courseDescriptionKey = "php_lesson3_course_description",
+            difficultyKey = "difficulty_hard",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        Debug.Log("[CourseButtonSpawner] Initialized 3 PHP courses");
+    }
+
+    /// <summary>
+    /// Initializes Swift courses
+    /// </summary>
+    private void InitializeSwiftCourses()
+    {
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "swift_lesson1_course_title",
+            courseDescriptionKey = "swift_lesson1_course_description",
+            difficultyKey = "difficulty_easy",
+            totalExercises = 8,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "swift_lesson2_course_title",
+            courseDescriptionKey = "swift_lesson2_course_description",
+            difficultyKey = "difficulty_medium",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "swift_lesson3_course_title",
+            courseDescriptionKey = "swift_lesson3_course_description",
+            difficultyKey = "difficulty_hard",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        Debug.Log("[CourseButtonSpawner] Initialized 3 Swift courses");
+    }
+
+    /// <summary>
+    /// Initializes Kotlin courses
+    /// </summary>
+    private void InitializeKotlinCourses()
+    {
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "kotlin_lesson1_course_title",
+            courseDescriptionKey = "kotlin_lesson1_course_description",
+            difficultyKey = "difficulty_easy",
+            totalExercises = 8,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "kotlin_lesson2_course_title",
+            courseDescriptionKey = "kotlin_lesson2_course_description",
+            difficultyKey = "difficulty_medium",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "kotlin_lesson3_course_title",
+            courseDescriptionKey = "kotlin_lesson3_course_description",
+            difficultyKey = "difficulty_medium",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "kotlin_lesson4_course_title",
+            courseDescriptionKey = "kotlin_lesson4_course_description",
+            difficultyKey = "difficulty_hard",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        Debug.Log("[CourseButtonSpawner] Initialized 4 Kotlin courses");
+    }
+
+    /// <summary>
+    /// Initializes Bash courses
+    /// </summary>
+    private void InitializeBashCourses()
+    {
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "bash_lesson1_course_title",
+            courseDescriptionKey = "bash_lesson1_course_description",
+            difficultyKey = "difficulty_easy",
+            totalExercises = 7,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "bash_lesson2_course_title",
+            courseDescriptionKey = "bash_lesson2_course_description",
+            difficultyKey = "difficulty_medium",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "bash_lesson3_course_title",
+            courseDescriptionKey = "bash_lesson3_course_description",
+            difficultyKey = "difficulty_hard",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        Debug.Log("[CourseButtonSpawner] Initialized 3 Bash courses");
+    }
+
+    /// <summary>
+    /// Initializes SQL courses
+    /// </summary>
+    private void InitializeSQLCourses()
+    {
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "sql_lesson1_course_title",
+            courseDescriptionKey = "sql_lesson1_course_description",
+            difficultyKey = "difficulty_easy",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "sql_lesson2_course_title",
+            courseDescriptionKey = "sql_lesson2_course_description",
+            difficultyKey = "difficulty_medium",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "sql_lesson3_course_title",
+            courseDescriptionKey = "sql_lesson3_course_description",
+            difficultyKey = "difficulty_medium",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "sql_lesson4_course_title",
+            courseDescriptionKey = "sql_lesson4_course_description",
+            difficultyKey = "difficulty_hard",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        Debug.Log("[CourseButtonSpawner] Initialized 4 SQL courses");
+    }
+
+    /// <summary>
+    /// Initializes Lua courses
+    /// </summary>
+    private void InitializeLuaCourses()
+    {
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "lua_lesson1_course_title",
+            courseDescriptionKey = "lua_lesson1_course_description",
+            difficultyKey = "difficulty_easy",
+            totalExercises = 3,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "lua_lesson3_course_title",
+            courseDescriptionKey = "lua_lesson3_course_description",
+            difficultyKey = "difficulty_medium",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        Debug.Log("[CourseButtonSpawner] Initialized 2 Lua courses");
+    }
+
+    /// <summary>
+    /// Initializes Perl courses
+    /// </summary>
+    private void InitializePerlCourses()
+    {
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "perl_lesson1_course_title",
+            courseDescriptionKey = "perl_lesson1_course_description",
+            difficultyKey = "difficulty_easy",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "perl_lesson2_course_title",
+            courseDescriptionKey = "perl_lesson2_course_description",
+            difficultyKey = "difficulty_medium",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "perl_lesson3_course_title",
+            courseDescriptionKey = "perl_lesson3_course_description",
+            difficultyKey = "difficulty_hard",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        Debug.Log("[CourseButtonSpawner] Initialized 3 Perl courses");
+    }
+
+    /// <summary>
+    /// Initializes Haskell courses
+    /// </summary>
+    private void InitializeHaskellCourses()
+    {
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "haskell_lesson2_course_title",
+            courseDescriptionKey = "haskell_lesson2_course_description",
+            difficultyKey = "difficulty_medium",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "haskell_lesson3_course_title",
+            courseDescriptionKey = "haskell_lesson3_course_description",
+            difficultyKey = "difficulty_hard",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        Debug.Log("[CourseButtonSpawner] Initialized 2 Haskell courses");
+    }
+
+    /// <summary>
+    /// Initializes Elixir courses
+    /// </summary>
+    private void InitializeElixirCourses()
+    {
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "elixir_lesson1_course_title",
+            courseDescriptionKey = "elixir_lesson1_course_description",
+            difficultyKey = "difficulty_easy",
+            totalExercises = 3,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "elixir_lesson2_course_title",
+            courseDescriptionKey = "elixir_lesson2_course_description",
+            difficultyKey = "difficulty_medium",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        courses.Add(new CourseData
+        {
+            courseTitleKey = "elixir_lesson3_course_title",
+            courseDescriptionKey = "elixir_lesson3_course_description",
+            difficultyKey = "difficulty_hard",
+            totalExercises = 10,
+            completedExercises = 0
+        });
+
+        Debug.Log("[CourseButtonSpawner] Initialized 3 Elixir courses");
     }
 
     /// <summary>
