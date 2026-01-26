@@ -460,10 +460,27 @@ public class SlideManager : MonoBehaviour
         string rawContent = LocalizationManager.Instance.GetText(contentKey);
         DisplaySplitContent(rawContent);
 
-        // Load slide image from Resources (e.g., SlideImages/python_lesson1_ex1_slide1)
+        // Load slide image from Resources
+        // First try JSON _image key (e.g., /illustrations/common/monitor.png)
+        // Then fallback to SlideImages folder (e.g., SlideImages/python_lesson1_ex1_slide1)
         if (slideImage != null)
         {
-            string imagePath = $"SlideImages/{slideKeyPrefix}_slide{index + 1}";
+            string imageKey = $"{slideKeyPrefix}_slide{index + 1}_image";
+            string imagePath = LocalizationManager.Instance.GetText(imageKey);
+
+            // If JSON _image key exists and is not the key itself, convert path for Resources.Load
+            if (!string.IsNullOrEmpty(imagePath) && imagePath != imageKey)
+            {
+                // Convert "/illustrations/common/monitor.png" to "illustrations/common/monitor"
+                imagePath = imagePath.TrimStart('/').Replace(".png", "").Replace(".jpg", "");
+                Debug.Log($"[SlideManager] Using JSON image path: {imagePath}");
+            }
+            else
+            {
+                // Fallback to SlideImages folder
+                imagePath = $"SlideImages/{slideKeyPrefix}_slide{index + 1}";
+                Debug.Log($"[SlideManager] Using fallback SlideImages path: {imagePath}");
+            }
 
             // Try loading as Sprite first, then as Texture2D
             Sprite sprite = Resources.Load<Sprite>(imagePath);

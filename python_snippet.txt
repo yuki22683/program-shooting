@@ -1,0 +1,532 @@
+    private void InitializePythonLessons()
+    {
+        Lesson lesson1 = new Lesson { titleKey = "python_lesson1_title" };
+        Lesson lesson2 = new Lesson { titleKey = "python_lesson2_title" };
+        Lesson lesson3 = new Lesson { titleKey = "python_lesson3_title" };
+        Lesson lesson4 = new Lesson { titleKey = "python_lesson4_title" };
+        Lesson lesson5 = new Lesson { titleKey = "python_lesson5_title" };
+
+        // Lesson 1
+        // Ex1: 
+        lesson1.exercises.Add(new Exercise {
+            titleKey = "python_lesson1_ex1_title",
+            slideKeyPrefix = "python_lesson1_ex1",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex2: 
+        lesson1.exercises.Add(new Exercise {
+            titleKey = "python_lesson1_ex2_title",
+            slideKeyPrefix = "python_lesson1_ex2",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex3: 
+        lesson1.exercises.Add(new Exercise {
+            titleKey = "python_lesson1_ex3_title",
+            slideKeyPrefix = "python_lesson1_ex3",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex4: 
+        lesson1.exercises.Add(new Exercise {
+            titleKey = "python_lesson1_ex4_title",
+            slideKeyPrefix = "python_lesson1_ex4",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex5: 
+        lesson1.exercises.Add(new Exercise {
+            titleKey = "python_lesson1_ex5_title",
+            slideKeyPrefix = "python_lesson1_ex5",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex6: 
+        lesson1.exercises.Add(new Exercise {
+            titleKey = "python_lesson1_ex6_title",
+            slideKeyPrefix = "python_lesson1_ex6",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex7: 
+        lesson1.exercises.Add(new Exercise {
+            titleKey = "python_lesson1_ex7_title",
+            slideKeyPrefix = "python_lesson1_ex7",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex8: 
+        lesson1.exercises.Add(new Exercise {
+            titleKey = "python_lesson1_ex8_title",
+            slideKeyPrefix = "python_lesson1_ex8",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex9: 
+        lesson1.exercises.Add(new Exercise {
+            titleKey = "python_lesson1_ex9_title",
+            slideKeyPrefix = "python_lesson1_ex9",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex10: 
+        lesson1.exercises.Add(new Exercise {
+            titleKey = "python_lesson1_ex10_title",
+            slideKeyPrefix = "python_lesson1_ex10",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex11: 
+        lesson1.exercises.Add(new Exercise {
+            titleKey = "python_lesson1_ex11_title",
+            slideKeyPrefix = "python_lesson1_ex11",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex12: 
+        lesson1.exercises.Add(new Exercise {
+            titleKey = "python_lesson1_ex12_title",
+            slideKeyPrefix = "python_lesson1_ex12",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex13: 
+        lesson1.exercises.Add(new Exercise {
+            titleKey = "python_lesson1_ex13_title",
+            slideKeyPrefix = "python_lesson1_ex13",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Lesson 2
+        // Ex1: 
+        lesson2.exercises.Add(new Exercise {
+            titleKey = "python_lesson2_ex1_title",
+            slideKeyPrefix = "python_lesson2_ex1",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex2: 
+        lesson2.exercises.Add(new Exercise {
+            titleKey = "python_lesson2_ex2_title",
+            slideKeyPrefix = "python_lesson2_ex2",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex3: 
+        lesson2.exercises.Add(new Exercise {
+            titleKey = "python_lesson2_ex3_title",
+            slideKeyPrefix = "python_lesson2_ex3",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex4: 
+        lesson2.exercises.Add(new Exercise {
+            titleKey = "python_lesson2_ex4_title",
+            slideKeyPrefix = "python_lesson2_ex4",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex5: 
+        lesson2.exercises.Add(new Exercise {
+            titleKey = "python_lesson2_ex5_title",
+            slideKeyPrefix = "python_lesson2_ex5",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex6: 
+        lesson2.exercises.Add(new Exercise {
+            titleKey = "python_lesson2_ex6_title",
+            slideKeyPrefix = "python_lesson2_ex6",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex7: 
+        lesson2.exercises.Add(new Exercise {
+            titleKey = "python_lesson2_ex7_title",
+            slideKeyPrefix = "python_lesson2_ex7",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex8: 
+        lesson2.exercises.Add(new Exercise {
+            titleKey = "python_lesson2_ex8_title",
+            slideKeyPrefix = "python_lesson2_ex8",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex9: 
+        lesson2.exercises.Add(new Exercise {
+            titleKey = "python_lesson2_ex9_title",
+            slideKeyPrefix = "python_lesson2_ex9",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex10: 
+        lesson2.exercises.Add(new Exercise {
+            titleKey = "python_lesson2_ex10_title",
+            slideKeyPrefix = "python_lesson2_ex10",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex11: 
+        lesson2.exercises.Add(new Exercise {
+            titleKey = "python_lesson2_ex11_title",
+            slideKeyPrefix = "python_lesson2_ex11",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex12: 
+        lesson2.exercises.Add(new Exercise {
+            titleKey = "python_lesson2_ex12_title",
+            slideKeyPrefix = "python_lesson2_ex12",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex13: 
+        lesson2.exercises.Add(new Exercise {
+            titleKey = "python_lesson2_ex13_title",
+            slideKeyPrefix = "python_lesson2_ex13",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex14: 
+        lesson2.exercises.Add(new Exercise {
+            titleKey = "python_lesson2_ex14_title",
+            slideKeyPrefix = "python_lesson2_ex14",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Lesson 3
+        // Ex1: 
+        lesson3.exercises.Add(new Exercise {
+            titleKey = "python_lesson3_ex1_title",
+            slideKeyPrefix = "python_lesson3_ex1",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex2: 
+        lesson3.exercises.Add(new Exercise {
+            titleKey = "python_lesson3_ex2_title",
+            slideKeyPrefix = "python_lesson3_ex2",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex3: 
+        lesson3.exercises.Add(new Exercise {
+            titleKey = "python_lesson3_ex3_title",
+            slideKeyPrefix = "python_lesson3_ex3",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex4: 
+        lesson3.exercises.Add(new Exercise {
+            titleKey = "python_lesson3_ex4_title",
+            slideKeyPrefix = "python_lesson3_ex4",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex5: 
+        lesson3.exercises.Add(new Exercise {
+            titleKey = "python_lesson3_ex5_title",
+            slideKeyPrefix = "python_lesson3_ex5",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex6: 
+        lesson3.exercises.Add(new Exercise {
+            titleKey = "python_lesson3_ex6_title",
+            slideKeyPrefix = "python_lesson3_ex6",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex7: 
+        lesson3.exercises.Add(new Exercise {
+            titleKey = "python_lesson3_ex7_title",
+            slideKeyPrefix = "python_lesson3_ex7",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex8: 
+        lesson3.exercises.Add(new Exercise {
+            titleKey = "python_lesson3_ex8_title",
+            slideKeyPrefix = "python_lesson3_ex8",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex9: 
+        lesson3.exercises.Add(new Exercise {
+            titleKey = "python_lesson3_ex9_title",
+            slideKeyPrefix = "python_lesson3_ex9",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex10: 
+        lesson3.exercises.Add(new Exercise {
+            titleKey = "python_lesson3_ex10_title",
+            slideKeyPrefix = "python_lesson3_ex10",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Lesson 4
+        // Ex1: 
+        lesson4.exercises.Add(new Exercise {
+            titleKey = "python_lesson4_ex1_title",
+            slideKeyPrefix = "python_lesson4_ex1",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex2: 
+        lesson4.exercises.Add(new Exercise {
+            titleKey = "python_lesson4_ex2_title",
+            slideKeyPrefix = "python_lesson4_ex2",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex3: 
+        lesson4.exercises.Add(new Exercise {
+            titleKey = "python_lesson4_ex3_title",
+            slideKeyPrefix = "python_lesson4_ex3",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex4: 
+        lesson4.exercises.Add(new Exercise {
+            titleKey = "python_lesson4_ex4_title",
+            slideKeyPrefix = "python_lesson4_ex4",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex5: 
+        lesson4.exercises.Add(new Exercise {
+            titleKey = "python_lesson4_ex5_title",
+            slideKeyPrefix = "python_lesson4_ex5",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex6: 
+        lesson4.exercises.Add(new Exercise {
+            titleKey = "python_lesson4_ex6_title",
+            slideKeyPrefix = "python_lesson4_ex6",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex7: 
+        lesson4.exercises.Add(new Exercise {
+            titleKey = "python_lesson4_ex7_title",
+            slideKeyPrefix = "python_lesson4_ex7",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex8: 
+        lesson4.exercises.Add(new Exercise {
+            titleKey = "python_lesson4_ex8_title",
+            slideKeyPrefix = "python_lesson4_ex8",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex9: 
+        lesson4.exercises.Add(new Exercise {
+            titleKey = "python_lesson4_ex9_title",
+            slideKeyPrefix = "python_lesson4_ex9",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex10: 
+        lesson4.exercises.Add(new Exercise {
+            titleKey = "python_lesson4_ex10_title",
+            slideKeyPrefix = "python_lesson4_ex10",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Lesson 5
+        // Ex1: 
+        lesson5.exercises.Add(new Exercise {
+            titleKey = "python_lesson5_ex1_title",
+            slideKeyPrefix = "python_lesson5_ex1",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex2: 
+        lesson5.exercises.Add(new Exercise {
+            titleKey = "python_lesson5_ex2_title",
+            slideKeyPrefix = "python_lesson5_ex2",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex3: 
+        lesson5.exercises.Add(new Exercise {
+            titleKey = "python_lesson5_ex3_title",
+            slideKeyPrefix = "python_lesson5_ex3",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex4: 
+        lesson5.exercises.Add(new Exercise {
+            titleKey = "python_lesson5_ex4_title",
+            slideKeyPrefix = "python_lesson5_ex4",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex5: 
+        lesson5.exercises.Add(new Exercise {
+            titleKey = "python_lesson5_ex5_title",
+            slideKeyPrefix = "python_lesson5_ex5",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex6: 
+        lesson5.exercises.Add(new Exercise {
+            titleKey = "python_lesson5_ex6_title",
+            slideKeyPrefix = "python_lesson5_ex6",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex7: 
+        lesson5.exercises.Add(new Exercise {
+            titleKey = "python_lesson5_ex7_title",
+            slideKeyPrefix = "python_lesson5_ex7",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex8: 
+        lesson5.exercises.Add(new Exercise {
+            titleKey = "python_lesson5_ex8_title",
+            slideKeyPrefix = "python_lesson5_ex8",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex9: 
+        lesson5.exercises.Add(new Exercise {
+            titleKey = "python_lesson5_ex9_title",
+            slideKeyPrefix = "python_lesson5_ex9",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        // Ex10: 
+        lesson5.exercises.Add(new Exercise {
+            titleKey = "python_lesson5_ex10_title",
+            slideKeyPrefix = "python_lesson5_ex10",
+            slideCount = 1,
+            correctLines = new List<string> {  },
+            comments = new List<LocalizedComment>(),
+            expectedOutput = new List<string>()
+        });
+        lessons.Add(lesson1);
+        lessons.Add(lesson2);
+        lessons.Add(lesson3);
+        lessons.Add(lesson4);
+        lessons.Add(lesson5);
+    }
