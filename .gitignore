@@ -43,3 +43,4 @@ Thumbs.db
 # Misc
 .svn/
 node_modules/
+scripts/__pycache__/

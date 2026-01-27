@@ -26,6 +26,46 @@ LANGUAGES = [
     "lua", "perl", "haskell", "elixir", "assembly"
 ]
 
+def sanitize_json_string(json_str):
+    """Sanitize JSON string to handle special characters from TypeScript files."""
+    # Valid JSON escape characters: " \ / b f n r t u
+    # Any backslash followed by other characters needs to be escaped
+
+    # Handle actual tab characters inside strings -> \t
+    def replace_tabs_in_strings(m):
+        return m.group(0).replace('\t', '\\t')
+    json_str = re.sub(r'"[^"\\]*(?:\\.[^"\\]*)*"', replace_tabs_in_strings, json_str)
+
+    # Escape backslashes before invalid escape characters
+    # Match backslash NOT followed by valid escape chars: " \ / b f n r t u
+    # We need to be careful not to double-escape already valid sequences
+    def fix_invalid_escapes(m):
+        s = m.group(0)
+        result = []
+        i = 0
+        while i < len(s):
+            if s[i] == '\\' and i + 1 < len(s):
+                next_char = s[i + 1]
+                # Valid JSON escapes
+                if next_char in '"\\\/bfnrtu':
+                    result.append(s[i:i+2])
+                    i += 2
+                else:
+                    # Invalid escape - add extra backslash
+                    result.append('\\\\')
+                    result.append(next_char)
+                    i += 2
+            else:
+                result.append(s[i])
+                i += 1
+        return ''.join(result)
+
+    # Apply fix to all string values
+    json_str = re.sub(r'"[^"]*(?:\\.[^"]*)*"', fix_invalid_escapes, json_str)
+
+    return json_str
+
+
 def parse_ts_file(file_path):
     """Parse TypeScript file and extract JSON data."""
     if not file_path.exists():
@@ -38,6 +78,8 @@ def parse_ts_file(file_path):
     if match:
         json_str = match.group(1)
         json_str = re.sub(r',(\s*[}\]])', r'\1', json_str)
+        # Sanitize special characters
+        json_str = sanitize_json_string(json_str)
         try:
             return json.loads(json_str)
         except json.JSONDecodeError as e:
