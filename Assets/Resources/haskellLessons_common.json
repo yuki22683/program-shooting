@@ -6,11 +6,14 @@
   "haskell_lesson1_ex2_slide2_image": "/illustrations/common/box.png",
   "haskell_lesson1_ex3_slide1_image": "/illustrations/common/robot_math.png",
   "haskell_lesson1_ex3_slide2_image": "/illustrations/common/robot_math.png",
+  "haskell_lesson2_ex10_slide1_image": "/illustrations/3d/gear.png",
+  "haskell_lesson2_ex10_slide2_image": "/illustrations/3d/gear.png",
   "haskell_lesson2_ex1_slide1_image": "/illustrations/3d/gear.png",
   "haskell_lesson2_ex1_slide2_image": "/illustrations/3d/gear.png",
   "haskell_lesson2_ex2_slide1_image": "/illustrations/3d/gear.png",
   "haskell_lesson2_ex2_slide2_image": "/illustrations/3d/gear.png",
   "haskell_lesson2_ex3_slide1_image": "/illustrations/3d/gear.png",
+  "haskell_lesson2_ex3_slide2_image": "/illustrations/3d/gear.png",
   "haskell_lesson2_ex4_slide1_image": "/illustrations/3d_advanced/comprehension.png",
   "haskell_lesson2_ex4_slide2_image": "/illustrations/3d_advanced/comprehension.png",
   "haskell_lesson2_ex5_slide1_image": "/illustrations/3d_advanced/comprehension.png",
@@ -23,8 +26,7 @@
   "haskell_lesson2_ex8_slide2_image": "/illustrations/3d_advanced/lambda_spark.png",
   "haskell_lesson2_ex9_slide1_image": "/illustrations/3d_advanced/comprehension.png",
   "haskell_lesson2_ex9_slide2_image": "/illustrations/3d_advanced/comprehension.png",
-  "haskell_lesson2_ex10_slide1_image": "/illustrations/3d/gear.png",
-  "haskell_lesson2_ex10_slide2_image": "/illustrations/3d/gear.png",
+  "haskell_lesson3_ex10_slide1_image": "/illustrations/3d_advanced/comprehension.png",
   "haskell_lesson3_ex1_slide1_image": "/illustrations/3d_advanced/comprehension.png",
   "haskell_lesson3_ex2_slide1_image": "/illustrations/3d_advanced/comprehension.png",
   "haskell_lesson3_ex3_slide1_image": "/illustrations/3d_advanced/lambda_spark.png",
@@ -33,7 +35,5 @@
   "haskell_lesson3_ex6_slide1_image": "/illustrations/3d/maybe_box.png",
   "haskell_lesson3_ex7_slide1_image": "/illustrations/3d/either_fork.png",
   "haskell_lesson3_ex8_slide1_image": "/illustrations/3d_advanced/comprehension.png",
-  "haskell_lesson3_ex9_slide1_image": "/illustrations/3d/do_sequence.png",
-  "haskell_lesson3_ex10_slide1_image": "/illustrations/3d_advanced/comprehension.png",
-  "haskell_lesson2_ex3_slide2_image": "/illustrations/3d/gear.png"
+  "haskell_lesson3_ex9_slide1_image": "/illustrations/3d/do_sequence.png"
 }

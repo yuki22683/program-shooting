@@ -6,6 +6,8 @@
   "lua_lesson1_ex2_slide2_image": "/illustrations/common/box.png",
   "lua_lesson1_ex3_slide1_image": "/illustrations/common/robot_math.png",
   "lua_lesson1_ex3_slide2_image": "/illustrations/common/robot_math.png",
+  "lua_lesson2_ex10_slide1_image": "/illustrations/3d_advanced/concurrency.png",
+  "lua_lesson2_ex10_slide2_image": "/illustrations/3d/gear.png",
   "lua_lesson2_ex1_slide1_image": "/illustrations/3d/gear.png",
   "lua_lesson2_ex1_slide2_image": "/illustrations/3d/gear.png",
   "lua_lesson2_ex2_slide1_image": "/illustrations/3d/gear.png",
@@ -24,8 +26,8 @@
   "lua_lesson2_ex8_slide2_image": "/illustrations/3d/gear.png",
   "lua_lesson2_ex9_slide1_image": "/illustrations/3d_advanced/lambda_spark.png",
   "lua_lesson2_ex9_slide2_image": "/illustrations/3d_advanced/lambda_spark.png",
-  "lua_lesson2_ex10_slide1_image": "/illustrations/3d_advanced/concurrency.png",
-  "lua_lesson2_ex10_slide2_image": "/illustrations/3d/gear.png",
+  "lua_lesson3_ex10_slide1_image": "/illustrations/3d/gear.png",
+  "lua_lesson3_ex10_slide2_image": "/illustrations/3d/gear.png",
   "lua_lesson3_ex1_slide1_image": "/illustrations/3d/gear.png",
   "lua_lesson3_ex1_slide2_image": "/illustrations/3d/gear.png",
   "lua_lesson3_ex2_slide1_image": "/illustrations/3d/gear.png",
@@ -43,7 +45,5 @@
   "lua_lesson3_ex8_slide1_image": "/illustrations/3d/gear.png",
   "lua_lesson3_ex8_slide2_image": "/illustrations/3d/gear.png",
   "lua_lesson3_ex9_slide1_image": "/illustrations/3d/gear.png",
-  "lua_lesson3_ex9_slide2_image": "/illustrations/3d/gear.png",
-  "lua_lesson3_ex10_slide1_image": "/illustrations/3d/gear.png",
-  "lua_lesson3_ex10_slide2_image": "/illustrations/3d/gear.png"
+  "lua_lesson3_ex9_slide2_image": "/illustrations/3d/gear.png"
 }
