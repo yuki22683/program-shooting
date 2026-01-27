@@ -47,17 +47,59 @@ public class LocalizationManager : MonoBehaviour
 		allLanguages = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, string>>>(jsonFile.text);
 		allLanguagesPrivacyPolicy = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, string>>>(jsonFilePrivacyPolicy.text);
 
-		// Load programming language lesson files and merge
-		string[] lessonFiles = { "pythonLessons", "javascriptLessons", "typescriptLessons", "javaLessons", "cLessons", "cppLessons", "csharpLessons", "assemblyLessons" };
-		foreach (var fileName in lessonFiles)
+		// Programming language lesson file base names
+		string[] lessonFiles = {
+			"pythonLessons", "javascriptLessons", "typescriptLessons", "javaLessons",
+			"cLessons", "cppLessons", "csharpLessons", "assemblyLessons",
+			"goLessons", "rustLessons", "rubyLessons", "phpLessons",
+			"swiftLessons", "kotlinLessons", "bashLessons", "sqlLessons",
+			"luaLessons", "perlLessons", "haskellLessons", "elixirLessons"
+		};
+
+		// Language codes to load
+		string[] langCodes = {
+			"en", "ja", "cs", "de", "nl", "da", "el", "fi", "fr", "it",
+			"ko", "no", "pl", "pt", "ro", "ru", "es", "sv", "tr", "zh-Hans", "zh-Hant"
+		};
+
+		// Load lesson files for each language
+		foreach (var baseName in lessonFiles)
 		{
-			TextAsset lessonFile = Resources.Load<TextAsset>(fileName);
-			if (lessonFile != null)
+			// Load common data first (shared across all languages)
+			TextAsset commonFile = Resources.Load<TextAsset>($"{baseName}_common");
+			if (commonFile != null)
 			{
-				var lessonData = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, string>>>(lessonFile.text);
-				MergeLocalizationData(lessonData);
-				Debug.Log($"[LocalizationManager] Loaded {fileName}.json");
+				var commonData = JsonConvert.DeserializeObject<Dictionary<string, string>>(commonFile.text);
+				if (commonData != null)
+				{
+					foreach (var langCode in allLanguages.Keys)
+					{
+						foreach (var textPair in commonData)
+						{
+							allLanguages[langCode][textPair.Key] = textPair.Value;
+						}
+					}
+				}
 			}
+
+			// Load each language file
+			foreach (var langCode in langCodes)
+			{
+				string fileName = $"{baseName}_{langCode}";
+				TextAsset lessonFile = Resources.Load<TextAsset>(fileName);
+				if (lessonFile != null)
+				{
+					var langData = JsonConvert.DeserializeObject<Dictionary<string, string>>(lessonFile.text);
+					if (langData != null && allLanguages.ContainsKey(langCode))
+					{
+						foreach (var textPair in langData)
+						{
+							allLanguages[langCode][textPair.Key] = textPair.Value;
+						}
+					}
+				}
+			}
+			Debug.Log($"[LocalizationManager] Loaded {baseName} lesson files");
 		}
 
         if (DataManager.gameSettings.languageSettings.languageCode == "")
@@ -82,24 +124,6 @@ public class LocalizationManager : MonoBehaviour
 		}
 	}
 
-	private void MergeLocalizationData(Dictionary<string, Dictionary<string, string>> sourceData)
-	{
-		if (sourceData == null) return;
-
-		foreach (var langPair in sourceData)
-		{
-			string langCode = langPair.Key;
-			if (!allLanguages.ContainsKey(langCode))
-			{
-				allLanguages[langCode] = new Dictionary<string, string>();
-			}
-
-			foreach (var textPair in langPair.Value)
-			{
-				allLanguages[langCode][textPair.Key] = textPair.Value;
-			}
-		}
-	}
 
 	public string GetText(string key)
 	{

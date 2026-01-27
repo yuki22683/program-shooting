@@ -1,0 +1,11 @@
+{
+  "assembly_lesson1_course_title": "Thử thách Assembly!",
+  "assembly_lesson1_course_description": "Học những kiến thức cơ bản về assembly - ngôn ngữ thô nói trực tiếp với bộ não của máy tính (CPU). Khám phá cách máy tính thực sự hoạt động ở cấp độ thấp nhất.",
+  "assembly_lesson1_title": "Assembly I - Bắt đầu",
+  "assembly_lesson2_course_title": "Assembly II - Thanh ghi và phép toán",
+  "assembly_lesson2_course_description": "Học các phép toán cơ bản và luồng điều khiển trong assembly. Hiểu cách sử dụng thanh ghi, phép toán số học và rẽ nhánh có điều kiện.",
+  "assembly_lesson2_title": "Assembly II - Thanh ghi và phép toán",
+  "assembly_lesson3_course_title": "Assembly III - Bộ nhớ và ngăn xếp",
+  "assembly_lesson3_course_description": "Học các thao tác bộ nhớ và thao tác ngăn xếp trong assembly. Thành thạo cách lưu trữ và truy xuất dữ liệu.",
+  "assembly_lesson3_title": "Assembly III - Bộ nhớ và ngăn xếp"
+}

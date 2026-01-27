@@ -1,0 +1,11 @@
+{
+  "assembly_lesson1_course_title": "Виклик Assembly!",
+  "assembly_lesson1_course_description": "Вивчіть основи асемблера - сирої мови, яка говорить безпосередньо з мозком вашого комп'ютера (CPU). Дізнайтеся, як комп'ютери насправді працюють на найнижчому рівні.",
+  "assembly_lesson1_title": "Assembly I - Початок",
+  "assembly_lesson2_course_title": "Assembly II - Регістри та операції",
+  "assembly_lesson2_course_description": "Вивчіть базові операції та потік керування в асемблері. Зрозумійте, як використовувати регістри, арифметичні операції та умовні переходи.",
+  "assembly_lesson2_title": "Assembly II - Регістри та операції",
+  "assembly_lesson3_course_title": "Assembly III - Пам'ять та стек",
+  "assembly_lesson3_course_description": "Вивчіть операції з пам'яттю та маніпуляції зі стеком в асемблері. Опануйте зберігання та отримання даних.",
+  "assembly_lesson3_title": "Assembly III - Пам'ять та стек"
+}

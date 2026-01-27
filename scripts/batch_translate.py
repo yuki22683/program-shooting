@@ -1,141 +1,135 @@
 #!/usr/bin/env python3
 """
-Batch translate Japanese lesson content to English using Gemini CLI.
-Processes one language at a time, saves progress.
+Batch translate JA files to EN using efficient chunking.
 """
-
 import json
-import os
-import subprocess
-import sys
 import re
+import sys
+import io
 import time
+from pathlib import Path
 
-def has_japanese(text):
-    """Check if text contains Japanese characters."""
-    if not text:
-        return False
-    return bool(re.search(r'[\u3040-\u309f\u30a0-\u30ff\u4e00-\u9fff]', text))
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
-
-def call_gemini(prompt):
-    """Call Gemini CLI."""
-    try:
-        result = subprocess.run(
-            ['gemini.cmd', '-p', prompt],
-            capture_output=True,
-            text=True,
-            encoding='utf-8',
-            timeout=120
-        )
-        # Remove "Loaded cached credentials." line
-        output = result.stdout.strip()
-        lines = output.split('\n')
-        if lines and 'cached credentials' in lines[0].lower():
-            output = '\n'.join(lines[1:]).strip()
-        return output
-    except Exception as e:
-        print(f"  Error: {e}")
-        return None
-
-
-def translate_text(text, key_type="content"):
-    """Translate a single text."""
-    if not text or not has_japanese(text):
+# Import JSON utilities for sanitization
+try:
+    from json_utils import sanitize_text_for_json, safe_json_dump, validate_json_file
+except ImportError:
+    # Fallback if module not found
+    def sanitize_text_for_json(text):
+        if not text:
+            return text
+        # Basic smart quote replacement
+        text = text.replace('\u201c', '"').replace('\u201d', '"')
+        text = text.replace('\u2018', "'").replace('\u2019', "'")
         return text
+    safe_json_dump = None
+    validate_json_file = None
 
-    if key_type == "title":
-        prompt = f"""Translate this Japanese title to English. Return ONLY the translation:
-{text}"""
-    else:
-        prompt = f"""Translate this Japanese programming tutorial text to English.
-Keep all code blocks (``` ```) and inline code (` `) exactly as they are.
-Keep markdown formatting (# headers, lists, etc.).
-Return ONLY the translation, no explanations:
+try:
+    from deep_translator import GoogleTranslator
+except ImportError:
+    import subprocess
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "deep-translator", "-q"])
+    from deep_translator import GoogleTranslator
 
-{text}"""
+LOCAL_DIR = Path("C:/Work/MetaXR/ProgramShooting/Assets/Resources")
 
-    result = call_gemini(prompt)
+LANGUAGES = [
+    "python", "javascript", "typescript", "java",
+    "c", "cpp", "csharp", "assembly",
+    "go", "rust", "ruby", "php",
+    "swift", "kotlin", "bash", "sql",
+    "lua", "perl", "haskell", "elixir"
+]
 
-    if result and not has_japanese(result):
-        return result
+def protect_code(text):
+    blocks = []
+    def save_block(m):
+        blocks.append(m.group(0))
+        return f"CODEBLOCK{len(blocks)-1}ENDBLOCK"
+    text = re.sub(r'```[\s\S]*?```', save_block, text)
+    inlines = []
+    def save_inline(m):
+        inlines.append(m.group(0))
+        return f"INLINECODE{len(inlines)-1}ENDINLINE"
+    text = re.sub(r'`[^`]+`', save_inline, text)
+    return text, blocks, inlines
+
+def restore_code(text, blocks, inlines):
+    for i, b in enumerate(blocks):
+        text = text.replace(f"CODEBLOCK{i}ENDBLOCK", b)
+    for i, c in enumerate(inlines):
+        text = text.replace(f"INLINECODE{i}ENDINLINE", c)
     return text
 
+def translate_text(translator, text):
+    if not text or not text.strip():
+        return text
+    protected, blocks, inlines = protect_code(text)
+    try:
+        translated = translator.translate(protected)
+        restored = restore_code(translated, blocks, inlines)
+        # Sanitize to prevent JSON corruption
+        return sanitize_text_for_json(restored)
+    except Exception as e:
+        return text
 
 def process_language(lang):
-    """Process a single language file."""
-    filepath = f'Assets/Resources/{lang}Lessons.json'
-
-    if not os.path.exists(filepath):
-        print(f"File not found: {filepath}")
+    ja_path = LOCAL_DIR / f"{lang}Lessons_ja.json"
+    en_path = LOCAL_DIR / f"{lang}Lessons_en.json"
+    if not ja_path.exists():
         return 0
-
-    with open(filepath, 'r', encoding='utf-8') as f:
-        data = json.load(f)
-
-    en_data = data.get('en', {})
-
-    # Find keys with Japanese content
-    keys_to_translate = []
-    for key, value in en_data.items():
-        if has_japanese(value) and not key.endswith('_image'):
-            keys_to_translate.append(key)
-
-    total = len(keys_to_translate)
-    print(f"\n{lang}: {total} keys to translate")
-
-    if total == 0:
+    with open(ja_path, 'r', encoding='utf-8') as f:
+        ja_data = json.load(f)
+    en_data = {}
+    if en_path.exists():
+        with open(en_path, 'r', encoding='utf-8') as f:
+            en_data = json.load(f)
+    translator = GoogleTranslator(source='ja', target='en')
+    keys_to_translate = [k for k in ja_data if k not in en_data or not en_data[k]]
+    if not keys_to_translate:
+        print(f"  Already done")
         return 0
+    print(f"  {len(keys_to_translate)} keys to translate...")
+    count = 0
+    for key in keys_to_translate:
+        en_data[key] = translate_text(translator, ja_data[key])
+        count += 1
+        if count % 50 == 0:
+            print(f"    {count}/{len(keys_to_translate)}")
+        time.sleep(0.02)
+    sorted_data = dict(sorted(en_data.items()))
 
-    translated = 0
-    for i, key in enumerate(keys_to_translate):
-        print(f"  [{i+1}/{total}] {key[:50]}...", end=" ", flush=True)
+    # Validate before writing
+    if safe_json_dump:
+        try:
+            safe_json_dump(sorted_data, en_path, indent=2)
+        except ValueError as e:
+            print(f"    ERROR: JSON validation failed: {e}")
+            return 0
+    else:
+        with open(en_path, 'w', encoding='utf-8') as f:
+            json.dump(sorted_data, f, ensure_ascii=False, indent=2)
 
-        key_type = "title" if '_title' in key else "content"
-        result = translate_text(en_data[key], key_type)
+    # Verify the written file
+    if validate_json_file:
+        is_valid, error, _ = validate_json_file(en_path)
+        if not is_valid:
+            print(f"    WARNING: Written file has JSON errors: {error}")
 
-        if result != en_data[key]:
-            en_data[key] = result
-            translated += 1
-            print("OK")
-        else:
-            print("SKIP")
-
-        # Save progress every 10 keys
-        if (i + 1) % 10 == 0:
-            data['en'] = en_data
-            with open(filepath, 'w', encoding='utf-8') as f:
-                json.dump(data, f, ensure_ascii=False, indent=4)
-            print(f"  [Saved progress: {translated}/{i+1}]")
-
-        time.sleep(0.3)  # Rate limiting
-
-    # Final save
-    data['en'] = en_data
-    with open(filepath, 'w', encoding='utf-8') as f:
-        json.dump(data, f, ensure_ascii=False, indent=4)
-
-    print(f"  Completed: {translated}/{total}")
-    return translated
-
+    return count
 
 def main():
-    if len(sys.argv) > 1:
-        langs = sys.argv[1:]
-    else:
-        # All languages
-        files = [os.path.basename(f).replace('Lessons.json', '')
-                 for f in sorted(os.listdir('Assets/Resources'))
-                 if f.endswith('Lessons.json')]
-        langs = files
+    print("JA -> EN Translation")
+    for lang in LANGUAGES:
+        print(f"[{lang}]")
+        try:
+            count = process_language(lang)
+            print(f"  OK: {count}")
+        except Exception as e:
+            print(f"  ERROR: {e}")
+    print("Done")
 
-    total = 0
-    for lang in langs:
-        count = process_language(lang)
-        total += count
-
-    print(f"\n=== Total: {total} keys translated ===")
-
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
