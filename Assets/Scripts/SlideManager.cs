@@ -460,82 +460,10 @@ public class SlideManager : MonoBehaviour
         string rawContent = LocalizationManager.Instance.GetText(contentKey);
         DisplaySplitContent(rawContent);
 
-        // Load slide image from Resources
-        // First try JSON _image key (e.g., /illustrations/common/monitor.png)
-        // Then fallback to SlideImages folder (e.g., SlideImages/python_lesson1_ex1_slide1)
+        // Disable slide images completely
         if (slideImage != null)
         {
-            string imageKey = $"{slideKeyPrefix}_slide{index + 1}_image";
-            string imagePath = LocalizationManager.Instance.GetText(imageKey);
-
-            // If JSON _image key exists and is not the key itself, convert path for Resources.Load
-            if (!string.IsNullOrEmpty(imagePath) && imagePath != imageKey)
-            {
-                // Convert "/illustrations/common/monitor.png" to "illustrations/common/monitor"
-                imagePath = imagePath.TrimStart('/').Replace(".png", "").Replace(".jpg", "");
-                Debug.Log($"[SlideManager] Using JSON image path: {imagePath}");
-            }
-            else
-            {
-                // Fallback to SlideImages folder
-                imagePath = $"SlideImages/{slideKeyPrefix}_slide{index + 1}";
-                Debug.Log($"[SlideManager] Using fallback SlideImages path: {imagePath}");
-            }
-
-            // Try loading as Sprite first, then as Texture2D
-            Sprite sprite = Resources.Load<Sprite>(imagePath);
-            if (sprite == null)
-            {
-                // Try loading as Texture2D and create Sprite dynamically
-                Texture2D texture = Resources.Load<Texture2D>(imagePath);
-                if (texture != null)
-                {
-                    sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
-                }
-            }
-
-            if (sprite != null)
-            {
-                slideImage.sprite = sprite;
-                slideImage.rectTransform.localScale = new Vector3(-1, 1, 1); // Flip horizontally
-
-                // Set fixed height of 500 and calculate width based on aspect ratio
-                float originalWidth = sprite.rect.width;
-                float originalHeight = sprite.rect.height;
-                float fixedHeight = 500f;
-                float calculatedWidth = (originalWidth / originalHeight) * fixedHeight;
-
-                Debug.Log($"[SlideManager] Original image size: {originalWidth}x{originalHeight}, calculated: {calculatedWidth}x{fixedHeight}");
-
-                // Update LayoutElement to control size in layout system
-                LayoutElement layoutElement = slideImage.GetComponent<LayoutElement>();
-                if (layoutElement != null)
-                {
-                    layoutElement.preferredWidth = calculatedWidth;
-                    layoutElement.preferredHeight = fixedHeight;
-                    Debug.Log($"[SlideManager] Set LayoutElement preferredWidth={calculatedWidth}, preferredHeight={fixedHeight}");
-                }
-
-                // Also set sizeDelta directly
-                slideImage.rectTransform.sizeDelta = new Vector2(calculatedWidth, fixedHeight);
-
-                slideImage.gameObject.SetActive(true);
-
-                // Force layout rebuild for the image and its parent
-                Canvas.ForceUpdateCanvases();
-                LayoutRebuilder.ForceRebuildLayoutImmediate(slideImage.rectTransform);
-                if (slideImage.transform.parent != null)
-                {
-                    LayoutRebuilder.ForceRebuildLayoutImmediate(slideImage.transform.parent as RectTransform);
-                }
-
-                Debug.Log($"[SlideManager] Loaded slide image: {imagePath} (size: {calculatedWidth}x{fixedHeight})");
-            }
-            else
-            {
-                slideImage.gameObject.SetActive(false);
-                Debug.Log($"[SlideManager] No image found for slide: {imagePath}");
-            }
+            slideImage.gameObject.SetActive(false);
         }
 
         // Force layout rebuild to recalculate sizes
